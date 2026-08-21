@@ -1,0 +1,110 @@
+---
+title: "Post to social media and track analytics from ShopWrk"
+description: "Connect Meta, TikTok, and Google Business to schedule posts, publish content, and view engagement analytics without leaving your ShopWrk dashboard."
+---
+
+ShopWrk's social media tools let you manage your shop's online presence from one place. Connect your accounts, compose posts with AI-assisted captions and hashtags, schedule them in advance, and review performance metrics — all without switching between apps.
+
+## Connect your social accounts
+
+Go to **Settings → Social Accounts** to link your platforms.
+
+<CardGroup cols={2}>
+  <Card title="Meta (Facebook & Instagram)" icon="facebook" href="/integrations/social-media">
+    Connect your Facebook Page and linked Instagram Business account through a single Meta OAuth flow.
+  </Card>
+  <Card title="TikTok" icon="video" href="/integrations/social-media">
+    Publish short-form video content to your TikTok account.
+  </Card>
+  <Card title="Google Business" icon="map-pin" href="/integrations/social-media">
+    Post updates directly to your Google Business Profile.
+  </Card>
+</CardGroup>
+
+### Connecting Meta (Facebook and Instagram)
+
+Meta's Instagram Business publishing requires a connected Facebook Page. ShopWrk handles this through a single OAuth connection.
+
+<Steps>
+  <Step title="Click 'Connect' on the Meta card">
+    You'll be redirected to Facebook to log in and choose which Page to connect.
+  </Step>
+  <Step title="Grant all requested permissions">
+    ShopWrk needs permission to manage your Page posts and, if applicable, your linked Instagram Business account. Decline any permission and that platform won't be available for publishing.
+  </Step>
+  <Step title="Confirm both accounts appear">
+    After completing OAuth, ShopWrk shows separate entries for your Facebook Page and Instagram Business account, each with a **Connected** badge.
+  </Step>
+</Steps>
+
+<Note>
+  Instagram publishing through the Meta API requires an Instagram Business or Creator account linked to a Facebook Page. Personal Instagram accounts are not supported.
+</Note>
+
+### Connecting TikTok and Google Business
+
+For TikTok and Google Business, click **Connect** next to the platform. You'll go through that platform's OAuth flow and return to ShopWrk once authorized.
+
+### Account statuses
+
+| Status | Meaning |
+|--------|---------|
+| Connected | Active and ready to publish |
+| Needs Reconnect | Authorization expired — click Reconnect |
+| Expired | Token has lapsed — reconnect to restore access |
+
+If an account shows **Needs Reconnect** or **Expired**, posts scheduled to that account will not publish until you reconnect.
+
+## Creating and scheduling posts
+
+Go to **Marketing → Social Planner** and click **New Post**, or navigate to **Marketing → Social → Create Post**.
+
+<Steps>
+  <Step title="Write your caption">
+    Type your post copy in the caption field. ShopWrk shows a live platform preview so you can see how the post will look on each channel.
+  </Step>
+  <Step title="Add media">
+    Upload images or video. Each platform has its own format requirements — ShopWrk warns you if an uploaded file doesn't meet the target platform's specs.
+  </Step>
+  <Step title="Select target accounts">
+    Choose one or more connected accounts to publish to. You can post the same content to multiple platforms at once.
+  </Step>
+  <Step title="Schedule or publish">
+    - **Publish now** — sends the post immediately to all selected accounts.
+    - **Schedule** — pick a date and time. The post appears in the Social Planner calendar and publishes automatically at the chosen time.
+  </Step>
+</Steps>
+
+### AI caption and hashtag tools
+
+The post composer includes AI-powered tools to help you write content faster:
+
+- **Generate caption** — describe your post (for example, "front window tint on a black Tesla Model 3") and the AI drafts a ready-to-publish caption.
+- **Suggest hashtags** — generates relevant hashtags based on your caption and auto-styling niche.
+- **Generate image** — creates a social media graphic using AI if you don't have a photo to attach.
+
+<Tip>
+  The AI strategist is trained on auto-styling content. Giving it specific details — film type, vehicle make, finish result — produces more useful output than a generic prompt.
+</Tip>
+
+### Draft saving
+
+Posts are auto-saved as drafts while you compose them. If you leave the page before scheduling or publishing, your draft is waiting in the Social Planner when you return.
+
+## Social Planner calendar
+
+The Social Planner at **Marketing → Social Planner** shows all your scheduled and published posts in a calendar view. Click any post to edit it, reschedule it, or view its performance after publishing.
+
+## Analytics
+
+Go to **Marketing → Social → Analytics** to view aggregated engagement data across your connected accounts. The default view covers the last 30 days and shows metrics by platform.
+
+Metrics available include impressions, reach, engagement, and post-level performance. Use this view to identify which content types and posting times resonate with your audience.
+
+<Note>
+  Analytics data is pulled from each platform's API and may be delayed by up to 24 hours depending on the platform.
+</Note>
+
+## Disconnecting an account
+
+In **Settings → Social Accounts**, click **Disconnect** next to any account. Existing published posts are not affected. Scheduled posts targeting only that account will not publish after disconnection.

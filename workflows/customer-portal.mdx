@@ -1,0 +1,96 @@
+---
+title: "Give customers self-service access with the portal"
+description: "The customer portal lets clients view their jobs, estimates, invoices, warranties, and messages through a secure magic-link login — no password required."
+---
+
+The ShopWrk customer portal is a branded, mobile-friendly interface your customers can access to check on their jobs, view and pay invoices, see warranty details, and message your shop — all without needing to call or email you. Access is passwordless: customers log in using a magic link sent to their email.
+
+## How the portal works
+
+The portal lives at `/portal` and is scoped to your shop. When a customer visits the portal login page, they enter their email address and receive a one-time sign-in link. Clicking the link logs them in and takes them to their personal dashboard showing only their data.
+
+<Info>
+  The portal must be enabled for your shop before customers can access it. Go to **Settings → Customer Portal** to turn it on and customize your branding.
+</Info>
+
+## What customers can see
+
+Once logged in, customers see a personalized dashboard organized into sections:
+
+<CardGroup cols={2}>
+  <Card title="Active jobs" icon="briefcase" href="/workflows/customer-portal#what-customers-can-see">
+    Jobs currently in progress, with status badges and vehicle details.
+  </Card>
+  <Card title="Upcoming appointments" icon="calendar" href="/workflows/customer-portal#what-customers-can-see">
+    Scheduled jobs with date and time so customers know when to bring their vehicle in.
+  </Card>
+  <Card title="Outstanding invoices" icon="dollar-sign" href="/workflows/customer-portal#what-customers-can-see">
+    Unpaid invoices with the amount due and a direct link to pay online.
+  </Card>
+  <Card title="Warranties" icon="shield" href="/workflows/customer-portal#what-customers-can-see">
+    Active warranty registrations tied to their vehicles, including product brand and name.
+  </Card>
+  <Card title="Service history" icon="clock" href="/workflows/customer-portal#what-customers-can-see">
+    All past jobs linked to their account, accessible from the Jobs section.
+  </Card>
+  <Card title="Messages" icon="message-circle" href="/workflows/customer-portal#what-customers-can-see">
+    A direct message thread with your shop. Unread message count is shown on the dashboard.
+  </Card>
+</CardGroup>
+
+Customers can also request a new quote directly from the portal dashboard using the **Request Quote** button.
+
+## Sending a customer their portal link
+
+There are two ways to get a customer into the portal:
+
+<Tabs>
+  <Tab title="From the customer record">
+    Open any customer profile and click **Send portal link**. ShopWrk sends a magic-link email to the customer's address on file. The email includes your shop's logo and brand color.
+  </Tab>
+  <Tab title="Via messaging">
+    Paste your shop's portal login URL into an SMS or email from the messaging panel. You can find and copy the portal URL from **Settings → Customer Portal**. The customer enters their email on that page to receive their sign-in link.
+  </Tab>
+</Tabs>
+
+<Note>
+  Magic links expire after a short time for security. If a customer's link has expired, send them a fresh one from the customer record or ask them to request a new link from the portal login page.
+</Note>
+
+## Token-authenticated estimate and invoice views
+
+In addition to the full portal, ShopWrk generates individual shareable pages for estimates and invoices. These pages do not require any login — they are secured by a unique token embedded in the URL.
+
+| Page | URL pattern | What the customer can do |
+|---|---|---|
+| Estimate view | `/view/estimate/[token]` | Select a tier, add optional add-ons, approve or decline, ask a question |
+| Invoice view | `/view/invoice/[token]` | Review line items, pay online, download PDF, print, ask a question |
+
+These links are sent automatically when you click **Send** on an estimate or invoice. You can also copy the link from the estimate or invoice detail page to share manually.
+
+### Customer actions on the estimate view
+
+When a customer opens an estimate link they can:
+
+- Choose between pricing tiers (Good / Better / Best) if the estimate uses them
+- Check or uncheck optional add-ons
+- See a live price summary that updates with their selections
+- Click **Approve Estimate** to confirm, or **Decline** to pass with an optional reason
+- Send a question to your shop without approving or declining
+
+<Warning>
+  If the estimate requires a document signature before approval, the customer will see a **Sign Required Document** prompt. They must sign the document before the Approve button becomes available.
+</Warning>
+
+### Customer actions on the invoice view
+
+When a customer opens an invoice link they can:
+
+- Review all line items, discounts, tax, and amount due
+- Click **Pay now** to pay by card through Stripe
+- Print the invoice or download a PDF if one has been generated
+- Send a question to your shop
+
+## Portal branding
+
+Your shop's logo and brand color are applied to the portal login page, the dashboard header, and the token-authenticated estimate and invoice views. Update these under **Settings → Branding**.

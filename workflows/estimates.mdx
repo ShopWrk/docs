@@ -1,0 +1,116 @@
+---
+title: "Build and send tier-based estimates for customer approval"
+description: "Create Good/Better/Best estimates for any vehicle size, add services and optional add-ons, then send for customer approval — all from a single wizard."
+---
+
+Estimates in ShopWrk let you quote a customer before any work begins. You build the estimate in a step-by-step wizard, choose how pricing tiers are structured, and then send a link the customer can review and approve on their own device. Once approved, a single click converts the estimate into a scheduled job.
+
+## Creating a new estimate
+
+Navigate to **Estimates** in the sidebar and click **New Estimate**. A wizard opens and walks you through four steps: picking the customer, selecting the vehicle, adding services, and reviewing pricing.
+
+<Steps>
+  <Step title="Select a customer">
+    Search for an existing customer by name, phone, or email. If the customer is new, click **Add new customer** directly from the search panel to create a contact without leaving the wizard.
+  </Step>
+  <Step title="Select a vehicle">
+    Choose from vehicles already on file for that customer, or click **Add new vehicle** to enter the year, make, model, and color. ShopWrk uses the vehicle details to automatically suggest the correct pricing tier (sedan, SUV, or truck).
+  </Step>
+  <Step title="Add services">
+    Browse your service catalog by category. Select packages and individual services. Each service shows tier-based pricing — the price adjusts automatically based on the vehicle size detected in the previous step.
+
+    <Tip>
+      You can override the auto-detected vehicle tier at any point in the services step using the tier selector at the top of the panel.
+    </Tip>
+  </Step>
+  <Step title="Review pricing and send">
+    Set a discount (fixed dollar amount or percentage), a tax rate, and an optional deposit requirement. Choose whether to send the estimate by email, SMS, or both — then click **Create Estimate**.
+  </Step>
+</Steps>
+
+## Tier-based pricing (Good / Better / Best)
+
+ShopWrk supports multi-tier estimates where the customer picks a package level — typically **Good**, **Better**, and **Best** — and sees a different price for each. This is the default mode for new estimates.
+
+Each tier maps to a vehicle size:
+
+| Vehicle type | Typical use |
+|---|---|
+| Sedan | Cars and smaller coupes |
+| SUV | SUVs, crossovers, and minivans |
+| Truck | Full-size trucks |
+
+When you add a service with tier pricing enabled, the correct per-vehicle-size price is pulled from your service catalog automatically. You can adjust any individual line item price before sending.
+
+<Note>
+  If you prefer a flat single-price estimate with no tier selection, toggle off **Use tiers** in the services step. All line items will use a single price regardless of vehicle size.
+</Note>
+
+## Adding services, packages, and add-ons
+
+In the services step you can add three kinds of line items:
+
+<CardGroup cols={3}>
+  <Card title="Services" icon="wrench" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Individual services from your catalog, priced per vehicle tier.
+  </Card>
+  <Card title="Packages" icon="layers" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Pre-configured bundles of services with combined pricing.
+  </Card>
+  <Card title="Add-ons" icon="plus-circle" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Optional extras the customer can choose to include when they approve.
+  </Card>
+</CardGroup>
+
+Mark any line item as **Optional** to let the customer decide whether to include it. Optional items appear as checkboxes on the customer-facing approval page.
+
+## Sending the estimate to a customer
+
+From the estimate detail page, click **Send**. You can deliver the estimate via:
+
+- **Email** — sends a branded email with a unique link to the estimate
+- **SMS** — sends a text message with the same link
+
+The estimate link is token-authenticated, so the customer does not need a ShopWrk account to view or respond. You can resend the estimate at any time from the same detail page.
+
+<Tip>
+  Set a **Valid until** date on the estimate to automatically expire the customer's ability to approve after a certain date. Expired estimates display a notice to the customer.
+</Tip>
+
+## What the customer sees
+
+When the customer opens their estimate link, they see:
+
+- Your shop branding and the services quoted
+- Tier options (if the estimate uses tiers) — the customer picks **Good**, **Better**, or **Best**
+- Optional add-ons as checkboxes they can include or skip
+- A live price summary that updates as they make selections
+- **Approve** and **Decline** buttons
+
+If a contract or agreement needs to be signed before approval is allowed, the customer will be prompted to sign the document first.
+
+The customer can also send a question directly from the estimate page. Questions appear in your messaging inbox.
+
+## Approving or declining
+
+Once the customer clicks **Approve**, the estimate status changes to **Approved** in your dashboard. You will see a notification and can proceed to convert the estimate to a job.
+
+If the customer declines, they can optionally leave a reason. The estimate status changes to **Declined** and the reason is visible on the estimate detail page.
+
+<Warning>
+  A customer cannot approve an estimate that has already expired. If a customer tries to approve after the valid-until date has passed, they will see an expiry notice and cannot proceed.
+</Warning>
+
+## Converting an approved estimate to a job
+
+Open the approved estimate and click **Convert to Job**. On the conversion page you can optionally:
+
+- Set a scheduled date and time
+- Assign a technician
+- Assign a bay number
+
+All of these fields are optional — you can convert without scheduling and fill in those details later from the job.
+
+<Note>
+  You can only convert an estimate once. After conversion, the estimate shows a link to the job it created.
+</Note>

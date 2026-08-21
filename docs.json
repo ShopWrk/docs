@@ -1,0 +1,102 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "ShopWrk",
+  "theme": "willow",
+  "favicon": {
+    "light": "/images/ShopWrk-WhiteBGLogo.png",
+    "dark": "/images/ShopWrkIconLogoBlackBG.png"
+  },
+  "colors": {
+    "primary": "#040404",
+    "light": "#a77642",
+    "dark": "#734a2d"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/kassamkhoja/shopwrk-app"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started/account-setup",
+              "getting-started/onboarding",
+              "getting-started/roles-permissions"
+            ]
+          },
+          {
+            "group": "Core Workflows",
+            "pages": [
+              "workflows/estimates",
+              "workflows/jobs",
+              "workflows/invoices-payments",
+              "workflows/customer-portal"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/crm",
+              "features/calendar-booking",
+              "features/inventory",
+              "features/team-scheduling",
+              "features/communications",
+              "features/automations",
+              "features/ai-assistant",
+              "features/warranties"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/stripe-payments",
+              "integrations/google-calendar",
+              "integrations/social-media",
+              "integrations/sms-voice"
+            ]
+          },
+          {
+            "group": "Settings & Config",
+            "pages": [
+              "settings/billing",
+              "settings/branding",
+              "settings/services-catalog",
+              "settings/webhooks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Mobile App",
+        "groups": [
+          {
+            "group": "iOS App",
+            "pages": [
+              "mobile/overview",
+              "mobile/getting-started",
+              "mobile/owner-features",
+              "mobile/technician-features"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/images/ShopWrkFullLogo-Black.png",
+    "dark": "/images/ShopWrkFullLogo-Black.png"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "fonts": {
+    "family": "Montserrat"
+  }
+}

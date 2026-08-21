@@ -1,0 +1,130 @@
+---
+title: "Manage your ShopWrk subscription, pricing plan, and usage"
+description: "View your current plan, track usage meters, upgrade or change your subscription, and manage your payment method through the Stripe customer portal."
+---
+
+ShopWrk billing is handled entirely through Stripe. Your subscription controls which features are active for your shop, how many included units you get each billing period, and when overage charges apply. You can view all of this from **Settings → Billing**.
+
+## Subscription plans
+
+ShopWrk offers three plans, billed monthly or annually. Annual billing saves approximately 17% compared to paying month to month.
+
+<CardGroup cols={3}>
+  <Card title="Essential" icon="wrench" href="/settings/billing">
+    Core shop operations and AI assistant. Includes jobs, estimates, invoices, calendar, customer portal, online booking, documents, workflow automation, and a limited AI image allowance.
+  </Card>
+  <Card title="Pro" icon="message-square" href="/settings/billing">
+    Everything in Essential plus customer communication. Adds a unified inbox for SMS, email, and social DMs, calling with recording and voicemails, and an SMS AI agent that handles and closes leads.
+  </Card>
+  <Card title="Autopilot" icon="sparkles" href="/settings/billing">
+    Everything in Pro plus AI-led sales. Adds a Voice AI receptionist with 300 included minutes, a Meta Ads strategist with creative generation, and autopilot sales follow-up.
+  </Card>
+</CardGroup>
+
+### Pricing
+
+| Plan | Monthly | Annual |
+|------|---------|--------|
+| Essential | $148/mo | $1,480/yr |
+| Pro | $348/mo | $3,480/yr |
+| Autopilot | $648/mo | $6,480/yr |
+
+<Tip>
+  Switch to annual billing on the billing page to save 17% on any plan. You can toggle between monthly and annual before selecting or changing a plan.
+</Tip>
+
+## Trial period
+
+New shops start on a 14-day free trial. During the trial you have access to the features on your plan, but usage meters stop at the included allowance — overages only apply on paid plans. The billing page shows a countdown when fewer than 14 days remain on your trial.
+
+<Note>
+  Add a payment method before your trial ends to avoid any interruption. Stripe will not charge you until the trial period expires.
+</Note>
+
+## Current subscription
+
+The top of the billing page shows a summary of your active subscription:
+
+- **Plan** — the tier you are currently on
+- **Status** — active, trialing, past due, or another Stripe status
+- **Trial** — the trial end date, or when it ended if the trial has passed
+- **Renews** — the date your current billing period ends
+
+### Billing warnings
+
+If your subscription becomes past due, ShopWrk shows a warning banner. Paid features stay active for 7 days past the due date. After that, the account is locked until payment is updated.
+
+<Warning>
+  Billing access is restricted after 7 days past due. Update your payment method in the Stripe customer portal as soon as you see a past-due warning to avoid losing access to paid features.
+</Warning>
+
+## Usage and overage meters
+
+ShopWrk tracks usage for features that have per-unit costs beyond your plan's included allowance. Each meter on the billing page shows how many units you have used, how many are included in your plan, and the overage rate that applies once you exceed the allowance.
+
+| Meter | Included (Essential) | Included (Pro) | Included (Autopilot) | Overage rate |
+|-------|---------------------|----------------|----------------------|--------------|
+| Outbound SMS segments | — | 5,000 | 12,000 | $10.00 per 1,000 segments |
+| SMS AI lead threads | — | 50 | 1,000 | $1.00 per thread |
+| Voice AI minutes | — | — | 300 | $0.15 per minute |
+| Assistant images | 5 | 15 | 50 | $0.25 per image |
+| Meta strategist runs | — | — | 60 | $5.00 per run |
+| Meta ad images | — | — | 15 | $0.50 per image |
+
+A meter turns yellow when you have used 80% of the included allowance. If you exceed the allowance, overages are billed automatically at the end of the billing period.
+
+<Note>
+  During a free trial, meters stop at the included allowance. No overage charges apply until you are on a paid plan.
+</Note>
+
+## A2P and 10DLC fees
+
+SMS messaging in the US requires A2P 10DLC registration. Registration fees are billed separately from your subscription.
+
+| Fee | Amount |
+|-----|--------|
+| Brand registration | $5.40 (one-time) |
+| Campaign registration | $18.00 (one-time) |
+| Medium Volume Mixed upgrade | $12.00/mo |
+
+<Info>
+  The Low Volume Mixed tier is included by default on plans with SMS. The Medium Volume Mixed upgrade is only needed if your shop sends high message volumes. Contact support if you are unsure which tier applies to you.
+</Info>
+
+## Changing your plan
+
+<Steps>
+  <Step title="Open the billing page">
+    Go to **Settings → Billing**.
+  </Step>
+  <Step title="Choose a billing interval">
+    Use the Monthly / Annual toggle to see pricing for each interval before making a selection.
+  </Step>
+  <Step title="Select a plan">
+    Click the plan card you want. If you already have an active subscription, you are taken to the Stripe customer portal where Stripe handles proration automatically. If you are starting a new subscription from a trial, a Stripe Checkout session opens to collect payment.
+  </Step>
+  <Step title="Complete payment in Stripe">
+    Follow the prompts to confirm the change. You are redirected back to ShopWrk once complete.
+  </Step>
+</Steps>
+
+<Note>
+  Only users with the **Owner** role or billing permission can change plans or open the customer portal. Admins can view the plan cards but the action buttons are disabled.
+</Note>
+
+## Managing your payment method
+
+Click **Manage in Stripe** at the top of the billing page to open the Stripe customer portal. From there you can:
+
+- Update your credit card or bank account
+- Download past invoices and receipts
+- View your full billing history
+- Cancel your subscription
+
+<Warning>
+  Canceling your subscription in the Stripe portal takes effect at the end of the current billing period. Your shop retains full access until that date.
+</Warning>
+
+## Custom and legacy plans
+
+If your shop is on a manually billed, comped, or grandfathered plan, the billing page shows your arrangement but plan-change buttons are disabled. Contact ShopWrk support to make any changes to a custom plan.

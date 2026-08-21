@@ -1,0 +1,167 @@
+---
+title: "Manage team member roles and permissions in ShopWrk"
+description: "Understand the three built-in roles — Owner, Admin, and Technician — what each role can access, and how to invite team members to your shop."
+---
+
+ShopWrk uses a role-based permission system to control what each team member can see and do. When you invite someone, you assign them one of three roles. Their role determines which sections of the dashboard they can access and which actions they can take. You can also adjust individual permissions on top of their role's defaults.
+
+## The three roles
+
+<CardGroup cols={3}>
+  <Card title="Owner" icon="crown" href="/getting-started/roles-permissions#owner">
+    Full access to every feature, setting, and team management function.
+  </Card>
+  <Card title="Admin" icon="shield" href="/getting-started/roles-permissions#admin">
+    Full operational access — jobs, customers, invoices, CRM — with no access to billing or owner-only settings.
+  </Card>
+  <Card title="Technician" icon="wrench" href="/getting-started/roles-permissions#technician">
+    Access limited to assigned jobs and their own schedule.
+  </Card>
+</CardGroup>
+
+### Owner
+
+The shop owner has unrestricted access to the entire platform. There is exactly one Owner per shop — the account created during signup. The Owner role cannot be assigned to additional team members.
+
+Owners can do everything Admins and Technicians can do, plus:
+
+- Manage billing and subscription settings
+- Manage integrations (Stripe, Google Calendar, Telnyx, social accounts)
+- Manage all team permissions, including granting or revoking individual overrides
+- Approve payments and refunds
+- Modify service pricing rules
+- Manage and publish social media accounts
+- Manage calling settings and phone numbers
+- Manage document templates
+
+### Admin
+
+Admins have full access to day-to-day operations. This role is suited for a shop manager or senior staff member who runs the business alongside the owner but shouldn't have access to billing or owner-level configuration.
+
+Admins can:
+
+- Create, edit, and delete jobs, customers, and estimates
+- View the full calendar and schedule jobs
+- Create, send, and void invoices
+- Log cash and cheque payments, and process POS card payments
+- View and manage the full messaging inbox
+- View, add, and adjust inventory
+- Manage leads, deals, and CRM pipelines (view only for pipeline settings)
+- Make, receive, transfer, and record calls; manage call queues
+- Create and manage email campaigns
+- Create and publish social media posts (but not connect new accounts)
+- Manage automation workflows
+- Use the AI assistant
+- Run and resolve data imports
+
+Admins cannot:
+
+- Access billing or subscription settings
+- Change service pricing rules
+- Manage team permissions or deactivate members
+- Connect or disconnect social media accounts
+- Configure calling phone numbers and routing settings
+- Manage document templates
+- Approve logged payments
+
+### Technician
+
+Technicians have a focused view of the dashboard. This role is intended for installers and shop staff who need to see their own work and update job statuses, without access to customer financials or shop configuration.
+
+Technicians can:
+
+- View jobs assigned to them
+- Update the status of their assigned jobs
+- View their own schedule and calendar
+- View the service catalog
+- View inventory stock levels
+- Receive inbound calls, view call history, and listen to voicemails
+
+Technicians cannot access customers, estimates, invoices, payments, the full calendar, messaging, reports, CRM, settings, or any admin-level features.
+
+## Permissions by area
+
+The table below summarizes key permissions across roles. "Full" means create, edit, and delete access. "View" means read-only.
+
+| Area | Owner | Admin | Technician |
+| --- | --- | --- | --- |
+| Jobs (all) | Full | Full | — |
+| Jobs (own assigned) | Full | Full | View + status |
+| Customers | Full | Full | — |
+| Calendar (full) | Full | Full | — |
+| Calendar (own schedule) | Full | Full | View |
+| Estimates | Full | Full | — |
+| Invoices | Full | Full | — |
+| Payments | Full | Log + POS | — |
+| Payment approval | Full | — | — |
+| Service catalog | Full | View + create/edit | View |
+| Service pricing | Full | — | — |
+| Inventory | Full | Full | View |
+| CRM (leads, deals) | Full | Full | — |
+| Messaging (inbox) | Full | Full | — |
+| Calling (make/receive) | Full | Full | Receive only |
+| Calling settings | Full | — | — |
+| Reports | Full | View | — |
+| Automations | Full | Full | — |
+| Email campaigns | Full | Full | — |
+| Social media | Full | Create + publish | — |
+| Social account connections | Full | — | — |
+| AI assistant | Full | Full | — |
+| Documents | Full | All except templates | — |
+| Team management | Full | View | — |
+| Settings (general) | Full | View | — |
+| Settings (billing) | Full | — | — |
+| Settings (integrations) | Full | — | — |
+| Data imports | Full | Full | — |
+
+## Inviting a team member
+
+Only Owners can invite new team members.
+
+<Steps>
+  <Step title="Go to Team">
+    In the dashboard navigation, click **Team**.
+  </Step>
+  <Step title="Click Invite member">
+    Click the **Invite member** button in the top-right corner of the Team page.
+  </Step>
+  <Step title="Enter their details">
+    Enter the team member's name and email address, then select their role: **Admin** or **Technician**.
+  </Step>
+  <Step title="Send the invitation">
+    Click **Send invite**. ShopWrk emails them a link to create their account and join your shop.
+  </Step>
+</Steps>
+
+The invitation link is valid for a limited time. If it expires before the team member accepts it, you can resend the invitation from the Team page.
+
+<Note>
+  Invited team members sign up through a dedicated join page, not the standard signup flow. Their email address is locked to the invited address and their role is pre-assigned.
+</Note>
+
+## Adjusting individual permissions
+
+If the default permissions for a role don't quite fit a specific team member, Owners can grant or remove individual permissions on top of that person's role.
+
+To adjust permissions for a team member:
+
+1. Go to **Team** and open the team member's profile.
+2. Scroll to the **Permissions** section.
+3. Toggle individual permissions on or off as needed.
+
+<Warning>
+  Granting a Technician individual permissions outside their role — such as customer access or invoice viewing — means they will see those sections in the dashboard. Review any overrides carefully before saving.
+</Warning>
+
+## Deactivating a team member
+
+Owners can deactivate a team member's account from their profile on the Team page. Deactivated members cannot log in, but their historical records (jobs, time logs, assignments) are preserved.
+
+<CardGroup cols={2}>
+  <Card title="Account setup" icon="user-plus" href="/getting-started/account-setup">
+    Create your ShopWrk account if you haven't already.
+  </Card>
+  <Card title="Team scheduling" icon="calendar-days" href="/features/team-scheduling">
+    Set up staff schedules, timesheets, and shifts for your team.
+  </Card>
+</CardGroup>

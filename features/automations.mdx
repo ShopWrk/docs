@@ -1,0 +1,141 @@
+---
+title: "Automate your shop's workflows and follow-ups in ShopWrk"
+description: "Build event-driven automations with a visual workflow editor, use 10 pre-built templates, and let ShopWrk handle follow-ups, reminders, and notifications."
+---
+
+ShopWrk Automations let you set up workflows that run on their own whenever something happens in your shop. When a job is completed, a review request goes out. When an invoice goes unpaid, a reminder fires. When a new lead comes in, they get a welcome text. You define the rules once and ShopWrk handles the follow-through.
+
+Open **Automations** from the sidebar to manage all your workflows.
+
+## How automations work
+
+Each automation has three parts:
+
+1. **Trigger** — the event that starts the automation (e.g., "Job Completed")
+2. **Conditions** (optional) — filters that must be true for the automation to continue (e.g., "only for PPF jobs")
+3. **Actions** — what happens when the automation runs (send SMS, send email, add a tag, log a note, etc.)
+
+When the trigger event occurs and all conditions are met, ShopWrk executes the actions in order. Delays between actions let you space out a multi-touch sequence.
+
+## Built-in templates
+
+ShopWrk ships with 10 ready-to-use templates that cover the most common follow-up workflows for auto styling shops. Start from a template to save time — you can customize everything after creating it.
+
+<CardGroup cols={2}>
+  <Card title="New Lead Welcome" icon="hand-wave" href="/features/automations#built-in-templates">
+    Sends a welcome SMS immediately when a new lead is captured, then follows up with a detailed email after 1 hour.
+  </Card>
+  <Card title="Estimate Follow-up" icon="file-invoice" href="/features/automations#built-in-templates">
+    Follows up on sent estimates after 2 days if the customer hasn't approved yet.
+  </Card>
+  <Card title="Review Request" icon="star" href="/features/automations#built-in-templates">
+    Asks customers for a review 1 day after their job is completed.
+  </Card>
+  <Card title="Booking Confirmation" icon="calendar-check" href="/features/automations#built-in-templates">
+    Sends an instant confirmation SMS and a detailed email when a new booking request comes in.
+  </Card>
+  <Card title="Deal Won Celebration" icon="trophy" href="/features/automations#built-in-templates">
+    Sends a confirmation SMS when a deal is marked won, then a thank-you email with a referral ask 3 days later.
+  </Card>
+  <Card title="Invoice Payment Thank-You" icon="circle-check" href="/features/automations#built-in-templates">
+    Thanks customers automatically when they pay an invoice and tags them as paid.
+  </Card>
+  <Card title="Overdue Invoice Reminder" icon="clock" href="/features/automations#built-in-templates">
+    Sends a reminder SMS 3 days after an invoice is sent if unpaid, then a final email reminder 4 days after that.
+  </Card>
+  <Card title="Job Status Update" icon="wrench" href="/features/automations#built-in-templates">
+    Notifies customers via SMS whenever their job status changes and logs a note.
+  </Card>
+  <Card title="Estimate Approved Notification" icon="thumbs-up" href="/features/automations#built-in-templates">
+    Confirms an estimate approval via SMS, tags the contact, and logs a note.
+  </Card>
+  <Card title="New Contact Onboarding" icon="users" href="/features/automations#built-in-templates">
+    A 3-touch drip for new contacts: welcome SMS, onboarding email the next day, and a check-in SMS after 5 days.
+  </Card>
+</CardGroup>
+
+## Available triggers
+
+Triggers are organized by category. You can build automations on any of the following events:
+
+<AccordionGroup>
+  <Accordion title="Contacts">
+    Contact Created, Contact Updated, Contact Tag Added, Contact Tag Removed, Lead Created, Lead Status Changed, Lead Converted, ShopWrk Lead Form Submitted, Meta Lead Form Submitted
+  </Accordion>
+  <Accordion title="CRM">
+    Deal Created, Deal Stage Changed, Deal Won, Deal Lost
+  </Accordion>
+  <Accordion title="Estimates">
+    Estimate Created, Estimate Sent, Estimate Approved, Estimate Declined
+  </Accordion>
+  <Accordion title="Jobs">
+    Job Created, Job Status Changed, Job Completed
+  </Accordion>
+  <Accordion title="Invoices">
+    Invoice Created, Invoice Sent, Invoice Paid
+  </Accordion>
+  <Accordion title="Messaging">
+    Message Received, Instagram Comment Received
+  </Accordion>
+  <Accordion title="Booking">
+    Booking Request Created, Booking Request Status Changed
+  </Accordion>
+  <Accordion title="Warranties">
+    Warranty Registration Due, Warranty Inspection Due
+  </Accordion>
+  <Accordion title="System">
+    Scheduled (Recurring), Manual Trigger, Custom Webhook
+  </Accordion>
+</AccordionGroup>
+
+## Creating an automation
+
+<Steps>
+  <Step title="Click New Automation">
+    From the Automations page, click **New Automation** in the top-right corner.
+  </Step>
+  <Step title="Choose a starting point">
+    Select **Start from a template** to use one of the built-in workflows, or **Start blank** to build from scratch.
+  </Step>
+  <Step title="Pick a trigger (blank path only)">
+    If starting blank, select the event that will trigger this automation. Triggers are grouped by category so you can find the right one quickly.
+  </Step>
+  <Step title="Build your workflow">
+    In the visual workflow editor, add condition nodes to filter when the automation should run, then add action nodes — send SMS, send email, add a tag, add a note, or introduce a time delay.
+  </Step>
+  <Step title="Name and describe it">
+    Give the automation a clear name and optional description so your team knows what it does.
+  </Step>
+  <Step title="Activate">
+    Toggle the automation **Active** to turn it on. You can pause it at any time by toggling it off.
+  </Step>
+</Steps>
+
+## Managing automations
+
+The automations list shows every workflow you've created, with its current status (Active or Paused), trigger type, run count, and failure count.
+
+<Tabs>
+  <Tab title="Activating and pausing">
+    Use the toggle on each automation row to enable or disable it without deleting it. You can also select multiple automations and bulk enable or disable them.
+  </Tab>
+  <Tab title="Duplicating">
+    Open the three-dot menu on any automation and click **Duplicate** to create a copy. Useful for building variations of a workflow — for example, separate welcome sequences for different service types.
+  </Tab>
+  <Tab title="Viewing run history">
+    Click **View Runs** from the three-dot menu to see every time the automation has executed, including whether each run succeeded or failed and what triggered it.
+  </Tab>
+  <Tab title="Analytics">
+    Click **Analytics** in the Automations toolbar to see aggregate run stats, success rates, and failure patterns across all your automations.
+  </Tab>
+</Tabs>
+
+<Tip>
+  Use the category filter on the Automations list to focus on a specific domain — for example, filter to "Jobs" to see only automations that fire on job events.
+</Tip>
+
+## Import and export
+
+You can export an automation as a JSON file and import it into another shop account. This is useful for sharing workflows between multiple locations or backing up a complex automation before making changes.
+
+Use the **Import** button in the Automations toolbar to upload a previously exported JSON file.

@@ -1,0 +1,103 @@
+---
+title: "Manage your schedule and online booking in ShopWrk"
+description: "Schedule jobs across bays, sync with Google Calendar, accept online booking requests, and let customers book consultations — all from one calendar view."
+---
+
+ShopWrk's calendar is the central place where your shop's schedule lives. You can view and create jobs, manage bay assignments, block off time, and handle online booking requests from customers — without ever leaving the dashboard.
+
+## Calendar view
+
+Open **Calendar** from the sidebar to see your week at a glance. Jobs appear as color-coded events. You can filter the view by technician, bay, or job status using the toolbar at the top.
+
+<CardGroup cols={3}>
+  <Card title="Day view" icon="calendar-day" href="/features/calendar-booking#calendar-view">
+    Focus on a single day's schedule with hour-by-hour time slots per bay.
+  </Card>
+  <Card title="Week view" icon="calendar-week" href="/features/calendar-booking#calendar-view">
+    See the full week across all bays and technicians side by side.
+  </Card>
+  <Card title="Month view" icon="calendar" href="/features/calendar-booking#calendar-view">
+    Get a high-level overview of job density across the month.
+  </Card>
+</CardGroup>
+
+### Bay management
+
+ShopWrk organizes your schedule around bays — the physical workspaces in your shop. Each bay shows as a lane in the calendar. You can configure the number of bays and give each one a custom name (for example, "Bay 1 – Tint" or "Detail Bay") in **Settings**.
+
+When you schedule a job, you assign it to a bay. This prevents double-booking and makes it easy to see available capacity at a glance.
+
+### Blocked time
+
+Block off periods when a bay or technician is unavailable — lunch breaks, equipment maintenance, staff time off. Blocked times appear on the calendar so the rest of your team knows not to book into that window.
+
+### Google Calendar sync
+
+ShopWrk supports bidirectional sync with Google Calendar. Connect your account in **Settings → Integrations** and your ShopWrk jobs will appear alongside your personal or business calendar events.
+
+<Note>
+  External calendar events (from Google) are shown as read-only overlays on the ShopWrk calendar. You cannot edit them from within ShopWrk.
+</Note>
+
+## Scheduling a job
+
+<Steps>
+  <Step title="Open the new job wizard">
+    Click **+ New Job** in the calendar toolbar, or click directly on a time slot in the calendar grid. The job creation wizard opens.
+  </Step>
+  <Step title="Select a customer and vehicle">
+    Search for an existing contact or create a new one. Add or select the vehicle being serviced.
+  </Step>
+  <Step title="Choose services">
+    Pick the services from your catalog. Pricing adjusts automatically based on vehicle size (sedan, SUV, truck).
+  </Step>
+  <Step title="Assign a bay and technician">
+    Select the bay and assign the job to a technician. ShopWrk highlights any conflicts in the chosen time slot.
+  </Step>
+  <Step title="Set the date and time">
+    Choose the scheduled start time. The calendar shows existing jobs so you can find open slots quickly.
+  </Step>
+  <Step title="Save the job">
+    Click **Create Job**. The job appears on the calendar and the customer can receive a confirmation if you have automations set up.
+  </Step>
+</Steps>
+
+## Online booking
+
+ShopWrk gives you a public-facing booking page your customers can use to request appointments. You control availability — customers cannot self-schedule directly onto your calendar. Instead, every submission goes through a review step.
+
+### How requests work
+
+<Steps>
+  <Step title="Customer submits a request">
+    The customer visits your booking page, picks a service, provides their vehicle details, and submits a preferred date and time.
+  </Step>
+  <Step title="Request lands in Booking Requests">
+    Open **Booking Requests** in the sidebar. New requests arrive with status **New**. You'll also see requests as **Contacted**, **Scheduled**, **Converted**, **Declined**, or **Cancelled** as you work through them.
+  </Step>
+  <Step title="Review and respond">
+    Click a request to see the customer's details, vehicle, requested service, and preferred time. You can contact the customer, approve and schedule the job, or decline the request.
+  </Step>
+  <Step title="Convert to a job">
+    When you're ready to confirm, convert the request to a job. ShopWrk creates the job and links it to the contact — no double entry needed.
+  </Step>
+</Steps>
+
+<Warning>
+  Approving a booking request does not automatically block time on the calendar. You still need to schedule the converted job in the calendar view.
+</Warning>
+
+### Booking request statuses
+
+| Status | Meaning |
+|---|---|
+| New | Just submitted, not yet reviewed |
+| Contacted | You've reached out to the customer |
+| Scheduled | A job has been booked with the customer |
+| Converted | Successfully turned into a job in ShopWrk |
+| Declined | Request turned down |
+| Cancelled | Customer or shop cancelled before booking |
+
+## Consultation scheduling
+
+In addition to job scheduling, you can book consultations directly from the calendar. Consultations are useful for in-person estimate walkarounds or customer meetings that don't result in an immediate job. They appear on the calendar as distinct events so your team knows the time is held.

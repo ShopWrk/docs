@@ -1,0 +1,138 @@
+---
+title: "Configure SMS messaging and voice calling with Telnyx"
+description: "Set up your business phone number, complete A2P 10DLC registration, configure call routing and voicemail, and send bulk SMS campaigns through Telnyx."
+---
+
+ShopWrk uses Telnyx to power all SMS messaging and voice calling. You get a dedicated business phone number, two-way texting with customers, automated message templates, bulk campaigns, inbound call routing, voicemail, and call recording — managed entirely from your ShopWrk dashboard.
+
+## SMS setup
+
+### First-time setup wizard
+
+The first time you visit **Settings → Messaging**, ShopWrk launches a setup wizard that walks you through:
+
+1. Registering your brand and campaign with The Campaign Registry (required for A2P 10DLC).
+2. Provisioning a phone number.
+3. Configuring your messaging defaults.
+
+Complete all steps before sending any business SMS. Skipping registration means your messages will likely be filtered or blocked by carriers.
+
+### A2P 10DLC registration
+
+A2P 10DLC (Application-to-Person 10-Digit Long Code) is the US carrier framework that allows businesses to send SMS at scale without messages being treated as spam. Registration is mandatory for any business sending automated or bulk SMS in the United States.
+
+ShopWrk handles the registration flow inside the setup wizard. You'll provide:
+
+- **Business information** — legal name, address, EIN, website, and contact details.
+- **Owner information** — name, email, and phone of the account owner.
+- **Campaign description** — a brief explanation of how you'll use SMS (appointment reminders, follow-ups, promotions).
+
+After you submit, The Campaign Registry reviews your brand and campaign. This typically takes 1–5 business days. ShopWrk displays the current approval status on **Settings → Messaging**.
+
+<Info>
+  Registration statuses are **Brand** and **Campaign**. Both must show **Approved** before you can send outbound SMS through ShopWrk. You can still receive inbound SMS while approval is pending.
+</Info>
+
+<Warning>
+  Do not attempt to work around A2P 10DLC by sending high volumes of messages before approval. Carriers can permanently flag your number, which would require you to provision a new number and re-register.
+</Warning>
+
+### Provisioning your phone number
+
+After A2P registration is approved, you can provision a Telnyx phone number directly from **Settings → Messaging**. Choose a local area code that matches your shop's market for the best response rates.
+
+If you have an existing business number you want to keep, contact ShopWrk support to discuss porting it in.
+
+### Compliance and trust center
+
+**Settings → Messaging** includes a **Compliance & Trust** panel where you can monitor:
+
+- Brand registration status
+- Campaign approval status
+- Monthly SMS usage (inbound and outbound counts, estimated cost)
+- Opt-out compliance status
+
+#### SMS opt-out compliance
+
+ShopWrk automatically handles STOP, HELP, and UNSTOP keywords per TCPA requirements. When a customer replies STOP, they're added to your opt-out list and will not receive further messages from your number. Attempting to send to an opted-out number is blocked at the platform level.
+
+You can view and manage the opt-out list from the Compliance & Trust panel.
+
+## Messaging configuration
+
+Once your number is provisioned and A2P registration is approved, **Settings → Messaging** gives you access to:
+
+- **Message templates** — saved message templates for common scenarios (appointment confirmations, invoice reminders, review requests).
+- **Auto-replies** — optional automatic responses for after-hours or missed messages.
+- **Opt-out list** — view and manage customers who have opted out of SMS.
+
+## Bulk messaging campaigns
+
+Use bulk messaging to reach multiple customers at once — for promotions, seasonal offers, or service reminders.
+
+<Steps>
+  <Step title="Build your audience">
+    Filter your customer list by criteria such as service type, last visit date, or vehicle type to target the right customers.
+  </Step>
+  <Step title="Write your message">
+    Use a saved template or write a custom message. Keep it concise — carrier filtering increases for messages over 160 characters.
+  </Step>
+  <Step title="Review and send">
+    Preview the recipient count and message content before sending. ShopWrk queues and dispatches the messages through Telnyx.
+  </Step>
+</Steps>
+
+<Warning>
+  Bulk SMS is subject to your A2P 10DLC campaign's approved use cases. Only send messages that match what you described during registration. Promotions or offers outside your approved category can trigger carrier filtering.
+</Warning>
+
+## Voice calling setup
+
+Voice calling is configured separately at **Settings → Calling**. The settings are organized into tabs:
+
+<Tabs>
+  <Tab title="General">
+    Assign which provisioned phone number handles inbound calls. Configure your business hours and what happens to calls received outside those hours.
+  </Tab>
+  <Tab title="Forwarding">
+    Create call forwarding rules to route inbound calls to specific team members or external numbers. Rules can be based on time of day, day of week, or caller type.
+  </Tab>
+  <Tab title="Queue">
+    Configure hold music, queue announcements, and maximum wait times for customers on hold.
+  </Tab>
+  <Tab title="Ring priority">
+    Set the order in which phone numbers ring when a call comes in. Drag numbers to reorder them.
+  </Tab>
+  <Tab title="Scripts">
+    Save call scripts for your team to reference during inbound calls — useful for intake questions or service upsells.
+  </Tab>
+  <Tab title="Voicemail">
+    Upload or record a custom voicemail greeting. Configure how long a call rings before going to voicemail.
+  </Tab>
+  <Tab title="Analytics">
+    View call volume, average handle time, missed call rate, and other call metrics.
+  </Tab>
+</Tabs>
+
+### Voicemail and call recording
+
+Voicemail recordings are stored and accessible from the Calls section of ShopWrk. Call recordings are retained for 60 days and then automatically deleted.
+
+<Note>
+  Call recording laws vary by state. Some states require you to inform all parties that a call is being recorded before the recording begins. Consult your local regulations before enabling call recording.
+</Note>
+
+### WebRTC calling
+
+ShopWrk supports in-browser calling using WebRTC, so team members can make and receive calls directly from the ShopWrk dashboard without a physical phone.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Automations" icon="bolt" href="/features/automations">
+    Set up automatic SMS reminders for appointments, invoice follow-ups, and review requests.
+  </Card>
+  <Card title="Communications" icon="message-circle" href="/features/communications">
+    View and reply to inbound customer messages in the unified inbox.
+  </Card>
+</CardGroup>

@@ -1,0 +1,147 @@
+---
+title: "Schedule staff, track time, and run payroll in ShopWrk"
+description: "Manage your team's weekly schedule, handle time-off requests, review timesheets, configure compensation, and run payroll — all from the Team page."
+---
+
+ShopWrk's Team module brings together everything you need to manage your staff — from setting recurring weekly schedules and approving time-off requests to reviewing individual timesheets and running payroll. All of this lives under **Team** in the sidebar.
+
+The Team page is organized into four tabs: **Staff**, **Schedules**, **Timesheet**, and **Payroll**.
+
+<Note>
+  The Team page is only accessible to shop owners. Admin and Technician roles are redirected to the main dashboard.
+</Note>
+
+## Staff
+
+The Staff tab shows every team member on your roster — active employees, pending invitations, and deactivated accounts.
+
+<CardGroup cols={3}>
+  <Card title="Active" icon="user-check" href="/features/team-scheduling#staff">
+    Staff who are currently working and have access to ShopWrk.
+  </Card>
+  <Card title="Invited" icon="envelope" href="/features/team-scheduling#staff">
+    Team members who have been sent an invitation but haven't accepted yet.
+  </Card>
+  <Card title="Deactivated" icon="user-minus" href="/features/team-scheduling#staff">
+    Former employees whose accounts have been disabled.
+  </Card>
+</CardGroup>
+
+### Roles
+
+ShopWrk has three roles:
+
+| Role | Access |
+|---|---|
+| Owner | Full access including team management, payroll, and all settings |
+| Admin | Most features; cannot access owner-only settings or payroll |
+| Technician | Only their assigned jobs and their own timesheet |
+
+### Inviting a team member
+
+<Steps>
+  <Step title="Click Invite">
+    From the Staff tab, click **Invite Team Member**.
+  </Step>
+  <Step title="Enter their details">
+    Provide the person's name, email address, and role.
+  </Step>
+  <Step title="Send the invitation">
+    ShopWrk sends them an email with a link to set up their account. They appear as **Invited** until they accept.
+  </Step>
+</Steps>
+
+## Schedules
+
+The Schedules tab lets you define each team member's regular working hours and manage time-off requests.
+
+### Weekly schedule
+
+Each staff member can have a recurring schedule — the days and hours they're normally available. This schedule feeds into the calendar so you know who's in on any given day.
+
+<Steps>
+  <Step title="Open a staff member's schedule">
+    On the Schedules tab, find the team member and click their row to expand their weekly schedule.
+  </Step>
+  <Step title="Set working hours">
+    For each day of the week, set the start and end time or mark the day as off. Multiple shifts per day are supported.
+  </Step>
+  <Step title="Save">
+    Click **Save Schedule**. Changes take effect immediately.
+  </Step>
+</Steps>
+
+### Time-off requests
+
+Staff can submit time-off requests, and managers can approve or deny them from the Schedules tab.
+
+<Tabs>
+  <Tab title="As a manager">
+    Review pending requests in the **Time-Off Requests** section of the Schedules tab. Each request shows the staff member's name, the dates requested, and the reason. Click **Approve** or **Reject**.
+  </Tab>
+  <Tab title="As a staff member">
+    Submit a time-off request from your own schedule view. Provide the start and end dates and an optional note. Your request will show as **Pending** until a manager reviews it.
+  </Tab>
+</Tabs>
+
+## Timesheet
+
+The Timesheet tab shows a weekly breakdown of hours worked by each team member, including clock-in/clock-out records and any job-specific time logs.
+
+### Clock in and out
+
+Staff can clock in and out directly from the ShopWrk dashboard. The Timesheet tab shows who is currently clocked in and their running time for the day.
+
+### Job timers
+
+When a technician is working a job, they can start a job-specific timer. This logs time against the job for accurate labor costing and gives you a real-time view of how long each job is taking.
+
+### Weekly summary
+
+The Timesheet tab shows:
+
+- Total hours per staff member for the week
+- Daily breakdown by day
+- Clock-in and clock-out times
+- Any gaps or missing entries
+
+<Tip>
+  Review timesheets weekly before running payroll to catch any missed clock-ins or discrepancies.
+</Tip>
+
+## Payroll
+
+The Payroll tab is where you process pay runs for your team. It's only visible to shop owners.
+
+### Compensation settings
+
+Before running payroll, each staff member needs a compensation configuration. Go to **Team → Payroll** and open a team member's record to set:
+
+- Pay type (hourly or salary)
+- Pay rate
+- Overtime rules (if applicable)
+
+### Running payroll
+
+<Steps>
+  <Step title="Review the pay period">
+    Open the Payroll tab and confirm the pay period dates are correct.
+  </Step>
+  <Step title="Review hours and earnings">
+    ShopWrk pulls in approved hours from the timesheet. Review each team member's hours and calculated pay.
+  </Step>
+  <Step title="Make any adjustments">
+    Add bonuses, deductions, or manual overrides if needed before finalizing.
+  </Step>
+  <Step title="Run payroll">
+    Click **Run Payroll** to finalize the pay run. Each team member receives a paystub.
+  </Step>
+</Steps>
+
+<Warning>
+  Payroll runs cannot be undone. Review all hours and compensation settings carefully before clicking **Run Payroll**.
+</Warning>
+
+### Paystubs
+
+After a payroll run, each team member's paystub is saved to their record. Owners can access historical paystubs from the Payroll tab at any time.
