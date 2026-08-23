@@ -74,7 +74,8 @@
               "settings/billing",
               "settings/branding",
               "settings/services-catalog",
-              "settings/webhooks"
+              "settings/webhooks",
+              "settings/a2p-registration"
             ]
           }
         ]
