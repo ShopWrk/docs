@@ -56,7 +56,8 @@
               "features/ai-agents",
               "features/ai-assistant",
               "features/warranties",
-              "features/forms"
+              "features/forms",
+              "features/job-checklists"
             ]
           },
           {

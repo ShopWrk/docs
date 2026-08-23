@@ -1,0 +1,68 @@
+---
+title: "Set up service and quality-control checklists"
+description: "Build reusable checklist templates, attach them to services, require photo proof, and make sure every job gets done the same way."
+sidebarTitle: "Checklists"
+---
+
+Checklists are how a five-tech shop does work one way instead of five ways. You build a checklist once, attach it to a service, and every job that includes the service carries its own copy for technicians to complete. Missed steps become visible before the car leaves the bay, not when the customer calls back.
+
+Three things share the word checklist, and they are not interchangeable:
+
+- **Templates** are your master copies, managed under Settings.
+- **Service checklists** are templates attached to a service or category, so new jobs pick them up automatically.
+- **Job checklists** are snapshots copied onto an individual job. Editing a template later never rewrites jobs already created from it.
+
+## Building your first template
+
+<Steps>
+  <Step title="Open checklist settings">
+    Go to **Settings → Checklists** and click **New template**.
+  </Step>
+  <Step title="Add the steps">
+    List the steps in work order, exactly as a tech should do them: prep, panels one through four, edges, final inspection.
+  </Step>
+  <Step title="Require what matters">
+    Mark critical steps as required so a job can't move forward without them. For photo-proof steps, require a photo or video; ShopWrk blocks completion until media is attached.
+  </Step>
+  <Step title="Save it as a template">
+    Name it after the workflow it captures ("PPF full front", "Ceramic two-stage") so it's obvious when attaching.
+  </Step>
+</Steps>
+
+## Attaching checklists to services
+
+A template does nothing until something uses it. Attach it three ways:
+
+- **To a service** so every job including that service carries the checklist.
+- **To a service variant** when only certain packages need it, like the top ceramic tier with its annual-inspection step.
+- **To a whole category** when everything under "Detailing" should follow the same basic flow.
+
+Shop-wide defaults matter here too: set default before/after photo requirements once, and every checklist inherits them unless you override per step.
+
+<Tip>
+  Start by copying the process your best technician already follows. The checklist teaches the rest of the team to hit that standard without you standing over anyone's shoulder.
+</Tip>
+
+## What happens on a job
+
+When a job is created from services carrying checklists, ShopWrk snapshots those checklists onto the job. The technician works through their steps in the app, attaches required photos as they go, and finishes. If anything required is missing, the job can't be submitted for approval; Pending Review stays out of reach until the work is actually done.
+
+Editing a template later changes future jobs only. If a process changes mid-week, jobs already scheduled keep the old snapshot, which protects you from retroactive confusion on work already quoted.
+
+## Editing and deleting safely
+
+- Edit a template any time; changes apply to jobs created after you save.
+- Need a different flow for a specific service? Attach a different template rather than mutating a shared one.
+- Deleting a template doesn't touch past job snapshots, but nothing new will pick it up. Reattach replacements where needed.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Jobs" icon="wrench" href="/workflows/jobs">
+    Where technicians complete checklists and submit for review.
+  </Card>
+
+  <Card title="Services catalog" icon="wrench" href="/settings/services-catalog">
+    Where service attachments and variants live.
+  </Card>
+</CardGroup>
