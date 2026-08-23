@@ -3,156 +3,101 @@ title: "Shop owner dashboard and features in the ShopWrk iOS app"
 description: "A complete guide to every screen and tool available to shop owners in the ShopWrk iOS app, from live KPI tiles to quick-create and the AI assistant."
 ---
 
-When you sign in as a shop owner, the ShopWrk iOS app gives you a real-time picture of your business from anywhere. Your home screen shows live metrics, today's job schedule, quick-access tiles for the most common workflows, and a feed of recent activity — all in one scrollable view. Additional tools like search, global create, and the AI assistant are always a tap away from the bottom tab bar.
+Sign in as an owner or admin and the app gives you a live picture of the shop from anywhere. The home screen carries your metrics, today's schedule preview, quick actions, and recent activity. Search, Create, Inbox, and ShopWrker sit one tap away in the bottom bar.
 
 ## Home screen
 
-The owner home screen is your operational command center. Pull down to refresh any section and get the latest data from your shop.
+Pull down anywhere on the home screen to refresh its data.
 
 ### Greeting and status line
 
-At the top of the home screen you'll see a time-sensitive greeting — "Good morning," "Good afternoon," or "Good evening" — personalized with your first name. Below the greeting, an amber pill shows how many jobs are currently in the bay, and a secondary line shows how many jobs are scheduled for the rest of the day.
+A greeting changes with the time of day and includes your first name. Before 5 a.m. it says "Working late." Below it, an amber pill shows how many jobs are in the bay, and a second line shows how many are still scheduled today.
 
 ### KPI tiles
 
-Four live metric tiles appear in a two-column grid immediately below the greeting. Each tile includes a mini chart that plots the last seven days of data.
+Four live tiles in a two-column grid, each with the last seven days charted:
 
 | Tile | What it shows |
-|---|---|
-| **Revenue · Today** | Total revenue collected today, with a sparkline of the past 7 days |
-| **Jobs · Today** | Jobs done or in progress today out of the total scheduled, with dot-progress indicators |
-| **Pipeline · Open** | Total value of open estimates and pending approvals |
-| **AI Agent · Today** | Number of AI assistant interactions today, with a 7-day bar chart |
+| --- | --- |
+| **Revenue · Today** | Collected today, with a 7-day sparkline |
+| **Jobs · Today** | Done or in progress out of today's total |
+| **Pipeline · Open** | Value of open estimates and pending approvals |
+| **AI Agent · Today** | AI interactions today, with a 7-day bar chart |
 
 ### Today's schedule
 
-Below the KPI tiles, a card shows up to three jobs on today's calendar. The card header displays the current time and highlights the job that's active right now alongside an "Up next" chip showing when the following job is due. Each row in the card shows the scheduled time, customer name, vehicle, and a color-coded status label.
+Up to three of today's jobs appear as a card: scheduled time, customer, vehicle, and status color.
 
-Status colors at a glance:
+- **Amber:** in bay or under review
+- **Green:** completed or scheduled
+- **Red:** cancelled
 
-- **Amber** — in bay or under review
-- **Green** — completed or scheduled
-- **Red** — cancelled or no-show
-
-Tap **View full day** in the section header to open the full Schedule tab.
-
-<Note>
-  The Schedule tab is coming in a future release. For now, the "View full day" link is a placeholder. Use the ShopWrk web dashboard to manage your full calendar.
-</Note>
+An "Up next" chip shows when the following job is due. Tap **View full day** for the full Schedule tab, which is coming soon; use the web dashboard for full calendar management meanwhile.
 
 ### Quick actions
 
-Four tappable tiles give you fast access to the most-used sections of the app.
-
 <CardGroup cols={2}>
   <Card title="Contacts" icon="users" href="/mobile/owner-features#contacts">
-    Browse customers and leads.
+    Your customer and lead list. Fully working; see below.
   </Card>
+
   <Card title="CRM" icon="layout-grid" href="/mobile/owner-features#crm">
-    View your sales pipeline and deal stages.
+    Placeholder today; manage pipelines on the web.
   </Card>
+
   <Card title="Payments" icon="credit-card" href="/mobile/owner-features#payments">
-    Track invoices and payouts.
+    Placeholder today; manage invoices and payouts on the web.
   </Card>
+
   <Card title="Inventory" icon="package" href="/mobile/owner-features#inventory">
-    Check stock levels and supplies.
+    Placeholder today; manage stock on the web.
   </Card>
 </CardGroup>
 
 ### Activity feed
 
-At the bottom of the home screen, a "Recent activity" section shows a chronological list of shop events from the last 24 hours: new jobs created, jobs completed, invoices sent, and payments received. Each row shows the event title, a detail line, and a relative timestamp (for example, "2 min ago").
+The bottom of the home screen lists shop events from the last 24 hours: jobs created, jobs completed, invoices sent, payments received. Each row has a detail line and a relative timestamp.
 
----
+## Inbox
 
-## Create
-
-The **Create** tab (the `+` in the bottom tab bar) opens a quick-start action sheet. It lets you kick off any of the five most common creation tasks without navigating away from what you're doing.
-
-| Action | What it does |
-|---|---|
-| **New job** | Opens a job for a customer and vehicle |
-| **New estimate** | Builds an estimate to send for customer approval |
-| **New invoice** | Creates an invoice to charge for completed work |
-| **New customer** | Adds a new customer and their first vehicle |
-| **New vehicle** | Attaches a vehicle to an existing customer |
-
-<Info>
-  Full create flows for estimates, invoices, customers, and vehicles are being added in an upcoming release. Tapping those rows currently shows a "Coming soon" notice. New job creation is available now.
-</Info>
-
----
-
-## Search
-
-Tap the search icon in the top-right corner of the home screen to open the search overlay. The overlay auto-focuses a search field and shows a "Browse" list of categories while the field is empty.
-
-Start typing to search across:
-
-- Customers
-- Vehicles
-- Jobs
-- Invoices
-- Estimates
-
-Results appear as you type. Tap any result to open the record.
-
----
+The Inbox tab is where customer conversations live on mobile. Search and filter threads, open any conversation, start a new one, and reply on supported channels including SMS and connected social accounts. The list opens on SMS by default; switch channels or view all from the channel menu.
 
 ## Contacts
 
-The **Contacts** section (accessible from the quick-action tile on your home screen) is where you'll manage customers and leads.
+Open Contacts from the quick-action tile. You can browse, search, and filter customers and leads, add a contact, and open any record to see its profile details, activity, vehicles, notes, tasks, jobs, estimates, invoices, payments, and deals.
 
-<Note>
-  Full contacts functionality is coming in a future release. Use the ShopWrk web dashboard to manage customers and leads in the meantime.
-</Note>
+## Search
 
----
+Tap the search bar at the top of Home. Type at least two characters and results appear across customers, vehicles, jobs, invoices, and estimates. Results are view-only for now; open records through Contacts or the web dashboard.
 
-## CRM
+## Create
 
-The **CRM** section shows your sales pipeline and deal stages.
+The Create tab (the \+ in the bottom bar) previews five shortcuts:
 
-<Note>
-  Full pipeline and deal-stage views are coming in a future release. Use the ShopWrk web dashboard to manage your CRM in the meantime.
-</Note>
+| Action | Status |
+| --- | --- |
+| New job | Coming soon |
+| New estimate | Coming soon |
+| New invoice | Coming soon |
+| New customer | Coming soon |
+| New vehicle | Coming soon |
 
----
+Use the [web dashboard](https://app.shopwrk.com) to create these today.
 
-## Payments
+## CRM, Payments, Inventory tiles
 
-The **Payments** section shows invoices and payout history.
+These quick-action destinations show placeholder views while their mobile experiences are built. Use the web dashboard for pipeline work, payment operations, and inventory management in the meantime.
 
-<Note>
-  Full invoicing and payout views are coming in a future release. Use the ShopWrk web dashboard to view and manage payments in the meantime.
-</Note>
+## ShopWrker
 
----
-
-## Inventory
-
-The **Inventory** section shows your stock levels and supplies.
-
-<Note>
-  Full inventory management is coming in a future release. Use the ShopWrk web dashboard to manage stock in the meantime.
-</Note>
-
----
-
-## AI assistant
-
-The **Assistant** tab (sparkle icon) opens a conversational AI interface trained on your shop's data. Ask it questions about your jobs, revenue, customers, or general shop operations.
-
-You can also view **Artifacts** — structured outputs the assistant has generated, such as summaries and reports — by navigating to the artifacts screen from within the Assistant tab.
+The ShopWrker tab (sparkle icon) is your AI assistant. Ask about jobs, revenue, customers, or operations. From inside ShopWrker you can also open **Artifacts**, structured outputs like summaries and reports the assistant has produced.
 
 <Tip>
-  The AI assistant works best with specific questions. For example: "How many jobs did we complete this week?" or "Which technician has the most open jobs today?" rather than open-ended prompts.
+  Specific questions beat broad ones. "How many jobs did we complete this week?" gets a sharper answer than "how's business?"
 </Tip>
-
----
 
 ## Notifications
 
-Push notifications keep you informed of key shop events even when the app is in the background. ShopWrk sends notifications for new job activity, payment events, and messages. Tap any notification to open the relevant screen directly.
+Push notifications can alert you while the app is in the background. Tapping an inbox-message or AI-response notification opens its related screen directly. Other notification types open the app without a guaranteed direct link.
 
-To manage which notifications you receive, go to your iPhone's **Settings → Notifications → ShopWrk**.
+Manage delivery in your iPhone's **Settings → Notifications → ShopWrk**.

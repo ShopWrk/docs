@@ -55,7 +55,8 @@
               "features/campaigns",
               "features/ai-agents",
               "features/ai-assistant",
-              "features/warranties"
+              "features/warranties",
+              "features/forms"
             ]
           },
           {

@@ -22,7 +22,7 @@ Beyond individual services, you can also create:
     Navigate to **Services** from the main sidebar, then click **New Service**.
   </Step>
   <Step title="Choose a category">
-    Select the category the service belongs to. Categories help organize your catalog and control which add-ons are available for each service.
+    Categories organize your catalog. A modifier can be limited to a category, and you choose which applicable modifiers to assign to each service.
   </Step>
   <Step title="Name and describe the service">
     Enter the service name and an optional description. You can use the AI description tool to generate a customer-facing description based on the service name.
@@ -50,15 +50,17 @@ ShopWrk is built around Good / Better / Best quoting. Each tier is a variant on 
 
 **Flat vehicle pricing** gives you the most control — you enter exact dollar amounts for sedan, SUV, and large for every variant. This works well when your pricing does not follow a consistent pattern across vehicle sizes.
 
-**Multiplier pricing** is faster to maintain. You set one base price per variant and ShopWrk multiplies it by a vehicle-size factor to calculate the price. Default multipliers are set in **Settings → Services** and apply to all services unless you override them at the service or variant level.
+In **Settings → Services**, set the default price and duration multipliers used when you create new services. In each service editor, review the variants-by-vehicle-group pricing grid and enter customer-facing prices. Changing a default never rewrites existing estimates or invoices.
 
 <AccordionGroup>
   <Accordion title="Default vehicle multipliers">
     The shop-wide defaults are set in Settings → Services. The factory defaults are 1.0× for sedan, 1.2× for SUV, and 1.4× for large. You can change these defaults to match your shop's typical pricing spread.
   </Accordion>
+
   <Accordion title="Service-level multiplier overrides">
     Turn on **Override** within a service's pricing settings to set different multipliers for that service only, without affecting any other services.
   </Accordion>
+
   <Accordion title="Duration multipliers">
     You can also apply separate multipliers to job duration by vehicle size. This ensures scheduling reflects the actual time it takes to work on a larger vehicle.
   </Accordion>
@@ -88,7 +90,7 @@ Once a modifier exists, you assign it to specific services from the **Add-ons** 
 
 ## Tax configuration
 
-Go to **Settings → Services** to set the tax mode for your shop:
+Go to **Settings → Payments** to set the tax mode for your shop:
 
 - **Tax added to price (exclusive)** — prices shown to customers have tax added on top at checkout
 - **Tax included in price (inclusive)** — prices already include tax and the net amount is back-calculated

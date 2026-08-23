@@ -1,77 +1,48 @@
 ---
-title: "Review Stripe billing events"
-description: "Review the 50 most recent Stripe subscription-billing events ShopWrk has processed, understand their statuses, and replay failed ones after fixing the cause."
-sidebarTitle: "Stripe billing events"
+title: "Billing updates and stuck payments"
+description: "How billing and payment updates reach your dashboard, and what to do when one looks stuck."
+sidebarTitle: "Billing events"
 ---
 
-ShopWrk receives webhook events from Stripe whenever something happens with your subscription billing: a plan change processes, a renewal charge succeeds, or a payment fails. The webhook log at **Settings → Webhooks** shows the 50 most recent events so you can see what has been processed and investigate anything that did not succeed.
+ShopWrk listens for billing and payment events from Stripe and Finix around the clock: subscription changes, renewal charges, customer payments, payouts, and disputes. You never configure anything here, and there is nothing you need to run. This page explains how updates flow and where to look when something seems stuck.
 
-<Note>
-  This page covers ShopWrk's own billing connection to Stripe. It does not show customer payments, which run through [ShopWrk Pay](/integrations/shopwrk-pay). If no events appear yet, the first will arrive when your shop's plan or billing status changes.
-</Note>
+## How updates reach your dashboard
 
-## Reading the event log
+When something happens, the provider tells ShopWrk immediately:
 
-Each row in the event log represents one Stripe event. The columns are:
+- **Subscription events** (Stripe) update your [plan status](/settings/billing), renewals, and past-due state.
+- **Customer payment events** (ShopWrk Pay) mark invoices paid, record deposits, start payouts, and open disputes. See [ShopWrk Pay](/integrations/shopwrk-pay).
 
-| Column | Description |
-| --- | --- |
-| **Event** | The Stripe event ID (for example, `evt_1ABC...`). This ID matches the event in your Stripe dashboard. |
-| **Type** | The Stripe event type, such as `payment_intent.succeeded` or `invoice.payment_failed`. |
-| **Status** | Whether the event succeeded, is pending, or failed. |
-| **Attempts** | How many times ShopWrk has tried to process the event. |
-| **Received** | How long ago ShopWrk received the event from Stripe. |
-| **Succeeded** | When the event was successfully processed, or `—` if it has not. |
+If a delivery hiccups, providers retry automatically, so most transient failures heal themselves within minutes.
 
-## Event statuses
+## When an update looks stuck
 
-<CardGroup cols={3}>
-  <Card title="Succeeded" icon="check-circle" href="/settings/webhooks">
-    The event was received and processed without errors. No action is needed.
-  </Card>
-
-  <Card title="Pending" icon="clock" href="/settings/webhooks">
-    The event has been received but processing has not completed. This is normal briefly after an event arrives.
-  </Card>
-
-  <Card title="Failed" icon="x-circle" href="/settings/webhooks">
-    Processing encountered an error. The error message is shown below the status badge. The event persists in the log so it can be replayed after the cause is fixed.
-  </Card>
-</CardGroup>
-
-## Replaying a failed event
-
-If an event fails — for example, because of a temporary network issue or a misconfigured integration — you can replay it once you have resolved the underlying cause.
-
-<Warning>
-  Replaying an event re-fetches it from Stripe and re-runs the handler. For payment-related events this has real-world side effects. Only replay an event after you have confirmed the original failure is fixed.
-</Warning>
+Symptoms: a customer says they paid but the invoice still shows unpaid, a payout has not landed, or your plan status did not change after a renewal.
 
 <Steps>
-  <Step title="Find the failed event">
-    Look for any row with a **Failed** status badge. The error message below the badge describes what went wrong.
+  <Step title="Give it fifteen minutes">
+    Provider retries usually resolve short outages on their own. Refresh the invoice or billing page before doing anything else.
   </Step>
-  <Step title="Resolve the cause">
-    Fix whatever caused the failure before replaying. For example, if the failure was due to a past-due payment, update the payment method first.
+  <Step title="Check the source">
+    Look for the matching record in your ShopWrk Pay statements or the Stripe receipt. If the money moved on the provider side, ShopWrk will reconcile it.
   </Step>
-  <Step title="Click Replay">
-    Click the **Replay** button on the failed event row. A confirmation dialog appears describing the event and warning about side effects.
-  </Step>
-  <Step title="Confirm the replay">
-    Click **Replay event** in the confirmation dialog. ShopWrk re-fetches the event from Stripe and runs the handler again. A success or error message appears when the replay completes.
+  <Step title="Contact support">
+    Still stuck? Contact ShopWrk support with the invoice or payout details and the approximate time it happened. Support can trace the event and replay it safely on our side.
   </Step>
 </Steps>
 
-<Note>
-  The **Replay** button is only available to users with the **Owner** role. Admins see an "Owner only" indicator instead.
-</Note>
+<Warning>
+  Do not retry a customer's payment yourself because an invoice looks unpaid. Duplicate charges are much harder to unwind than a delayed webhook. Check with support first.
+</Warning>
 
-## When to use replay
+## Related
 
-Replay is useful when:
+<CardGroup cols={2}>
+  <Card title="Billing and plans" icon="receipt" href="/settings/billing">
+    Your subscription status and usage meters.
+  </Card>
 
-- A payment event failed due to a temporary error and the payment itself actually succeeded in Stripe
-- A subscription update did not apply because of a processing error
-- You updated a misconfigured integration and need the event to re-run
-
-If the same event fails repeatedly after replaying, contact ShopWrk support with the event ID so the issue can be investigated.
+  <Card title="ShopWrk Pay" icon="credit-card" href="/integrations/shopwrk-pay">
+    Customer payments, payouts, and disputes.
+  </Card>
+</CardGroup>

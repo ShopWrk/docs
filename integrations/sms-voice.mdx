@@ -11,9 +11,10 @@ ShopWrk uses Telnyx to power all SMS messaging and voice calling. You get a dedi
 
 The first time you visit **Settings → Messaging**, ShopWrk launches a setup wizard that walks you through:
 
-1. Registering your brand and campaign with The Campaign Registry (required for A2P 10DLC).
-2. Provisioning a phone number.
-3. Configuring your messaging defaults.
+1. Submitting your business brand.
+2. Completing carrier vetting.
+3. Registering your messaging campaign.
+4. Assigning an approved phone number.
 
 Complete all steps before sending any business SMS. Skipping registration means your messages will likely be filtered or blocked by carriers.
 
@@ -54,7 +55,9 @@ If you have an existing business number you want to keep, contact ShopWrk suppor
 
 #### SMS opt-out compliance
 
-ShopWrk automatically handles STOP, HELP, and UNSTOP keywords per TCPA requirements. When a customer replies STOP, they're added to your opt-out list and will not receive further messages from your number. Attempting to send to an opted-out number is blocked at the platform level.
+ShopWrk handles carrier keywords automatically. STOP, UNSUBSCRIBE, CANCEL, END, and QUIT opt a customer out. START, YES, UNSTOP, and SUBSCRIBE opt them back in. HELP and INFO return your shop information and opt-out instructions. Messages to an opted-out number are blocked at the platform level.
+
+Marketing texts also require explicit marketing consent; a customer who booked work hasn't necessarily agreed to receive promotions.
 
 You can view and manage the opt-out list from the Compliance & Trust panel.
 

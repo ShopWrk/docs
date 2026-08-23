@@ -3,18 +3,18 @@ title: "Schedule staff, track time, and run payroll in ShopWrk"
 description: "Manage your team's weekly schedule, handle time-off requests, review timesheets, configure compensation, and run payroll — all from the Team page."
 ---
 
-The Team area covers the whole employment loop: who works for you, when each of them works, what time they actually worked, and what that time costs. Everything lives under **Team** in the sidebar, across four tabs: **Directory**, **Schedules**, **Time**, and **Payroll**.
+The Team area covers the employment loop: who works for you, when they work, what time they actually worked, what they can access, and what it all costs. Open **Team** in the sidebar. Tabs include **Staff**, **Schedules**, **Timesheet**, **Access**, and **Payroll**.
 
-## Directory
+## Staff
 
-The directory lists every member of your shop: active members, pending invitations, and deactivated accounts.
+The Staff tab lists everyone on your roster: active members, pending invitations, and deactivated accounts.
 
 <Steps>
   <Step title="Invite a team member">
-    Click **Invite**, enter their name and email, and pick a role. They get an email invitation and show as Invited until they accept.
+    Click **Invite member**, enter their name and email, and pick a role. They get an email invitation and show as Invited until they accept. Owner invitations expire after 24 hours; other roles get 7 days.
   </Step>
   <Step title="Set up their profile">
-    Once active, each member has a profile with their role and access, contact details, schedule, tracked time, and compensation.
+    Once active, each member has a profile covering role and access, contact details, schedule, tracked time, and compensation.
   </Step>
 </Steps>
 
@@ -22,55 +22,52 @@ The directory lists every member of your shop: active members, pending invitatio
 
 | Role | Access |
 | --- | --- |
-| Owner | Everything, including billing, payroll, and shop settings |
-| Admin | Day-to-day operations; no owner-only settings or payroll |
+| Owner | Everything, including billing, permissions, and shop settings |
+| Admin | Day-to-day operations; no owner-only settings by default |
 | Technician | Their assigned jobs, their own schedule, and their own time |
 
-Members can also belong to more than one shop. Switching shops happens from the account menu, which matters for owners running multiple locations or a mobile unit alongside the main shop.
+Roles are starting points. Owners can adjust any member's access with permission groups and individual overrides, so two people with similar jobs can see different things. If a control is missing for someone, an Owner can fix it from their Access settings.
+
+Members can also belong to more than one shop. Switching happens from the account menu, which matters if you run a second location or a mobile unit.
 
 ## Schedules
 
-Scheduling is week-by-week and shift-based, built for shops where hours genuinely change:
+Scheduling is week-by-week and shift-based:
 
 - **Publish dated shifts.** Set each member's shifts for the coming week and publish them. The calendar shows staffing against booked jobs so you can spot an overbooked Tuesday before it happens.
-- **Recurring patterns.** Save a typical week as a template and apply it in seconds instead of rebuilding every Sunday night.
-- **Time off.** Staff request time off from their own view; you approve or decline from Schedules. Approved days block job assignment warnings for that person rather than silently double-booking them.
-- **Assignment warnings.** When you assign a tech to a job outside their published shifts or during approved time off, the calendar tells you before you save.
+- **Time off.** Staff request time off from their own view; you approve or decline from Schedules. Approved days feed assignment warnings instead of silently double-booking someone who is away.
+- **Assignment warnings.** Assign a tech outside their published shifts or during approved time off and the calendar tells you before you save.
 
-## Time tracking
+## Timesheet
 
-The Time tab shows real worked hours, not just scheduled ones:
+The Timesheet tab shows real worked hours, not just scheduled ones:
 
-- **Work sessions.** Clock in and out with breaks recorded as they happen. Edits and corrections are logged, so payroll disputes have a paper trail.
+- **Work sessions.** Clock in and out with breaks recorded as they happen. Corrections are logged, so payroll disputes have a paper trail.
 - **Job timers.** Technicians log time against specific jobs while working them, feeding both labor costing and per-service commission calculations.
-- **Weekly review.** Each member's week appears as scheduled versus actual. Missing clock-ins are flagged rather than quietly becoming zero hours.
+- **Weekly review.** Each member's week shows scheduled versus actual. Missing clock-ins are flagged rather than quietly becoming zero hours.
 
 <Tip>
-  Review the Time tab midweek, not on payday. A missed clock-out is a ten-second fix Wednesday and an argument Friday.
+  Review timesheets midweek, not on payday. A missed clock-out is a ten-second fix Wednesday and an argument Friday.
 </Tip>
 
-## Payroll
+## Payroll prep
 
-Payroll turns approved time into money owed. The flow is review first, then run:
+The Payroll tab compiles each member's approved hours at their rate plus commissions earned on completed jobs, ready to hand to your payroll process.
 
-1. **Pick the period.** Confirm the pay period dates.
-2. **Review payroll prep.** ShopWrk compiles each member's approved hours at their hourly rate plus any commissions earned on completed jobs. Adjust anything wrong here; corrections after the run are messier.
-3. **Run payroll.** Finalize the run. Every member gets a paystub saved to their profile.
+Commissions follow your compensation setup: per-service rates assigned to the technician who did that line of work. Configure rates on each member's compensation settings, and the ledger builds itself as jobs complete.
 
-Commissions follow your compensation setup: per-service rates assigned to the technician who did that line of work. Configure rates on each member's Compensation tab, and the ledger builds itself as jobs complete.
-
-<Warning>
-  A finalized payroll run cannot be undone. Check hours and rates carefully before running.
-</Warning>
+<Note>
+  ShopWrk handles payroll preparation. The final pay run, tax withholding, and paystub delivery happen in your payroll provider. Export the prep numbers and close the loop there.
+</Note>
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Roles and permissions" icon="shield" href="/getting-started/roles-permissions">
-    What each role can see and change.
+    What each role can see and change, and how overrides work.
   </Card>
 
   <Card title="Jobs" icon="wrench" href="/workflows/jobs">
-    Where technician assignment and per-service work feed payroll.
+    Where technician assignment and per-service work feed commissions.
   </Card>
 </CardGroup>

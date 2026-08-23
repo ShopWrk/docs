@@ -4,62 +4,49 @@ description: "Track revenue, jobs, payment health, agent performance, and AI usa
 icon: "chart-line"
 ---
 
-Reports turn the work already flowing through ShopWrk into answers. How much did we bill this month? Which service makes the most money? Are customers paying on time? Which ads produce booked jobs? Every chart pulls live from your jobs, invoices, payments, and conversations, so there is nothing to export or re-enter.
+Straight talk first: the full Reports suite described in earlier versions of this page is not live yet. What ships today is an **Analytics** preview area plus per-feature stats scattered through the product. Here is what exists, what it can tell you, and how to answer the questions owners actually ask.
 
-Open **Reports** from the sidebar.
+## The Analytics preview
 
-## What you can track
+The Analytics area is access-restricted and currently runs on demo data. Treat it as a look at where reporting is headed, not as a source of truth. Do not use its numbers for business decisions or bookkeeping.
 
-<CardGroup cols={2}>
-  <Card title="Revenue" icon="dollar-sign">
-    Invoiced, collected, and outstanding amounts over time, split by service, customer, or lead source.
-  </Card>
+## Numbers you can trust right now
 
-  <Card title="Jobs" icon="wrench">
-    Volume by status and service type, completion rates, and average turnaround from booking to completion.
-  </Card>
+Until full reporting ships, these surfaces read from live shop data:
 
-  <Card title="Payments" icon="credit-card">
-    Collected vs pending, deposit totals, refund counts, and how quickly customers pay after invoicing.
-  </Card>
+| Where | What it tells you |
+| --- | --- |
+| Payments overview | Collected vs outstanding, deposit totals, payment activity by period |
+| Invoices list | Who owes what, overdue aging, status counts |
+| Estimates list | Sent vs approved vs declined, pipeline value waiting on customers |
+| Automations analytics | Run counts, success rates, failures across every workflow |
+| Inventory reports | Film usage, cost of materials consumed, waste over time |
+| Campaign stats | Delivered, opened, clicked, bounced for each email send |
+| Agent activity | Conversations handled and outcomes under **Agents** |
 
-  <Card title="Pipeline" icon="filter">
-    Lead sources ranked by conversion, stage-by-stage funnel, and win rates by deal type.
-  </Card>
-</CardGroup>
+Each of these answers a real question without exporting anything:
 
-## The date range does the thinking
+- **Who owes me money?** The invoices list sorted by due date, oldest first.
+- **Are quotes converting?** Compare approved against declined estimates this month.
+- **Is my follow-up running?** Automations analytics shows runs and failures at a glance.
+- **What did materials cost me?** Inventory usage and cost reports over any date range.
 
-Every report starts with a period selector: this week, this month, this quarter, year to date, or a custom range. Pick a range once and every widget on the page follows it, so a single glance tells a consistent story instead of mixing numbers from different periods.
+## Getting data out
 
-<Tip>
-  Compare against the previous period when you change something, like a price increase or a new ad campaign. The delta tells you whether it worked better than any absolute number can.
-</Tip>
-
-## Questions these reports answer
-
-- **Which service actually pays?** Revenue by service shows what a full front PPF brings in versus a basic tint job, including add-on attach rates.
-- **Where do leads die?** The pipeline funnel shows how many quotes were sent, approved, deposited, and completed, so you can see if the leak is at quoting or at deposit collection.
-- **Who owes me money?** Outstanding balances by age, with the invoice one click away for a reminder.
-- **Is my ad spend working?** Leads by source connects campaign spend to booked revenue rather than raw form fills.
-- **Are agents pulling their weight?** AI usage and outcomes show conversations handled, bookings made, and deposits collected on autopilot.
-
-## Exporting
-
-Any report exports to CSV from the toolbar. Owners usually export monthly close numbers for their accountant and leave the live view for day-to-day decisions.
+ShopWrk supports CSV export for contacts and other records from their respective list views. For accounting close, most owners pull the invoice list filtered to the month plus the payments overview, and their accountant takes it from there.
 
 <Note>
-  Numbers on dashboards are computed from live data. If a job was just marked complete or an invoice just paid, give it a moment before presenting to a room; a refresh updates everything.
+  When the production Reports suite ships, this page will document it in detail. Until then, the per-area numbers above are the reliable path.
 </Note>
 
 ## Related
 
 <CardGroup cols={2}>
   <Card title="Billing and usage" icon="receipt" href="/settings/billing">
-    Where AI and messaging usage meters live, alongside plan allowances.
+    Where AI and messaging usage meters live.
   </Card>
 
   <Card title="CRM" icon="address-book" href="/features/crm">
-    The pipeline data that feeds conversion reporting.
+    The pipeline behind conversion tracking.
   </Card>
 </CardGroup>

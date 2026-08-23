@@ -7,7 +7,7 @@ ShopWrk handles the full billing cycle from job to payment. You create an invoic
 
 ## Creating an invoice from a job
 
-The most common way to create an invoice is directly from a job. Open the completed job, then click **Send invoice** in the pricing card on the right side. The new invoice form opens pre-populated with:
+The most common way to create an invoice is directly from a job. Open the completed job, then click **Create invoice** in the pricing card on the right side. The prefilled invoice builder opens with:
 
 - The customer and vehicle from the job
 - All services booked on the job as line items
@@ -71,7 +71,7 @@ If a customer pays in cash or by cheque, record the payment manually from the **
 
 ## Payments overview
 
-The **Payments** section of the sidebar has five tabs:
+The **Payments** area has seven tabs. Beyond the five listed above, **Payouts** tracks transfers to your bank account, and **Disputes** shows customer-challenged card payments with their response deadlines.
 
 | Tab | What it shows |
 | --- | --- |
@@ -92,6 +92,8 @@ A recurring template defines:
 - The start date and optional end date
 
 ShopWrk automatically generates and sends invoices on schedule based on the template. You can pause, edit, or cancel a recurring template at any time from the recurring invoices list.
+
+Automatic invoice creation is separate from automatic payment. For autopay, the customer must save a payment method and consent through the setup link. Without that consent, ShopWrk still generates and sends each invoice, but the customer pays it manually.
 
 ## Refunds
 

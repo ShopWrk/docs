@@ -4,7 +4,7 @@ description: "Fill slow weeks by reaching the customers you already earned. Segm
 icon: "paper-plane"
 ---
 
-New leads cost money. Campaigns make money from the customers already in your CRM: winter ceramic specials to last summer's coating customers, a reminder to everyone whose warranty expires soon, a win-back offer to clients who went quiet. You build the audience from real shop data and send to all of them at once.
+New leads cost money. Email campaigns make money from the customers already in your CRM: a winter ceramic special to last summer's coating customers, a heads-up to everyone whose warranty inspection is due, a win-back offer to clients who went quiet. Build the audience from real shop data, write once, send to all of them.
 
 Open **Marketing** from the sidebar.
 
@@ -15,42 +15,45 @@ Open **Marketing** from the sidebar.
     Click **New Campaign**. Give it a name your team will recognize in the list.
   </Step>
   <Step title="Pick the audience">
-    Filter contacts by tag, service history, last visit date, vehicle type, or lead source. For example: customers tagged Ceramic who haven't booked in 6 months.
+    Choose from built-in audience types: all contacts, new in the last 30 days, inactive for 90 or more days, high spenders, by service, by vehicle, by tag, or a custom recipient list.
   </Step>
-  <Step title="Write the message">
-    Compose the email or SMS. Personalization tokens drop in the customer's name, vehicle, or last service automatically.
+  <Step title="Build the email">
+    Add the subject, preview text, and content. Personalization tokens such as the customer's first name drop in automatically, and a preview shows the result before sending.
+  </Step>
+  <Step title="Review recipients">
+    Check the recipient preview before sending, especially after narrowing the list. Contacts who cannot receive the campaign are excluded automatically.
   </Step>
   <Step title="Send or schedule">
-    Send now, or schedule for when your customers actually read messages. Then watch delivered, opened, clicked, and bounced counts roll in per recipient.
+    Send now or schedule for when your customers read email. Delivered, opened, clicked, and bounced counts roll in per recipient afterward.
   </Step>
 </Steps>
 
 <Tip>
-  Let the assistant draft it. Ask for "a win-back SMS for ceramic customers we haven't seen since spring" in the AI chat, then paste the winner into your campaign. See [AI agents](/features/ai-agents).
+  Let the assistant draft it. Ask for "a win-back email for ceramic customers we haven't seen since spring" in the AI chat, then paste the winner into your campaign. See [AI agents](/features/ai-agents).
 </Tip>
 
-## Segments that earn their keep
+## Audiences that earn their keep
 
-| Segment | Built from | Typical offer |
+| Audience | Built from | Typical offer |
 | --- | --- | --- |
-| Lapsed ceramic | Last visit 6\+ months, coating job history | Annual inspection plus booster top-up |
-| Winter prep | Tag or service history | Fall booking discount before the rush |
-| Quote ghosts | Estimates sent, never approved | Limited deposit-match nudge |
-| One-time tints | Exactly one completed job | Full-front PPF upgrade intro |
-| Fleet accounts | Company contacts | Quarterly maintenance reminder |
+| Lapsed ceramic | Inactive 90\+ days plus coating history | Annual inspection with booster top-up |
+| New since spring | New in last 30 days, filtered by tag | First-visit PPF intro pricing |
+| Quote ghosts | Custom list from estimates sent, never approved | Limited deposit-match nudge |
+| High spenders | High spenders preset | Early access to seasonal booking |
 
-Save any filter set as a segment and it refreshes as your data changes, so the same campaign can rerun each season without rebuilding the list.
+Preview the recipient count each time; audiences snapshot at send rather than refreshing later, so rerunning a campaign means picking the audience fresh.
 
 ## Compliance basics
 
-- Email campaigns require no special setup. Unsubscribe links are handled for you.
-- SMS campaigns go through your registered A2P number. Complete [A2P registration](/settings/a2p-registration) before your first text blast.
-- Customers who opted out are excluded automatically, and opt-outs are honored across every channel.
-- Quiet hours apply to scheduled sends. ShopWrk holds messages until morning in the customer's timezone rather than texting someone at midnight.
+Every campaign includes an unsubscribe link handled for you. The review step shows exactly who receives it before anything goes out.
 
 <Note>
-  A good rule of thumb: email monthly at most, SMS only when there's a reason. Shops that respect the channel keep their lists responsive; shops that hammer them train customers to ignore everything.
+  A good rule of thumb: monthly at most, and only when there's a reason. Shops that respect the inbox keep their lists responsive; shops that hammer them train customers to ignore everything.
 </Note>
+
+<Info>
+  Looking for text blasts? SMS bulk messaging is covered under [SMS setup](/integrations/sms-voice), separate from email campaigns.
+</Info>
 
 ## Related
 
@@ -60,6 +63,6 @@ Save any filter set as a segment and it refreshes as your data changes, so the s
   </Card>
 
   <Card title="CRM" icon="address-book" href="/features/crm">
-    Where tags live that power your segments.
+    Where tags live that power your audience filters.
   </Card>
 </CardGroup>

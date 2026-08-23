@@ -23,7 +23,7 @@ ShopWrk uses a role-based permission system to control what each team member can
 
 ### Owner
 
-The shop owner has unrestricted access to the entire platform. There is exactly one Owner per shop — the account created during signup. The Owner role cannot be assigned to additional team members.
+Owners have unrestricted access to the entire platform. A shop can have more than one Owner, but at least one active Owner must remain. Only an Owner can invite or manage another Owner, and Owner access can't be reduced by permission overrides.
 
 Owners can do everything Admins and Technicians can do, plus:
 
@@ -60,7 +60,7 @@ Admins cannot:
 
 - Access billing or subscription settings
 - Change service pricing rules
-- Manage team permissions or deactivate members
+- Manage permission overrides or owner-protected access
 - Connect or disconnect social media accounts
 - Configure calling phone numbers and routing settings
 - Manage document templates
@@ -70,20 +70,13 @@ Admins cannot:
 
 Technicians have a focused view of the dashboard. This role is intended for installers and shop staff who need to see their own work and update job statuses, without access to customer financials or shop configuration.
 
-Technicians can:
+By default, Technicians get a focused view for their own work: assigned jobs, job status updates, their own schedule, the service catalog, inventory use with retail prices, and inbound calls with call history and voicemail.
 
-- View jobs assigned to them
-- Update the status of their assigned jobs
-- View their own schedule and calendar
-- View the service catalog
-- View inventory stock levels
-- Receive inbound calls, view call history, and listen to voicemails
-
-Technicians cannot access customers, estimates, invoices, payments, the full calendar, messaging, reports, CRM, settings, or any admin-level features.
+By default they do not have access to customers, estimates, invoices, payments, the full calendar, messaging, reports, CRM, settings, or admin-level features. Owners can grant selected permissions, so review each member's effective access after applying an override.
 
 ## Permissions by area
 
-The table below summarizes key permissions across roles. "Full" means create, edit, and delete access. "View" means read-only.
+Owner always has full access. Admin and Technician are starting roles: effective access comes from permission groups plus individual overrides, so two members with the same title can see different things. Check a person's access summary on the Team page before relying on the role name alone.
 
 | Area | Owner | Admin | Technician |
 | --- | --- | --- | --- |
@@ -110,7 +103,7 @@ The table below summarizes key permissions across roles. "Full" means create, ed
 | Social account connections | Full | — | — |
 | AI assistant | Full | Full | — |
 | Documents | Full | All except templates | — |
-| Team management | Full | View | — |
+| Team management | Full | Manage staff | — |
 | Settings (general) | Full | View | — |
 | Settings (billing) | Full | — | — |
 | Settings (integrations) | Full | — | — |
@@ -118,7 +111,7 @@ The table below summarizes key permissions across roles. "Full" means create, ed
 
 ## Inviting a team member
 
-Only Owners can invite new team members.
+Owners and Admins can invite new team members when their **Team invite** permission is enabled. Only an Owner can invite another Owner.
 
 <Steps>
   <Step title="Go to Team">
@@ -128,14 +121,14 @@ Only Owners can invite new team members.
     Click the **Invite member** button in the top-right corner of the Team page.
   </Step>
   <Step title="Enter their details">
-    Enter the team member's name and email address, then select their role: **Admin** or **Technician**.
+    Enter the team member's name and email address, then select **Admin** or **Technician**. An Owner can also select **Owner** and confirm the extra warning.
   </Step>
   <Step title="Send the invitation">
     Click **Send invite**. ShopWrk emails them a link to create their account and join your shop.
   </Step>
 </Steps>
 
-The invitation link is valid for a limited time. If it expires before the team member accepts it, you can resend the invitation from the Team page.
+An Owner invitation expires after 24 hours; Admin and Technician invitations last 7 days. If a link expires, resend it from the Team page.
 
 <Note>
   Invited team members sign up through a dedicated join page, not the standard signup flow. Their email address is locked to the invited address and their role is pre-assigned.
@@ -157,7 +150,7 @@ To adjust permissions for a team member:
 
 ## Price visibility
 
-Some shops keep labor and material costs private from front-desk staff. Owners can scope price visibility by role under team permissions: a member can run their whole workflow with prices hidden or shown only as totals, while owners see full margins. Redaction applies everywhere the number would appear, including lists, documents, and exports.
+Some shops limit price access for non-owner members. Price visibility depends on the member's effective permissions and the surface they're using: estimate prices, invoice prices and totals, payment amounts, service retail prices, and inventory retail prices each have their own scope. Review the specific price scopes in **Team** access settings before granting access rather than assuming every list, document, or export hides a value. Owner access always shows the available price scopes.
 
 ## Working across multiple shops
 
@@ -165,7 +158,7 @@ A team member can belong to more than one shop, which matters if you run a secon
 
 ## Deactivating a team member
 
-Owners can deactivate a team member's account from their profile on the Team page. Deactivated members cannot log in, but their historical records (jobs, time logs, assignments) are preserved.
+Owners and authorized Admins can deactivate a team member from the Team page. Deactivated members cannot log in, but their historical records (jobs, time logs, assignments) are preserved.
 
 <CardGroup cols={2}>
   <Card title="Account setup" icon="user-plus" href="/getting-started/account-setup">

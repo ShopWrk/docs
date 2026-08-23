@@ -3,112 +3,72 @@ title: "Customize your shop's branding across all documents"
 description: "Set your logo, colors, and copy for invoices, estimates, emails, and your booking page so every customer-facing document looks professional and on-brand."
 ---
 
-ShopWrk lets you apply your shop's branding to every document and page your customers see. You manage all of this from **Settings → Branding**, which is organized into tabs: Invoice, Estimate, Email, Booking Page, and Portal. Changes on each tab are independent — you can customize each surface separately.
+ShopWrk applies your brand everywhere a customer looks: documents, emails, the booking page, and the portal. You manage it all from **Settings → Branding**, across five tabs: **Brand**, **Documents**, **Email**, **Booking Page**, and **Portal**.
 
 <Note>
-  Invoices and estimates share the same logo and accent color. Updating those fields on either tab applies the change to both document types.
+  The Brand tab is the source of truth. Set your logo, brand color, and email tagline there once and every surface picks them up. The Documents tab holds the numbering, footers, terms, and estimate tier presets shared by invoices and estimates.
 </Note>
 
-## Invoice branding
+## Document branding
 
-The Invoice tab controls how your invoices look when customers receive them or view them in the customer portal.
-
-<AccordionGroup>
-  <Accordion title="Accent color">
-    Set a hex color (for example, `#14b8a6`) to use for headers and accents on invoice documents. This color also applies to estimate documents since they share branding settings.
-  </Accordion>
-
-  <Accordion title="Logo">
-    Enter a publicly accessible URL for your logo. Recommended size is 200×50 px in PNG or JPG format. The logo appears at the top of printed and digital invoices.
-  </Accordion>
-
-  <Accordion title="Invoice number prefix">
-    Set a short alphanumeric prefix (up to 10 characters, letters, numbers, and hyphens) that appears before the invoice number. For example, a prefix of `INV-` produces invoice numbers like `INV-0001`.
-  </Accordion>
-
-  <Accordion title="Footer and terms">
-    Add a footer message (up to 500 characters) that prints at the bottom of every invoice. You can also set default terms and conditions (up to 2,000 characters) that are pre-filled when you create a new invoice, and can be edited per invoice if needed.
-  </Accordion>
-</AccordionGroup>
-
-## Estimate branding
-
-The Estimate tab has the same logo and accent color fields as Invoice — changes there update both document types. It also has estimate-specific settings.
+Open the **Documents** tab to set what invoices and estimates share:
 
 <AccordionGroup>
-  <Accordion title="Estimate number prefix">
-    Set a prefix that appears before each estimate number. The default is `EST-`, producing numbers like `EST-0001`. Letters, numbers, and hyphens only, up to 10 characters.
+  <Accordion title="Number prefix">
+    One short alphanumeric prefix (up to 10 characters) for both document types. For example, `INV-` produces invoice numbers like `INV-0001`, with the same prefix style applied to estimates.
   </Accordion>
 
-  <Accordion title="Footer and terms">
-    Add a footer message and default terms and conditions for estimate documents. These are pre-populated on new estimates but can be overridden per estimate. Footer max is 500 characters; terms max is 2,000 characters.
+  <Accordion title="Footer message">
+    Up to 500 characters printed at the bottom of every document. Bank details, warranty one-liners, or thank-you notes live here.
   </Accordion>
 
-  <Accordion title="Default tier presets">
-    When you create a tiered estimate (Good / Better / Best), ShopWrk pre-fills tier names and descriptions from these presets. The defaults are Good, Better, and Best. You can rename them, add a description for each, or remove tiers you don't use. You can configure up to five presets.
+  <Accordion title="Default terms">
+    Terms and conditions (up to 2,000 characters) pre-filled on new documents, editable per document when a job needs different language.
+  </Accordion>
 
-    If no presets are configured, click **Use Default (Good / Better / Best)** to add the standard three-tier setup, then customize from there.
+  <Accordion title="Estimate tier presets">
+    The names and descriptions behind Good / Better / Best quotes. Defaults are Good, Better, Best; rename them, describe each, or add up to five presets for your sales style.
   </Accordion>
 </AccordionGroup>
 
 ## Email branding
 
-The Email tab controls the header and footer of all transactional emails sent to your customers — including estimate deliveries, invoice notifications, and booking confirmations.
+Transactional emails (estimate deliveries, invoice notifications, booking confirmations) carry your brand from two places:
 
-### Header and logo
-
-<Steps>
-  <Step title="Set an accent color">
-    Enter a hex color for the header accent bar and call-to-action buttons in your emails.
-  </Step>
-  <Step title="Add your logo URL">
-    Provide a publicly accessible logo URL. The logo appears centered in the email header. Recommended size is 200×50 px.
-  </Step>
-  <Step title="Add a tagline">
-    Enter a short tagline (up to 100 characters) that appears below your logo in the email header. For example: _Professional Auto Styling Services_.
-  </Step>
-</Steps>
-
-### Footer and social links
-
-The email footer appears at the bottom of every outgoing email. You can add:
-
-- A custom footer message (up to 500 characters)
-- An Instagram profile URL
-- A Facebook page URL
-- Your shop website URL
-
-Social links appear as icons in the email footer, giving customers a quick way to follow your shop.
+- **Brand tab:** the shared logo, brand color, and tagline that form the header.
+- **Email tab:** the footer message plus Instagram, Facebook, and website links shown as icons at the bottom of every email.
 
 ## Booking page branding
 
-Your booking page is the public-facing page where customers request appointments. The Booking Page tab lets you customize how it looks before sharing the link with customers.
+Your public booking page takes its own hero treatment on the **Booking Page** tab. The URL sits at the top of the tab; copy it or click **Preview** to see changes live.
 
-The booking page URL is shown at the top of the tab. You can copy it or click **Preview** to open it in a new tab and see your changes live.
+Set a **hero title** and **hero subtitle**, the first words customers read:
 
-### Hero section
-
-Set a **hero title** and **hero subtitle** that appear at the top of the booking page. These are the first words a customer sees.
-
-- **Hero title** example: _Premium Auto Styling_
-- **Hero subtitle** example: _Window Tint, PPF, Ceramic Coating & More_
-
-### Colors and images
+- Hero title example: _Premium Auto Styling_
+- Hero subtitle example: _Window Tint, PPF, Ceramic Coating & More_
 
 | Field | Description |
 | --- | --- |
-| Accent color | Hex color used for buttons and highlighted elements on the booking page |
-| Logo URL | Your shop logo displayed on the booking page |
-| Background image URL | Optional hero background image shown behind the title and subtitle |
+| Accent color | Buttons and highlights on the booking page |
+| Logo | Pulled from your Brand tab |
+| Background image URL | Optional hero image behind the title |
 
 <Tip>
-  Use a high-contrast background image with a dark overlay effect to keep your hero title readable. A wide, landscape-oriented photo of your shop or finished vehicles works well.
+  Use a high-contrast background photo with a dark overlay so the hero title stays readable. A wide shot of finished work under good light works well.
 </Tip>
 
-## Portal branding
+## Portal branding and access
 
-The Portal tab controls what customers see when they log into their [customer portal](/workflows/customer-portal). Your shop's logo and brand color apply across the portal login, dashboard header, and every token-authenticated estimate and invoice view.
+The **Portal** tab controls what customers see in their [customer portal](/workflows/customer-portal): portal color (falls back to your brand color if empty), logo, welcome message, and how long sessions last.
+
+The same tab carries the switches that matter:
+
+- **Enable Customer Portal.** Off means no customer can sign in.
+- **Section visibility.** Choose whether customers see messages, vehicles, warranties, photos, request-quote, and reviews.
+- **Session duration.** How long a customer stays signed in after using their magic link.
+
+Save the Portal tab after changing any of these.
 
 ## Saving your changes
 
-Each branding tab has its own **Save Settings** button. Changes are not applied until you save. If you navigate away with unsaved changes, ShopWrk will ask whether you want to discard them.
+Each tab has its own **Save Settings** button; nothing applies until you save. Navigate away with unsaved changes and ShopWrk asks before discarding them.

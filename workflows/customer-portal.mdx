@@ -3,19 +3,19 @@ title: "Give customers self-service access with the portal"
 description: "The customer portal lets clients view their jobs, estimates, invoices, warranties, and messages through a secure magic-link login — no password required."
 ---
 
-The ShopWrk customer portal is a branded, mobile-friendly interface your customers can access to check on their jobs, view and pay invoices, see warranty details, and message your shop — all without needing to call or email you. Access is passwordless: customers log in using a magic link sent to their email.
+The ShopWrk customer portal is a branded, mobile-friendly place where customers can check jobs, pay invoices, see warranty details, and message your shop. Customers sign in without a password by requesting a magic link through SMS or email.
 
 ## How the portal works
 
-The portal lives at `/portal` and is scoped to your shop. When a customer visits the portal login page, they enter their email address and receive a one-time sign-in link. Clicking the link logs them in and takes them to their personal dashboard showing only their data.
+The portal lives at `/portal` and is scoped to your shop. When a customer visits the portal login page, they enter their email address or phone number and receive a one-time sign-in link. Clicking it logs them in and takes them to their personal dashboard showing only their data.
 
 <Info>
-  The portal must be enabled for your shop before customers can access it. Go to **Settings → Customer Portal** to turn it on and customize your branding.
+  The portal must be enabled before customers can use it. Go to **Settings → Branding**, open the **Portal** tab, turn on **Enable Customer Portal**, and save. The same tab holds section-visibility switches and session duration.
 </Info>
 
 ## What customers can see
 
-Once logged in, customers see a personalized dashboard organized into sections:
+Once logged in, customers see a personalized dashboard organized into sections. You control which sections appear: visibility switches live under **Settings → Branding → Portal**, and a hidden section stays hidden even when the customer has records in it.
 
 <CardGroup cols={2}>
   <Card title="Active jobs" icon="briefcase" href="/workflows/customer-portal#what-customers-can-see">
@@ -51,10 +51,10 @@ There are two ways to get a customer into the portal:
 
 <Tabs>
   <Tab title="From the customer record">
-    Open any customer profile and click **Send portal link**. ShopWrk sends a magic-link email to the customer's address on file. The email includes your shop's logo and brand color.
+    Open the customer profile and use the portal invite action. Choose SMS or email; the customer needs a phone number for SMS or an email address on file. ShopWrk sends a magic link through the channel you choose, branded with your logo and color.
   </Tab>
   <Tab title="Via messaging">
-    Paste your shop's portal login URL into an SMS or email from the messaging panel. You can find and copy the portal URL from **Settings → Customer Portal**. The customer enters their email on that page to receive their sign-in link.
+    Paste your shop's portal login URL into an SMS or email from the messaging panel. You can find and copy the portal URL from **Settings → Branding → Portal**. The customer enters their email or phone on that page to receive their sign-in link.
   </Tab>
 </Tabs>
 
@@ -98,4 +98,4 @@ When a customer opens an invoice link they can:
 
 ## Portal branding
 
-Your shop's logo and brand color are applied to the portal login page, the dashboard header, and the token-authenticated estimate and invoice views. Update these under **Settings → Branding**.
+Set portal-specific color, logo, welcome message, section visibility, and session duration under **Settings → Branding → Portal**. If the portal color is empty, the portal inherits your brand color. Estimate and invoice branding has its own controls on the Documents tab.
