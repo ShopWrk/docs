@@ -11,9 +11,11 @@ ShopWrk uses a role-based permission system to control what each team member can
   <Card title="Owner" icon="crown" href="/getting-started/roles-permissions#owner">
     Full access to every feature, setting, and team management function.
   </Card>
+
   <Card title="Admin" icon="shield" href="/getting-started/roles-permissions#admin">
     Full operational access — jobs, customers, invoices, CRM — with no access to billing or owner-only settings.
   </Card>
+
   <Card title="Technician" icon="wrench" href="/getting-started/roles-permissions#technician">
     Access limited to assigned jobs and their own schedule.
   </Card>
@@ -26,7 +28,7 @@ The shop owner has unrestricted access to the entire platform. There is exactly 
 Owners can do everything Admins and Technicians can do, plus:
 
 - Manage billing and subscription settings
-- Manage integrations (Stripe, Google Calendar, Telnyx, social accounts)
+- Manage integrations (ShopWrk Pay, Google Calendar, Telnyx, Facebook and Instagram)
 - Manage all team permissions, including granting or revoking individual overrides
 - Approve payments and refunds
 - Modify service pricing rules
@@ -86,15 +88,15 @@ The table below summarizes key permissions across roles. "Full" means create, ed
 | Area | Owner | Admin | Technician |
 | --- | --- | --- | --- |
 | Jobs (all) | Full | Full | — |
-| Jobs (own assigned) | Full | Full | View + status |
+| Jobs (own assigned) | Full | Full | View \+ status |
 | Customers | Full | Full | — |
 | Calendar (full) | Full | Full | — |
 | Calendar (own schedule) | Full | Full | View |
 | Estimates | Full | Full | — |
 | Invoices | Full | Full | — |
-| Payments | Full | Log + POS | — |
+| Payments | Full | Log \+ POS | — |
 | Payment approval | Full | — | — |
-| Service catalog | Full | View + create/edit | View |
+| Service catalog | Full | View \+ create/edit | View |
 | Service pricing | Full | — | — |
 | Inventory | Full | Full | View |
 | CRM (leads, deals) | Full | Full | — |
@@ -104,7 +106,7 @@ The table below summarizes key permissions across roles. "Full" means create, ed
 | Reports | Full | View | — |
 | Automations | Full | Full | — |
 | Email campaigns | Full | Full | — |
-| Social media | Full | Create + publish | — |
+| Social media | Full | Create \+ publish | — |
 | Social account connections | Full | — | — |
 | AI assistant | Full | Full | — |
 | Documents | Full | All except templates | — |
@@ -161,6 +163,7 @@ Owners can deactivate a team member's account from their profile on the Team pag
   <Card title="Account setup" icon="user-plus" href="/getting-started/account-setup">
     Create your ShopWrk account if you haven't already.
   </Card>
+
   <Card title="Team scheduling" icon="calendar-days" href="/features/team-scheduling">
     Set up staff schedules, timesheets, and shifts for your team.
   </Card>

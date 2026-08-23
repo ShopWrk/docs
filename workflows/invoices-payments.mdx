@@ -1,9 +1,9 @@
 ---
-title: "Create invoices and collect Stripe payments in ShopWrk"
-description: "Generate invoices from jobs, collect card payments via Stripe, record cash or cheque, issue refunds, and automate billing with recurring invoice templates."
+title: "Create invoices and get paid in ShopWrk"
+description: "Generate invoices from jobs, collect card payments through ShopWrk Pay, record cash or cheque, issue refunds, and automate billing with recurring templates."
 ---
 
-ShopWrk handles the full billing cycle from job to payment. You create an invoice from a completed job, send it to the customer with a secure payment link, and collect payment online through Stripe. You can also set up recurring invoice templates for customers on ongoing maintenance plans.
+ShopWrk handles the full billing cycle from job to payment. You create an invoice from a completed job, send it to the customer with a secure payment link, and collect payment online through [ShopWrk Pay](/integrations/shopwrk-pay). You can also set up recurring invoice templates for customers on ongoing maintenance plans.
 
 ## Creating an invoice from a job
 
@@ -51,31 +51,30 @@ The customer-facing invoice page shows the line items, total, amount due, and a 
   Each invoice has a unique token-authenticated URL at `/view/invoice/[token]`. You can share this link directly with the customer if needed.
 </Note>
 
-## Accepting online payments via Stripe
+## Getting paid online
 
-When a customer clicks **Pay now** on their invoice, they are taken to a Stripe-hosted checkout page to enter their card details. Payments are processed securely through Stripe and the invoice status updates automatically when payment is confirmed.
-
-To accept online payments you need to connect your Stripe account. Go to **Settings → Payments** to set up your Stripe integration.
+When a customer clicks **Pay now** on their invoice, they enter card details on a secure checkout page. Payments are processed through [ShopWrk Pay](/integrations/shopwrk-pay) and the invoice status updates automatically when payment is confirmed.
 
 <CardGroup cols={2}>
-  <Card title="Online payments" icon="credit-card" href="/workflows/invoices-payments#accepting-online-payments-via-stripe">
-    Customers pay by card through Stripe Checkout. No card data touches ShopWrk.
+  <Card title="Online payments" icon="credit-card" href="/integrations/shopwrk-pay">
+    Customers pay by card on a hosted checkout. No card data touches ShopWrk servers.
   </Card>
-  <Card title="In-person payments" icon="smartphone" href="/workflows/invoices-payments#accepting-online-payments-via-stripe">
-    Use Stripe Terminal with a card reader to collect payment at the counter.
+
+  <Card title="Deposits" icon="hand-holding-dollar" href="/integrations/shopwrk-pay">
+    Collect a deposit at estimate approval and it carries onto the final invoice automatically.
   </Card>
 </CardGroup>
 
-### Cash and cheque payments
+## Cash and cheque payments
 
-If a customer pays in cash or by cheque, record the payment manually from the **Payments** page under the **Cash & Cheque** tab. This keeps your payment records accurate without requiring a card transaction.
+If a customer pays in cash or by cheque, record the payment manually from the **Payments** page under the **Cash & Cheque** tab. This keeps your revenue reports accurate even when no card transaction happens.
 
 ## Payments overview
 
 The **Payments** section of the sidebar has five tabs:
 
 | Tab | What it shows |
-|---|---|
+| --- | --- |
 | **Overview** | Total collected, outstanding balance, and recent payment activity |
 | **Invoices** | All invoices with their status and amounts |
 | **Estimates** | Approved estimates with deposit status |
@@ -96,16 +95,16 @@ ShopWrk automatically generates and sends invoices on schedule based on the temp
 
 ## Refunds
 
-To issue a refund on a payment collected through Stripe, open the invoice, find the payment in the payments section, and use the refund option. The refund is processed through Stripe and the invoice status updates to reflect the refunded amount.
+To issue a refund on a card payment, open the invoice, find the payment in the payments section, and use the refund option. The refund goes back to the customer's original card and the invoice status updates to reflect the refunded amount.
 
 <Warning>
-  Refunds processed through ShopWrk are sent to Stripe for processing. It may take 5–10 business days for the refund to appear in the customer's account depending on their card issuer.
+  Card refunds usually reappear on the customer's statement within 5–10 business days, depending on their bank. Refunded amounts come out of a future payout rather than a separate charge.
 </Warning>
 
 ## Invoice statuses
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Draft** | Created but not yet sent |
 | **Sent** | Delivered to the customer, awaiting payment |
 | **Viewed** | Customer has opened the invoice link |

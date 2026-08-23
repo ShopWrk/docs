@@ -1,122 +1,62 @@
 ---
-title: "Connect Stripe to accept online and in-person payments"
-description: "Link your Stripe account to ShopWrk to collect online invoice payments, run in-person card readers, issue refunds, and track transactions in one place."
+title: "How your ShopWrk subscription is billed"
+description: "ShopWrk subscriptions are billed through Stripe. Update your payment method, download invoices, and manage your plan from one place."
+sidebarTitle: "Subscription billing"
 ---
 
-ShopWrk uses Stripe Connect to process payments on your behalf. Once connected, customers can pay invoices online through a Stripe-hosted page, and you can collect in-person payments at the counter using a Stripe Terminal card reader. All payouts go directly to your linked bank account.
+Your ShopWrk subscription is billed through Stripe. This page covers how that works: where to update your card, where your receipts live, and what happens if a payment fails.
 
-## Connect your Stripe account
+<Info>
+  This is about paying for ShopWrk itself. Money your customers pay you runs through [ShopWrk Pay](/integrations/shopwrk-pay) instead, which is a separate account with its own payouts.
+</Info>
 
-Go to **Settings → Payments** to begin. You'll need to complete Stripe's onboarding before you can accept any payments.
+## What Stripe handles
+
+- Your monthly or annual [plan subscription](/settings/billing)
+- Plan upgrades, downgrades, and proration when you change tiers
+- Overage charges for AI and messaging usage beyond your plan allowance
+- A2P registration fees for SMS
+
+## Managing your payment method
 
 <Steps>
-  <Step title="Choose your business type">
-    Select whether you operate as a **Company / LLC** (registered business entity) or a **Sole proprietor / Individual** (operating under your own name). This determines which verification documents Stripe will ask for.
+  <Step title="Open billing">
+    Go to **Settings → Billing**.
   </Step>
-  <Step title="Start the Stripe onboarding flow">
-    Click **Connect Stripe Account**. You'll be redirected to Stripe to provide:
-
-    - Business name, address, and EIN or SSN
-    - Bank account for receiving payouts
-    - Identity verification documents
+  <Step title="Click Manage in Stripe">
+    The Stripe customer portal opens in a new tab. You may need to confirm by email depending on your settings.
   </Step>
-  <Step title="Complete verification">
-    After submitting your information, Stripe reviews and verifies your account. You'll be returned to ShopWrk automatically. If Stripe needs more information, a banner will appear on the Payments page listing the specific items still required.
-  </Step>
-  <Step title="Confirm charges and payouts are enabled">
-    Once fully onboarded, the Payments page shows two green checkmarks: **Charges** and **Payouts**. Both must be active before ShopWrk can process payments for you.
+  <Step title="Update what you need">
+    From the portal you can change your card, download past invoices as PDFs, view your full billing history, or cancel your subscription.
   </Step>
 </Steps>
 
-<Note>
-  If you leave Stripe's onboarding partway through, your account is saved. Return to **Settings → Payments** and click **Continue Setup** to pick up where you left off.
-</Note>
+Only users with the **Owner** role or billing permission can open the customer portal. Admins see the billing page but the button is disabled.
 
-## Accepting online payments
+## Failed payments and past due
 
-When your Stripe account is connected and charges are enabled, ShopWrk sends customers a link to a Stripe-hosted invoice page where they can pay by card.
+If a charge fails, Stripe retries it automatically and ShopWrk shows a past-due banner in your dashboard right away.
 
-The typical flow is:
-
-1. Create an estimate for the customer and get their approval.
-2. Convert the approved estimate to a job, then generate an invoice.
-3. Send the invoice — the customer receives a link to pay online.
-4. ShopWrk records the payment and marks the invoice paid.
-
-<Tip>
-  You can configure deposits and partial payments through payment schedules when creating an invoice. This lets you collect a deposit upfront and the balance on completion.
-</Tip>
-
-## In-person payments with Stripe Terminal
-
-Stripe Terminal lets you accept card payments at the counter without leaving ShopWrk. Supported readers are the **Stripe Reader M2** (Bluetooth, handheld) and the **BBPOS WisePOS E** (countertop).
-
-### Prerequisites
-
-Before registering a reader, make sure:
-
-- Your Stripe account is fully connected and charges are enabled.
-- POS payments are turned on under **Payment Methods** in the Payments settings.
-- Your shop address is filled in under **Settings → Shop** (required by Stripe for Terminal registration).
-
-### Registering a reader
-
-<Steps>
-  <Step title="Power on the reader">
-    Turn on your Stripe reader. It will display a registration code on screen (for example, `sepia-cerulean-heron`).
-  </Step>
-  <Step title="Add the reader in ShopWrk">
-    In **Settings → Payments**, scroll to **POS Terminal Setup** and click **Add Reader**. Enter the registration code and an optional label (for example, "Front Counter" or "Bay 1").
-  </Step>
-  <Step title="Confirm the connection">
-    The reader appears in the list with an **Online** status once it connects to your network. If it shows **Offline**, check that the reader is on the same Wi-Fi network as your device.
-  </Step>
-</Steps>
+Paid features stay active for **7 days** past the due date. Update your payment method in the Stripe customer portal during that window and nothing else happens. After 7 days without a successful charge, paid features lock until the balance clears.
 
 <Warning>
-  You can remove a reader from ShopWrk at any time, but you'll need to re-register it to use it again.
+  Update your card as soon as you see the past-due banner. Seven days goes fast over a weekend, and re-locking an unlocked shop requires support intervention.
 </Warning>
 
-## Payment methods
+## Canceling
 
-Under **Payment Methods** you can control which payment types your shop accepts:
+Cancel from the Stripe customer portal under **Settings → Billing**. Cancellation takes effect at the end of your current billing period, and your shop keeps full access until that date.
 
-| Method | Description |
-|--------|-------------|
-| Card (online) | Credit and debit cards on Stripe-hosted invoice pages |
-| POS (in-person) | Card payments via Stripe Terminal readers |
-| Cash | Recorded manually; no Stripe processing |
-| Cheque | Recorded manually; no Stripe processing |
-
-Enabling or disabling a method takes effect immediately for new invoices.
-
-## Handling refunds
-
-To refund a payment, open the invoice in ShopWrk and use the refund action. ShopWrk sends the refund instruction to Stripe, which processes it back to the customer's original payment method. Partial refunds are supported.
-
-<Note>
-  Stripe typically returns funds to the customer within 5–10 business days, depending on their card issuer.
-</Note>
-
-## Stripe Dashboard access
-
-From **Settings → Payments**, click **Open Stripe Dashboard** to jump directly to your Stripe account. Use the Stripe Dashboard to view detailed payout schedules, dispute management, and transaction history beyond what ShopWrk surfaces.
-
-## Disconnecting Stripe
-
-<Warning>
-  You cannot disconnect Stripe while open invoices exist. Settle, void, or refund all outstanding invoices first. Disconnecting removes ShopWrk's ability to process payments, but your Stripe account itself is not deleted.
-</Warning>
-
-To disconnect, click **Disconnect** on the Payments settings page and confirm the dialog. You can reconnect at any time.
+Your shop data stays in place if you cancel. If you come back later, your records are waiting.
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Invoices" icon="file-invoice-dollar" href="/workflows/invoices-payments">
-    Create and send invoices that customers pay through Stripe.
+  <Card title="Plans, usage, and allowances" icon="receipt" href="/settings/billing">
+    What each plan includes and what overages cost.
   </Card>
-  <Card title="Estimates" icon="calculator" href="/workflows/estimates">
-    Build tier-based quotes and collect customer approval before billing.
+
+  <Card title="ShopWrk Pay" icon="credit-card" href="/integrations/shopwrk-pay">
+    How your customers pay you.
   </Card>
 </CardGroup>

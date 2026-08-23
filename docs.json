@@ -53,9 +53,9 @@
               "features/reports",
               "features/documents",
               "features/campaigns",
+              "features/ai-agents",
               "features/ai-assistant",
-              "features/warranties",
-              "features/ai-agents"
+              "features/warranties"
             ]
           },
           {
@@ -63,9 +63,9 @@
             "pages": [
               "integrations/shopwrk-pay",
               "integrations/meta",
-              "integrations/stripe-payments",
               "integrations/google-calendar",
               "integrations/social-media",
+              "integrations/stripe-payments",
               "integrations/sms-voice"
             ]
           },

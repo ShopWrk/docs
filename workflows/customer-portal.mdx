@@ -21,18 +21,23 @@ Once logged in, customers see a personalized dashboard organized into sections:
   <Card title="Active jobs" icon="briefcase" href="/workflows/customer-portal#what-customers-can-see">
     Jobs currently in progress, with status badges and vehicle details.
   </Card>
+
   <Card title="Upcoming appointments" icon="calendar" href="/workflows/customer-portal#what-customers-can-see">
     Scheduled jobs with date and time so customers know when to bring their vehicle in.
   </Card>
+
   <Card title="Outstanding invoices" icon="dollar-sign" href="/workflows/customer-portal#what-customers-can-see">
     Unpaid invoices with the amount due and a direct link to pay online.
   </Card>
+
   <Card title="Warranties" icon="shield" href="/workflows/customer-portal#what-customers-can-see">
     Active warranty registrations tied to their vehicles, including product brand and name.
   </Card>
+
   <Card title="Service history" icon="clock" href="/workflows/customer-portal#what-customers-can-see">
     All past jobs linked to their account, accessible from the Jobs section.
   </Card>
+
   <Card title="Messages" icon="message-circle" href="/workflows/customer-portal#what-customers-can-see">
     A direct message thread with your shop. Unread message count is shown on the dashboard.
   </Card>
@@ -62,7 +67,7 @@ There are two ways to get a customer into the portal:
 In addition to the full portal, ShopWrk generates individual shareable pages for estimates and invoices. These pages do not require any login — they are secured by a unique token embedded in the URL.
 
 | Page | URL pattern | What the customer can do |
-|---|---|---|
+| --- | --- | --- |
 | Estimate view | `/view/estimate/[token]` | Select a tier, add optional add-ons, approve or decline, ask a question |
 | Invoice view | `/view/invoice/[token]` | Review line items, pay online, download PDF, print, ask a question |
 
@@ -87,7 +92,7 @@ When a customer opens an estimate link they can:
 When a customer opens an invoice link they can:
 
 - Review all line items, discounts, tax, and amount due
-- Click **Pay now** to pay by card through Stripe
+- Click **Pay now** to pay by card through [ShopWrk Pay](/integrations/shopwrk-pay)
 - Print the invoice or download a PDF if one has been generated
 - Send a question to your shop
 

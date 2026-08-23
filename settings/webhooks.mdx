@@ -1,12 +1,13 @@
 ---
-title: "View and replay incoming Stripe billing webhook events"
-description: "Review the 50 most recent Stripe events ShopWrk has processed, understand event statuses, and replay failed events after resolving the underlying cause."
+title: "Review Stripe billing events"
+description: "Review the 50 most recent Stripe subscription-billing events ShopWrk has processed, understand their statuses, and replay failed ones after fixing the cause."
+sidebarTitle: "Stripe billing events"
 ---
 
-ShopWrk receives webhook events from Stripe whenever something happens with your billing — a payment succeeds, an invoice is created, or your subscription status changes. The webhook log at **Settings → Webhooks** shows the 50 most recent events so you can see what has been processed and investigate anything that did not succeed.
+ShopWrk receives webhook events from Stripe whenever something happens with your subscription billing: a plan change processes, a renewal charge succeeds, or a payment fails. The webhook log at **Settings → Webhooks** shows the 50 most recent events so you can see what has been processed and investigate anything that did not succeed.
 
 <Note>
-  This page shows Stripe events received by ShopWrk. It does not show events you send to other services. If no events appear yet, the first will arrive when a customer pays an invoice or your Stripe account updates.
+  This page covers ShopWrk's own billing connection to Stripe. It does not show customer payments, which run through [ShopWrk Pay](/integrations/shopwrk-pay). If no events appear yet, the first will arrive when your shop's plan or billing status changes.
 </Note>
 
 ## Reading the event log
@@ -14,7 +15,7 @@ ShopWrk receives webhook events from Stripe whenever something happens with your
 Each row in the event log represents one Stripe event. The columns are:
 
 | Column | Description |
-|--------|-------------|
+| --- | --- |
 | **Event** | The Stripe event ID (for example, `evt_1ABC...`). This ID matches the event in your Stripe dashboard. |
 | **Type** | The Stripe event type, such as `payment_intent.succeeded` or `invoice.payment_failed`. |
 | **Status** | Whether the event succeeded, is pending, or failed. |
@@ -28,9 +29,11 @@ Each row in the event log represents one Stripe event. The columns are:
   <Card title="Succeeded" icon="check-circle" href="/settings/webhooks">
     The event was received and processed without errors. No action is needed.
   </Card>
+
   <Card title="Pending" icon="clock" href="/settings/webhooks">
     The event has been received but processing has not completed. This is normal briefly after an event arrives.
   </Card>
+
   <Card title="Failed" icon="x-circle" href="/settings/webhooks">
     Processing encountered an error. The error message is shown below the status badge. The event persists in the log so it can be replayed after the cause is fixed.
   </Card>
