@@ -78,7 +78,8 @@
               "settings/branding",
               "settings/services-catalog",
               "settings/webhooks",
-              "settings/a2p-registration"
+              "settings/a2p-registration",
+              "settings/data-management"
             ]
           }
         ]
