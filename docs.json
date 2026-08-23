@@ -50,12 +50,14 @@
               "features/communications",
               "features/automations",
               "features/ai-assistant",
-              "features/warranties"
+              "features/warranties",
+              "features/ai-agents"
             ]
           },
           {
             "group": "Integrations",
             "pages": [
+              "integrations/shopwrk-pay",
               "integrations/stripe-payments",
               "integrations/google-calendar",
               "integrations/social-media",

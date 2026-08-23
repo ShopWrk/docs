@@ -1,0 +1,127 @@
+---
+title: "How the ShopWrk AI agents work"
+description: "Meet the assistant, the lead closer, the voice receptionist, and the Meta Ads agent. What each one does, what it can act on, and when it hands off to a human."
+icon: "robot"
+---
+
+ShopWrk ships with a set of AI agents that work from your shop's real data: your services, pricing, calendar, customers, and conversations. They are not generic chatbots. Each one has a job, a set of tools it can use, and clear limits on when it acts on its own versus when it checks with you.
+
+You can see every agent in one place under **Agents** in the sidebar, and talk to your assistant any time from **AI** in the sidebar.
+
+<CardGroup cols={2}>
+  <Card title="AI assistant" icon="comment">
+    Your inside man. Ask questions, get drafts, pull numbers, run analysis across the whole shop.
+  </Card>
+
+  <Card title="Lead closer" icon="user-plus">
+    Works your inbound leads over SMS, Instagram, and Facebook. Answers fast, quotes from your pricing, books the job.
+  </Card>
+
+  <Card title="Voice receptionist" icon="phone">
+    Answers calls you can't pick up, collects details, checks availability, and books or hands off.
+  </Card>
+
+  <Card title="Meta Ads agent" icon="bullhorn">
+    Connects your ad spend to booked, paid jobs and proposes budget and creative changes for your approval.
+  </Card>
+</CardGroup>
+
+## The AI assistant
+
+The assistant lives in the AI chat and knows your whole shop. Use it when you want an answer or a draft without clicking through five screens.
+
+Things owners ask it every day:
+
+- "Which estimates went out this week and haven't been opened?"
+- "What did we invoice for ceramic coating last month vs the month before?"
+- "Draft a win-back text for customers who haven't booked in 6 months."
+- "Why did my PPF leads stall in July? Read the conversations and tell me."
+
+It can look up customers and vehicles, summarize threads, analyze revenue and jobs, draft messages and campaigns, and walk you through features. When you ask it to change something, it confirms before acting. See [Use the AI assistant](/features/ai-assistant) for the full tour.
+
+## The lead closer
+
+Speed wins jobs in this industry. The lead closer replies to new inbound leads in seconds instead of hours, then keeps the conversation moving until it books or the lead goes cold.
+
+**Where it works.** SMS, Instagram DMs, Facebook Messenger, and form submissions, depending on which channels your shop has connected.
+
+**What it does on every lead:**
+
+1. Replies immediately, answers questions, and asks qualifying questions.
+2. Quotes using your service catalog and vehicle-tier pricing, so a full front PPF on a crew cab prices correctly without anyone checking a sheet.
+3. Checks your calendar availability and proposes times.
+4. Sends the estimate and collects the deposit when enabled.
+5. Books the job and follows up on stalled leads until they convert or opt out.
+
+Every conversation is visible in [Conversations](/features/communications), so you or your team can jump in at any point. You can also set it to draft replies for your approval instead of sending on its own.
+
+<Info>
+  Autonomy is your call. Per lead source, you choose autopilot (it runs the full conversation), answer-only (it drafts, you send), or route-to-assignee (leads go straight to a team member).
+</Info>
+
+## The voice receptionist
+
+When a call comes in and nobody can pick up, the voice receptionist answers in your shop's style. It can:
+
+- Answer common questions about services and hours.
+- Look up whether someone is an existing customer and their job history.
+- Check availability and book appointments.
+- Create a lead, take a message, or text a follow-up link.
+- Transfer urgent or high-value calls to you.
+
+Calls it handles show up in the Conversations inbox with transcripts and summaries, so you can review everything it did in one pass at the end of the day.
+
+<Tip>
+  Set how each lead source gets handled under your lead routing settings. Many shops run autopilot on web forms and after-hours calls, and answer-only during busy daytime hours.
+</Tip>
+
+## The Meta Ads agent
+
+Most shops know what their ads cost. Few know which ads produced booked, paid jobs. This agent closes that gap. It connects your Meta ad accounts to what actually happened downstream: which lead came from which ad, what they asked for, whether they booked, and what they paid.
+
+With that picture it can:
+
+- Show cost per booked job, not just cost per lead.
+- Spot which creatives and offers actually convert for your shop.
+- Propose budget moves, audience adjustments, and new creative variants.
+
+Proposals land in your approvals queue. Nothing changes on your ad account until you approve it.
+
+## How agents use your shop's context
+
+All the agents draw from the same foundation, which is why keeping it current matters:
+
+| Context | Where you maintain it |
+| --- | --- |
+| Services and vehicle-tier pricing | [Service catalog](/settings/services-catalog) |
+| Calendar and availability | [Calendar and booking](/features/calendar-booking) |
+| Customer history | [CRM](/features/crm) |
+| Your policies and FAQs | Knowledge base under **AI** |
+| Tone, greetings, escalation rules | Agent settings under **Agents** |
+
+If a price changes or you add a service, update the catalog once and every agent picks it up on the next conversation.
+
+## Guardrails and handoff
+
+The agents follow your rules, and the rules always beat the agent:
+
+- **Human handoff.** Low confidence, sensitive topics, or a request outside its limits sends the conversation to a human with a summary of what happened so far.
+- **Approvals.** Money-moving and account-changing actions, like deposit collection and ad budget changes, wait for your confirmation unless you explicitly turn on autopilot for them.
+- **Consent.** Messaging and call recording respect opt-outs and compliance requirements. Customers who reply STOP stop getting automated messages.
+- **Your data stays yours.** Agents read your shop's workspace only. One shop's data never leaks into another's answers.
+
+<Note>
+  The agents are capable, but they don't replace your judgment on anything that matters. Review deposits, discounts, and anything customer-facing that you wouldn't say yourself.
+</Note>
+
+## Plan availability
+
+| Capability | Essential | Pro | Autopilot |
+| --- | --- | --- | --- |
+| AI assistant chat | Limited images | Yes | Yes |
+| Lead closer (SMS) |  | Yes | Yes |
+| Lead closer (Instagram, Facebook) |  | Yes | Yes |
+| Voice receptionist |  |  | Yes |
+| Meta Ads agent proposals |  |  | Yes |
+
+See [Billing and plans](/settings/billing) for included allowances and overage rates.

@@ -1,0 +1,97 @@
+---
+title: "Accept customer payments with ShopWrk Pay"
+description: "Take card payments, deposits, and payouts through ShopWrk Pay. Set up your merchant account, collect online, handle refunds and disputes."
+icon: "credit-card"
+---
+
+ShopWrk Pay is the built-in way your customers pay you. It processes card payments for invoices, estimates, and booking deposits, and sends the money to your bank account. Under the hood it runs on Finix, a payment processor, but you set it up and manage it entirely inside ShopWrk.
+
+<Info>
+  ShopWrk Pay handles money your customers pay you. Your own ShopWrk subscription is billed separately through Stripe. That's normal, and it means your processing account is independent of your software subscription.
+</Info>
+
+## Set up ShopWrk Pay
+
+Before your first payment, you need a one-time merchant setup. ShopWrk verifies your business with the processor, the same way any payment provider would.
+
+<Steps>
+  <Step title="Open Payments settings">
+    Go to **Settings → Payments** and click **Set up payments**.
+  </Step>
+  <Step title="Enter your business details">
+    Provide your legal business name, address, tax ID, and industry. Sole proprietors can use their own legal name and SSN.
+  </Step>
+  <Step title="Add your bank account">
+    This is where payouts land. Double-check the routing and account numbers; a typo here delays your first payout by days.
+  </Step>
+  <Step title="Verify your identity">
+    Have a government ID ready. Depending on your business type, the processor may ask for a document or two, like a formation certificate.
+  </Step>
+  <Step title="Wait for approval">
+    Most shops are approved within one to two business days. ShopWrk emails you when your account is live, and the Payments page shows your status throughout.
+  </Step>
+</Steps>
+
+<Warning>
+  If verification comes back with questions, a banner on the Payments page lists exactly what's needed. Clearing it usually takes minutes once you have the documents on hand.
+</Warning>
+
+## Getting paid online
+
+Once ShopWrk Pay is active, every invoice, estimate, and booking page carries a **Pay now** button. Customers enter their card on a secure checkout page and never need a ShopWrk account.
+
+The flow most shops run:
+
+1. Customer approves an estimate and pays the deposit through the link.
+2. You do the work and mark the job complete.
+3. You send the invoice for the balance.
+4. The customer pays online and the invoice marks itself paid.
+
+Deposits carry through automatically. If a customer put \$200 down at approval, that amount is deducted from the balance due on the final invoice.
+
+<Tip>
+  Turn on payment reminders under **Settings → Reminders** and ShopWrk nudges customers about unpaid balances for you, on the schedule you pick.
+</Tip>
+
+## Payment methods
+
+| Method | How it works |
+| --- | --- |
+| Card online | Customer pays the invoice or estimate link by card |
+| Deposits | Collected at estimate approval or booking, credited to the final invoice |
+| Cash | Record manually from the invoice; marked paid, nothing processed |
+| Cheque | Record manually the same way |
+
+Recording cash and cheque keeps your revenue reports accurate even when no card transaction happens.
+
+## Refunds
+
+Open the invoice, find the payment, and click **Refund**. Choose a full or partial amount. The refund goes back to the customer's original card.
+
+Card refunds typically reappear on the customer's statement within 5 to 10 business days, depending on their bank. The refunded amount comes out of a future payout, not out of your pocket twice.
+
+## Disputes and chargebacks
+
+When a customer disputes a charge with their bank, ShopWrk flags it on the invoice and shows the response deadline. You gather your evidence, like the signed estimate, message history, photos, and job notes, and submit it right there. ShopWrk passes it to the processor with the deadline tracked for you.
+
+Fast responses win disputes. Signed estimates and approval audit trails, which ShopWrk keeps automatically, are usually all you need.
+
+## Payouts
+
+Processed payments settle to your linked bank account on a rolling schedule. The Payments area shows pending, in-transit, and deposited amounts, plus a full payout history. If a payout ever fails, usually a closed or mistyped bank account, ShopWrk tells you and lets you fix the destination.
+
+## Fees
+
+Processing fees are disclosed during merchant setup and shown on your statements. There is no separate monthly cost to have ShopWrk Pay turned on; you pay per processed transaction, and the fee comes out before payout rather than as a separate bill.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Invoices and payments" icon="file-invoice-dollar" href="/workflows/invoices-payments">
+    The full billing cycle, from job to paid invoice.
+  </Card>
+
+  <Card title="Subscription billing" icon="receipt" href="/integrations/stripe-payments">
+    How your own ShopWrk subscription is billed through Stripe.
+  </Card>
+</CardGroup>
