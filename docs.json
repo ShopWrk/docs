@@ -49,6 +49,8 @@
               "features/team-scheduling",
               "features/communications",
               "features/automations",
+              "features/reports",
+              "features/documents",
               "features/ai-assistant",
               "features/warranties",
               "features/ai-agents"
