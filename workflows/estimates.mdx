@@ -3,114 +3,92 @@ title: "Build and send tier-based estimates for customer approval"
 description: "Create Good/Better/Best estimates for any vehicle size, add services and optional add-ons, then send for customer approval — all from a single wizard."
 ---
 
-Estimates in ShopWrk let you quote a customer before any work begins. You build the estimate in a step-by-step wizard, choose how pricing tiers are structured, and then send a link the customer can review and approve on their own device. Once approved, a single click converts the estimate into a scheduled job.
+The estimate is where a maybe becomes booked work. Build the quote on screen while the customer watches or waits, send a link by text or email, and they approve and pay the deposit in one sitting. Approval does the paperwork for you: the job appears on your calendar queue and a draft invoice is already waiting.
 
-## Creating a new estimate
+## Creating an estimate
 
-Navigate to **Estimates** in the sidebar and click **New Estimate**. A wizard opens and walks you through four steps: picking the customer, selecting the vehicle, adding services, and reviewing pricing.
+Go to **Estimates** and click **New Estimate**. The builder walks through four steps:
 
 <Steps>
   <Step title="Select a customer">
-    Search for an existing customer by name, phone, or email. If the customer is new, click **Add new customer** directly from the search panel to create a contact without leaving the wizard.
+    Search by name, phone, or email. New customer? Add them right from the search panel without leaving the builder.
   </Step>
   <Step title="Select a vehicle">
-    Choose from vehicles already on file for that customer, or click **Add new vehicle** to enter the year, make, model, and color. ShopWrk uses the vehicle details to automatically suggest the correct pricing tier (sedan, SUV, or truck).
+    Pick a vehicle on file or add one with year, make, model, and color. ShopWrk suggests the pricing tier from the vehicle size.
   </Step>
   <Step title="Add services">
-    Browse your service catalog by category. Select packages and individual services. Each service shows tier-based pricing — the price adjusts automatically based on the vehicle size detected in the previous step.
-
-    <Tip>
-      You can override the auto-detected vehicle tier at any point in the services step using the tier selector at the top of the panel.
-    </Tip>
+    Browse your catalog by category. Prices fill in from the vehicle tier automatically. Mark anything Optional to let the customer decide at approval time.
   </Step>
-  <Step title="Review pricing and send">
-    Set a discount (fixed dollar amount or percentage), a tax rate, and an optional deposit requirement. Choose whether to send the estimate by email, SMS, or both — then click **Create Estimate**.
+  <Step title="Review and set the deposit">
+    Check totals, apply a discount or tax override, and set the deposit amount. Then send by email, SMS, or both.
   </Step>
 </Steps>
 
-## Tier-based pricing (Good / Better / Best)
-
-ShopWrk supports multi-tier estimates where the customer picks a package level — typically **Good**, **Better**, and **Best** — and sees a different price for each. This is the default mode for new estimates.
-
-Each tier maps to a vehicle size:
-
-| Vehicle type | Typical use |
-|---|---|
-| Sedan | Cars and smaller coupes |
-| SUV | SUVs, crossovers, and minivans |
-| Truck | Full-size trucks |
-
-When you add a service with tier pricing enabled, the correct per-vehicle-size price is pulled from your service catalog automatically. You can adjust any individual line item price before sending.
-
-<Note>
-  If you prefer a flat single-price estimate with no tier selection, toggle off **Use tiers** in the services step. All line items will use a single price regardless of vehicle size.
-</Note>
-
-## Adding services, packages, and add-ons
-
-In the services step you can add three kinds of line items:
-
-<CardGroup cols={3}>
-  <Card title="Services" icon="wrench" href="/workflows/estimates#adding-services-packages-and-add-ons">
-    Individual services from your catalog, priced per vehicle tier.
-  </Card>
-  <Card title="Packages" icon="layers" href="/workflows/estimates#adding-services-packages-and-add-ons">
-    Pre-configured bundles of services with combined pricing.
-  </Card>
-  <Card title="Add-ons" icon="plus-circle" href="/workflows/estimates#adding-services-packages-and-add-ons">
-    Optional extras the customer can choose to include when they approve.
-  </Card>
-</CardGroup>
-
-Mark any line item as **Optional** to let the customer decide whether to include it. Optional items appear as checkboxes on the customer-facing approval page.
-
-## Sending the estimate to a customer
-
-From the estimate detail page, click **Send**. You can deliver the estimate via:
-
-- **Email** — sends a branded email with a unique link to the estimate
-- **SMS** — sends a text message with the same link
-
-The estimate link is token-authenticated, so the customer does not need a ShopWrk account to view or respond. You can resend the estimate at any time from the same detail page.
-
 <Tip>
-  Set a **Valid until** date on the estimate to automatically expire the customer's ability to approve after a certain date. Expired estimates display a notice to the customer.
+  The tier selector sits above the services panel. A lifted truck wearing sedan prices fixes itself in one click before the quote ever goes out.
 </Tip>
+
+## Tier-based pricing
+
+Each service can carry a price per vehicle size. The customer-facing quote can present package tiers, typically Good / Better / Best, so buyers self-select instead of you guessing their budget:
+
+| Vehicle size | Typical fit |
+| --- | --- |
+| Sedan | Cars and coupes |
+| SUV | SUVs, crossovers, minivans |
+| Truck | Full-size trucks and large vans |
+
+Prefer one flat price? Turn tiers off and every line item uses a single number regardless of vehicle.
+
+## Sending and tracking
+
+From the estimate page, click **Send**. Email arrives branded with your logo; SMS lands as a short link. Both open the same token-authenticated page, so customers never need an account.
+
+Every status change shows in your estimates list:
+
+| Status | Meaning |
+| --- | --- |
+| **Draft** | Still being built, not sent |
+| **Sent** | With the customer, waiting |
+| **Viewed** | They opened the link |
+| **Approved** | Accepted, deposit handled, job created |
+| **Declined** | Passed, reason attached if they left one |
+| **Expired** | Past the valid-until date you set |
+
+Set a **Valid until** date so stale quotes stop being approvable. Follow-up automations fire off the Sent and Viewed states without anyone remembering to nudge.
 
 ## What the customer sees
 
-When the customer opens their estimate link, they see:
+Your branding, the line items, tier options where enabled, and optional add-ons as checkboxes. A live total updates as they choose. When they are ready, Approve and pay happen on the same page: if the estimate carries a deposit requirement, card entry comes first and approval completes once the deposit clears. No deposit on the quote? Approval is one click.
 
-- Your shop branding and the services quoted
-- Tier options (if the estimate uses tiers) — the customer picks **Good**, **Better**, or **Best**
-- Optional add-ons as checkboxes they can include or skip
-- A live price summary that updates as they make selections
-- **Approve** and **Decline** buttons
+If a document needs signing before approval, like a liability waiver for a wrap, the customer signs it inline before they can continue. Questions typed into the estimate page land in your [conversations inbox](/features/communications).
 
-If a contract or agreement needs to be signed before approval is allowed, the customer will be prompted to sign the document first.
+<Info>
+  Deposits are the quiet close rate booster. A customer who has money down does not shop the quote around overnight. Most shops require 20 to 50 percent depending on ticket size and film cost.
+</Info>
 
-The customer can also send a question directly from the estimate page. Questions appear in your messaging inbox.
+## After approval
 
-## Approving or declining
+Approval triggers the chain without a click from you:
 
-Once the customer clicks **Approve**, the estimate status changes to **Approved** in your dashboard. You will see a notification and can proceed to convert the estimate to a job.
+1. The job is created with services, vehicle, and deposit status carried over. Scheduled date set? It lands on the calendar. Not scheduled yet? It waits in the Waiting queue until you drag it onto a day.
+2. A draft invoice exists with the deposit already credited.
+3. Your estimate-approved automation fires, if you turned one on.
 
-If the customer declines, they can optionally leave a reason. The estimate status changes to **Declined** and the reason is visible on the estimate detail page.
-
-<Warning>
-  A customer cannot approve an estimate that has already expired. If a customer tries to approve after the valid-until date has passed, they will see an expiry notice and cannot proceed.
-</Warning>
-
-## Converting an approved estimate to a job
-
-Open the approved estimate and click **Convert to Job**. On the conversion page you can optionally:
-
-- Set a scheduled date and time
-- Assign a technician
-- Assign a bay number
-
-All of these fields are optional — you can convert without scheduling and fill in those details later from the job.
+You can still schedule straight from the estimate if you prefer to pick the bay and tech yourself; the conversion screen carries everything over either way.
 
 <Note>
-  You can only convert an estimate once. After conversion, the estimate shows a link to the job it created.
+  An estimate converts once. After that it links to the job it created so history stays traceable.
 </Note>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Jobs" icon="wrench" href="/workflows/jobs">
+    What happens after approval, from scheduling to completion.
+  </Card>
+
+  <Card title="ShopWrk Pay" icon="credit-card" href="/integrations/shopwrk-pay">
+    Where deposits and payments are processed.
+  </Card>
+</CardGroup>

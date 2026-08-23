@@ -122,6 +122,18 @@ Voicemail recordings are stored and accessible from the Calls section of ShopWrk
   Call recording laws vary by state. Some states require you to inform all parties that a call is being recorded before the recording begins. Consult your local regulations before enabling call recording.
 </Note>
 
+### Per-lead call handling
+
+Not every caller needs the same treatment. Under lead routing you choose how calls from each source are handled:
+
+| Mode | What happens |
+| --- | --- |
+| **Autopilot** | The [Voice AI receptionist](/features/ai-agents) answers, qualifies, and can book or take messages within your rules |
+| **Answer-only** | The agent answers and collects details, but hands everything to your team |
+| **Route-to-assignee** | Calls ring straight through to the person assigned to that lead |
+
+A common setup: autopilot after hours and during busy install blocks, route-to-assignee otherwise. Incoming calls also announce in the dashboard with caller ID so anyone at a desk can grab them.
+
 ### WebRTC calling
 
 ShopWrk supports in-browser calling using WebRTC, so team members can make and receive calls directly from the ShopWrk dashboard without a physical phone.
@@ -132,6 +144,7 @@ ShopWrk supports in-browser calling using WebRTC, so team members can make and r
   <Card title="Automations" icon="bolt" href="/features/automations">
     Set up automatic SMS reminders for appointments, invoice follow-ups, and review requests.
   </Card>
+
   <Card title="Communications" icon="message-circle" href="/features/communications">
     View and reply to inbound customer messages in the unified inbox.
   </Card>

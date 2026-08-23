@@ -3,145 +3,74 @@ title: "Schedule staff, track time, and run payroll in ShopWrk"
 description: "Manage your team's weekly schedule, handle time-off requests, review timesheets, configure compensation, and run payroll — all from the Team page."
 ---
 
-ShopWrk's Team module brings together everything you need to manage your staff — from setting recurring weekly schedules and approving time-off requests to reviewing individual timesheets and running payroll. All of this lives under **Team** in the sidebar.
+The Team area covers the whole employment loop: who works for you, when each of them works, what time they actually worked, and what that time costs. Everything lives under **Team** in the sidebar, across four tabs: **Directory**, **Schedules**, **Time**, and **Payroll**.
 
-The Team page is organized into four tabs: **Staff**, **Schedules**, **Timesheet**, and **Payroll**.
+## Directory
 
-<Note>
-  The Team page is only accessible to shop owners. Admin and Technician roles are redirected to the main dashboard.
-</Note>
+The directory lists every member of your shop: active members, pending invitations, and deactivated accounts.
 
-## Staff
-
-The Staff tab shows every team member on your roster — active employees, pending invitations, and deactivated accounts.
-
-<CardGroup cols={3}>
-  <Card title="Active" icon="user-check" href="/features/team-scheduling#staff">
-    Staff who are currently working and have access to ShopWrk.
-  </Card>
-  <Card title="Invited" icon="envelope" href="/features/team-scheduling#staff">
-    Team members who have been sent an invitation but haven't accepted yet.
-  </Card>
-  <Card title="Deactivated" icon="user-minus" href="/features/team-scheduling#staff">
-    Former employees whose accounts have been disabled.
-  </Card>
-</CardGroup>
+<Steps>
+  <Step title="Invite a team member">
+    Click **Invite**, enter their name and email, and pick a role. They get an email invitation and show as Invited until they accept.
+  </Step>
+  <Step title="Set up their profile">
+    Once active, each member has a profile with their role and access, contact details, schedule, tracked time, and compensation.
+  </Step>
+</Steps>
 
 ### Roles
 
-ShopWrk has three roles:
-
 | Role | Access |
-|---|---|
-| Owner | Full access including team management, payroll, and all settings |
-| Admin | Most features; cannot access owner-only settings or payroll |
-| Technician | Only their assigned jobs and their own timesheet |
+| --- | --- |
+| Owner | Everything, including billing, payroll, and shop settings |
+| Admin | Day-to-day operations; no owner-only settings or payroll |
+| Technician | Their assigned jobs, their own schedule, and their own time |
 
-### Inviting a team member
-
-<Steps>
-  <Step title="Click Invite">
-    From the Staff tab, click **Invite Team Member**.
-  </Step>
-  <Step title="Enter their details">
-    Provide the person's name, email address, and role.
-  </Step>
-  <Step title="Send the invitation">
-    ShopWrk sends them an email with a link to set up their account. They appear as **Invited** until they accept.
-  </Step>
-</Steps>
+Members can also belong to more than one shop. Switching shops happens from the account menu, which matters for owners running multiple locations or a mobile unit alongside the main shop.
 
 ## Schedules
 
-The Schedules tab lets you define each team member's regular working hours and manage time-off requests.
+Scheduling is week-by-week and shift-based, built for shops where hours genuinely change:
 
-### Weekly schedule
+- **Publish dated shifts.** Set each member's shifts for the coming week and publish them. The calendar shows staffing against booked jobs so you can spot an overbooked Tuesday before it happens.
+- **Recurring patterns.** Save a typical week as a template and apply it in seconds instead of rebuilding every Sunday night.
+- **Time off.** Staff request time off from their own view; you approve or decline from Schedules. Approved days block job assignment warnings for that person rather than silently double-booking them.
+- **Assignment warnings.** When you assign a tech to a job outside their published shifts or during approved time off, the calendar tells you before you save.
 
-Each staff member can have a recurring schedule — the days and hours they're normally available. This schedule feeds into the calendar so you know who's in on any given day.
+## Time tracking
 
-<Steps>
-  <Step title="Open a staff member's schedule">
-    On the Schedules tab, find the team member and click their row to expand their weekly schedule.
-  </Step>
-  <Step title="Set working hours">
-    For each day of the week, set the start and end time or mark the day as off. Multiple shifts per day are supported.
-  </Step>
-  <Step title="Save">
-    Click **Save Schedule**. Changes take effect immediately.
-  </Step>
-</Steps>
+The Time tab shows real worked hours, not just scheduled ones:
 
-### Time-off requests
-
-Staff can submit time-off requests, and managers can approve or deny them from the Schedules tab.
-
-<Tabs>
-  <Tab title="As a manager">
-    Review pending requests in the **Time-Off Requests** section of the Schedules tab. Each request shows the staff member's name, the dates requested, and the reason. Click **Approve** or **Reject**.
-  </Tab>
-  <Tab title="As a staff member">
-    Submit a time-off request from your own schedule view. Provide the start and end dates and an optional note. Your request will show as **Pending** until a manager reviews it.
-  </Tab>
-</Tabs>
-
-## Timesheet
-
-The Timesheet tab shows a weekly breakdown of hours worked by each team member, including clock-in/clock-out records and any job-specific time logs.
-
-### Clock in and out
-
-Staff can clock in and out directly from the ShopWrk dashboard. The Timesheet tab shows who is currently clocked in and their running time for the day.
-
-### Job timers
-
-When a technician is working a job, they can start a job-specific timer. This logs time against the job for accurate labor costing and gives you a real-time view of how long each job is taking.
-
-### Weekly summary
-
-The Timesheet tab shows:
-
-- Total hours per staff member for the week
-- Daily breakdown by day
-- Clock-in and clock-out times
-- Any gaps or missing entries
+- **Work sessions.** Clock in and out with breaks recorded as they happen. Edits and corrections are logged, so payroll disputes have a paper trail.
+- **Job timers.** Technicians log time against specific jobs while working them, feeding both labor costing and per-service commission calculations.
+- **Weekly review.** Each member's week appears as scheduled versus actual. Missing clock-ins are flagged rather than quietly becoming zero hours.
 
 <Tip>
-  Review timesheets weekly before running payroll to catch any missed clock-ins or discrepancies.
+  Review the Time tab midweek, not on payday. A missed clock-out is a ten-second fix Wednesday and an argument Friday.
 </Tip>
 
 ## Payroll
 
-The Payroll tab is where you process pay runs for your team. It's only visible to shop owners.
+Payroll turns approved time into money owed. The flow is review first, then run:
 
-### Compensation settings
+1. **Pick the period.** Confirm the pay period dates.
+2. **Review payroll prep.** ShopWrk compiles each member's approved hours at their hourly rate plus any commissions earned on completed jobs. Adjust anything wrong here; corrections after the run are messier.
+3. **Run payroll.** Finalize the run. Every member gets a paystub saved to their profile.
 
-Before running payroll, each staff member needs a compensation configuration. Go to **Team → Payroll** and open a team member's record to set:
-
-- Pay type (hourly or salary)
-- Pay rate
-- Overtime rules (if applicable)
-
-### Running payroll
-
-<Steps>
-  <Step title="Review the pay period">
-    Open the Payroll tab and confirm the pay period dates are correct.
-  </Step>
-  <Step title="Review hours and earnings">
-    ShopWrk pulls in approved hours from the timesheet. Review each team member's hours and calculated pay.
-  </Step>
-  <Step title="Make any adjustments">
-    Add bonuses, deductions, or manual overrides if needed before finalizing.
-  </Step>
-  <Step title="Run payroll">
-    Click **Run Payroll** to finalize the pay run. Each team member receives a paystub.
-  </Step>
-</Steps>
+Commissions follow your compensation setup: per-service rates assigned to the technician who did that line of work. Configure rates on each member's Compensation tab, and the ledger builds itself as jobs complete.
 
 <Warning>
-  Payroll runs cannot be undone. Review all hours and compensation settings carefully before clicking **Run Payroll**.
+  A finalized payroll run cannot be undone. Check hours and rates carefully before running.
 </Warning>
 
-### Paystubs
+## Related
 
-After a payroll run, each team member's paystub is saved to their record. Owners can access historical paystubs from the Payroll tab at any time.
+<CardGroup cols={2}>
+  <Card title="Roles and permissions" icon="shield" href="/getting-started/roles-permissions">
+    What each role can see and change.
+  </Card>
+
+  <Card title="Jobs" icon="wrench" href="/workflows/jobs">
+    Where technician assignment and per-service work feed payroll.
+  </Card>
+</CardGroup>

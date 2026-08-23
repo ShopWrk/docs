@@ -3,97 +3,100 @@ title: "Schedule and manage jobs from estimate to completion"
 description: "Turn approved estimates into scheduled jobs, assign technicians and bays, track progress through status stages, and finish work using notes and checklists."
 ---
 
-A job in ShopWrk represents the actual work being performed on a vehicle. Jobs are typically created by converting an approved estimate, though you can also create a job directly from the calendar. From there you schedule it, assign your team, track time and progress, and finally mark it complete before sending an invoice.
+A job is the actual work on a vehicle: what gets installed, who installs it, when it happens, and whether it got done right. Most jobs start life automatically the moment a customer approves an estimate, but you can also book one from scratch on the calendar.
 
-## How estimates become jobs
-
-When a customer approves an estimate, open the estimate and click **Convert to Job**. The conversion page shows a summary of the customer, vehicle, and services from the estimate so you can confirm the details before proceeding.
-
-You can optionally set the date, time, technician, and bay number at this point, or leave them blank and schedule later. Click **Convert to Job** to create the job record and be taken directly to the job detail page.
-
-<Note>
-  Jobs can also be created directly from the calendar without a pre-existing estimate. Open the calendar, click **New Job**, and fill in the customer, vehicle, and services manually.
-</Note>
-
-## Job statuses
-
-Jobs move through the following statuses as work progresses:
-
-| Status | Meaning |
-|---|---|
-| **Scheduled** | Job is booked with a date and time |
-| **In Progress** | Work has started on the vehicle |
-| **Pending Review** | Work is done and awaiting quality check |
-| **Completed** | Job is finished and ready for invoicing |
-| **Cancelled** | Job was cancelled before completion |
-
-Change the status at any time from the job detail page using the status dropdown at the top of the overview tab.
-
-## Scheduling a job
-
-Open a job and set the scheduled date and time from the job detail page. Jobs with a scheduled date appear on the **Calendar** view, where you can see all jobs across your bays and technicians.
-
-<Tip>
-  If you use Google Calendar sync, jobs with a scheduled date and time will appear in your connected Google Calendar automatically.
-</Tip>
-
-## Assigning technicians and bays
-
-Technician and bay assignment can be done at two levels:
-
-<Tabs>
-  <Tab title="Per job">
-    From the job detail page, set the primary technician and bay number for the entire job. This is the assignment shown on the calendar.
-  </Tab>
-  <Tab title="Per service">
-    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job — for example one tech for window tint and another for PPF.
-  </Tab>
-</Tabs>
-
-## Tracking job progress
-
-The job overview tab gives you everything you need to track progress in real time:
-
-- **Status dropdown** — change the job status as work moves forward
-- **Services list** — see all booked services with their assigned technicians
-- **Customer notes** — notes visible to the customer in the portal
-- **Internal notes** — staff-only notes not shown to customers
-- **Materials** — if inventory tracking is enabled, the materials consumed by this job are listed here
-
-### Checklists
-
-Once a job reaches **In Progress** status, any checklists assigned to this job type appear at the bottom of the Notes section. Technicians can check off items as they complete them. Checklists are not visible to customers.
-
-## Job detail tabs
-
-The job detail page has three tabs:
+## Where jobs come from
 
 <CardGroup cols={3}>
-  <Card title="Overview" icon="layout-dashboard" href="/workflows/jobs#tracking-job-progress">
-    Services, notes, pricing, deposit status, payments, and checklists.
+  <Card title="From an approved estimate" icon="file-check">
+    When a customer approves an estimate and pays the deposit, ShopWrk creates the job automatically with everything carried over.
   </Card>
-  <Card title="Images" icon="image" href="/workflows/jobs#job-detail-tabs">
-    Before and after photos. The badge on this tab shows how many images have been uploaded.
+
+  <Card title="From the calendar" icon="calendar-plus">
+    Click any day on the calendar and choose New Job to book work that never had an estimate, like a walk-in.
   </Card>
-  <Card title="Documents" icon="file-text" href="/workflows/jobs#job-detail-tabs">
-    Contracts, consent forms, and other documents associated with this job.
+
+  <Card title="From a booking request" icon="inbox">
+    Online booking requests you accept become scheduled jobs on the calendar.
   </Card>
 </CardGroup>
 
-## Pricing, deposit, and payments
+## Creating a job from the calendar
 
-The right-hand column of the job overview shows:
+Open **Calendar**, click **New Job** (or click a day), and the two-screen builder opens:
 
-- **Subtotal, tax, and total** — pulled from the services on the job
-- **Deposit status** — shows how much deposit has been collected versus required
-- **Send invoice button** — opens the new invoice form pre-populated with this job's services and customer
+<Steps>
+  <Step title="Details">
+    Pick the customer and vehicle, add services from your catalog, set the date, time, and bay, and assign a technician.
+  </Step>
+  <Step title="Review">
+    The second screen shows the full picture: services with tier-based pricing, totals, and schedule. Fix anything that looks wrong, then create the job.
+  </Step>
+</Steps>
 
-If a deposit was set on the original estimate, you can send a deposit request to the customer by email or SMS directly from the job page.
+The new job appears on the calendar immediately. Jobs created without a date land in the **Waiting** column so they never get forgotten; drag one onto a day whenever a slot opens.
 
-## Marking a job complete
+## Job statuses
 
-When the work is finished, change the job status to **Completed** using the status dropdown. At this point you can create an invoice for the job by clicking **Send invoice** in the pricing card.
+| Status | Meaning |
+| --- | --- |
+| **Waiting** | Created but not yet scheduled |
+| **Scheduled** | Booked with a date, time, bay, and technician |
+| **In Progress** | Work has started on the vehicle |
+| **Pending Review** | Technician finished and submitted; awaiting owner or manager sign-off |
+| **Completed** | Approved and ready for invoicing |
+| **Cancelled** | Not happening; kept for records |
+| **Rescheduled** | Moved to a new date |
 
-<Warning>
-  Deleting a job is permanent and cannot be undone. The **Delete** button is available at the top right of the job page. Only delete a job if you are certain it should not be invoiced or archived.
-</Warning>
+Change status from the dropdown at the top of the job page. Pending Review is the quality gate: the technician signals they are done, and someone with approval rights checks photos and checklist items before it flips to Completed. Shops that skip the gate can approve straight through.
+
+## Assigning technicians and bays
+
+Assignment works at two levels:
+
+<Tabs>
+  <Tab title="Whole job">
+    Set the primary technician and bay on the job itself. This is what the calendar shows.
+  </Tab>
+  <Tab title="Per service">
+    Each service line has its own technician selector. Use it when one tech does the tint and another handles the PPF on the same car. Per-service assignments also drive commissions once compensation is configured.
+  </Tab>
+</Tabs>
+
+## Running the day on a job
+
+The job overview keeps everything in one place:
+
+- Services with assigned techs and pricing, pulled from the original quote
+- Customer-facing notes and internal notes, clearly separated
+- Checklists the technician works through while the job is In Progress
+- Consumed materials, if you track inventory
+- Photos, organized as Before, During, After, and Damage
+
+The Damage category exists for a reason. Photograph anything questionable before touching the panel, and the record protects both the shop and the customer.
+
+## Deposits, payments, and invoicing
+
+If the job came from an approved estimate, the deposit is already collected and shows in the pricing card, deducted from the balance. From there:
+
+1. Mark the job Completed.
+2. Click **Send invoice**. The invoice pre-fills with booked services minus the deposit already paid.
+3. The customer pays the balance through their [payment link](/integrations/shopwrk-pay).
+
+For jobs created without an estimate, you can request a deposit from the job page before work starts, by email or SMS.
+
+<Note>
+  Google Calendar sync pushes scheduled jobs to your connected Google Calendar automatically, and edits flow both ways.
+</Note>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Estimates" icon="calculator" href="/workflows/estimates">
+    How quotes turn into approved work with deposits.
+  </Card>
+
+  <Card title="Team scheduling" icon="users" href="/features/team-scheduling">
+    Staff shifts, time off, and capacity planning behind the calendar.
+  </Card>
+</CardGroup>
