@@ -51,6 +51,7 @@
               "features/automations",
               "features/reports",
               "features/documents",
+              "features/campaigns",
               "features/ai-assistant",
               "features/warranties",
               "features/ai-agents"
@@ -60,6 +61,7 @@
             "group": "Integrations",
             "pages": [
               "integrations/shopwrk-pay",
+              "integrations/meta",
               "integrations/stripe-payments",
               "integrations/google-calendar",
               "integrations/social-media",
