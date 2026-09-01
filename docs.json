@@ -67,6 +67,7 @@
             "pages": [
               "settings/billing",
               "settings/branding",
+              "settings/sending-domain",
               "settings/services-catalog",
               "settings/webhooks"
             ]
