@@ -3,7 +3,7 @@ title: "Set up ShopWrk texts and calling"
 description: "Get a shop phone number, finish A2P 10DLC for texts, and set Call Flow so Chrome tabs and Work Phones ring together."
 ---
 
-ShopWrk texts and calling use one shop phone number. Customers text and call that number. You answer in Chrome or on a Work Phone, and every thread lives in Conversations.
+ShopWrk texts and calling use one shop phone number. Customers text and call that number. You answer in Chrome or on a Work Phone. Every thread lives in Conversations.
 
 ## SMS setup
 
@@ -19,7 +19,7 @@ Finish every step before you send business texts. Skipping registration is how m
 
 ### A2P 10DLC registration
 
-A2P 10DLC is the US carrier framework for business texts on a 10-digit number. Registration is required for automated or bulk SMS in the United States. Without it, carriers treat the texts like spam.
+A2P 10DLC is the US carrier rule for business texts on a 10-digit number. Registration is required for automated or bulk SMS in the United States. Without it, carriers treat the texts like spam.
 
 ShopWrk runs the registration inside that Messaging setup. You will provide:
 
@@ -88,25 +88,34 @@ Use bulk texts when you need to reach many customers at once, for promotions, se
 
 ## Call Flow
 
-Calling is set at **Settings → Calling**. Owners and admins edit Call Flow. Pick a Primary Recipient, add that person's Work Phone, choose fallbacks if you want them, then save. Reload the page. The same route should still be there.
+Go to **Settings → Calling**. Owners and admins edit Call Flow.
 
-If Call Flow is missing, turned off, or invalid, inbound calls go to ShopWrk voicemail. That is better than a silent miss.
+You will see your shop number, then **Primary recipient**. Pick the teammate who should get the first ring. Add their **Work phone** on the same page, or they will show as **Work phone needed**. Choose fallbacks if you want them, then save.
 
-### Primary Recipient and Work Phone
+If Call Flow is missing or turned off, inbound calls go to ShopWrk voicemail. That is better than a silent miss.
 
-Select one Primary Recipient. Enter that person's Work Phone on the same page.
+### Team Work Phone
+
+A Work Phone belongs to one teammate in this shop. It is the cell that rings with their Chrome tabs.
+
+Set it in either place:
+
+- **Team**, open that person, then **Work phone**.
+- **Settings → Calling**, on the person you picked for Call Flow.
+
+Call Flow cannot use a teammate as a phone target until they have a Work Phone. After you save a number, click **Test phone**. You should hear: "Your ShopWrk Work Phone is connected. Live customer calls can ring this phone."
+
+### Primary recipient and Chrome
 
 When a customer dials your shop number, ShopWrk rings every ready Chrome tab for that person and their Work Phone at the same time, for 18 seconds. A closed laptop does not delay the cell phone.
 
-A green phone icon means that Chrome tab is ready for calling.
+Keep ShopWrk open in Chrome so that person can answer in the browser.
 
 ### Press 1 on a Work Phone
 
-On the phone, ShopWrk speaks **ShopWork**, not ShopWrk spelled letter by letter. Written screens still say ShopWrk.
+When a Work Phone rings, you hear: "ShopWrk business call. Press 1 to accept."
 
-When a Work Phone rings, you hear: "ShopWork business call. Press 1 to accept." If you skip press 1, the call can land in that person's personal voicemail instead of yours.
-
-After you add a Work Phone, ShopWrk can place a test call. You should hear: "Your ShopWork Work Phone is connected. Live customer calls can ring this phone."
+Press 1. If you only swipe to answer and skip press 1, the call can land in that person's personal voicemail instead of ShopWrk voicemail.
 
 ### Fallback
 
@@ -120,7 +129,13 @@ If nobody accepts, the caller reaches ShopWrk voicemail and the call shows as mi
 
 ### After hours
 
-Call Flow uses the shop's existing business hours and timezone. After hours you can keep the normal Call Flow, ring only the Fallback Number, or send callers straight to ShopWrk voicemail.
+Call Flow uses the shop's business hours and timezone. Those same hours are used by scheduling and online booking.
+
+When the shop is closed you can pick:
+
+- **Normal call flow**: keep primary and fallback routing.
+- **Fallback only**: skip the Primary Recipient.
+- **Voicemail**: send callers straight to ShopWrk voicemail.
 
 ## Incoming calls in Chrome
 
@@ -128,21 +143,25 @@ Keep ShopWrk open in Chrome with calling ready. When a customer calls, the incom
 
 Answer in the browser, or press 1 on the Work Phone. The first accepted destination wins.
 
+The call also opens a CALL thread in Conversations, even if nobody picks up.
+
 ## Outbound calls
 
-When you start dialing from ShopWrk, Conversations creates a call thread right away. You do not wait for hangup, and you do not need recording turned on.
+Start a call from a customer thread in Conversations, or from the customer's profile. As soon as dialing begins, Conversations creates a CALL thread. You do not wait for hangup, and you do not need recording turned on.
 
-A saved customer attaches to that thread. An unknown number still gets a visible call thread.
+A saved customer attaches to that thread. An unknown number still gets a visible CALL thread.
 
 While the call is live, Conversations shows Calling, Ringing, or On a call.
 
 ## Call recording
 
-Call recording is a shop setting on **Settings → Calling**. That toggle is the only thing that starts automatic recording.
+Recording is a shop toggle, not something you start on each call.
 
-When it is on, ShopWrk records after a person answers, in Chrome or after press 1 on a Work Phone. Playback shows on the call thread in Conversations. ShopWrk then transcribes the call and writes a summary. If the transcript or summary fails, you still keep the audio and the call history.
+Go to **Settings → Calling**. If you see tabs, open **Setup**. Turn on **Call recording enabled**, then save.
 
-When it is off, the call still appears in Conversations. There is no audio, transcript, or summary.
+When it is on, ShopWrk records after a person answers, in Chrome or after press 1 on a Work Phone. Open the CALL thread in Conversations to play the audio. ShopWrk then writes a transcript and a summary on that same thread. If the transcript or summary fails, you still keep the audio and the call history.
+
+When it is off, the CALL thread still appears in Conversations. There is no audio, transcript, or summary.
 
 Ringing, no-answer attempts, and a personal carrier voicemail are not recorded as completed conversations.
 
@@ -153,11 +172,11 @@ Ringing, no-answer attempts, and a personal carrier voicemail are not recorded a
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Automations" icon="bolt" href="/features/automations">
-    Set up automatic SMS reminders for appointments, invoice follow-ups, and review requests.
+  <Card title="Conversations" icon="message-circle" href="/features/communications">
+    Text and call from Conversations. Play recordings back on the CALL thread.
   </Card>
 
-  <Card title="Communications" icon="message-circle" href="/features/communications">
-    View and reply to customer texts and calls in Conversations.
+  <Card title="Team roles" icon="users" href="/getting-started/roles-permissions">
+    Owners and admins set Call Flow. Add a Work Phone on each teammate.
   </Card>
 </CardGroup>

@@ -1,11 +1,15 @@
 ---
 title: "Manage team member roles and permissions in ShopWrk"
-description: "Understand the three built-in roles — Owner, Admin, and Technician — what each role can access, and how to invite team members to your shop."
+description: "Start with Owner, Admin, or Technician, then adjust what each person can do. Invite teammates and set a Work Phone so Call Flow can ring them."
 ---
 
-ShopWrk uses a role-based permission system to control what each team member can see and do. When you invite someone, you assign them one of three roles. Their role determines which sections of the dashboard they can access and which actions they can take. You can also adjust individual permissions on top of their role's defaults.
+When you invite someone, you assign them a starting role. That role controls which parts of the dashboard they can open. You can then turn individual permissions on or off for that person.
 
-## The three roles
+A Work Phone lives on the teammate, not on the shop number. Open **Team**, open that person, and set **Work phone**. Call Flow uses that number so Chrome and the cell ring together.
+
+## Default roles
+
+ShopWrk starts each person as Owner, Admin, or Technician. Those are defaults, not a locked list. Use the permission toggles on their Team profile when the default does not fit.
 
 <CardGroup cols={3}>
   <Card title="Owner" icon="crown" href="/getting-started/roles-permissions#owner">
@@ -13,7 +17,7 @@ ShopWrk uses a role-based permission system to control what each team member can
   </Card>
 
   <Card title="Admin" icon="shield" href="/getting-started/roles-permissions#admin">
-    Full operational access — jobs, customers, invoices, CRM — with no access to billing or owner-only settings.
+    Full day-to-day access to jobs, customers, invoices, and CRM. No billing or owner-only settings.
   </Card>
 
   <Card title="Technician" icon="wrench" href="/getting-started/roles-permissions#technician">
@@ -23,7 +27,7 @@ ShopWrk uses a role-based permission system to control what each team member can
 
 ### Owner
 
-The shop owner has unrestricted access to the entire platform. There is exactly one Owner per shop — the account created during signup. The Owner role cannot be assigned to additional team members.
+The shop owner has unrestricted access. There is exactly one Owner per shop, the account created during signup. The Owner role cannot be assigned to additional team members.
 
 Owners can do everything Admins and Technicians can do, plus:
 
@@ -33,12 +37,12 @@ Owners can do everything Admins and Technicians can do, plus:
 - Approve payments and refunds
 - Modify service pricing rules
 - Manage and publish social media accounts
-- Manage calling settings and phone numbers
+- Set Call Flow, shop phone numbers, Work Phones, and the call recording toggle
 - Manage document templates
 
 ### Admin
 
-Admins have full access to day-to-day operations. This role is suited for a shop manager or senior staff member who runs the business alongside the owner but shouldn't have access to billing or owner-level configuration.
+Admins have full access to day-to-day operations. This role fits a shop manager or senior staff member who runs the business alongside the owner, without billing or owner-level configuration.
 
 Admins can:
 
@@ -46,12 +50,12 @@ Admins can:
 - View the full calendar and schedule jobs
 - Create, send, and void invoices
 - Log cash and cheque payments, and process POS card payments
-- View and manage the full messaging inbox
+- View and manage the full Conversations inbox
 - View, add, and adjust inventory
-- Manage leads, deals, and CRM pipelines (view only for pipeline settings)
-- Make, receive, transfer, and record calls; manage call queues
+- Manage leads, deals, and CRM pipelines, with view only for pipeline settings
+- Make and receive ShopWrk calls, and edit Call Flow
 - Create and manage email campaigns
-- Create and publish social media posts (but not connect new accounts)
+- Create and publish social media posts, but not connect new accounts
 - Manage automation workflows
 - Use the AI assistant
 - Run and resolve data imports
@@ -62,13 +66,13 @@ Admins cannot:
 - Change service pricing rules
 - Manage team permissions or deactivate members
 - Connect or disconnect social media accounts
-- Configure calling phone numbers and routing settings
+- Change the shop phone number
 - Manage document templates
 - Approve logged payments
 
 ### Technician
 
-Technicians have a focused view of the dashboard. This role is intended for installers and shop staff who need to see their own work and update job statuses, without access to customer financials or shop configuration.
+Technicians have a focused view of the dashboard. This role is for installers and shop staff who need to see their own work and update job statuses, without customer financials or shop configuration.
 
 Technicians can:
 
@@ -77,7 +81,7 @@ Technicians can:
 - View their own schedule and calendar
 - View the service catalog
 - View inventory stock levels
-- Receive inbound calls, view call history, and listen to voicemails
+- Receive inbound calls on a ready Chrome tab or their Work Phone, and view their call history
 
 Technicians cannot access customers, estimates, invoices, payments, the full calendar, messaging, reports, CRM, settings, or any admin-level features.
 
@@ -87,34 +91,35 @@ The table below summarizes key permissions across roles. "Full" means create, ed
 
 | Area | Owner | Admin | Technician |
 | --- | --- | --- | --- |
-| Jobs (all) | Full | Full | — |
-| Jobs (own assigned) | Full | Full | View \+ status |
-| Customers | Full | Full | — |
-| Calendar (full) | Full | Full | — |
+| Jobs (all) | Full | Full | None |
+| Jobs (own assigned) | Full | Full | View + status |
+| Customers | Full | Full | None |
+| Calendar (full) | Full | Full | None |
 | Calendar (own schedule) | Full | Full | View |
-| Estimates | Full | Full | — |
-| Invoices | Full | Full | — |
-| Payments | Full | Log \+ POS | — |
-| Payment approval | Full | — | — |
-| Service catalog | Full | View \+ create/edit | View |
-| Service pricing | Full | — | — |
+| Estimates | Full | Full | None |
+| Invoices | Full | Full | None |
+| Payments | Full | Log + POS | None |
+| Payment approval | Full | None | None |
+| Service catalog | Full | View + create/edit | View |
+| Service pricing | Full | None | None |
 | Inventory | Full | Full | View |
-| CRM (leads, deals) | Full | Full | — |
-| Messaging (inbox) | Full | Full | — |
+| CRM (leads, deals) | Full | Full | None |
+| Messaging (inbox) | Full | Full | None |
 | Calling (make/receive) | Full | Full | Receive only |
-| Calling settings | Full | — | — |
-| Reports | Full | View | — |
-| Automations | Full | Full | — |
-| Email campaigns | Full | Full | — |
-| Social media | Full | Create \+ publish | — |
-| Social account connections | Full | — | — |
-| AI assistant | Full | Full | — |
-| Documents | Full | All except templates | — |
-| Team management | Full | View | — |
-| Settings (general) | Full | View | — |
-| Settings (billing) | Full | — | — |
-| Settings (integrations) | Full | — | — |
-| Data imports | Full | Full | — |
+| Call Flow | Full | Full | None |
+| Calling settings (shop number) | Full | None | None |
+| Reports | Full | View | None |
+| Automations | Full | Full | None |
+| Email campaigns | Full | Full | None |
+| Social media | Full | Create + publish | None |
+| Social account connections | Full | None | None |
+| AI assistant | Full | Full | None |
+| Documents | Full | All except templates | None |
+| Team management | Full | View | None |
+| Settings (general) | Full | View | None |
+| Settings (billing) | Full | None | None |
+| Settings (integrations) | Full | None | None |
+| Data imports | Full | Full | None |
 
 ## Inviting a team member
 
@@ -128,7 +133,7 @@ Only Owners can invite new team members.
     Click the **Invite member** button in the top-right corner of the Team page.
   </Step>
   <Step title="Enter their details">
-    Enter the team member's name and email address, then select their role: **Admin** or **Technician**.
+    Enter the team member's name and email address, then select their role: **Admin** or **Technician**. After they join, set **Work phone** on their Team profile if Call Flow should ring them.
   </Step>
   <Step title="Send the invitation">
     Click **Send invite**. ShopWrk emails them a link to create their account and join your shop.
@@ -143,7 +148,7 @@ The invitation link is valid for a limited time. If it expires before the team m
 
 ## Adjusting individual permissions
 
-If the default permissions for a role don't quite fit a specific team member, Owners can grant or remove individual permissions on top of that person's role.
+If the default permissions for a role do not quite fit a specific team member, Owners can grant or remove individual permissions on top of that person's role.
 
 To adjust permissions for a team member:
 
@@ -152,19 +157,21 @@ To adjust permissions for a team member:
 3. Toggle individual permissions on or off as needed.
 
 <Warning>
-  Granting a Technician individual permissions outside their role — such as customer access or invoice viewing — means they will see those sections in the dashboard. Review any overrides carefully before saving.
+  Granting a Technician individual permissions outside their role, such as customer access or invoice viewing, means they will see those sections in the dashboard. Review any overrides carefully before saving.
 </Warning>
 
 ## Deactivating a team member
 
 Owners can deactivate a team member's account from their profile on the Team page. Deactivated members cannot log in, but their historical records (jobs, time logs, assignments) are preserved.
 
+## Related
+
 <CardGroup cols={2}>
   <Card title="Account setup" icon="user-plus" href="/getting-started/account-setup">
-    Create your ShopWrk account if you haven't already.
+    Create your ShopWrk account if you have not already.
   </Card>
 
-  <Card title="Team scheduling" icon="calendar-days" href="/features/team-scheduling">
-    Set up staff schedules, timesheets, and shifts for your team.
+  <Card title="Texts and calling" icon="phone" href="/integrations/sms-voice">
+    Set Call Flow, add Work Phones, and turn on call recording.
   </Card>
 </CardGroup>
