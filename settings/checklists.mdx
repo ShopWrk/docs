@@ -3,39 +3,42 @@ title: "Create service checklists and complete them on jobs"
 description: "Build reusable templates in Settings, attach one published checklist to each service, and check off the copy that lands on each job."
 ---
 
-A checklist is the step list your techs follow for a service. You keep templates in Settings. You attach the live checklist to the service. Each new job gets its own copy of whatever is published on that service.
+A checklist is the step list your techs follow for a service. You keep reusable templates under Settings. You publish the live checklist on the service. Each new job gets its own copy of whatever is published on that service at the moment you create the job.
 
 ## Open your template library
 
-Go to **Settings → Checklist templates**. This page is your shop's template library.
+Go to **Settings → Checklist templates**.
 
-Templates are starting points you copy from. They are not assigned to a service on their own.
+Templates are starting points. They are not assigned to a service by themselves. You copy a template onto a service later.
 
-On this page you will see usage counts such as **Used on N services**. Click **New template** to open the full-screen editor. Click a template row to edit it. You can duplicate a template. Delete stays disabled while a template is already in use.
+Each template row shows how many steps it has. When a template is already in use, the row also says **Used on 2 services**, with the real number. Click **New template** to open the editor. Click a template row to edit it. You can duplicate a template from the editor. Delete stays disabled while a template is already in use.
 
 <Note>
-  ShopWrk no longer keeps a separate shop-wide checklist editor under Settings. Links that used to open one now return you to this library. Build the live checklist on the service.
+  Older shop-wide checklist links now send you here. Build the live checklist on the service.
 </Note>
 
-## Attach a checklist to a service
+## Attach one checklist to a service
 
-Each saved service owns one checklist. If the service has variants, they share that same checklist. You do not assign a checklist to a job type.
+Each saved service owns one checklist. Good, Better, and Best variants on that service all share it. You do not assign a checklist to a job type. The old checklist tab on the service is gone. Use the **Checklist** card instead.
 
 <Steps>
   <Step title="Save the service first">
-    Go to **Services** and open the service. If you are creating a new service, click **Save** before you add a checklist. ShopWrk will not attach a checklist to an unsaved service.
+    Go to **Services** and open the service. If you are creating a new one, click **Save** before you add a checklist. The card says **Save the service first** until you do.
   </Step>
   <Step title="Open the Checklist card">
-    On the service, find the **Checklist** card. It shows whether the checklist is published, still a draft, or not added yet.
+    On the service you will see a **Checklist** card. It says **All variants of this service share one checklist.** The badge shows Published, Draft, or that nothing is added yet.
   </Step>
   <Step title="Create blank or use a template">
-    Click **Create blank** to start empty, or **Use template** to copy a template into a draft on this service. **Edit** opens the full-page checklist editor for that service. **Remove** takes the checklist off the service.
+    Click **Create blank** to start empty, or **Use template** to copy a template into a draft on this service. **Edit checklist** opens the editor. **Remove** takes the checklist off the service.
+  </Step>
+  <Step title="Add steps and publish">
+    In the editor, click **Add step**. Name the step and add optional instructions. Turn on **This step is required** when the job should not complete without it. Under **Required evidence**, choose None, Photo, Video, or Photo and video. You can set a minimum number of photos or videos.
+
+    Click **Save draft** to keep working. Click **Publish** when the list is ready. New jobs only copy a published checklist. A draft stays on the service until you publish it.
   </Step>
 </Steps>
 
-New jobs only copy a published checklist. A draft stays on the service until you publish it. If the service has no published checklist, the job will show **No checklist has been added to this job.**
-
-The old checklist tab on the service is gone. Use the Checklist card.
+If the service has no published checklist, a new job shows **No checklist has been added to this job.**
 
 <Tip>
   Change the service checklist when your process changes. Jobs you already created keep the copy they received.
@@ -43,14 +46,18 @@ The old checklist tab on the service is gone. Use the Checklist card.
 
 ## What a new job copies
 
-When you click **Convert to Job** on an estimate, or **New Job** on the calendar, ShopWrk copies the published checklist from each service onto that job. That copy does not change if you later edit the service.
+When you click **Convert to Job** on an estimate, or **New Job** on the calendar, ShopWrk copies the published checklist from each service onto that job. That copy does not change if you later edit or republish the service.
 
 ## Complete items and view history
 
-Open the job detail page. Complete items there as work gets done. Customers do not see the checklist.
+Open the job. On the overview, the **Job checklist** section sits under the services list. It is not inside notes. Customers do not see it.
 
-Required photo or video steps must be finished before you can mark the job complete. Optional steps never block completion.
+Check off steps as work gets done. A completed step shows who finished it and when.
 
-If a step is later removed, it still appears under **Removed steps**. History stays on the job. Removed steps do not count toward progress.
+Required steps must be done before you can mark the job **Completed**. If a required step also needs a photo or video, attach that media first. The job shows **Incomplete requirements** or **Media required** until those are done. Optional steps never block completion.
+
+If a step is later removed from the job, it still appears under **Removed steps**. History stays on the job. Removed steps do not count toward progress.
+
+If no checklist copied onto the job, type a first step and click **Create checklist** to add one just for that job.
 
 For service setup, see [Build your service catalog](/settings/services-catalog). For converting estimates and running jobs, see [Schedule and manage jobs](/workflows/jobs).
