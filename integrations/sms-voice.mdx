@@ -3,180 +3,136 @@ title: "Configure SMS messaging and voice calling with Telnyx"
 description: "Set up your business phone number, complete A2P 10DLC registration, configure call routing and voicemail, and send bulk SMS campaigns through Telnyx."
 ---
 
-ShopWrk texts and calling use one shop phone number. Customers text and call that number. You answer in Chrome or on a Work Phone. Every thread lives in Conversations.
+ShopWrk uses Telnyx to power all SMS messaging and voice calling. You get a dedicated business phone number, two-way texting with customers, automated message templates, bulk campaigns, inbound call routing, voicemail, and call recording — managed entirely from your ShopWrk dashboard.
 
 ## SMS setup
 
-### First-time setup
+### First-time setup wizard
 
-The first time you visit **Settings → Messaging**, ShopWrk walks you through:
+The first time you visit **Settings → Messaging**, ShopWrk launches a setup wizard that walks you through:
 
-1. Registering your brand and campaign with The Campaign Registry. This is required for A2P 10DLC.
-2. Getting a phone number.
-3. Setting your messaging defaults.
+1. Registering your brand and campaign with The Campaign Registry (required for A2P 10DLC).
+2. Provisioning a phone number.
+3. Configuring your messaging defaults.
 
-Finish every step before you send business texts. Skipping registration is how messages get filtered or blocked.
+Complete all steps before sending any business SMS. Skipping registration means your messages will likely be filtered or blocked by carriers.
 
 ### A2P 10DLC registration
 
-A2P 10DLC is the US carrier rule for business texts on a 10-digit number. Registration is required for automated or bulk SMS in the United States. Without it, carriers treat the texts like spam.
+A2P 10DLC (Application-to-Person 10-Digit Long Code) is the US carrier framework that allows businesses to send SMS at scale without messages being treated as spam. Registration is mandatory for any business sending automated or bulk SMS in the United States.
 
-ShopWrk runs the registration inside that Messaging setup. You will provide:
+ShopWrk handles the registration flow inside the setup wizard. You'll provide:
 
-- Business information: legal name, address, EIN, website, and contact details.
-- Owner information: name, email, and phone of the account owner.
-- Campaign description: a short explanation of how you will use texts, such as appointment reminders, follow-ups, or promotions.
+- **Business information** — legal name, address, EIN, website, and contact details.
+- **Owner information** — name, email, and phone of the account owner.
+- **Campaign description** — a brief explanation of how you'll use SMS (appointment reminders, follow-ups, promotions).
 
-After you submit, The Campaign Registry reviews your brand and campaign. That usually takes 1 to 5 business days. ShopWrk shows the current approval status on **Settings → Messaging**.
+After you submit, The Campaign Registry reviews your brand and campaign. This typically takes 1–5 business days. ShopWrk displays the current approval status on **Settings → Messaging**.
 
 <Info>
-  Registration statuses are **Brand** and **Campaign**. Both must show **Approved** before you can send texts from ShopWrk. You can still receive inbound texts while approval is pending.
+  Registration statuses are **Brand** and **Campaign**. Both must show **Approved** before you can send outbound SMS through ShopWrk. You can still receive inbound SMS while approval is pending.
 </Info>
 
 <Warning>
-  Do not try to beat A2P 10DLC by sending a lot of texts before approval. Carriers can flag your number for good, which means a new number and another registration.
+  Do not attempt to work around A2P 10DLC by sending high volumes of messages before approval. Carriers can permanently flag your number, which would require you to provision a new number and re-register.
 </Warning>
 
-### Get a phone number
+### Provisioning your phone number
 
-After A2P registration is approved, get your shop number from **Settings → Messaging**. Pick a local area code that matches your market. Customers pick up more often when the number looks local.
+After A2P registration is approved, you can provision a Telnyx phone number directly from **Settings → Messaging**. Choose a local area code that matches your shop's market for the best response rates.
 
-If you already have a business number you want to keep, contact ShopWrk support about porting it in.
+If you have an existing business number you want to keep, contact ShopWrk support to discuss porting it in.
 
-### Compliance and trust
+### Compliance and trust center
 
 **Settings → Messaging** includes a **Compliance & Trust** panel where you can monitor:
 
 - Brand registration status
 - Campaign approval status
-- Monthly SMS usage, inbound and outbound counts, and estimated cost
+- Monthly SMS usage (inbound and outbound counts, estimated cost)
 - Opt-out compliance status
 
-#### SMS opt-out
+#### SMS opt-out compliance
 
-ShopWrk handles STOP, HELP, and UNSTOP keywords. When a customer replies STOP, they are added to your opt-out list and will not get further texts from your number. ShopWrk blocks sends to opted-out numbers.
+ShopWrk automatically handles STOP, HELP, and UNSTOP keywords per TCPA requirements. When a customer replies STOP, they're added to your opt-out list and will not receive further messages from your number. Attempting to send to an opted-out number is blocked at the platform level.
 
 You can view and manage the opt-out list from the Compliance & Trust panel.
 
 ## Messaging configuration
 
-Once your number is in place and A2P is approved, **Settings → Messaging** gives you:
+Once your number is provisioned and A2P registration is approved, **Settings → Messaging** gives you access to:
 
-- **Message templates**: saved texts for common jobs like appointment confirmations, invoice reminders, and review requests.
-- **Auto-replies**: optional automatic replies for after-hours or missed messages.
-- **Opt-out list**: customers who have opted out of SMS.
+- **Message templates** — saved message templates for common scenarios (appointment confirmations, invoice reminders, review requests).
+- **Auto-replies** — optional automatic responses for after-hours or missed messages.
+- **Opt-out list** — view and manage customers who have opted out of SMS.
 
-## Bulk text campaigns
+## Bulk messaging campaigns
 
-Use bulk texts when you need to reach many customers at once, for promotions, seasonal offers, or service reminders.
+Use bulk messaging to reach multiple customers at once — for promotions, seasonal offers, or service reminders.
 
 <Steps>
   <Step title="Build your audience">
-    Filter your customer list by things like service type, last visit date, or vehicle type.
+    Filter your customer list by criteria such as service type, last visit date, or vehicle type to target the right customers.
   </Step>
   <Step title="Write your message">
-    Use a saved template or write a custom message. Keep it short. Carrier filtering gets worse past 160 characters.
+    Use a saved template or write a custom message. Keep it concise — carrier filtering increases for messages over 160 characters.
   </Step>
   <Step title="Review and send">
-    Preview the recipient count and the message, then send. ShopWrk queues the texts and sends them from your shop number.
+    Preview the recipient count and message content before sending. ShopWrk queues and dispatches the messages through Telnyx.
   </Step>
 </Steps>
 
 <Warning>
-  Bulk SMS has to match the use cases on your approved A2P 10DLC campaign. Offers outside that category can get filtered.
+  Bulk SMS is subject to your A2P 10DLC campaign's approved use cases. Only send messages that match what you described during registration. Promotions or offers outside your approved category can trigger carrier filtering.
 </Warning>
 
-## Call Flow
+## Voice calling setup
 
-Go to **Settings → Calling**. Owners and admins edit Call Flow.
+Voice calling is configured separately at **Settings → Calling**. The settings are organized into tabs:
 
-You will see your shop number, then **Primary recipient**. Pick the teammate who should get the first ring. Add their **Work phone** on the same page, or they will show as **Work phone needed**. Choose fallbacks if you want them, then save.
+<Tabs>
+  <Tab title="General">
+    Assign which provisioned phone number handles inbound calls. Configure your business hours and what happens to calls received outside those hours.
+  </Tab>
+  <Tab title="Forwarding">
+    Create call forwarding rules to route inbound calls to specific team members or external numbers. Rules can be based on time of day, day of week, or caller type.
+  </Tab>
+  <Tab title="Queue">
+    Configure hold music, queue announcements, and maximum wait times for customers on hold.
+  </Tab>
+  <Tab title="Ring priority">
+    Set the order in which phone numbers ring when a call comes in. Drag numbers to reorder them.
+  </Tab>
+  <Tab title="Scripts">
+    Save call scripts for your team to reference during inbound calls — useful for intake questions or service upsells.
+  </Tab>
+  <Tab title="Voicemail">
+    Upload or record a custom voicemail greeting. Configure how long a call rings before going to voicemail.
+  </Tab>
+  <Tab title="Analytics">
+    View call volume, average handle time, missed call rate, and other call metrics.
+  </Tab>
+</Tabs>
 
-If Call Flow is missing or turned off, inbound calls go to ShopWrk voicemail. That is better than a silent miss.
+### Voicemail and call recording
 
-### Team Work Phone
+Voicemail recordings are stored and accessible from the Calls section of ShopWrk. Call recordings are retained for 60 days and then automatically deleted.
 
-A Work Phone belongs to one teammate in this shop. It is the cell that rings with their Chrome tabs.
+<Note>
+  Call recording laws vary by state. Some states require you to inform all parties that a call is being recorded before the recording begins. Consult your local regulations before enabling call recording.
+</Note>
 
-Set it in either place:
+### WebRTC calling
 
-- **Team**, open that person, then **Work phone**.
-- **Settings → Calling**, on the person you picked for Call Flow.
-
-Call Flow cannot use a teammate as a phone target until they have a Work Phone. After you save a number, click **Test phone**. You should hear: "Your ShopWrk Work Phone is connected. Live customer calls can ring this phone."
-
-### Primary recipient and Chrome
-
-When a customer dials your shop number, ShopWrk rings every ready Chrome tab for that person and their Work Phone at the same time, for 18 seconds. A closed laptop does not delay the cell phone.
-
-Keep ShopWrk open in Chrome so that person can answer in the browser.
-
-### Press 1 on a Work Phone
-
-When a Work Phone rings, you hear: "ShopWrk business call. Press 1 to accept."
-
-Press 1. If you only swipe to answer and skip press 1, the call can land in that person's personal voicemail instead of ShopWrk voicemail.
-
-### Fallback
-
-If the Primary Recipient does not answer, ShopWrk rings up to three fallback teammates and an optional fallback number together for 12 seconds. Ready Chrome tabs and Work Phones ring at the same time in that stage too.
-
-The first person who answers in Chrome or presses 1 on a phone wins. Everyone else stops ringing.
-
-If the Primary Recipient is already on a ShopWrk call, ShopWrk skips them and goes to fallback so the next customer is not stuck waiting.
-
-If nobody accepts, the caller reaches ShopWrk voicemail and the call shows as missed.
-
-### After hours
-
-Call Flow uses the shop's business hours and timezone. Those same hours are used by scheduling and online booking.
-
-When the shop is closed you can pick:
-
-- **Normal call flow**: keep primary and fallback routing.
-- **Fallback only**: skip the Primary Recipient.
-- **Voicemail**: send callers straight to ShopWrk voicemail.
-
-## Incoming calls in Chrome
-
-Keep ShopWrk open in Chrome with calling ready. When a customer calls, the incoming-call screen shows on every ready Chrome tab, not just one of them.
-
-Answer in the browser, or press 1 on the Work Phone. The first accepted destination wins.
-
-The call also opens a CALL thread in Conversations, even if nobody picks up.
-
-## Outbound calls
-
-Start a call from a customer thread in Conversations, or from the customer's profile. As soon as dialing begins, Conversations creates a CALL thread. You do not wait for hangup, and you do not need recording turned on.
-
-A saved customer attaches to that thread. An unknown number still gets a visible CALL thread.
-
-While the call is live, Conversations shows Calling, Ringing, or On a call.
-
-## Call recording
-
-Recording is a shop toggle, not something you start on each call.
-
-Go to **Settings → Calling**. If you see tabs, open **Setup**. Turn on **Call recording enabled**, then save.
-
-When it is on, ShopWrk records after a person answers, in Chrome or after press 1 on a Work Phone. Open the CALL thread in Conversations to play the audio. ShopWrk then writes a transcript and a summary on that same thread. If the transcript or summary fails, you still keep the audio and the call history.
-
-When it is off, the CALL thread still appears in Conversations. There is no audio, transcript, or summary.
-
-Ringing, no-answer attempts, and a personal carrier voicemail are not recorded as completed conversations.
-
-<Warning>
-  Recording rules differ by state. ShopWrk plays a disclosure when recording is on. Know the consent rules where you operate.
-</Warning>
+ShopWrk supports in-browser calling using WebRTC, so team members can make and receive calls directly from the ShopWrk dashboard without a physical phone.
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Conversations" icon="message-circle" href="/features/communications">
-    Text and call from Conversations. Play recordings back on the CALL thread.
+  <Card title="Automations" icon="bolt" href="/features/automations">
+    Set up automatic SMS reminders for appointments, invoice follow-ups, and review requests.
   </Card>
-
-  <Card title="Team roles" icon="users" href="/getting-started/roles-permissions">
-    Owners and admins set Call Flow. Add a Work Phone on each teammate.
+  <Card title="Communications" icon="message-circle" href="/features/communications">
+    View and reply to inbound customer messages in the unified inbox.
   </Card>
 </CardGroup>
