@@ -69,6 +69,7 @@
               "settings/billing",
               "settings/branding",
               "settings/services-catalog",
+              "settings/checklists",
               "settings/webhooks"
             ]
           }
