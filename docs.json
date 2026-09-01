@@ -50,6 +50,7 @@
               "features/communications",
               "features/automations",
               "features/ai-assistant",
+              "features/command-palette",
               "features/warranties"
             ]
           },
