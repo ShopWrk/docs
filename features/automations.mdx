@@ -1,141 +1,112 @@
 ---
-title: "Automate your shop's workflows and follow-ups in ShopWrk"
-description: "Build event-driven automations with a visual workflow editor, use 10 pre-built templates, and let ShopWrk handle follow-ups, reminders, and notifications."
+title: "Build automations for texts, calls, forms, and Meta leads"
+sidebarTitle: "Automations"
+description: "Create shop automations in the two-pane builder. Start from a text, a missed call, a ShopWrk form, or a Meta lead form. Add or remove tags, and ask ShopWrker to help write the steps."
+keywords: ["automations", "ShopWrker", "Meta Lead Form", "ShopWrk Form", "missed call", "Instagram DM"]
 ---
 
-ShopWrk Automations let you set up workflows that run on their own whenever something happens in your shop. When a job is completed, a review request goes out. When an invoice goes unpaid, a reminder fires. When a new lead comes in, they get a welcome text. You define the rules once and ShopWrk handles the follow-through.
+Automations run the follow-up you should not have to remember. A missed call can get a text. A Facebook lead form can create the contact and tag them. An Instagram comment can get a public reply.
 
-Open **Automations** from the sidebar to manage all your workflows.
+Open **Automations** to see what you already have. When you create one, ShopWrk opens the real builder. There is no setup screen before the canvas.
 
-## How automations work
+## The builder
 
-Each automation has three parts:
+The editor is a two-pane workspace.
 
-1. **Trigger** — the event that starts the automation (e.g., "Job Completed")
-2. **Conditions** (optional) — filters that must be true for the automation to continue (e.g., "only for PPF jobs")
-3. **Actions** — what happens when the automation runs (send SMS, send email, add a tag, log a note, etc.)
+The left pane is the canvas, where steps sit in order. The right pane is ShopWrker or the panel for the step you clicked. The right pane stays away until you open ShopWrker or click a step.
 
-When the trigger event occurs and all conditions are met, ShopWrk executes the actions in order. Delays between actions let you space out a multi-touch sequence.
-
-## Built-in templates
-
-ShopWrk ships with 10 ready-to-use templates that cover the most common follow-up workflows for auto styling shops. Start from a template to save time — you can customize everything after creating it.
+The header has back, **Builder**, **Activity**, **Settings**, publish, and **ShopWrker**.
 
 <CardGroup cols={2}>
-  <Card title="New Lead Welcome" icon="hand-wave" href="/features/automations#built-in-templates">
-    Sends a welcome SMS immediately when a new lead is captured, then follows up with a detailed email after 1 hour.
+  <Card title="ShopWrker" icon="sparkles">
+    Ask ShopWrker to draft the workflow. It has to pick a real trigger, including a specific form or call type. New automations do not get one combined "message received" trigger.
   </Card>
-  <Card title="Estimate Follow-up" icon="file-invoice" href="/features/automations#built-in-templates">
-    Follows up on sent estimates after 2 days if the customer hasn't approved yet.
-  </Card>
-  <Card title="Review Request" icon="star" href="/features/automations#built-in-templates">
-    Asks customers for a review 1 day after their job is completed.
-  </Card>
-  <Card title="Booking Confirmation" icon="calendar-check" href="/features/automations#built-in-templates">
-    Sends an instant confirmation SMS and a detailed email when a new booking request comes in.
-  </Card>
-  <Card title="Deal Won Celebration" icon="trophy" href="/features/automations#built-in-templates">
-    Sends a confirmation SMS when a deal is marked won, then a thank-you email with a referral ask 3 days later.
-  </Card>
-  <Card title="Invoice Payment Thank-You" icon="circle-check" href="/features/automations#built-in-templates">
-    Thanks customers automatically when they pay an invoice and tags them as paid.
-  </Card>
-  <Card title="Overdue Invoice Reminder" icon="clock" href="/features/automations#built-in-templates">
-    Sends a reminder SMS 3 days after an invoice is sent if unpaid, then a final email reminder 4 days after that.
-  </Card>
-  <Card title="Job Status Update" icon="wrench" href="/features/automations#built-in-templates">
-    Notifies customers via SMS whenever their job status changes and logs a note.
-  </Card>
-  <Card title="Estimate Approved Notification" icon="thumbs-up" href="/features/automations#built-in-templates">
-    Confirms an estimate approval via SMS, tags the contact, and logs a note.
-  </Card>
-  <Card title="New Contact Onboarding" icon="users" href="/features/automations#built-in-templates">
-    A 3-touch drip for new contacts: welcome SMS, onboarding email the next day, and a check-in SMS after 5 days.
+  <Card title="Write with AI" icon="pen">
+    On a message step, **Write with AI** drafts the text in that panel. The same writing rules apply here as they do when you apply a ShopWrker proposal, including titles.
   </Card>
 </CardGroup>
 
-## Available triggers
+Publish from the header when the workflow is ready. ShopWrk will not publish a Meta Lead Form or ShopWrk Form trigger until you pick exactly one form.
 
-Triggers are organized by category. You can build automations on any of the following events:
+## How a workflow is built
 
-<AccordionGroup>
-  <Accordion title="Contacts">
-    Contact Created, Contact Updated, Contact Tag Added, Contact Tag Removed, Lead Created, Lead Status Changed, Lead Converted, ShopWrk Lead Form Submitted, Meta Lead Form Submitted
-  </Accordion>
-  <Accordion title="CRM">
-    Deal Created, Deal Stage Changed, Deal Won, Deal Lost
-  </Accordion>
-  <Accordion title="Estimates">
-    Estimate Created, Estimate Sent, Estimate Approved, Estimate Declined
-  </Accordion>
-  <Accordion title="Jobs">
-    Job Created, Job Status Changed, Job Completed
-  </Accordion>
-  <Accordion title="Invoices">
-    Invoice Created, Invoice Sent, Invoice Paid
-  </Accordion>
-  <Accordion title="Messaging">
-    Message Received, Instagram Comment Received
-  </Accordion>
-  <Accordion title="Booking">
-    Booking Request Created, Booking Request Status Changed
-  </Accordion>
-  <Accordion title="Warranties">
-    Warranty Registration Due, Warranty Inspection Due
-  </Accordion>
-  <Accordion title="System">
-    Scheduled (Recurring), Manual Trigger, Custom Webhook
-  </Accordion>
-</AccordionGroup>
+Each automation has a trigger, optional filters, and actions.
 
-## Creating an automation
+The trigger is the event that starts it. Filters decide whether this contact should continue. Actions are the work: send a text, send an email, add a tag, wait, or send information to another tool you already use.
 
-<Steps>
-  <Step title="Click New Automation">
-    From the Automations page, click **New Automation** in the top-right corner.
-  </Step>
-  <Step title="Choose a starting point">
-    Select **Start from a template** to use one of the built-in workflows, or **Start blank** to build from scratch.
-  </Step>
-  <Step title="Pick a trigger (blank path only)">
-    If starting blank, select the event that will trigger this automation. Triggers are grouped by category so you can find the right one quickly.
-  </Step>
-  <Step title="Build your workflow">
-    In the visual workflow editor, add condition nodes to filter when the automation should run, then add action nodes — send SMS, send email, add a tag, add a note, or introduce a time delay.
-  </Step>
-  <Step title="Name and describe it">
-    Give the automation a clear name and optional description so your team knows what it does.
-  </Step>
-  <Step title="Activate">
-    Toggle the automation **Active** to turn it on. You can pause it at any time by toggling it off.
-  </Step>
-</Steps>
+Actions run in order. Put a wait between them when you want breathing room, like a same-day text and a next-day email.
 
-## Managing automations
+## Message and comment triggers
 
-The automations list shows every workflow you've created, with its current status (Active or Paused), trigger type, run count, and failure count.
+These are separate triggers. There is not one "message received" item for new automations.
 
-<Tabs>
-  <Tab title="Activating and pausing">
-    Use the toggle on each automation row to enable or disable it without deleting it. You can also select multiple automations and bulk enable or disable them.
-  </Tab>
-  <Tab title="Duplicating">
-    Open the three-dot menu on any automation and click **Duplicate** to create a copy. Useful for building variations of a workflow — for example, separate welcome sequences for different service types.
-  </Tab>
-  <Tab title="Viewing run history">
-    Click **View Runs** from the three-dot menu to see every time the automation has executed, including whether each run succeeded or failed and what triggered it.
-  </Tab>
-  <Tab title="Analytics">
-    Click **Analytics** in the Automations toolbar to see aggregate run stats, success rates, and failure patterns across all your automations.
-  </Tab>
-</Tabs>
+- **SMS received**
+- **Email received**
+- **Instagram DM received**
+- **Facebook message received**
+- **Instagram comment received**
+- **Facebook comment received**
+
+Reply actions are split the same way. **Reply to Instagram comment** and **Reply to Facebook comment** are two separate steps you can add.
+
+Instagram DMs and Facebook messages need the [Instagram and Messenger connection](/integrations/social-media#connect-instagram-and-messenger) on Integrations first.
+
+<Note>
+  Instagram and Messenger automations can send for up to 7 days after the customer last wrote in. After 7 days, ShopWrk will not send. See [how long you can reply](/integrations/social-media#how-long-you-can-reply).
+</Note>
+
+## Calling triggers
+
+These use **ShopWrk calling**. They are three separate triggers, not one call step with a dropdown.
+
+- **Missed inbound call** fires when an inbound call is not answered. It does not also fire Call ended.
+- **Voicemail left** fires when the caller leaves a voicemail. That is not a missed call and not a call ended.
+- **Call ended** fires after an answered call hangs up.
+
+## ShopWrk Form Submitted
+
+**ShopWrk Form Submitted** is its own trigger. You must pick exactly one ShopWrk form. There is no "any form" option, and you cannot leave it blank.
+
+If you change the form, ShopWrk asks you to confirm, then clears field mappings for the old form.
+
+Draft and test submissions do not run live automations. Only a real submission on that form does.
+
+## Meta Lead Form
+
+**Meta Lead Form** is a different trigger from ShopWrk Form Submitted. That is the name on the step. It is not labeled Facebook.
+
+You must pick exactly one Facebook lead form. Publish is blocked until that form is set.
+
+Connect [Lead Ads on Integrations](/integrations/social-media#connect-facebook-lead-ads) first. Import the form with the existing Forms Facebook wizard. Then pick that form on this trigger. Changing the form confirms and clears mappings, same as ShopWrk forms.
 
 <Tip>
-  Use the category filter on the Automations list to focus on a specific domain — for example, filter to "Jobs" to see only automations that fire on job events.
+  If the form list is empty, import the Facebook lead form in Forms first. The Lead Ads connection lives on Integrations. The import is not in this builder.
 </Tip>
 
-## Import and export
+## Tags
 
-You can export an automation as a JSON file and import it into another shop account. This is useful for sharing workflows between multiple locations or backing up a complex automation before making changes.
+**Add tag** and **Remove tag** are the tag actions. Add and remove are separate. New automations cannot replace every tag in one shot.
 
-Use the **Import** button in the Automations toolbar to upload a previously exported JSON file.
+If an older automation still used replace-tags, it will not publish until you rebuild that part with add and remove.
+
+## Webhook and send to another tool
+
+Two pieces stay in the builder for shops that already use other software.
+
+**Webhook** is a trigger. Another tool you already use can tell ShopWrk to start this automation.
+
+**Send HTTP request** is an action. It sends information out to another tool you already use. That outbound send is not called a webhook in ShopWrk.
+
+You set both on the automation itself. You do not need a separate events page for this.
+
+## Other shop events
+
+You can also start automations from everyday shop work: a new contact or lead, a deal moving, an estimate sent or approved, a job changing status, an invoice paid, a booking request, or a warranty coming due. Those sit alongside the message, calling, and form triggers above.
+
+## Turn one on, pause it, or check how it ran
+
+The automations list shows whether each workflow is on, what starts it, and whether runs are failing.
+
+Use **Builder** to edit steps. Use **Activity** to see runs. Use **Settings** for the name and whether it is on. You can pause one without deleting it.
+
+Old automations that used one combined "message received" trigger are moved onto the matching channel when ShopWrk can tell which channel it was. If it cannot tell, that step is marked incomplete so you can pick SMS, email, Instagram, or Facebook yourself.
