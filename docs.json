@@ -59,6 +59,7 @@
               "integrations/stripe-payments",
               "integrations/google-calendar",
               "integrations/social-media",
+              "integrations/site-tracker",
               "integrations/sms-voice"
             ]
           },
