@@ -9,7 +9,7 @@ A job in ShopWrk represents the actual work being performed on a vehicle. Jobs a
 
 When a customer approves an estimate, open the estimate and click **Convert to Job**. The conversion page shows a summary of the customer, vehicle, and services from the estimate so you can confirm the details before proceeding.
 
-You can optionally set the date, time, technician, and bay number at this point, or leave them blank and schedule later. Click **Convert to Job** to create the job record and be taken directly to the job detail page. If a service on the job has a published checklist, the job gets a copy of it at that moment.
+You can optionally set the date, time, technician, and bay number at this point, or leave them blank and schedule later. Click **Convert to Job** to create the job record and be taken directly to the job detail page.
 
 <Note>
   Jobs can also be created directly from the calendar without a pre-existing estimate. Open the calendar, click **New Job**, and fill in the customer, vehicle, and services manually.
@@ -46,7 +46,7 @@ Technician and bay assignment can be done at two levels:
     From the job detail page, set the primary technician and bay number for the entire job. This is the assignment shown on the calendar.
   </Tab>
   <Tab title="Per service">
-    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job — for example one tech for window tint and another for PPF.
+    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job, for example one tech for window tint and another for PPF.
   </Tab>
 </Tabs>
 
@@ -54,21 +54,15 @@ Technician and bay assignment can be done at two levels:
 
 The job overview tab gives you everything you need to track progress in real time:
 
-- **Status dropdown** — change the job status as work moves forward
-- **Services list** — see all booked services with their assigned technicians
-- **Customer notes** — notes visible to the customer in the portal
-- **Internal notes** — staff-only notes not shown to customers
-- **Materials** — if inventory tracking is enabled, the materials consumed by this job are listed here
+- **Status dropdown**, change the job status as work moves forward
+- **Services list**, see all booked services with their assigned technicians
+- **Customer notes**, notes visible to the customer in the portal
+- **Internal notes**, staff-only notes not shown to customers
+- **Materials**, if inventory tracking is enabled, the materials consumed by this job are listed here
 
 ### Checklists
 
-A new job copies the published checklist from each service at create time. You will see it on the job overview under **Job checklist**, right under the services list. If a service has no published checklist, the job shows **No checklist has been added to this job.**
-
-Check off items there as work gets done. Customers do not see the checklist. Required photo or video steps must be finished before you can mark the job complete. Optional steps never block completion.
-
-If a step is later removed, it still appears under **Removed steps** and stays in history. Removed steps do not count toward progress.
-
-Build and publish the live checklist on the service. See [Create service checklists and complete them on jobs](/settings/checklists).
+Once a job reaches **In Progress** status, any checklists assigned to this job type appear at the bottom of the Notes section. Technicians can check off items as they complete them. Checklists are not visible to customers.
 
 ## Job detail tabs
 
@@ -92,15 +86,15 @@ The job detail page has three tabs:
 
 The right-hand column of the job overview shows:
 
-- **Subtotal, tax, and total** — pulled from the services on the job
-- **Deposit status** — shows how much deposit has been collected versus required
-- **Send invoice button** — opens the new invoice form pre-populated with this job's services and customer
+- **Subtotal, tax, and total**, pulled from the services on the job
+- **Deposit status**, shows how much deposit has been collected versus required
+- **Send invoice button**, opens the new invoice form pre-populated with this job's services and customer
 
 If a deposit was set on the original estimate, you can send a deposit request to the customer by email or SMS directly from the job page.
 
 ## Marking a job complete
 
-When the work is finished, change the job status to **Completed** using the status dropdown. Required checklist items, including required photo or video steps, must be done first. Optional checklist steps do not block this. At this point you can create an invoice for the job by clicking **Send invoice** in the pricing card.
+When the work is finished, change the job status to **Completed** using the status dropdown. At this point you can create an invoice for the job by clicking **Send invoice** in the pricing card.
 
 <Warning>
   Deleting a job is permanent and cannot be undone. The **Delete** button is available at the top right of the job page. Only delete a job if you are certain it should not be invoiced or archived.
