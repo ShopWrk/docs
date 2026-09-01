@@ -3,13 +3,13 @@ title: "Schedule and manage jobs from estimate to completion"
 description: "Turn approved estimates into scheduled jobs, assign technicians and bays, track progress through status stages, and finish work using notes and checklists."
 ---
 
-A job in ShopWrk represents the actual work being performed on a vehicle. Jobs are typically created by converting an approved estimate, though you can also create a job directly from the calendar. From there you schedule it, assign your team, track time and progress, and finally mark it complete before sending an invoice.
+A job is the work on a vehicle. ShopWrk can create it when a customer approves an estimate with a deposit, when you convert an approved estimate, or when you add a job from the calendar. From there you schedule it, assign your team, track progress, and send the job's invoice through [ShopWrk Pay](/integrations/shopwrk-pay).
 
 ## How estimates become jobs
 
-When a customer approves an estimate, open the estimate and click **Convert to Job**. The conversion page shows a summary of the customer, vehicle, and services from the estimate so you can confirm the details before proceeding.
+If **Collect deposit on approval** was on, ShopWrk already created an unscheduled job when the customer approved. Open that job and set the date, technician, and bay. Do not convert the estimate again.
 
-You can optionally set the date, time, technician, and bay number at this point, or leave them blank and schedule later. Click **Convert to Job** to create the job record and be taken directly to the job detail page.
+If deposit on approval was off, open the approved estimate and click **Convert to Job**. The conversion page shows the customer, vehicle, and services so you can confirm them. You can set the date, time, technician, and bay now, or leave them blank and schedule later. Click **Convert to Job** to open the new job.
 
 <Note>
   Jobs can also be created directly from the calendar without a pre-existing estimate. Open the calendar, click **New Job**, and fill in the customer, vehicle, and services manually.
@@ -46,7 +46,7 @@ Technician and bay assignment can be done at two levels:
     From the job detail page, set the primary technician and bay number for the entire job. This is the assignment shown on the calendar.
   </Tab>
   <Tab title="Per service">
-    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job — for example one tech for window tint and another for PPF.
+    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job, for example one tech for window tint and another for PPF.
   </Tab>
 </Tabs>
 
@@ -54,11 +54,11 @@ Technician and bay assignment can be done at two levels:
 
 The job overview tab gives you everything you need to track progress in real time:
 
-- **Status dropdown** — change the job status as work moves forward
-- **Services list** — see all booked services with their assigned technicians
-- **Customer notes** — notes visible to the customer in the portal
-- **Internal notes** — staff-only notes not shown to customers
-- **Materials** — if inventory tracking is enabled, the materials consumed by this job are listed here
+- **Status dropdown.** Change the job status as work moves forward.
+- **Services list.** See all booked services with their assigned technicians.
+- **Customer notes.** Notes visible to the customer in the portal.
+- **Internal notes.** Staff-only notes not shown to customers.
+- **Materials.** If inventory tracking is on, the materials used on this job are listed here.
 
 ### Checklists
 
@@ -90,7 +90,7 @@ The right-hand column of the job overview shows:
 - Deposit status: Deposit requested, Deposit paid, or Balance due
 - **Send invoice**, which opens that job's invoice so you can send the pay link
 
-If the customer already paid a deposit from an estimate, that payment is already on this invoice. Send the remaining balance later on the same invoice through [ShopWrk Pay](/integrations/shopwrk-pay).
+If the customer already paid a deposit from an [estimate](/workflows/estimates), that payment is already on this invoice. Click **Send invoice** to send the remaining balance on the same invoice. The customer pays on **pay.shopwrk.com**. See [ShopWrk Pay](/integrations/shopwrk-pay).
 
 ## Marking a job complete
 

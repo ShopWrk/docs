@@ -1,15 +1,15 @@
 ---
 title: "Give customers self-service access with the portal"
-description: "The customer portal lets clients view their jobs, estimates, invoices, warranties, and messages through a secure magic-link login. No password required."
+description: "The customer portal lets customers view jobs, estimates, invoices, warranties, and messages with a one-time sign-in link. No password required."
 ---
 
-The ShopWrk customer portal is a branded, mobile-friendly interface your customers can access to check on their jobs, view and pay invoices, see warranty details, and message your shop, all without needing to call or email you. Access is passwordless: customers log in using a magic link sent to their email.
+The ShopWrk customer portal is a branded page your customers can open on their phone to check jobs, view and pay invoices, see warranty details, and message your shop. They log in with a one-time link sent to their email. No password.
 
 Invoice pay links go to **pay.shopwrk.com** through [ShopWrk Pay](/integrations/shopwrk-pay). Customers do not need a ShopWrk account to pay.
 
 ## How the portal works
 
-The portal lives at `/portal` and is scoped to your shop. When a customer visits the portal login page, they enter their email address and receive a one-time sign-in link. Clicking the link logs them in and takes them to their personal dashboard showing only their data.
+When a customer opens your shop's portal login page, they enter their email and receive a one-time sign-in link. Clicking the link logs them in and shows only their jobs, invoices, and messages.
 
 <Info>
   The portal must be enabled for your shop before customers can access it. Go to **Settings → Customer Portal** to turn it on and customize your branding.
@@ -53,7 +53,7 @@ There are two ways to get a customer into the portal:
 
 <Tabs>
   <Tab title="From the customer record">
-    Open any customer profile and click **Send portal link**. ShopWrk sends a magic-link email to the customer's address on file. The email includes your shop's logo and brand color.
+    Open any customer profile and click **Send portal link**. ShopWrk sends a one-time sign-in email to the customer's address on file. The email includes your shop's logo and brand color.
   </Tab>
   <Tab title="Via messaging">
     Paste your shop's portal login URL into an SMS or email from the messaging panel. You can find and copy the portal URL from **Settings → Customer Portal**. The customer enters their email on that page to receive their sign-in link.
@@ -61,12 +61,12 @@ There are two ways to get a customer into the portal:
 </Tabs>
 
 <Note>
-  Magic links expire after a short time for security. If a customer's link has expired, send them a fresh one from the customer record or ask them to request a new link from the portal login page.
+  Sign-in links expire after a short time. If a customer's link has expired, send them a fresh one from the customer record or ask them to request a new link from the portal login page.
 </Note>
 
-## Token-authenticated estimate and invoice views
+## Estimate and invoice links without a login
 
-In addition to the full portal, ShopWrk generates individual shareable pages for estimates and invoices. These pages do not require any login. They are secured by a unique token in the URL. New pay links use **pay.shopwrk.com**.
+In addition to the full portal, ShopWrk generates shareable pages for estimates and invoices. These pages do not require a login. The link itself is the access. New pay links use **pay.shopwrk.com**.
 
 | Page | What the customer can do |
 | --- | --- |
@@ -103,4 +103,4 @@ Each job has one invoice. A deposit already paid from the estimate shows on that
 
 ## Portal branding
 
-Your shop's logo and brand color are applied to the portal login page, the dashboard header, and the token-authenticated estimate and invoice views. Update these under **Settings → Branding**.
+Your shop's logo and brand color are applied to the portal login page, the dashboard header, and the estimate and invoice links. Update these under **Settings → Branding**.
