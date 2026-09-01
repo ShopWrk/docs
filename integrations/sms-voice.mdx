@@ -1,6 +1,6 @@
 ---
 title: "Set up ShopWrk texts and calling"
-description: "Get a shop phone number, finish A2P 10DLC for texts, and set Call Flow so Chrome tabs and Work Phones ring together."
+description: "Get a shop phone number, finish the texting registration ShopWrk shows, and set Call Flow so Chrome tabs and Work Phones ring together."
 ---
 
 ShopWrk texts and calling use one shop phone number. Customers text and call that number. You answer in Chrome or on a Work Phone. Every thread lives in Conversations.
@@ -9,37 +9,29 @@ ShopWrk texts and calling use one shop phone number. Customers text and call tha
 
 ### First-time setup
 
-The first time you visit **Settings → Messaging**, ShopWrk walks you through:
+If you want customer texts to actually send, go to **Settings → Messaging** and finish the registration steps ShopWrk shows there.
 
-1. Registering your brand and campaign with The Campaign Registry. This is required for A2P 10DLC.
-2. Getting a phone number.
-3. Setting your messaging defaults.
+US carriers require this once for business texts. Until it is done, outbound texts can get filtered or blocked.
 
-Finish every step before you send business texts. Skipping registration is how messages get filtered or blocked.
+ShopWrk then lets you pick a shop number and set messaging defaults on that same screen. Do the registration first.
 
-### A2P 10DLC registration
+### Finish registration
 
-A2P 10DLC is the US carrier rule for business texts on a 10-digit number. Registration is required for automated or bulk SMS in the United States. Without it, carriers treat the texts like spam.
+ShopWrk asks for the shop details carriers need. Typical items:
 
-ShopWrk runs the registration inside that Messaging setup. You will provide:
+- Legal name, address, tax ID (EIN), website, and a contact
+- Owner name, email, and phone
+- A short note on how you will use texts, such as appointment reminders, follow-ups, or promotions
 
-- Business information: legal name, address, EIN, website, and contact details.
-- Owner information: name, email, and phone of the account owner.
-- Campaign description: a short explanation of how you will use texts, such as appointment reminders, follow-ups, or promotions.
-
-After you submit, The Campaign Registry reviews your brand and campaign. That usually takes 1 to 5 business days. ShopWrk shows the current approval status on **Settings → Messaging**.
-
-<Info>
-  Registration statuses are **Brand** and **Campaign**. Both must show **Approved** before you can send texts from ShopWrk. You can still receive inbound texts while approval is pending.
-</Info>
+Submit it, then wait. Review is often 1 to 5 business days. Watch the status on **Settings → Messaging**. Both parts need to show approved before ShopWrk can send. You can still receive texts while you wait.
 
 <Warning>
-  Do not try to beat A2P 10DLC by sending a lot of texts before approval. Carriers can flag your number for good, which means a new number and another registration.
+  Do not send a pile of texts before approval. Carriers can flag the number for good, which means a new number and another registration.
 </Warning>
 
 ### Get a phone number
 
-After A2P registration is approved, get your shop number from **Settings → Messaging**. Pick a local area code that matches your market. Customers pick up more often when the number looks local.
+Get your shop number from **Settings → Messaging**. Pick a local area code that matches your market. Customers pick up more often when the number looks local.
 
 If you already have a business number you want to keep, contact ShopWrk support about porting it in.
 
@@ -60,11 +52,7 @@ You can view and manage the opt-out list from the Compliance & Trust panel.
 
 ## Messaging configuration
 
-Once your number is in place and A2P is approved, **Settings → Messaging** gives you:
-
-- **Message templates**: saved texts for common jobs like appointment confirmations, invoice reminders, and review requests.
-- **Auto-replies**: optional automatic replies for after-hours or missed messages.
-- **Opt-out list**: customers who have opted out of SMS.
+Once your number is in place and registration is approved, **Settings → Messaging** has saved **Message templates** for jobs like appointment confirmations, invoice reminders, and review requests. You can turn on **Auto-replies** for after-hours or missed messages, and manage the **Opt-out list**.
 
 ## Bulk text campaigns
 
@@ -83,7 +71,7 @@ Use bulk texts when you need to reach many customers at once, for promotions, se
 </Steps>
 
 <Warning>
-  Bulk SMS has to match the use cases on your approved A2P 10DLC campaign. Offers outside that category can get filtered.
+  Bulk texts should match what you said you would send when you registered. Offers outside that can get filtered.
 </Warning>
 
 ## Call Flow
