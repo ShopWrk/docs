@@ -1,7 +1,7 @@
 ---
 title: "Send customer email from your shop domain"
 sidebarTitle: "Sending domain"
-description: "Verify a domain you own so invoices, estimates, bookings, conversations, and campaigns send as your shop, and see which payment emails customers get."
+description: "Verify your shop domain, copy the DNS records as shown, then invoices, estimates, bookings, and conversations send from your shop."
 keywords: ["sending domain", "email domain", "custom domain", "from address", "invoices", "campaigns", "payment emails", "dns"]
 related:
   - /settings/branding
@@ -10,9 +10,11 @@ related:
   - /settings/billing
 ---
 
-Your customer should see your shop name in their inbox. Until you verify a domain, ShopWrk still sends the mail, from a shared ShopWrk address. After you verify, the From line is your shop and your domain, like **Riverside Wrap <hello@riversidewrap.com>**.
+Your customer should see your shop name in their inbox, not ShopWrk. First enter the domain you already use for the shop website. Then copy the DNS records exactly as ShopWrk shows them. After the badge says **Verified**, invoices, estimates, bookings, and conversation email send from your shop.
 
-This is on Autopilot. Open **Settings**. Under **Communications**, click **Email Domain**. Essential and Pro shops get an upgrade screen. The headline is **Send customer email from your own domain.** Change plan in **Settings → Billing**.
+Until then, ShopWrk still sends the mail from a shared ShopWrk address. Once verified, the From line looks like **Riverside Wrap <hello@riversidewrap.com>**.
+
+This is on the Autopilot plan. Open **Settings**. Under **Communications**, click **Email Domain**. Essential and Pro shops see an upgrade screen. The headline is **Send customer email from your own domain.** Change plan in **Settings → Billing**.
 
 ## Add your domain
 
@@ -20,21 +22,21 @@ The page title is **Email Domain**. The card is **Custom sending domain**.
 
 <Steps>
   <Step title="Enter a domain you own">
-    **Domain** is required. Use your shop site, like `riversidewrap.com`, or a mail host like `mail.riversidewrap.com`. The placeholder is `mail.yourshop.com`.
+    **Domain** is required. Type your shop website, like `riversidewrap.com`. The placeholder is `mail.yourshop.com`. Enter your real domain, not the placeholder. If you already send mail from a host like `mail.riversidewrap.com`, you can enter that instead.
   </Step>
   <Step title="Set the From address if you want">
     **From address** is the part before the @. It defaults to `hello`. Leave it unless you already answer mail as `jobs` or `info`.
   </Step>
   <Step title="Save">
-    Click **Save**. ShopWrk adds the domain and tells you to add DNS records next. It will not send from that domain yet.
+    Click **Save**. ShopWrk adds the domain and shows the DNS records to copy next. It will not send from that domain yet.
   </Step>
 </Steps>
 
-## Add the DNS records
+## Copy the DNS records as shown
 
 After you save, you get a **Sending as** preview, a records table, and **Verification status**.
 
-The table columns are **Type**, **Name / Host**, and **Value**. Copy each row into the DNS settings at the company that hosts your domain. Then click **Check status**.
+The table columns are **Type**, **Name / Host**, and **Value**. Open DNS settings at the company that hosts your domain. Copy each row exactly as shown. You do not need to know what the records do. Then click **Check status**.
 
 | Badge | Meaning |
 | ----- | ------- |
@@ -51,7 +53,7 @@ ShopWrk never sends from a domain that is still awaiting DNS or failed. That mai
   DNS can take a little while to catch up after you save records. If **Check status** still says **Awaiting DNS**, wait and try again. Do not delete the domain and start over unless you typed the wrong name.
 </Tip>
 
-## What sends from your domain
+## What sends from your shop
 
 Once **Verified**, all of this uses that From line:
 
@@ -62,13 +64,15 @@ Once **Verified**, all of this uses that From line:
 
 Replies still land back in ShopWrk. You do not have to change anything in Conversations.
 
+Those messages still use your logo, colors, and footer from [Branding](/settings/branding). The sending domain only changes who they are from. Payment and estimate mail uses the same ShopWrk Pay pages your customers already get.
+
 If you click **Remove domain**, a confirm dialog asks **Remove custom sending domain?** Confirming sends customer email from the shared ShopWrk address again. You can add a domain later.
 
 ## Payment and estimate emails customers get
 
-ShopWrk sends these when money or an estimate moves. Each one uses your shop name, logo, and colors from [Branding](/settings/branding). After the domain is verified, they also use your From address.
+ShopWrk emails the customer when money or an estimate moves. Each message uses your shop name, logo, and colors from [Branding](/settings/branding). After the domain is verified, they also use your From address.
 
-The message has a button. That button opens the same ShopWrk Pay page, receipt, or estimate ShopWrk already uses for that work.
+The message has a button. That button opens the same ShopWrk Pay invoice, receipt, or estimate ShopWrk already uses for that work.
 
 | When this happens | What they get | Button |
 | ----------------- | ------------- | ------ |
@@ -99,9 +103,9 @@ ShopWrk does not email them about your own payouts, bank changes, or merchant se
     You are not on Autopilot. Go to **Settings → Billing** and change plan.
   </Accordion>
   <Accordion title="The badge is still Awaiting DNS or Failed">
-    The records in the table have to match what you entered at your DNS provider. Click **Check status** after you save them. Until **Verified**, customer email keeps using the shared ShopWrk address on purpose.
+    The records in the table have to match what you entered at your DNS host. Copy them as shown, then click **Check status**. Until **Verified**, customer email keeps using the shared ShopWrk address on purpose.
   </Accordion>
-  <Accordion title="Campaigns still look like ShopWrk">
+  <Accordion title="Campaigns still show the shared ShopWrk address">
     Campaigns use the same verified domain as invoices and conversations. If the domain is not **Verified**, campaigns stay on the shared address too.
   </Accordion>
 </AccordionGroup>
