@@ -48,6 +48,7 @@
               "features/inventory",
               "features/team-scheduling",
               "features/communications",
+              "features/lead-closer",
               "features/automations",
               "features/ai-assistant",
               "features/warranties"

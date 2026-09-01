@@ -1,0 +1,118 @@
+---
+title: "Close leads over text with Lead Closer"
+sidebarTitle: "Lead Closer"
+description: "Lead Closer texts customers, follows up, takes deposits with ShopWrk Pay, and books a bay after payment. Test first, then Publish."
+keywords:
+  - "Lead Closer"
+  - "Agents"
+  - "texting"
+  - "deposits"
+  - "Playbooks"
+  - "booking"
+---
+
+Lead Closer is the ShopWrk agent that texts customers, answers questions about your services, and can take a deposit and book the job. It is not the AI chat in the sidebar. That chat helps you run the shop. Lead Closer talks to the customer.
+
+Open **Agents**, then **Lead Closer**.
+
+Overview is the setup chat. **Configure** is where you set Response Mode, turn services on, and edit Playbooks. **Knowledge** and **Learnings** sit next to each other. **Analytics** is its own tab.
+
+<Info>
+  Live Lead Closer needs ShopWrk Pay on, a shop phone number you own, and approved business texting. See [Billing](/settings/billing) if texting registration is still open.
+</Info>
+
+## Response modes
+
+**Response Mode** is how much Lead Closer is allowed to do on live texts.
+
+| Mode | What it does |
+| --- | --- |
+| Off | No reply and no draft. |
+| Draft | Writes a reply in the composer. Does not send. Does not create contacts, deals, payment requests, or bookings. |
+| Auto | Can send and close, only inside the settings you have Published, and only when the shop is ready for that work. |
+
+The first time you Publish, you pick Off, Draft, or Auto. Later Publishes keep the mode you already have unless you change it yourself.
+
+A payment that already came in still processes if Response Mode is Off. What the customer is told follows the mode. Off sends nothing. Draft writes composer text. Auto can send the confirmation.
+
+If you have not run Test, leave Auto off.
+
+## Services: Triage or Close
+
+On Configure, use **Add service**, then open the service. Pick **Triage** or **Close**. You can also choose **Do not offer**.
+
+**Triage** means Lead Closer can talk about the service and collect what you need. It cannot quote a price, send a payment link, or book.
+
+**Close** means it can take the customer through agreement, a ShopWrk Pay deposit, and booking.
+
+Variants follow the service. Include or exclude them. You do not set Triage or Close on a variant by itself.
+
+If a service is missing price, deposit rules, a Playbook, or a free bay and installer, Lead Closer will not pretend it is ready. Close does not fall back to Triage.
+
+## Playbooks, Knowledge, and Learnings
+
+A **Playbook** is sales guidance for one service. Goals, common questions, objections, proof, and follow-up notes live here. Start from a blank page, a ShopWrk starter, or a shop template. Editing a template does not rewrite Playbooks you already attached to a service.
+
+Shop prices, coverage, deposits, and schedule always beat Playbook text. If you teach an answer that fights the Playbook, that answer can help this customer now. The Playbook change waits. You will see **Current** versus **Proposed**. **Publish proposal** is separate from **Publish Playbook**.
+
+**Knowledge** is shop-wide. Warranties, house rules, and answers that are not tied to one service. Click **Add**. Knowledge is a fallback when the Playbook does not cover the question. It cannot set a price or authorize a booking.
+
+**Learnings** is the review list beside Knowledge. Proposed reply changes show up here with their source and which replies they would affect. **Approve** activates a change. **Reject** throws it out. **Revert** turns off guidance that is already live. Teaching a better answer in a conversation or in Test files a candidate. Live texts do not change until you review it.
+
+## Test versus live
+
+Test uses your unpublished settings. It does not text a real customer, take a deposit, book a bay, or write live deals. Test data is kept for 30 days, then dropped.
+
+Use Test like you would ride along with a new closer. Mark a reply **Helpful** or **Not helpful**, or suggest a better reply. That files work for review. It does not change what live customers see.
+
+**Restart** starts the Test customer over.
+
+When the draft is right, **Publish**. Publish shows what changed, what is blocked, and what is true in the shop right now, then turns the whole draft on at once. Rollback publishes an older version again. It does not unsend texts, undo payments, or pull jobs off the calendar.
+
+Follow-up count and the no-response lost stage live under Configure, **Advanced**, then **Shop policy**. You can set zero to six follow-up tries. Zero turns follow-ups off. Follow-ups above zero need a pipeline and a lost stage before Publish will go through.
+
+## When a person should take the text
+
+If the customer needs a shop answer Lead Closer does not have, Conversations pauses Lead Closer on that thread.
+
+Click **Add the answer** to teach the missing answer, then **Continue**, then choose who sends the text. Click **I'll reply myself** if you want to write it. The thread switches to **You're replying**. **Let Lead Closer reply again** puts it back on pause until you finish teaching or send.
+
+If you send while Lead Closer would still reply, you get **Send and take over** as the default, **Send and keep AI active**, or **Cancel**. Keep AI active leaves your message in the thread. Lead Closer waits for the next customer text.
+
+If the work is outside your services, mixed with work you do not offer, or something Lead Closer must not handle, it stops for that whole contact. It does not tell the customer that a person is taking over.
+
+Resume is something you do on purpose. There is no timer that hands the thread back.
+
+## Follow-ups
+
+Auto sends follow-ups inside your outbound window. Draft writes a follow-up in the composer and will not overwrite text you already typed.
+
+After the last try, Auto marks that deal lost for no response. Draft only recommends. If the customer texts back later, the deal can come back. A new inbound cancels a live follow-up.
+
+## How a booking and deposit actually land
+
+Close does not drop an invoice link in the thread.
+
+After the customer agrees, ShopWrk saves a **Booking Intent**. That is the agreement and the requested time, without holding a bay yet. Then ShopWrk Pay issues one deposit link that lasts 30 days. The amount is locked at agreement from your catalog. If the job changes, the old link is revoked and a new one is issued.
+
+When the deposit is paid, ShopWrk checks that a bay and a qualified installer are still free, then schedules the job. If you Close with no deposit, the same scheduling step runs right after agreement.
+
+Payment can land after someone else took the slot. The money is still captured. The job is not booked. A person on your shop has to pick it up. Lead Closer will not tell the customer they are booked.
+
+Google Calendar sync is extra. If Google fails, the ShopWrk booking still stands. See [Calendar](/features/calendar-booking).
+
+<Warning>
+  A 30-day deposit link does not hold the bay. Customers pay when they are ready. The schedule is checked at payment, not at the moment you sent the link.
+</Warning>
+
+## Analytics
+
+Open the **Analytics** tab on Lead Closer. Numbers come from real paid deposits and collected revenue on booked jobs, not from sample data. No-deposit bookings are not counted as primary revenue.
+
+You will see revenue, which services produced it, where leads stop, what needs attention, and results by day.
+
+## Related
+
+- [Conversations inbox](/features/communications)
+- [Calendar and bays](/features/calendar-booking)
+- [Plans that include Lead Closer](/settings/billing)
