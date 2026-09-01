@@ -67,6 +67,7 @@
             "pages": [
               "settings/billing",
               "settings/branding",
+              "settings/shopwrker",
               "settings/services-catalog",
               "settings/webhooks"
             ]
