@@ -2,31 +2,33 @@
 title: "Build automations for texts, calls, forms, and Meta leads"
 sidebarTitle: "Automations"
 description: "Create shop automations in the two-pane builder. Start from a text, a missed call, a ShopWrk form, or a Meta lead form. Add or remove tags, and ask ShopWrker to help write the steps."
-keywords: ["automations", "ShopWrker", "Meta Lead Form", "ShopWrk Form", "missed call", "Instagram DM"]
+keywords: ["automations", "ShopWrker", "Meta Lead Form", "ShopWrk Form", "missed call", "Instagram"]
 ---
 
-Automations run the follow-up you should not have to remember. A missed call can get a text. A Facebook lead form can create the contact and tag them. An Instagram comment can get a public reply.
+Automations run the follow-up you should not have to remember. A missed ShopWrk call can get a text. A Facebook lead form can create the contact and tag them. An Instagram comment can get a public reply.
 
-Open **Automations** to see what you already have. When you create one, ShopWrk opens the real builder. There is no setup screen before the canvas.
+Open **Automations** to see what you already have. When you create one, ShopWrk opens the builder. There is no setup screen before the canvas.
+
+Messaging, lead forms, and calling only fire if those pieces are already connected. [Instagram and Messenger](/integrations/social-media#connect-instagram-and-messenger) and [Facebook Lead Ads](/integrations/social-media#connect-facebook-lead-ads) start on **Settings → Integrations**. ShopWrk calling is your shop phone, not a separate phone vendor.
 
 ## The builder
 
 The editor is a two-pane workspace.
 
-The left pane is the canvas, where steps sit in order. The right pane is ShopWrker or the panel for the step you clicked. The right pane stays away until you open ShopWrker or click a step.
+The left pane is the canvas, where steps sit in order. The right pane opens when you click a step or click **ShopWrker**.
 
 The header has back, **Builder**, **Activity**, **Settings**, publish, and **ShopWrker**.
 
 <CardGroup cols={2}>
   <Card title="ShopWrker" icon="sparkles">
-    Ask ShopWrker to draft the workflow. It has to pick a real trigger, including a specific form or call type. New automations do not get one combined "message received" trigger.
+    Ask ShopWrker to draft the workflow. It has to pick a real trigger, such as Instagram Message Received, Meta Lead Form, or Missed inbound call. New automations do not get one combined message trigger.
   </Card>
   <Card title="Write with AI" icon="pen">
     On a message step, **Write with AI** drafts the text in that panel. The same writing rules apply here as they do when you apply a ShopWrker proposal, including titles.
   </Card>
 </CardGroup>
 
-Publish from the header when the workflow is ready. ShopWrk will not publish a Meta Lead Form or ShopWrk Form trigger until you pick exactly one form.
+Publish from the header when the workflow is ready. ShopWrk will not publish a Meta Lead Form or ShopWrk Form Submitted trigger until you pick exactly one form.
 
 ## How a workflow is built
 
@@ -40,16 +42,16 @@ Actions run in order. Put a wait between them when you want breathing room, like
 
 These are separate triggers. There is not one "message received" item for new automations.
 
-- **SMS received**
-- **Email received**
-- **Instagram DM received**
-- **Facebook message received**
-- **Instagram comment received**
-- **Facebook comment received**
+- **SMS Received**
+- **Email Received**
+- **Instagram Message Received**
+- **Facebook Message Received**
+- **Instagram Comment Received**
+- **Facebook Comment Received**
 
-Reply actions are split the same way. **Reply to Instagram comment** and **Reply to Facebook comment** are two separate steps you can add.
+Reply actions are split the same way. **Reply to Instagram Comment** and **Reply to Facebook Comment** are two separate steps you can add.
 
-Instagram DMs and Facebook messages need the [Instagram and Messenger connection](/integrations/social-media#connect-instagram-and-messenger) on Integrations first.
+Instagram DMs and Facebook messages need the [Instagram & Messenger connection](/integrations/social-media#connect-instagram-and-messenger) on Integrations first. Those threads also land in Conversations, on the same contact.
 
 <Note>
   Instagram and Messenger automations can send for up to 7 days after the customer last wrote in. After 7 days, ShopWrk will not send. See [how long you can reply](/integrations/social-media#how-long-you-can-reply).
@@ -77,15 +79,17 @@ Draft and test submissions do not run live automations. Only a real submission o
 
 You must pick exactly one Facebook lead form. Publish is blocked until that form is set.
 
-Connect [Lead Ads on Integrations](/integrations/social-media#connect-facebook-lead-ads) first. Import the form with the existing Forms Facebook wizard. Then pick that form on this trigger. Changing the form confirms and clears mappings, same as ShopWrk forms.
+Connect [Facebook Lead Ads on Integrations](/integrations/social-media#connect-facebook-lead-ads) first. Import the form with **Marketing → Forms → Connect Facebook**. Then pick that form on this trigger. Changing the form confirms and clears mappings, same as ShopWrk forms.
+
+When that form is submitted, the person lands in ShopWrk as a lead. The automation can then **Add Tag**, send a text, or move them through the rest of your follow-up.
 
 <Tip>
-  If the form list is empty, import the Facebook lead form in Forms first. The Lead Ads connection lives on Integrations. The import is not in this builder.
+  If the form list is empty, import the Facebook lead form in Forms first. The Facebook Lead Ads connection lives on Integrations. The import is not in this builder.
 </Tip>
 
 ## Tags
 
-**Add tag** and **Remove tag** are the tag actions. Add and remove are separate. New automations cannot replace every tag in one shot.
+**Add Tag** and **Remove Tag** are the tag actions. Add and remove are separate. New automations cannot replace every tag in one shot.
 
 If an older automation still used replace-tags, it will not publish until you rebuild that part with add and remove.
 
@@ -93,9 +97,9 @@ If an older automation still used replace-tags, it will not publish until you re
 
 Two pieces stay in the builder for shops that already use other software.
 
-**Webhook** is a trigger. Another tool you already use can tell ShopWrk to start this automation.
+**Custom Webhook** is a trigger. Another tool you already use can tell ShopWrk to start this automation.
 
-**Send HTTP request** is an action. It sends information out to another tool you already use. That outbound send is not called a webhook in ShopWrk.
+**HTTP Request** is an action. It sends information out to another tool you already use.
 
 You set both on the automation itself. You do not need a separate events page for this.
 
@@ -109,4 +113,4 @@ The automations list shows whether each workflow is on, what starts it, and whet
 
 Use **Builder** to edit steps. Use **Activity** to see runs. Use **Settings** for the name and whether it is on. You can pause one without deleting it.
 
-Old automations that used one combined "message received" trigger are moved onto the matching channel when ShopWrk can tell which channel it was. If it cannot tell, that step is marked incomplete so you can pick SMS, email, Instagram, or Facebook yourself.
+Old automations that used one combined message trigger are moved onto the matching channel when ShopWrk can tell which channel it was. If it cannot tell, that step is marked incomplete so you can pick SMS, email, Instagram, or Facebook yourself.

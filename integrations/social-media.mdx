@@ -1,84 +1,94 @@
 ---
 title: "Connect Instagram, Messenger, and Facebook Lead Ads"
 sidebarTitle: "Instagram and Messenger"
-description: "Connect Instagram DMs, Facebook Messenger, and Facebook Lead Ads from Integrations. Pick Pages, reply in Conversations, and run automations from a Meta lead form."
+description: "Connect Instagram DMs and Facebook Messenger on one Integrations card, and Facebook Lead Ads on another. Reply in Conversations, then run a Meta Lead Form automation on exactly one form."
 keywords: ["Instagram", "Messenger", "Facebook Lead Ads", "Integrations", "Conversations", "Meta"]
 ---
 
-Instagram DMs, Facebook Messenger, and Facebook Lead Ads are two separate connections in ShopWrk. You start both from **Integrations**. Do not start from Conversations. Do not start from Forms.
+There are two Meta connections in ShopWrk. One is for Instagram DMs and Facebook Messenger. The other is for Facebook Lead Ads.
 
-One connection is for DMs. The other is for lead forms. Connecting one does not turn the other on, and disconnecting one does not turn the other off.
+Start both from **Settings → Integrations**. Do not start from Conversations. Do not start from Forms.
+
+Connecting one does not turn the other on. Disconnecting one does not turn the other off.
 
 ## Two connections on Integrations
 
 <CardGroup cols={2}>
-  <Card title="Instagram and Messenger" icon="instagram">
-    Facebook Login for DMs. You pick which Facebook Pages this is for. Pages with a linked Instagram Business account get Instagram and Messenger. Pages without it connect as Messenger only, and the picker says so.
+  <Card title="Instagram & Messenger" icon="instagram">
+    Click **Connect** on this card for DMs. Facebook Login asks for messaging access. Then you pick Pages. Pages with a linked Instagram Business account show **Instagram + Messenger**. Pages without it show **Messenger only**.
   </Card>
-  <Card title="Lead Ads" icon="facebook">
-    A second Facebook Login for Facebook Lead Ads. You pick Pages again. After that, the Forms wizard still picks a Facebook lead form and maps its fields.
+  <Card title="Facebook Lead Ads" icon="facebook">
+    Click **Connect** on this second card for Facebook lead forms. You pick Pages again. After that, **Marketing → Forms** still picks the form and maps its fields.
   </Card>
 </CardGroup>
 
-You can connect the same Page for both. ShopWrk keeps them independent. A DM connection does not grant lead forms. A Lead Ads connection does not grant Instagram or Messenger.
+You can connect the same Page for both. A messaging connection does not grant lead forms. A Lead Ads connection does not grant Instagram or Messenger.
+
+## How this fits Conversations, CRM, and automations
+
+Messaging puts Instagram and Messenger threads in **Conversations**. A new person who DMs the shop shows up as a contact you can open from that thread. You can reply there even if ShopWrk calling is not set up yet.
+
+Lead Ads is the other path. When someone fills your Facebook lead form, they land in ShopWrk as a lead. Import that form under **Marketing → Forms**, then build a [Meta Lead Form](/features/automations#meta-lead-form) automation so the follow-up, tags, and texts run on their own.
 
 ## Connect Instagram and Messenger
 
 <Steps>
-  <Step title="Open Integrations">
-    Go to **Integrations**. Use the Instagram and Messenger card, not Conversations and not Forms.
+  <Step title="Open Settings, then Integrations">
+    Use the **Instagram & Messenger** card. Not Conversations. Not Forms.
   </Step>
   <Step title="Click Connect">
-    Facebook Login asks only for messaging permission. If messaging permission is missing, ShopWrk asks you to reconnect. It will not hide that behind a generic error.
+    Facebook Login asks for messaging access. If that access is missing, ShopWrk asks you to reconnect.
   </Step>
   <Step title="Pick Pages">
-    Choose which Facebook Pages this connection applies to. ShopWrk does not silently attach every Page on the account.
+    Choose which Facebook Pages this connection is for. ShopWrk only connects the Pages you pick.
   </Step>
   <Step title="Confirm what connected">
-    A Page with a linked Instagram Business account shows Instagram and Messenger. A Page without one is labeled Messenger only. Instagram does not appear unless that linked account exists.
+    A Page with a linked Instagram Business account is labeled **Instagram + Messenger**. A Page without one is labeled **Messenger only**. Instagram does not appear unless that linked account exists.
   </Step>
 </Steps>
 
-ShopWrk brings in a short stretch of recent DMs so Conversations is not empty after you connect. If that import fails, the connection still succeeds.
+ShopWrk brings in recent DMs so Conversations is not empty after you connect. If that import fails, the connection still succeeds.
 
-After you connect, you can turn extra Pages on or off for messaging from **Settings** without another Facebook Login. That lasts until the card shows **Needs reconnect**.
+After you connect, the button on the card becomes **Manage pages**. Turn extra Pages on or off there without another Facebook Login. That lasts until the card shows **Needs reconnect**.
 
 ## Connect Facebook Lead Ads
 
 <Steps>
-  <Step title="Open Integrations again">
-    Use the **Lead Ads** card. It is the second Meta entry, not the Instagram and Messenger card.
+  <Step title="Stay on Integrations">
+    Use the **Facebook Lead Ads** card. It is the second Meta entry, not Instagram & Messenger.
   </Step>
   <Step title="Click Connect">
-    Facebook Login asks for Lead Ads permission only. It does not turn on ads tools inside ShopWrk.
+    Facebook Login asks for Lead Ads access. This does not turn on ads tools inside ShopWrk.
   </Step>
   <Step title="Pick Pages">
     Choose which Pages should receive Facebook lead forms. Same picker idea as messaging. You are not connecting every Page by default.
   </Step>
-  <Step title="Pick the form in Forms">
-    After the Page is connected, the existing Forms Facebook wizard still picks a form and maps fields. Form choice does not live inside Automations.
+  <Step title="Import the form in Forms">
+    Go to **Marketing → Forms**, then **Connect Facebook**. Pick the connected Page, pick the form, map each Facebook question to a ShopWrk field, and click **Connect form**. Form choice does not live inside Automations.
   </Step>
 </Steps>
 
+Connecting a form does not pull in old Meta leads. New leads come in after the form is connected. You can import recent retrievable Meta leads later from that form's detail page.
+
 <Note>
-  A [Meta Lead Form automation](/features/automations#meta-lead-form) needs exactly one imported form. Connect Lead Ads here first, then import the form in Forms, then pick that form on the automation.
+  A [Meta Lead Form automation](/features/automations#meta-lead-form) needs exactly one imported form. Connect Facebook Lead Ads here first, then import the form in Forms, then pick that form on the automation.
 </Note>
 
 ## Needs reconnect
 
-ShopWrk keeps the connection fresh on its own. When Facebook will not refresh it, the account shows **Needs reconnect** on Integrations.
+ShopWrk keeps the connection fresh on its own. When Facebook will not refresh it, the card shows **Needs reconnect** or **Expired**.
 
 Until you reconnect, ShopWrk will not send Instagram or Messenger replies on that connection, and it will not take in new Facebook leads for that connection. Click reconnect and complete Facebook Login again.
 
 ## Reply in Conversations
 
-Once messaging is connected, Instagram and Messenger threads show up in **Conversations**.
+Once messaging is connected, Instagram and Messenger threads show up in **Conversations**. Open a thread and reply from the composer, the same way you reply to a text.
 
 ### Images and files
 
-You can send **1 to 10 images** in one Instagram or Messenger message. Eleven images are blocked before they leave ShopWrk.
+You can send **1 to 10 images** in one Instagram or Messenger message. You cannot send 11.
 
-You can send one video, one audio clip, or one file in a message. Do not mix a video with extra images. That send is rejected.
+You can send one video, one audio clip, or one file in a message. Do not mix a video with extra images. ShopWrk will not send that mix.
 
 ### How long you can reply
 
@@ -96,14 +106,14 @@ When they reply to your story, the thread shows small text in the middle: **Repl
 
 ## Disconnect one connection without losing the other
 
-On Integrations, **Disconnect** on Instagram and Messenger turns DMs off for those Pages. Lead Ads on the same Page stay on.
+On the **Instagram & Messenger** card, **Disconnect** turns DMs off for those Pages. Lead Ads on the same Page stay on.
 
-**Disconnect** on Lead Ads turns lead forms off. Instagram and Messenger on that Page stay on.
+On the **Facebook Lead Ads** card, **Disconnect** turns lead forms off. Instagram and Messenger on that Page stay on.
 
 Neither disconnect removes the other connection's Pages.
 
 ## Automations that use these connections
 
-After messaging is connected, automations can wait for an Instagram DM, a Facebook message, an Instagram comment, or a Facebook comment. See [Automations](/features/automations#message-and-comment-triggers).
+After messaging is connected, automations can wait for **Instagram Message Received**, **Facebook Message Received**, **Instagram Comment Received**, or **Facebook Comment Received**. See [message and comment triggers](/features/automations#message-and-comment-triggers).
 
-After Lead Ads is connected and a form is imported, use **Meta Lead Form** with exactly one form. See [Meta Lead Form](/features/automations#meta-lead-form).
+After Facebook Lead Ads is connected and a form is imported, use **Meta Lead Form** with exactly one form. See [Meta Lead Form](/features/automations#meta-lead-form).
