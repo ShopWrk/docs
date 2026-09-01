@@ -57,7 +57,6 @@
             "group": "Integrations",
             "pages": [
               "integrations/shopwrk-pay",
-              "integrations/stripe-payments",
               "integrations/google-calendar",
               "integrations/social-media",
               "integrations/sms-voice"

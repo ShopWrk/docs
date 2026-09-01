@@ -82,17 +82,19 @@ The job detail page has three tabs:
 
 ## Pricing, deposit, and payments
 
+Each job has one invoice. A deposit and the later balance are payment requests on that invoice, not extra invoices.
+
 The right-hand column of the job overview shows:
 
-- **Subtotal, tax, and total** — pulled from the services on the job
-- **Deposit status** — shows how much deposit has been collected versus required
-- **Send invoice button** — opens the new invoice form pre-populated with this job's services and customer
+- Subtotal, tax, and total, pulled from the services on the job
+- Deposit status: Deposit requested, Deposit paid, or Balance due
+- **Send invoice**, which opens that job's invoice so you can send the pay link
 
-If a deposit was set on the original estimate, you can send a deposit request to the customer by email or SMS directly from the job page.
+If the customer already paid a deposit from an estimate, that payment is already on this invoice. Send the remaining balance later on the same invoice through [ShopWrk Pay](/integrations/shopwrk-pay).
 
 ## Marking a job complete
 
-When the work is finished, change the job status to **Completed** using the status dropdown. At this point you can create an invoice for the job by clicking **Send invoice** in the pricing card.
+When the work is finished, change the job status to **Completed** using the status dropdown. Then click **Send invoice** in the pricing card to send the remaining balance on the job's invoice.
 
 <Warning>
   Deleting a job is permanent and cannot be undone. The **Delete** button is available at the top right of the job page. Only delete a job if you are certain it should not be invoiced or archived.
