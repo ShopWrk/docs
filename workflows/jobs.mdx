@@ -1,99 +1,150 @@
 ---
 title: "Schedule and manage jobs from estimate to completion"
-description: "Turn approved estimates into scheduled jobs, assign technicians and bays, track progress through status stages, and finish work using notes and checklists."
+description: "Turn an approved estimate into a scheduled job, edit services and discounts for that job, assign your team, and finish the work before you invoice."
 ---
 
-A job in ShopWrk represents the actual work being performed on a vehicle. Jobs are typically created by converting an approved estimate, though you can also create a job directly from the calendar. From there you schedule it, assign your team, track time and progress, and finally mark it complete before sending an invoice.
+A job is the work you are doing on a vehicle. Most jobs start when a customer approves an estimate. You can also create a job from the calendar. After that you schedule it, assign people, track progress, and mark it complete before you send an invoice.
 
 ## How estimates become jobs
 
-When a customer approves an estimate, open the estimate and click **Convert to Job**. The conversion page shows a summary of the customer, vehicle, and services from the estimate so you can confirm the details before proceeding.
+When a customer approves an estimate, open the estimate and click **Convert to Job**. You will see the customer, vehicle, and services so you can confirm them.
 
-You can optionally set the date, time, technician, and bay number at this point, or leave them blank and schedule later. Click **Convert to Job** to create the job record and be taken directly to the job detail page.
+You can set the date, time, technician, and bay now, or leave them blank and schedule later. Click **Convert to Job** to create the job and open its detail page.
+
+If the estimate had a discount, that discount comes with the job. You can change it later when you edit the job.
 
 <Note>
-  Jobs can also be created directly from the calendar without a pre-existing estimate. Open the calendar, click **New Job**, and fill in the customer, vehicle, and services manually.
+  You can also create a job from the calendar with no estimate. Open the calendar, click **New Job**, and fill in the customer, vehicle, and services.
 </Note>
 
 ## Job statuses
 
-Jobs move through the following statuses as work progresses:
+Jobs move through these statuses:
 
 | Status | Meaning |
-|---|---|
-| **Scheduled** | Job is booked with a date and time |
-| **In Progress** | Work has started on the vehicle |
-| **Pending Review** | Work is done and awaiting quality check |
-| **Completed** | Job is finished and ready for invoicing |
-| **Cancelled** | Job was cancelled before completion |
+| --- | --- |
+| **Scheduled** | Booked with a date and time |
+| **In Progress** | Work has started |
+| **Pending Review** | Work is done and waiting on a quality check |
+| **Completed** | Finished and ready to invoice |
+| **Cancelled** | Stopped before completion |
 
-Change the status at any time from the job detail page using the status dropdown at the top of the overview tab.
+Change the status from the dropdown at the top of the overview tab on the job page.
 
 ## Scheduling a job
 
-Open a job and set the scheduled date and time from the job detail page. Jobs with a scheduled date appear on the **Calendar** view, where you can see all jobs across your bays and technicians.
+Open the job and set the scheduled date and time. Jobs with a date show on the **Calendar**, where you can see work across bays and technicians.
+
+If an overnight or after-hours time looks off for your shop hours, hover the warning on the schedule. It is guidance, not a hard block.
 
 <Tip>
-  If you use Google Calendar sync, jobs with a scheduled date and time will appear in your connected Google Calendar automatically.
+  If Google Calendar is connected, jobs with a date and time show up there too.
 </Tip>
 
 ## Assigning technicians and bays
 
-Technician and bay assignment can be done at two levels:
+You can assign people two ways:
 
 <Tabs>
   <Tab title="Per job">
-    From the job detail page, set the primary technician and bay number for the entire job. This is the assignment shown on the calendar.
+    On the job detail page, set the primary technician and bay for the whole job. That is what the calendar shows.
   </Tab>
   <Tab title="Per service">
-    Within the **Services** section on the job overview, each service line has its own technician selector. Use per-service assignment when different technicians handle different parts of the job — for example one tech for window tint and another for PPF.
+    In **Services** on the job overview, each service line has its own technician. Use that when one tech does tint and another does PPF on the same car.
   </Tab>
 </Tabs>
 
+## Edit services on a job
+
+When you add a service, ShopWrk copies the name, description, duration, and price from your services list. You can change those fields on this job without changing your catalog.
+
+On **New Job** or when you edit the job, open a service line and change:
+
+- Name
+- Description
+- Duration
+- Price
+
+Click **Done** to save that line. The catalog in Settings stays the same. Only this job keeps the new values.
+
+Use this when one car needs a different price or a custom description. Checklists still sit under each service. Editing the line does not remove them.
+
+Scheduling uses the duration you saved on the job, so a longer custom service blocks the right amount of time on the calendar.
+
+## Apply a discount to a job
+
+Jobs use the same discount controls as estimates and invoices.
+
+On create or edit, turn on **Discount**. Choose a fixed dollar amount or a percentage. The job total updates right away. Tax and balance due follow that discounted total.
+
+You can turn the discount off later, or switch between dollar and percent. The math matches what you already use on estimates and invoices, so the total does not get discounted twice.
+
 ## Tracking job progress
 
-The job overview tab gives you everything you need to track progress in real time:
+The overview tab is where you watch the job:
 
-- **Status dropdown** — change the job status as work moves forward
-- **Services list** — see all booked services with their assigned technicians
-- **Customer notes** — notes visible to the customer in the portal
-- **Internal notes** — staff-only notes not shown to customers
-- **Materials** — if inventory tracking is enabled, the materials consumed by this job are listed here
+- **Status dropdown** to move the job forward
+- **Services list** with technicians and the edited prices
+- **Customer notes** that the customer can see in the portal
+- **Internal notes** for staff only
+- **Materials** when inventory tracking is on
 
 ### Checklists
 
-Once a job reaches **In Progress** status, any checklists assigned to this job type appear at the bottom of the Notes section. Technicians can check off items as they complete them. Checklists are not visible to customers.
+Once the job is **In Progress**, checklists for this job type show at the bottom of Notes. Techs check items off as they go. Customers do not see checklists.
 
 ## Job detail tabs
 
-The job detail page has three tabs:
+The job page has three tabs:
 
 <CardGroup cols={3}>
   <Card title="Overview" icon="layout-dashboard" href="/workflows/jobs#tracking-job-progress">
-    Services, notes, pricing, deposit status, payments, and checklists.
+    Services, notes, pricing, deposit, payments, and checklists.
   </Card>
+
   <Card title="Images" icon="image" href="/workflows/jobs#job-detail-tabs">
-    Before and after photos. The badge on this tab shows how many images have been uploaded.
+    Before and after photos. The badge shows how many are uploaded.
   </Card>
+
   <Card title="Documents" icon="file-text" href="/workflows/jobs#job-detail-tabs">
-    Contracts, consent forms, and other documents associated with this job.
+    Contracts, consent forms, and other files on this job.
   </Card>
 </CardGroup>
 
 ## Pricing, deposit, and payments
 
-The right-hand column of the job overview shows:
+The right column on overview shows:
 
-- **Subtotal, tax, and total** — pulled from the services on the job
-- **Deposit status** — shows how much deposit has been collected versus required
-- **Send invoice button** — opens the new invoice form pre-populated with this job's services and customer
+- **Subtotal, discount, tax, and total** from the services and discount on this job
+- **Deposit status** for how much is collected versus required
+- **Send invoice** to open a new invoice with this job's customer and services
 
-If a deposit was set on the original estimate, you can send a deposit request to the customer by email or SMS directly from the job page.
+If the estimate required a deposit, you can send a deposit request by email or text from the job page.
+
+When you send the invoice, it picks up the current service lines and discount from the job.
 
 ## Marking a job complete
 
-When the work is finished, change the job status to **Completed** using the status dropdown. At this point you can create an invoice for the job by clicking **Send invoice** in the pricing card.
+When the work is done, set the status to **Completed**. Then click **Send invoice** in the pricing card.
 
 <Warning>
-  Deleting a job is permanent and cannot be undone. The **Delete** button is available at the top right of the job page. Only delete a job if you are certain it should not be invoiced or archived.
+  Deleting a job cannot be undone. The **Delete** button is at the top right. Only delete a job if you are sure it should not be invoiced or kept.
 </Warning>
+
+<CardGroup cols={2}>
+  <Card title="Estimates" icon="file-pen" href="/workflows/estimates">
+    Build the quote that becomes this job.
+  </Card>
+
+  <Card title="Invoices and payments" icon="file-invoice-dollar" href="/workflows/invoices-payments">
+    Invoice the finished job and collect payment.
+  </Card>
+
+  <Card title="Services catalog" icon="list" href="/settings/services-catalog">
+    Change the default prices and names your jobs copy from.
+  </Card>
+
+  <Card title="Inventory" icon="boxes" href="/features/inventory">
+    See materials tied to jobs when stock tracking is on.
+  </Card>
+</CardGroup>
