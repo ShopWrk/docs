@@ -1,6 +1,6 @@
 ---
-title: "Find customers, jobs, and invoices from anywhere in ShopWrk"
-description: "Press Cmd+K or Ctrl+K to search customers, vehicles, jobs, estimates, invoices, and payments without leaving the page you are on."
+title: "Find customers, jobs, stock, and messages from anywhere in ShopWrk"
+description: "Press Cmd+K or Ctrl+K to search customers, jobs, invoices, messages, calls, voicemails, and film stock without leaving the page you are on."
 sidebarTitle: "Shop search"
 keywords:
   - "command palette"
@@ -9,21 +9,24 @@ keywords:
   - "Ctrl+K"
   - "Quick AI"
   - "shop search"
+  - "inventory"
+  - "unread messages"
+  - "missed calls"
 ---
 
-When a customer is on the phone, you do not have time to click through Contacts, Jobs, and Invoices. Press **Cmd\+K** on a Mac or **Ctrl\+K** on Windows from anywhere in ShopWrk. A search box opens on top of the page you were already on.
+When a customer is on the phone, you do not have time to click through Contacts, Jobs, and Invoices. Press **Cmd+K** on a Mac or **Ctrl+K** on Windows from anywhere in ShopWrk. A search box opens on top of the page you were already on.
 
-This is shop search. It is not a new AI chat. Click a result to open that customer, job, or invoice. Use **Quick AI** only when you want a written answer, then **Open in full chat** to continue under **AI** in the sidebar.
+This is shop search. It is not a new AI chat. Click a result to open that customer, job, invoice, conversation, or stock item. Use **Quick AI** only when you want a written answer, then **Open in full chat** to continue under **AI** in the sidebar.
 
 ## How it works
 
-After you sign in, press **Cmd\+K** on a Mac or **Ctrl\+K** on Windows. You can do this from any page.
+After you sign in, press **Cmd+K** on a Mac or **Ctrl+K** on Windows. You can do this from any page.
 
 Start typing. Results show as you type. An invoice number, phone number, VIN, or license plate jumps to the top. A misspelled customer name usually still finds them.
 
 Headings above the results show what ShopWrk understood, such as **Jobs on January 4, 2026**.
 
-Click a result to open it. A customer opens their contact page. A job opens the job. An invoice opens the invoice. Search closes and you land on that record.
+Click a result to open it. A customer opens their contact page. A job opens the job. An invoice opens the invoice. A conversation opens the thread. Search closes and you land on that record.
 
 Search looks through your current shop. You only see what your login can already open.
 
@@ -36,6 +39,9 @@ Search looks through your current shop. You only see what your login can already
 - Estimates
 - Invoices
 - Payments
+- Conversations and unread messages
+- Missed calls and voicemails
+- Film and material stock
 
 You can also search ShopWrk pages from the same box, so you do not have to hunt through the sidebar.
 
@@ -55,10 +61,40 @@ Type a name if you have one. Or type it the way you would ask whoever is sitting
 - `invoices more than 7 days overdue`
 - `largest five unpaid invoices`
 - `estimates over $2,000`
+- `unread messages`
+- `waiting for a reply`
+- `missed calls not called back`
+- `new voicemails`
+- `XPEL Stealth leftover`
+- `do we have enough film for this week's jobs`
 
 Dates follow your shop's timezone. Unpaid and overdue invoices use the due date. Estimates still waiting use the date you sent them. Completed jobs use the date the work actually finished, not the original schedule date.
 
 If the search is asking for a total, you get the matching records plus one number: outstanding invoice balance, or the combined value of estimates still waiting.
+
+## Find messages, calls, and voicemails
+
+If you want the inbox without leaving the page you are on, search for it the same way.
+
+- `unread conversations` or `unread messages` shows what still needs a look
+- A customer name plus `latest conversation` opens their most recent thread
+- `waiting for a reply` finds threads where the customer messaged last
+- `missed calls` and `missed calls not called back` surface calls that still need a return call
+- `new voicemails` lists voicemails you have not handled yet
+
+Results stay limited to people, phone numbers, and call or message status. ShopWrk does not dig through the words inside old messages for these searches. If you want that kind of answer, use **Quick AI** instead.
+
+Click a result to open the conversation or the customer. You only see calls and voicemails if your login can already open calling history.
+
+## Check film and material stock
+
+If you want to know what is on the shelf, ask shop search.
+
+Type a brand, product line, width, or shade. Results show on-hand quantity and how many usable rolls you still have. Press the **right arrow** on a family to drill into variants and physical rolls.
+
+You can also ask whether upcoming work has enough material. Try `do we have enough film for this week's jobs` or `which jobs are short on stock`. ShopWrk answers from the stock on hand and how your services use that stock. If it does not know which stock a service uses, you get a clear next step instead of a guess. Different widths and variants are not mixed into one pool.
+
+You only see inventory when your login can already open Inventory.
 
 ## Look inside a customer
 
@@ -115,5 +151,13 @@ If search finds nothing, **Ask Quick AI about…** is the next step. Nothing is 
 
   <Card title="Invoices and payments" icon="file-invoice-dollar" href="/workflows/invoices-payments">
     Open the invoice when you need the balance, due date, or payment.
+  </Card>
+
+  <Card title="Inventory" icon="boxes" href="/features/inventory">
+    Open the full stock page when you need to adjust rolls or catalog items.
+  </Card>
+
+  <Card title="Calling and texts" icon="phone" href="/features/communications">
+    Open the inbox when you want the full conversation history.
   </Card>
 </CardGroup>
