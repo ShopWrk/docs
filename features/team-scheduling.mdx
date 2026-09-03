@@ -38,7 +38,7 @@ ShopWrk emails them a join link. Phone is required. That number becomes their **
 Open an active member from the Staff table to see their profile. Tabs on the profile are **Profile**, **Access**, **Schedule**, **Stats**, and **Activity**. People with compensation permission also see **Compensation**.
 
 - **Profile** holds name, phone, and shop membership details. You can view their sign-in email when you are allowed to. You cannot change it for them. They change their own email.
-- **Access** uses the same grant editor as Team → Access. Assign groups and set this person's overrides there.
+- **Access** is this person's groups. See [Roles and permissions](/getting-started/roles-permissions).
 - **Schedule** is this person's dated shifts and time off.
 - **Stats** shows jobs completed, paid hours this week versus last week, and time per service.
 - **Activity** is the audit trail for membership and access changes.
@@ -93,9 +93,7 @@ The Staff table also has a **Job hours** column. That is time on jobs. Keep it d
 
 ## Access
 
-**Team → Access** is where you build permission groups and toggle grants. A new shop starts with locked **Administrator** and a seeded **Technician** group you can edit. You cannot rename, delete, or change grants on Administrator.
-
-Open a person from Staff and use their **Access** tab for that person's groups and overrides. Price visibility is a grant here too. Details are on [Roles and permissions](/getting-started/roles-permissions).
+**Team → Access** is where you set who can do what. See [Roles and permissions](/getting-started/roles-permissions).
 
 ## Payroll Prep
 
@@ -121,7 +119,7 @@ Staff can see only their own approved gross. They do not see rates, other people
   Do not treat Payroll Prep as a live payroll run. Salary, commission, paystubs, direct deposit, and processing pay are still coming.
 </Warning>
 
-## Jobs, Work Phone, and prices
+## Jobs and Work Phone
 
 The people on Staff are who you assign on a job. On the job, job timers are operational time. They are not pay. Paid hours come from **Timesheet**.
 
@@ -137,8 +135,6 @@ Typical reasons:
 Overnight jobs that still start and end inside shop hours do not warn. Two jobs in the same bay at the same time still refuse, as do blocked time and a busy Google Calendar. Cross-shop schedule conflicts are ignored on purpose.
 
 ShopWrk calling and texts for this shop use each person's **Work Phone** from the invite.
-
-Selling-price visibility is a grant on **Team → Access**. Leave it off a technician group if they should not see prices. The default Technician group can still see inventory retail price for the work they do. Costs, valuation, and margin stay hidden unless you grant those separately.
 
 ## What is not live yet
 
