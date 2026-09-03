@@ -1,8 +1,8 @@
 ---
 title: "Tell ShopWrker how your shop works"
-description: "Add shop memory and personal notes in Settings so ShopWrker remembers them in chat. Keep longer files in Knowledge."
+description: "Add shop facts and personal notes in Settings so ShopWrker remembers them in chat. Keep longer files in the assistant knowledge library."
 sidebarTitle: "ShopWrker"
-keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings", "knowledge"]
+keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings"]
 ---
 
 If you want ShopWrker to remember shop rules, go to **Settings → AI & Automation → ShopWrker → Memory**.
@@ -11,15 +11,17 @@ Save them once. ShopWrker uses that list when you chat on **AI**, and when ShopW
 
 If you still have an old Memory bookmark under **AI**, ShopWrk sends you to this settings screen.
 
-## Memory vs Knowledge
+## Memory vs other knowledge
 
-These are two different places.
+These are different places. Do not mix the names.
 
-**Memory** is this tab. Short shop rules, plus notes that are only about you.
+**Memory** is this tab. Short shop facts, plus notes that are only about you.
 
-**Knowledge** is the document library. It is not nested under Memory. Click **Agents** in the sidebar, then **Knowledge**. Put price sheets, PDFs, film spec sheets, and longer writeups there. ShopWrker looks those documents up when a question matches.
+The **knowledge library** is the files the assistant can read. Put price sheets, PDFs, film spec sheets, and longer writeups there. See [AI assistant](/features/ai-assistant).
 
-If ShopWrker should answer from a short rule without opening a file, put it on **Memory**. If it is a document someone would print or attach, put it in **Knowledge**.
+**Lead Closer Knowledge (this agent only)** is that agent's playbook knowledge. It is not this Memory list. See [Lead Closer](/features/lead-closer).
+
+If ShopWrker should answer from a short rule without opening a file, put it on **Memory**. If it is a document someone would print or attach, put it in the knowledge library.
 
 ## Shop memory
 
@@ -59,14 +61,6 @@ If ShopWrker needs a yes or a choice from you, it asks in the same chat box. You
 **Ask Permission** shows you the change and waits. ShopWrker does not send a message, reschedule a job, or edit shop data until you approve.
 
 **Autonomous** lets ShopWrker do those actions without asking. Use that only if you already trust it.
-
-## MCP
-
-The **MCP** tab is not ready yet. Skip it.
-
-## Dashboards
-
-ShopWrker cannot change the live **Dashboard** under **Overview**. If you ask it to build a dashboard, you may get a file under **Artifacts**. That file is not the dashboard your shop uses day to day.
 
 <Card title="Talk to ShopWrker" icon="sparkles" href="/features/ai-assistant">
   Open **AI** in the sidebar to chat with the facts you saved here.

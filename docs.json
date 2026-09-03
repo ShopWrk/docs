@@ -121,6 +121,11 @@
       "source": "/settings/webhooks",
       "destination": "/settings/billing",
       "permanent": true
+    },
+    {
+      "source": "/integrations/meta",
+      "destination": "/integrations/social-media",
+      "permanent": true
     }
   ]
 }

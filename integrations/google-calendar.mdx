@@ -7,16 +7,18 @@ ShopWrk sends your schedule to Google Calendar. When you connect, every job, blo
 
 The practical rule: make schedule changes in ShopWrk, not in Google.
 
+Shop calendar, bays, blocked time, buffer time, and booking rules live on [Calendar and booking](/features/calendar-booking).
+
 ## Connect your shop calendar
 
 Go to **Settings → Integrations**, find the **Google Calendar** card, and click **Connect**.
 
 <Steps>
-  <Step title="Click 'Connect Google Calendar'">
-    ShopWrk redirects you to Google's OAuth consent screen. Sign in with the Google account that owns the calendar you want to use.
+  <Step title="Click Connect">
+    ShopWrk opens Google sign-in. Sign in with the Google account that owns the calendar you want to use.
   </Step>
-  <Step title="Grant calendar permissions">
-    Approve read and write access so ShopWrk can create, update, and delete events on your behalf.
+  <Step title="Allow calendar access">
+    Allow ShopWrk to add and update events on that calendar.
   </Step>
   <Step title="Confirm the connection">
     You'll be returned to ShopWrk. The Google Calendar section shows a **Connected** badge and the name of the linked calendar.
@@ -24,7 +26,7 @@ Go to **Settings → Integrations**, find the **Google Calendar** card, and clic
 </Steps>
 
 <Note>
-  ShopWrk syncs to whichever calendar Google selects by default for the account you authorized. If you need to use a specific calendar, make sure it's the primary calendar on that Google account, or create a dedicated calendar and set it as default before connecting.
+  ShopWrk syncs to whichever calendar Google selects by default for the account you signed in with. If you need to use a specific calendar, make sure it's the primary calendar on that Google account, or create a dedicated calendar and set it as default before connecting.
 </Note>
 
 ## What syncs
@@ -51,46 +53,11 @@ Changes you make to a job in ShopWrk (rescheduling, reassigning, or cancelling) 
 
 After your shop calendar is connected, you can optionally sync each technician's assigned jobs to their personal Google Calendar.
 
-In the **Technician Calendars** section, each team member on your roster is listed. Click **Connect** next to a technician's name to send them a Google OAuth link. Once they authorize it, their assigned jobs appear on their personal Google Calendar.
+In the **Technician Calendars** section, each team member on your roster is listed. Click **Connect** next to a technician's name. They sign in with Google. Once they allow access, their assigned jobs appear on their personal Google Calendar.
 
 <Tip>
   This is useful for mobile technicians who check their phone calendar throughout the day. They see only their own jobs, not the full shop schedule.
 </Tip>
-
-## Technician calendar access in ShopWrk
-
-Separately from the Google sync, you can also control what technicians see inside ShopWrk's own calendar view. In the **Technician Calendar Access** section of **Settings → Calendar**, toggle each technician between:
-
-- **Full shop calendar** — they see all jobs across all bays and technicians.
-- **Own schedule only** — they see only jobs assigned to them.
-
-This setting affects the ShopWrk in-app view and does not change what syncs to Google Calendar.
-
-## Scheduling rules and buffer time
-
-The top of **Settings → Calendar** contains scheduling configuration that affects how ShopWrk handles bookings, including online booking requests from customers.
-
-<Tabs>
-  <Tab title="Buffer time">
-    Add padding around each job to give technicians time to prepare and clean up:
-
-    - **Before job** — minutes blocked before the job start time (0–120 min).
-    - **After job** — minutes blocked after the job end time (0–120 min, default 15 min).
-  </Tab>
-  <Tab title="Scheduling rules">
-    - **Minimum notice** — how many hours in advance a booking must be made (0 = same day).
-    - **Max advance days** — how far ahead customers can book (7–365 days, default 90).
-    - **Allow double booking** — lets multiple jobs overlap in the same bay.
-    - **Allow overbooking** — ignores all scheduling conflicts entirely. Use with caution.
-  </Tab>
-  <Tab title="Display preferences">
-    Customize the ShopWrk calendar view:
-
-    - **Default view** — day, week, or month.
-    - **Time slot increment** — 15, 30, or 60 minutes.
-    - **Calendar start / end hour** — the first and last hour visible on the grid.
-  </Tab>
-</Tabs>
 
 ## Sync status and troubleshooting
 
@@ -100,10 +67,10 @@ When your shop calendar is connected, a **Sync Status** panel shows:
 - **Pending** — events queued for sync.
 - **Failed** — events that could not be synced.
 
-If failed events appear, click **Retry Failed Events** to try the sync again. If failures persist, disconnect and reconnect your Google Calendar to refresh the authorization token.
+If failed events appear, click **Retry Failed Events** to try the sync again. If failures persist, disconnect and **Reconnect** your Google Calendar.
 
 <Warning>
-  If ShopWrk shows a **Needs Reconnect** badge on your calendar connection, your authorization has expired. Click **Reconnect** and complete the Google OAuth flow again. No calendar data is lost.
+  If ShopWrk shows a **Needs Reconnect** badge on your calendar connection, click **Reconnect** and complete Google sign-in again. No calendar data is lost.
 </Warning>
 
 ## Disconnecting
