@@ -28,7 +28,8 @@
               "introduction",
               "getting-started/account-setup",
               "getting-started/onboarding",
-              "getting-started/roles-permissions"
+              "getting-started/roles-permissions",
+              "getting-started/first-job"
             ]
           },
           {
@@ -48,17 +49,25 @@
               "features/inventory",
               "features/team-scheduling",
               "features/communications",
+              "features/lead-closer",
               "features/automations",
               "features/ai-assistant",
-              "features/warranties"
+              "features/command-palette",
+              "features/warranties",
+              "features/reports",
+              "features/documents",
+              "features/campaigns",
+              "features/ai-agents",
+              "features/forms"
             ]
           },
           {
             "group": "Integrations",
             "pages": [
-              "integrations/stripe-payments",
+              "integrations/shopwrk-pay",
               "integrations/google-calendar",
               "integrations/social-media",
+              "integrations/site-tracker",
               "integrations/sms-voice"
             ]
           },
@@ -67,7 +76,11 @@
             "pages": [
               "settings/billing",
               "settings/branding",
+              "settings/sending-domain",
+              "settings/shopwrker",
               "settings/services-catalog",
+              "settings/checklists",
+              "settings/data-management",
               "settings/webhooks"
             ]
           }
@@ -98,5 +111,12 @@
   },
   "fonts": {
     "family": "Montserrat"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/integrations/stripe-payments",
+      "destination": "/integrations/shopwrk-pay",
+      "permanent": true
+    }
+  ]
 }

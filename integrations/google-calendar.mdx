@@ -3,11 +3,13 @@ title: "Sync your shop's jobs and schedule with Google Calendar"
 description: "Connect Google Calendar to automatically mirror your jobs, blocked time, and consultations so your shop schedule stays in sync wherever your team works."
 ---
 
-ShopWrk can sync your schedule to Google Calendar in real time. When you connect, every job, blocked time slot, and consultation you create in ShopWrk appears as a Google Calendar event — and updates you make in either place are reflected in the other. Individual technicians can also connect their own Google Calendars to receive their personal job assignments.
+ShopWrk sends your schedule to Google Calendar. When you connect, every job, blocked time slot, and consultation you create in ShopWrk appears as a Google Calendar event, and ShopWrk keeps those events updated as plans change. Events created directly in Google Calendar appear in ShopWrk only as read-only overlays used for availability. Individual technicians can also connect their own Google Calendars to receive their personal job assignments.
+
+The practical rule: make schedule changes in ShopWrk, not in Google.
 
 ## Connect your shop calendar
 
-Go to **Settings → Calendar** and scroll to the **Google Calendar** section.
+Go to **Settings → Integrations**, find the **Google Calendar** card, and click **Connect**.
 
 <Steps>
   <Step title="Click 'Connect Google Calendar'">
@@ -33,15 +35,17 @@ Once connected, the following ShopWrk items are mirrored to Google Calendar:
   <Card title="Jobs" icon="wrench" href="/workflows/jobs">
     Customer name, vehicle, and service details appear in the event description.
   </Card>
+
   <Card title="Blocked time" icon="ban" href="/features/calendar-booking">
     Lunch breaks, meetings, and time off are blocked on the calendar.
   </Card>
+
   <Card title="Consultations" icon="calendar-check" href="/features/calendar-booking">
     Customer consultation appointments sync with full details.
   </Card>
 </CardGroup>
 
-Changes you make to a job in ShopWrk (rescheduling, reassigning, or cancelling) update the corresponding Google Calendar event automatically. Deleting an event from Google Calendar does not delete the job in ShopWrk, but ShopWrk will stop updating that event.
+Changes you make to a job in ShopWrk (rescheduling, reassigning, or cancelling) update the corresponding Google Calendar event automatically. Deleting a linked event in Google Calendar does not delete the ShopWrk job; make schedule changes in ShopWrk so both stay accurate.
 
 ## Technician calendars
 
@@ -96,7 +100,7 @@ When your shop calendar is connected, a **Sync Status** panel shows:
 - **Pending** — events queued for sync.
 - **Failed** — events that could not be synced.
 
-If failed events appear, click **Retry Failed** to re-attempt the sync. If failures persist, disconnect and reconnect your Google Calendar to refresh the authorization token.
+If failed events appear, click **Retry Failed Events** to try the sync again. If failures persist, disconnect and reconnect your Google Calendar to refresh the authorization token.
 
 <Warning>
   If ShopWrk shows a **Needs Reconnect** badge on your calendar connection, your authorization has expired. Click **Reconnect** and complete the Google OAuth flow again. No calendar data is lost.

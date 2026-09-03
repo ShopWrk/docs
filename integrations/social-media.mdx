@@ -1,110 +1,119 @@
 ---
-title: "Post to social media and track analytics from ShopWrk"
-description: "Connect Meta, TikTok, and Google Business to schedule posts, publish content, and view engagement analytics without leaving your ShopWrk dashboard."
+title: "Connect Instagram, Messenger, and Facebook Lead Ads"
+sidebarTitle: "Instagram and Messenger"
+description: "Connect Instagram DMs and Facebook Messenger on one Integrations card, and Facebook Lead Ads on another. Reply in Conversations, then run a Meta Lead Form automation on exactly one form."
+keywords: ["Instagram", "Messenger", "Facebook Lead Ads", "Integrations", "Conversations", "Meta"]
 ---
 
-ShopWrk's social media tools let you manage your shop's online presence from one place. Connect your accounts, compose posts with AI-assisted captions and hashtags, schedule them in advance, and review performance metrics — all without switching between apps.
+There are two Meta connections in ShopWrk. One is for Instagram DMs and Facebook Messenger. The other is for Facebook Lead Ads.
 
-## Connect your social accounts
+Start both from **Settings → Integrations**. Do not start from Conversations. Do not start from Forms.
 
-Go to **Settings → Social Accounts** to link your platforms.
+Connecting one does not turn the other on. Disconnecting one does not turn the other off.
+
+## Two connections on Integrations
 
 <CardGroup cols={2}>
-  <Card title="Meta (Facebook & Instagram)" icon="facebook" href="/integrations/social-media">
-    Connect your Facebook Page and linked Instagram Business account through a single Meta OAuth flow.
+  <Card title="Instagram & Messenger" icon="instagram">
+    Click **Connect** on this card for DMs. Facebook Login asks for messaging access. Then you pick Pages. Pages with a linked Instagram Business account show **Instagram + Messenger**. Pages without it show **Messenger only**.
   </Card>
-  <Card title="TikTok" icon="video" href="/integrations/social-media">
-    Publish short-form video content to your TikTok account.
-  </Card>
-  <Card title="Google Business" icon="map-pin" href="/integrations/social-media">
-    Post updates directly to your Google Business Profile.
+  <Card title="Facebook Lead Ads" icon="facebook">
+    Click **Connect** on this second card for Facebook lead forms. You pick Pages again. After that, **Marketing → Forms** still picks the form and maps its fields.
   </Card>
 </CardGroup>
 
-### Connecting Meta (Facebook and Instagram)
+You can connect the same Page for both. A messaging connection does not grant lead forms. A Lead Ads connection does not grant Instagram or Messenger.
 
-Meta's Instagram Business publishing requires a connected Facebook Page. ShopWrk handles this through a single OAuth connection.
+## How this fits Conversations, CRM, and automations
+
+Messaging puts Instagram and Messenger threads in **Conversations**. A new person who DMs the shop shows up as a contact you can open from that thread. You can reply there even if ShopWrk calling is not set up yet.
+
+Lead Ads is the other path. When someone fills your Facebook lead form, they land in ShopWrk as a lead. Import that form under **Marketing → Forms**, then build a [Meta Lead Form](/features/automations#meta-lead-form) automation so the follow-up, tags, and texts run on their own.
+
+## Connect Instagram and Messenger
 
 <Steps>
-  <Step title="Click 'Connect' on the Meta card">
-    You'll be redirected to Facebook to log in and choose which Page to connect.
+  <Step title="Open Settings, then Integrations">
+    Use the **Instagram & Messenger** card. Not Conversations. Not Forms.
   </Step>
-  <Step title="Grant all requested permissions">
-    ShopWrk needs permission to manage your Page posts and, if applicable, your linked Instagram Business account. Decline any permission and that platform won't be available for publishing.
+  <Step title="Click Connect">
+    Facebook Login asks for messaging access. If that access is missing, ShopWrk asks you to reconnect.
   </Step>
-  <Step title="Confirm both accounts appear">
-    After completing OAuth, ShopWrk shows separate entries for your Facebook Page and Instagram Business account, each with a **Connected** badge.
+  <Step title="Pick Pages">
+    Choose which Facebook Pages this connection is for. ShopWrk only connects the Pages you pick.
+  </Step>
+  <Step title="Confirm what connected">
+    A Page with a linked Instagram Business account is labeled **Instagram + Messenger**. A Page without one is labeled **Messenger only**. Instagram does not appear unless that linked account exists.
   </Step>
 </Steps>
 
-<Note>
-  Instagram publishing through the Meta API requires an Instagram Business or Creator account linked to a Facebook Page. Personal Instagram accounts are not supported.
-</Note>
+ShopWrk brings in recent DMs so Conversations is not empty after you connect. If that import fails, the connection still succeeds.
 
-### Connecting TikTok and Google Business
+After you connect, the button on the card becomes **Manage pages**. Turn extra Pages on or off there without another Facebook Login. That lasts until the card shows **Needs reconnect**.
 
-For TikTok and Google Business, click **Connect** next to the platform. You'll go through that platform's OAuth flow and return to ShopWrk once authorized.
-
-### Account statuses
-
-| Status | Meaning |
-|--------|---------|
-| Connected | Active and ready to publish |
-| Needs Reconnect | Authorization expired — click Reconnect |
-| Expired | Token has lapsed — reconnect to restore access |
-
-If an account shows **Needs Reconnect** or **Expired**, posts scheduled to that account will not publish until you reconnect.
-
-## Creating and scheduling posts
-
-Go to **Marketing → Social Planner** and click **New Post**, or navigate to **Marketing → Social → Create Post**.
+## Connect Facebook Lead Ads
 
 <Steps>
-  <Step title="Write your caption">
-    Type your post copy in the caption field. ShopWrk shows a live platform preview so you can see how the post will look on each channel.
+  <Step title="Stay on Integrations">
+    Use the **Facebook Lead Ads** card. It is the second Meta entry, not Instagram & Messenger.
   </Step>
-  <Step title="Add media">
-    Upload images or video. Each platform has its own format requirements — ShopWrk warns you if an uploaded file doesn't meet the target platform's specs.
+  <Step title="Click Connect">
+    Facebook Login asks for Lead Ads access. This does not turn on ads tools inside ShopWrk.
   </Step>
-  <Step title="Select target accounts">
-    Choose one or more connected accounts to publish to. You can post the same content to multiple platforms at once.
+  <Step title="Pick Pages">
+    Choose which Pages should receive Facebook lead forms. Same picker idea as messaging. You are not connecting every Page by default.
   </Step>
-  <Step title="Schedule or publish">
-    - **Publish now** — sends the post immediately to all selected accounts.
-    - **Schedule** — pick a date and time. The post appears in the Social Planner calendar and publishes automatically at the chosen time.
+  <Step title="Import the form in Forms">
+    Go to **Marketing → Forms**, then **Connect Facebook**. Pick the connected Page, pick the form, map each Facebook question to a ShopWrk field, and click **Connect form**. Form choice does not live inside Automations.
   </Step>
 </Steps>
 
-### AI caption and hashtag tools
-
-The post composer includes AI-powered tools to help you write content faster:
-
-- **Generate caption** — describe your post (for example, "front window tint on a black Tesla Model 3") and the AI drafts a ready-to-publish caption.
-- **Suggest hashtags** — generates relevant hashtags based on your caption and auto-styling niche.
-- **Generate image** — creates a social media graphic using AI if you don't have a photo to attach.
-
-<Tip>
-  The AI strategist is trained on auto-styling content. Giving it specific details — film type, vehicle make, finish result — produces more useful output than a generic prompt.
-</Tip>
-
-### Draft saving
-
-Posts are auto-saved as drafts while you compose them. If you leave the page before scheduling or publishing, your draft is waiting in the Social Planner when you return.
-
-## Social Planner calendar
-
-The Social Planner at **Marketing → Social Planner** shows all your scheduled and published posts in a calendar view. Click any post to edit it, reschedule it, or view its performance after publishing.
-
-## Analytics
-
-Go to **Marketing → Social → Analytics** to view aggregated engagement data across your connected accounts. The default view covers the last 30 days and shows metrics by platform.
-
-Metrics available include impressions, reach, engagement, and post-level performance. Use this view to identify which content types and posting times resonate with your audience.
+Connecting a form does not pull in old Meta leads. New leads come in after the form is connected. You can import recent retrievable Meta leads later from that form's detail page.
 
 <Note>
-  Analytics data is pulled from each platform's API and may be delayed by up to 24 hours depending on the platform.
+  A [Meta Lead Form automation](/features/automations#meta-lead-form) needs exactly one imported form. Connect Facebook Lead Ads here first, then import the form in Forms, then pick that form on the automation.
 </Note>
 
-## Disconnecting an account
+## Needs reconnect
 
-In **Settings → Social Accounts**, click **Disconnect** next to any account. Existing published posts are not affected. Scheduled posts targeting only that account will not publish after disconnection.
+ShopWrk keeps the connection fresh on its own. When Facebook will not refresh it, the card shows **Needs reconnect** or **Expired**.
+
+Until you reconnect, ShopWrk will not send Instagram or Messenger replies on that connection, and it will not take in new Facebook leads for that connection. Click reconnect and complete Facebook Login again.
+
+## Reply in Conversations
+
+Once messaging is connected, Instagram and Messenger threads show up in **Conversations**. Open a thread and reply from the composer, the same way you reply to a text.
+
+### Images and files
+
+You can send **1 to 10 images** in one Instagram or Messenger message. You cannot send 11.
+
+You can send one video, one audio clip, or one file in a message. Do not mix a video with extra images. ShopWrk will not send that mix.
+
+### How long you can reply
+
+Meta limits how long a shop can message someone after they last wrote in.
+
+- For **24 hours** after their last message, you can reply normally from Conversations.
+- From **24 hours to 7 days**, you and your [automations](/features/automations) can still send. After 7 days, ShopWrk will not send.
+- AI replies only work in the first 24 hours. If that window is closed, ShopWrk skips the send and shows why.
+
+### Shared posts and stories
+
+When a customer shares an Instagram post or reel in a DM, ShopWrk shows a preview image if Facebook provided one, plus a title. Click it to open the post on Instagram. If there is no image, you get a simple link, not an empty card.
+
+When they reply to your story, the thread shows small text in the middle: **Replied to your story**. When they mention the shop in a story, it shows **Mentioned you in a story**. If they also typed words, those sit in a normal bubble. ShopWrk does not play the story in the thread.
+
+## Disconnect one connection without losing the other
+
+On the **Instagram & Messenger** card, **Disconnect** turns DMs off for those Pages. Lead Ads on the same Page stay on.
+
+On the **Facebook Lead Ads** card, **Disconnect** turns lead forms off. Instagram and Messenger on that Page stay on.
+
+Neither disconnect removes the other connection's Pages.
+
+## Automations that use these connections
+
+After messaging is connected, automations can wait for **Instagram Message Received**, **Facebook Message Received**, **Instagram Comment Received**, or **Facebook Comment Received**. See [message and comment triggers](/features/automations#message-and-comment-triggers).
+
+After Facebook Lead Ads is connected and a form is imported, use **Meta Lead Form** with exactly one form. See [Meta Lead Form](/features/automations#meta-lead-form).

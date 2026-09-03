@@ -1,167 +1,91 @@
 ---
-title: "Manage team member roles and permissions in ShopWrk"
-description: "Understand the three built-in roles — Owner, Admin, and Technician — what each role can access, and how to invite team members to your shop."
+title: "Manage permission groups and team access in ShopWrk"
+description: "Invite staff with email, name, and phone. Control access with permission groups and grants."
 ---
 
-ShopWrk uses a role-based permission system to control what each team member can see and do. When you invite someone, you assign them one of three roles. Their role determines which sections of the dashboard they can access and which actions they can take. You can also adjust individual permissions on top of their role's defaults.
+Access in ShopWrk is permission groups plus grants. It is not three fixed roles named Owner, Admin, and Technician.
 
-## The three roles
+You invite people from **Team → Staff**. You decide what they can do on **Team → Access**, and on that person's **Access** tab.
 
-<CardGroup cols={3}>
-  <Card title="Owner" icon="crown" href="/getting-started/roles-permissions#owner">
-    Full access to every feature, setting, and team management function.
-  </Card>
-  <Card title="Admin" icon="shield" href="/getting-started/roles-permissions#admin">
-    Full operational access — jobs, customers, invoices, CRM — with no access to billing or owner-only settings.
-  </Card>
-  <Card title="Technician" icon="wrench" href="/getting-started/roles-permissions#technician">
-    Access limited to assigned jobs and their own schedule.
-  </Card>
-</CardGroup>
+Anyone with permission to view the team can open **Team**. Extra grants cover staff, schedule, time, compensation, and payroll prep. A few actions stay Owner-only.
 
-### Owner
+## Owner is not a group
 
-The shop owner has unrestricted access to the entire platform. There is exactly one Owner per shop — the account created during signup. The Owner role cannot be assigned to additional team members.
+Owner is a protected shop status. It is not a permission group you rename or delete.
 
-Owners can do everything Admins and Technicians can do, plus:
+A shop can have more than one Owner. An Owner bypasses group and override checks. The last Owner cannot be demoted, deactivated, or removed.
 
-- Manage billing and subscription settings
-- Manage integrations (Stripe, Google Calendar, Telnyx, social accounts)
-- Manage all team permissions, including granting or revoking individual overrides
-- Approve payments and refunds
-- Modify service pricing rules
-- Manage and publish social media accounts
-- Manage calling settings and phone numbers
-- Manage document templates
+Rows marked **Owner** on the Access screen are Owner-only. Leave those to an Owner.
 
-### Admin
+## Permission groups
 
-Admins have full access to day-to-day operations. This role is suited for a shop manager or senior staff member who runs the business alongside the owner but shouldn't have access to billing or owner-level configuration.
+Go to **Team → Access**. The left side is a searchable list of groups. Open a group to see its grants, then the people in it.
 
-Admins can:
+A new shop starts with two groups:
 
-- Create, edit, and delete jobs, customers, and estimates
-- View the full calendar and schedule jobs
-- Create, send, and void invoices
-- Log cash and cheque payments, and process POS card payments
-- View and manage the full messaging inbox
-- View, add, and adjust inventory
-- Manage leads, deals, and CRM pipelines (view only for pipeline settings)
-- Make, receive, transfer, and record calls; manage call queues
-- Create and manage email campaigns
-- Create and publish social media posts (but not connect new accounts)
-- Manage automation workflows
-- Use the AI assistant
-- Run and resolve data imports
+- **Administrator** is locked. It has every grant you can give. You cannot rename it, delete it, or edit its grants. Do not hunt for an edit button on it.
+- **Technician** is seeded for you and you can edit it. You can rename it. You cannot delete it.
 
-Admins cannot:
+Create custom groups when those two are not enough. You can rename a custom group, delete it, and assign or remove members.
 
-- Access billing or subscription settings
-- Change service pricing rules
-- Manage team permissions or deactivate members
-- Connect or disconnect social media accounts
-- Configure calling phone numbers and routing settings
-- Manage document templates
-- Approve logged payments
+A person can belong to more than one group. Grants stack. If any of their groups allows something, they have it, unless you set a member override.
 
-### Technician
+<Note>
+  Group changes apply right away. You do not republish access.
+</Note>
 
-Technicians have a focused view of the dashboard. This role is intended for installers and shop staff who need to see their own work and update job statuses, without access to customer financials or shop configuration.
+## Grants and member overrides
 
-Technicians can:
+On a group, toggle the grants that group should have. The member **Access** tab uses the same grant editor, so the layout matches what you already saw on the group.
 
-- View jobs assigned to them
-- Update the status of their assigned jobs
-- View their own schedule and calendar
-- View the service catalog
-- View inventory stock levels
-- Receive inbound calls, view call history, and listen to voicemails
+Grants you will use a lot:
 
-Technicians cannot access customers, estimates, invoices, payments, the full calendar, messaging, reports, CRM, settings, or any admin-level features.
+- Manage Staff, Manage Schedule, and Manage Time
+- View Compensation and Manage Compensation
+- Prepare Payroll
+- View full calendar
+- View Agents and Manage Agents
 
-## Permissions by area
+Price visibility is a grant too. On **Team → Access**, open the group and leave selling-price grants off if technicians should not see prices. The default Technician group can still see inventory retail price for the work they do. Costs, valuation, and margin stay hidden unless you grant those separately. There is no single shop-wide switch that reveals every price.
 
-The table below summarizes key permissions across roles. "Full" means create, edit, and delete access. "View" means read-only.
+On a member, you can leave a grant on **Inherit**, or set **Allow** or **Deny**. The member setting wins. Owner still bypasses this.
 
-| Area | Owner | Admin | Technician |
-| --- | --- | --- | --- |
-| Jobs (all) | Full | Full | — |
-| Jobs (own assigned) | Full | Full | View + status |
-| Customers | Full | Full | — |
-| Calendar (full) | Full | Full | — |
-| Calendar (own schedule) | Full | Full | View |
-| Estimates | Full | Full | — |
-| Invoices | Full | Full | — |
-| Payments | Full | Log + POS | — |
-| Payment approval | Full | — | — |
-| Service catalog | Full | View + create/edit | View |
-| Service pricing | Full | — | — |
-| Inventory | Full | Full | View |
-| CRM (leads, deals) | Full | Full | — |
-| Messaging (inbox) | Full | Full | — |
-| Calling (make/receive) | Full | Full | Receive only |
-| Calling settings | Full | — | — |
-| Reports | Full | View | — |
-| Automations | Full | Full | — |
-| Email campaigns | Full | Full | — |
-| Social media | Full | Create + publish | — |
-| Social account connections | Full | — | — |
-| AI assistant | Full | Full | — |
-| Documents | Full | All except templates | — |
-| Team management | Full | View | — |
-| Settings (general) | Full | View | — |
-| Settings (billing) | Full | — | — |
-| Settings (integrations) | Full | — | — |
-| Data imports | Full | Full | — |
+Calendar access is a grant, not a separate card on Access. Turn on **View full calendar** when someone should see the whole shop calendar.
 
-## Inviting a team member
+## Invite a team member
 
-Only Owners can invite new team members.
+Invites live in the Staff table, not a second pending table.
 
 <Steps>
-  <Step title="Go to Team">
-    In the dashboard navigation, click **Team**.
+  <Step title="Go to Team → Staff">
+    Invite is on the Staff tab.
   </Step>
-  <Step title="Click Invite member">
-    Click the **Invite member** button in the top-right corner of the Team page.
+  <Step title="Click Invite Team Member">
+    Email, Name, and Phone are required. Role is on the invite. The tooltip says you can change this later.
   </Step>
-  <Step title="Enter their details">
-    Enter the team member's name and email address, then select their role: **Admin** or **Technician**.
-  </Step>
-  <Step title="Send the invitation">
-    Click **Send invite**. ShopWrk emails them a link to create their account and join your shop.
+  <Step title="Send the invite">
+    They appear as **Invited** until they accept.
   </Step>
 </Steps>
 
-The invitation link is valid for a limited time. If it expires before the team member accepts it, you can resend the invitation from the Team page.
+The join email has their address filled in. Phone from the invite becomes **Work Phone** for this shop only, not their personal sign-in phone. ShopWrk calling and texts in this shop use that Work Phone.
 
-<Note>
-  Invited team members sign up through a dedicated join page, not the standard signup flow. Their email address is locked to the invited address and their role is pre-assigned.
-</Note>
+Inviting another Owner is Owner-only. Regular invites follow whoever you gave invite permission to.
 
-## Adjusting individual permissions
+## A member's Access tab
 
-If the default permissions for a role don't quite fit a specific team member, Owners can grant or remove individual permissions on top of that person's role.
+Open the person from Staff, then **Access**. Assign groups and set Inherit, Allow, or Deny on the same editor you use for groups. There is no separate per-agent table on this tab.
 
-To adjust permissions for a team member:
+## Deactivating someone
 
-1. Go to **Team** and open the team member's profile.
-2. Scroll to the **Permissions** section.
-3. Toggle individual permissions on or off as needed.
-
-<Warning>
-  Granting a Technician individual permissions outside their role — such as customer access or invoice viewing — means they will see those sections in the dashboard. Review any overrides carefully before saving.
-</Warning>
-
-## Deactivating a team member
-
-Owners can deactivate a team member's account from their profile on the Team page. Deactivated members cannot log in, but their historical records (jobs, time logs, assignments) are preserved.
+Deactivate a member from their profile. They cannot sign in. Jobs, time, and assignments stay in history. Future draft and published shifts cancel. Reactivate later and their groups and overrides come back.
 
 <CardGroup cols={2}>
   <Card title="Account setup" icon="user-plus" href="/getting-started/account-setup">
-    Create your ShopWrk account if you haven't already.
+    Create your ShopWrk account if you have not already.
   </Card>
-  <Card title="Team scheduling" icon="calendar-days" href="/features/team-scheduling">
-    Set up staff schedules, timesheets, and shifts for your team.
+
+  <Card title="Team, schedules, and payroll prep" icon="calendar-days" href="/features/team-scheduling">
+    Invite staff, publish shifts, and export hourly payroll prep.
   </Card>
 </CardGroup>

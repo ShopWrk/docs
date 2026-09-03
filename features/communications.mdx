@@ -1,42 +1,29 @@
 ---
-title: "Communicate with customers via SMS, voice, and email"
-description: "Send and receive SMS, make calls with voicemail and recording, run email campaigns, and manage all customer conversations from a unified inbox."
+title: "Text, call, and email customers from Conversations"
+description: "Text and call customers from Conversations. Set Call Flow, Work Phone ringing, and call recording for your shop."
 ---
 
-ShopWrk brings all of your customer communication into one place. From the **Conversations** inbox you can send SMS messages, make and receive calls, and run email campaigns — without switching between separate apps. Every message, call, and email is tied back to the customer's profile.
+ShopWrk puts customer texts, calls, and email in one place. From **Conversations** you can text a customer, place a call, and keep the history on their profile.
 
 <Note>
-  Conversations requires messaging to be configured for your shop. If you see a "Set Up Messaging" prompt, go to **Settings → Messaging** to connect your phone number and configure SMS.
+  Conversations needs messaging set up for your shop. If you see a "Set Up Messaging" prompt, go to **Settings → Messaging** to connect your phone number and configure SMS.
 </Note>
 
-## Unified inbox
+## Conversations
 
-The **Conversations** inbox shows all your customer threads in one list. Each thread groups all messages with a contact — SMS, voice, and notes — so you have full context before you reply.
+**Conversations** lists your customer threads. A thread groups texts, calls, and notes with that person so you have the context before you reply.
 
-<Tabs>
-  <Tab title="All">
-    Every conversation across all channels. Use this when you want to see everything at once.
-  </Tab>
-  <Tab title="SMS">
-    Threads that contain SMS messages only. Useful when you're focused on text-based outreach.
-  </Tab>
-  <Tab title="Calls">
-    Call history and voicemail threads. Review recordings and transcripts here.
-  </Tab>
-  <Tab title="Unread">
-    Conversations with unread inbound messages. A good starting point at the beginning of each day.
-  </Tab>
-</Tabs>
+CALL threads show up here as soon as you start dialing. Inbound calls land here too. You do not need recording turned on for the call to appear.
 
 ## SMS messaging
 
-ShopWrk uses Telnyx to send and receive SMS. Messages are sent from your shop's registered phone number and arrive in the sender's standard text message app.
+ShopWrk texts come from your shop's registered phone number and arrive in the customer's regular messaging app.
 
 ### Sending a message
 
 <Steps>
   <Step title="Open a conversation">
-    Click on a customer's thread in Conversations, or click **+ New Conversation** to start a thread with a contact who doesn't have one yet.
+    Click a customer's thread in Conversations, or click **+ New Conversation** to start a thread with a contact who does not have one yet.
   </Step>
   <Step title="Compose your message">
     Type your message in the composer at the bottom of the thread. You can type freely or insert a template.
@@ -48,93 +35,97 @@ ShopWrk uses Telnyx to send and receive SMS. Messages are sent from your shop's 
 
 ### Message templates
 
-Templates let you save messages you send frequently — appointment reminders, estimate notifications, payment links — so you don't have to type them from scratch each time.
+Templates save messages you send often, like appointment reminders, estimate notices, and ShopWrk Pay links, so you are not typing them from scratch.
 
 <Steps>
   <Step title="Open templates">
-    In the message composer, click the **Templates** icon (or go to **Settings → Messaging → Templates**).
+    In the message composer, click the **Templates** icon, or go to **Settings → Messaging → Templates**.
   </Step>
   <Step title="Pick a template">
-    Select a template from the list. It populates the composer. Edit the text if needed before sending.
+    Select a template from the list. It fills the composer. Edit the text if you need to before sending.
   </Step>
   <Step title="Save a new template">
-    In Settings, click **New Template**, name it, write the body, and save. It's immediately available in the composer.
+    In Settings, click **New Template**, name it, write the body, and save. It is immediately available in the composer.
   </Step>
 </Steps>
 
 ### Bulk messaging
 
-Send a single SMS to multiple contacts at once — useful for promotions, reminders, or seasonal campaigns.
+Send one SMS to many contacts at once. This is useful for promotions, reminders, or seasonal campaigns.
 
 <Warning>
-  Bulk SMS is subject to A2P 10DLC regulations. You must complete A2P registration before sending bulk messages. See [A2P 10DLC compliance](#a2p-10dlc-compliance) below.
+  Bulk SMS is subject to A2P 10DLC rules. Complete A2P registration before sending bulk messages. See [A2P 10DLC](#a2p-10dlc) below.
 </Warning>
 
-### A2P 10DLC compliance
+### A2P 10DLC
 
-A2P (Application-to-Person) 10DLC registration is required by US carriers for business SMS. Without it, your messages may be filtered or blocked.
+A2P 10DLC registration is required by US carriers for business SMS. Without it, your messages may be filtered or blocked.
 
-ShopWrk guides you through the registration process from **Settings → Messaging → A2P Registration**. You'll provide your business name, EIN, and a description of your messaging use case. Approval typically takes a few business days.
+ShopWrk guides you through registration from **Settings → Messaging**. You provide your business name, EIN, and a description of how you use texts. Approval usually takes a few business days.
 
 <Info>
-  A2P registration is a one-time setup. Once approved, your shop's number is recognized as a legitimate business sender and enjoys higher deliverability.
+  A2P registration is a one-time setup. Once approved, your shop number is treated as a business sender and deliverability is better.
 </Info>
 
-## Voice calls
+## Calls
 
-ShopWrk includes WebRTC-based calling so you can make and receive calls directly from the dashboard — no physical phone required.
+You can make and receive ShopWrk calls from Chrome. A Work Phone can ring at the same time. Set the route at **Settings → Calling**. See [Call Flow](/integrations/sms-voice#call-flow) for the full setup.
 
 ### Making a call
 
-<Steps>
-  <Step title="Open a contact or conversation">
-    Go to a customer's profile or their conversation thread.
-  </Step>
-  <Step title="Click Call">
-    Click the phone icon to start a call. The call connects through your browser using WebRTC.
-  </Step>
-  <Step title="Talk and hang up">
-    Speak with the customer. Click **End Call** when you're done. The call is logged in the conversation thread.
-  </Step>
-</Steps>
+Open a customer thread in Conversations, or open the customer, then click the phone icon.
+
+As soon as dialing begins, ShopWrk creates a CALL thread for that number. A saved customer is linked. An unknown number still gets a visible CALL thread.
+
+While the call is live, Conversations shows Calling, Ringing, or On a call. Hangup, no answer, and a completed talk all stay on that thread.
 
 ### Receiving calls
 
-Incoming calls to your shop's number ring in the ShopWrk dashboard. You can accept or decline from the notification that appears. If you're away or busy, calls route to voicemail automatically.
+Incoming calls to your shop number ring every ready Chrome tab and the Primary Recipient's Work Phone together. The incoming-call screen shows on each ready tab, not only one of them.
+
+Answer in Chrome, or press 1 on the Work Phone when you hear "ShopWrk business call. Press 1 to accept." The first accepted destination wins. If nobody answers, the caller reaches ShopWrk voicemail.
+
+That inbound call still gets a CALL thread in Conversations, missed or answered.
 
 ### Voicemail
 
-Missed calls go to voicemail. ShopWrk records the message and stores it in the conversation thread. You can play back voicemails directly in the inbox.
+Missed calls go to ShopWrk voicemail. The message is stored on the conversation thread so you can play it back from Conversations.
 
 ### Call recording
 
-All calls are recorded and stored for 60 days. Recordings are accessible from the conversation thread.
+Recording is not on for every call by default. The shop toggle on **Settings → Calling** is the only switch that starts it. If you see tabs, open **Setup** and turn on **Call recording enabled**.
+
+When recording is on, ShopWrk starts after a person answers. Open the CALL thread in Conversations to play the audio back. ShopWrk then transcribes the call and writes a summary on that thread. If those fail, the audio and the call history still stay.
+
+When recording is off, you still get the CALL history in Conversations. There is no audio, transcript, or summary.
 
 <Warning>
-  Call recording laws vary by state. Make sure you understand and comply with the consent requirements in your jurisdiction before enabling call recording.
+  Recording rules differ by state. ShopWrk plays a disclosure when recording is on. Know the consent rules where you operate.
 </Warning>
 
-### Call routing
+### Call Flow
 
-Configure how incoming calls are handled in **Settings → Voice** — set business hours, define forwarding rules, and customize voicemail greetings.
+Owners and admins set Call Flow at **Settings → Calling**. Choose a Primary Recipient, then add that person's Work Phone. You can also set Work Phone on **Team** for that teammate. Add fallback teammates and an optional fallback number if you want backup rings. Save.
+
+A missing or inactive Call Flow sends callers to ShopWrk voicemail instead of leaving the call hanging.
 
 ## Email
 
-ShopWrk sends transactional emails (estimates, invoices, job confirmations) automatically. You can also send one-off emails to customers and run targeted email campaigns.
+ShopWrk sends transactional emails, such as estimates, invoices, and job confirmations, automatically. You can also send one-off emails to customers and run targeted email campaigns.
 
 ### Email campaigns
 
-Use campaigns to send a message to a specific list of contacts — for example, all customers who haven't been in for more than 6 months, or everyone tagged "Window Tint".
+Use campaigns to send a message to a specific list of contacts. For example, all customers who have not been in for more than 6 months, or everyone tagged "Window Tint".
 
 <Steps>
   <Step title="Open Marketing">
-    Navigate to **Marketing** in the sidebar and go to the **Email** section.
+    Go to **Marketing** in the sidebar, then open **Email**.
   </Step>
   <Step title="Create a campaign">
     Click **New Campaign**, choose a name, and select your audience by filtering contacts.
   </Step>
   <Step title="Write your email">
-    Compose the subject line and body. You can use personalization tokens like the customer's first name.
+    Compose the subject line and body. You can insert the customer's first name.
   </Step>
   <Step title="Send or schedule">
     Send immediately or schedule the campaign for a later date and time.
@@ -143,4 +134,16 @@ Use campaigns to send a message to a specific list of contacts — for example, 
 
 ### Delivery tracking
 
-After sending a campaign, ShopWrk tracks delivery status for each recipient — delivered, opened, or bounced. View these stats from the campaign detail page.
+After sending a campaign, ShopWrk tracks delivery status for each recipient: delivered, opened, or bounced. View these stats from the campaign detail page.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Texts and calling setup" icon="phone" href="/integrations/sms-voice">
+    Get a shop number, set Call Flow, add Work Phones, and turn recording on.
+  </Card>
+
+  <Card title="Team roles" icon="users" href="/getting-started/roles-permissions">
+    Who can set Call Flow, answer calls, and add a Work Phone on Team.
+  </Card>
+</CardGroup>
