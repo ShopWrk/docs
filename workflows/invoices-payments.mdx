@@ -1,114 +1,123 @@
 ---
-title: "Create invoices and collect Stripe payments in ShopWrk"
-description: "Generate invoices from jobs, collect card payments via Stripe, record cash or cheque, issue refunds, and automate billing with recurring invoice templates."
+title: "Create invoices and collect payments with ShopWrk Pay"
+sidebarTitle: "Invoices and payments"
+description: "Generate one invoice per job, send deposit and balance requests through ShopWrk Pay, record cash or cheque, and run recurring autopay."
 ---
 
-ShopWrk handles the full billing cycle from job to payment. You create an invoice from a completed job, send it to the customer with a secure payment link, and collect payment online through Stripe. You can also set up recurring invoice templates for customers on ongoing maintenance plans.
+Each [job](/workflows/jobs) gets one invoice. A deposit and the later balance are payment requests on that invoice, not extra invoices. Customers pay on **pay.shopwrk.com** through [ShopWrk Pay](/integrations/shopwrk-pay).
+
+You can still create a standalone invoice from **Invoices → New Invoice** when the work is not on a job.
+
+Paying ShopWrk for your subscription is [Settings → Billing](/settings/billing). That is not how customers pay you.
 
 ## Creating an invoice from a job
 
-The most common way to create an invoice is directly from a job. Open the completed job, then click **Send invoice** in the pricing card on the right side. The new invoice form opens pre-populated with:
+When you create or convert a job, ShopWrk already builds the draft invoice. Open the job and click **Send invoice** in the pricing card on the right. You will see:
 
 - The customer and vehicle from the job
 - All services booked on the job as line items
 - The tax rate configured for your shop
 
-You can add, remove, or edit line items before saving.
+You can add, remove, or edit line items while the invoice is still a draft.
 
 <Tip>
-  You can also create invoices independently of jobs. Go to **Invoices** in the sidebar and click **New Invoice** to build an invoice from scratch.
+  To bill something that is not a job, go to **Invoices** in the sidebar and click **New Invoice**.
 </Tip>
 
 ## Invoice line items and tax
 
 Each invoice has one or more line items. Line items have a name, quantity, unit price, and optional description. The invoice calculates subtotal, tax, and total automatically.
 
-Tax is applied at the shop level by default. If you need to override tax for a specific invoice, you can change the tax rate on the invoice form.
+Tax is applied at the shop level by default. If you need to override tax for a specific invoice, change the tax rate on the invoice form.
 
 You can apply a discount to the invoice total as either a fixed dollar amount or a percentage.
 
-## Payment schedules and deposits
+## Deposits and remaining balance
 
-ShopWrk supports splitting a payment into installments:
+A deposit is the first payment on the job's invoice. It is not a second invoice.
 
-- **Deposit** — collect a portion upfront before work begins. The deposit amount carries over from the estimate if one was set.
-- **Payment schedule** — define multiple due dates and amounts for the remaining balance.
+- **Deposit requested.** You sent a deposit pay link.
+- **Deposit paid.** The deposit landed on the invoice.
+- **Balance due.** What is left after deposits and other payments.
+
+If the customer already paid a deposit from an [estimate](/workflows/estimates), that payment is already on this invoice. Send the remaining balance later on the same invoice.
 
 <Info>
-  A deposit collected at the estimate or job stage is tracked separately. When you create the invoice, the deposit paid is reflected in the amount due shown to the customer.
+  ShopWrk Pay will not take more than \$10,000 in one transaction, card or bank. Fees and that limit are on [app.shopwrk.com/legal/fees](https://app.shopwrk.com/legal/fees).
 </Info>
+
+<Note>
+  Lead Closer can collect a 30-day deposit through ShopWrk Pay when that feature is on for your shop.
+</Note>
 
 ## Sending an invoice to a customer
 
 From the invoice detail page, click **Send**. You can deliver the invoice by:
 
-- **Email** — sends a branded email with a unique payment link
-- **SMS** — sends a text message with the same link
+- **Email.** A branded email with the pay link.
+- **SMS.** A text with the same link.
 
-The customer-facing invoice page shows the line items, total, amount due, and a **Pay now** button. Customers do not need a ShopWrk account to pay.
+The customer-facing page shows line items, total, amount due, and **Pay now**. Customers do not need a ShopWrk account.
 
 <Note>
-  Each invoice has a unique token-authenticated URL at `/view/invoice/[token]`. You can share this link directly with the customer if needed.
+  New pay links go to **pay.shopwrk.com**. Share that link if you need to send it by hand.
 </Note>
 
-## Accepting online payments via Stripe
+## How the customer pays
 
-When a customer clicks **Pay now** on their invoice, they are taken to a Stripe-hosted checkout page to enter their card details. Payments are processed securely through Stripe and the invoice status updates automatically when payment is confirmed.
+When a customer clicks **Pay now**, they stay on the ShopWrk Pay page. They can pay by card, bank, Apple Pay, or Google Pay when those methods are on for your shop.
 
-To accept online payments you need to connect your Stripe account. Go to **Settings → Payments** to set up your Stripe integration.
-
-<CardGroup cols={2}>
-  <Card title="Online payments" icon="credit-card" href="/workflows/invoices-payments#accepting-online-payments-via-stripe">
-    Customers pay by card through Stripe Checkout. No card data touches ShopWrk.
-  </Card>
-  <Card title="In-person payments" icon="smartphone" href="/workflows/invoices-payments#accepting-online-payments-via-stripe">
-    Use Stripe Terminal with a card reader to collect payment at the counter.
-  </Card>
-</CardGroup>
+ShopWrk records the payment and updates the invoice. To turn ShopWrk Pay on, replace the payout bank, or manage wallets, see [ShopWrk Pay](/integrations/shopwrk-pay).
 
 ### Cash and cheque payments
 
-If a customer pays in cash or by cheque, record the payment manually from the **Payments** page under the **Cash & Cheque** tab. This keeps your payment records accurate without requiring a card transaction.
+If a customer pays in cash or by cheque, record the payment manually from the **Payments** page under the **Cash & Cheque** tab. That keeps your records accurate without a card or bank charge.
 
 ## Payments overview
 
-The **Payments** section of the sidebar has five tabs:
+The **Payments** section of the sidebar has these areas:
 
 | Tab | What it shows |
-|---|---|
+| --- | --- |
 | **Overview** | Total collected, outstanding balance, and recent payment activity |
 | **Invoices** | All invoices with their status and amounts |
 | **Estimates** | Approved estimates with deposit status |
 | **Cash & Cheque** | Manually recorded offline payments |
 | **Analytics** | Revenue charts broken down by period |
 
-## Recurring invoices
+Open the dispute list from **Payments**, or click **Open dispute** on the invoice. Upload evidence and submit your response before the deadline on the dispute page.
 
-For customers who pay on a regular schedule — monthly maintenance plans, for example — you can create a recurring invoice template. Go to **Invoices → Recurring** and click **New Template**.
+Payout history lives under **Payments → Payouts**. If a payout fails, wait for the automatic retry. After you confirm a new bank in **Settings → Payments**, you can resend when recovery allows it.
+
+## Recurring invoices and autopay
+
+For customers who pay on a regular schedule, go to **Invoices → Recurring** and click **New Template**.
 
 A recurring template defines:
 
 - The line items and amounts
-- The billing interval (weekly, monthly, quarterly, etc.)
+- The billing interval (weekly, monthly, quarterly, and similar)
 - The start date and optional end date
 
-ShopWrk automatically generates and sends invoices on schedule based on the template. You can pause, edit, or cancel a recurring template at any time from the recurring invoices list.
+ShopWrk generates and sends invoices on that schedule. Autopay charges a saved card or bank through ShopWrk Pay. You can pause, edit, or cancel a template from the recurring invoices list.
+
+A failed autopay notifies the shop. The customer is not charged twice for the same invoice.
 
 ## Refunds
 
-To issue a refund on a payment collected through Stripe, open the invoice, find the payment in the payments section, and use the refund option. The refund is processed through Stripe and the invoice status updates to reflect the refunded amount.
+To refund a ShopWrk Pay payment, open the invoice, find the payment, and use the refund option. The refund goes back to the customer's original card or bank. The invoice updates to show the refunded amount.
 
 <Warning>
-  Refunds processed through ShopWrk are sent to Stripe for processing. It may take 5–10 business days for the refund to appear in the customer's account depending on their card issuer.
+  Refund timing depends on the customer's bank. The invoice in ShopWrk updates when the refund is submitted.
 </Warning>
 
 ## Invoice statuses
 
 | Status | Meaning |
-|---|---|
+| --- | --- |
 | **Draft** | Created but not yet sent |
 | **Sent** | Delivered to the customer, awaiting payment |
-| **Viewed** | Customer has opened the invoice link |
+| **Viewed** | Customer has opened the invoice |
 | **Paid** | Full balance collected |
 | **Partial** | Some payment received, balance still due |
 | **Overdue** | Past the due date with an outstanding balance |

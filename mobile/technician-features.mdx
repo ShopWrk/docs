@@ -3,149 +3,99 @@ title: "Technician dashboard and features in the ShopWrk iOS app"
 description: "How technicians use the ShopWrk iOS app: clock in and out, view assigned jobs, track hours worked today and this week, and preview incoming messages."
 ---
 
-When you sign in as a technician, the ShopWrk iOS app gives you a focused view of your workday. Your home screen shows a clock-in/clock-out control, all the jobs assigned to you today, a running count of your hours, and a preview of your most recent messages — everything you need to stay on track without needing to open the web dashboard. The bottom tab bar gives you access to the schedule, a quick-create sheet, your inbox, and the AI assistant.
+Sign in as a technician and the app gives you your workday: a clock card, today's assigned jobs, your running hours, and your messages. The bottom bar opens Schedule, Create, Inbox, and ShopWrker. Two of those are still placeholders, and this page says exactly which.
 
 ## Home screen
 
-The technician home screen loads as soon as you sign in. Pull down on any section to refresh and get the latest data from your shop.
+Pull down anywhere to refresh.
 
 ### Greeting
 
-At the top of the screen, a time-sensitive greeting welcomes you by first name: "Good morning," "Good afternoon," or "Good evening."
-
----
+A time-sensitive greeting sits at the top of the screen: "Good morning," "Good afternoon," or "Good evening."
 
 ## Clocking in and out
 
-The **clock-in/clock-out card** is the first interactive element on your home screen. It shows your current shift status and lets you start or end your shift with a single tap.
+The clock card is the first interactive element on your home screen.
 
-**When you're off the clock**, the card shows a neutral status with a prompt to start your shift.
-
-**When you're on the clock**, the card turns green and displays a live running timer showing how long you've been clocked in. The timer updates every minute while the app is open.
+**Off the clock**, it shows a neutral status with a prompt to start your shift. **On the clock**, it turns green with a running timer that updates while the app is open.
 
 <Steps>
-  <Step title="Tap Clock in to start your shift">
-    The button at the bottom of the card changes from **Clock in** to **Clock out** and the card turns green. A success haptic confirms the action.
+  <Step title="Clock in">
+    Tap **Clock in**. The button flips to **Clock out**, the card turns green, and a haptic confirms.
   </Step>
   <Step title="Work your shift">
-    The elapsed time counter updates while you're clocked in. You can leave the app and come back — your shift is recorded on the server.
+    The elapsed timer keeps counting even if you leave the app. Your shift records on the server.
   </Step>
-  <Step title="Tap Clock out to end your shift">
-    The card returns to the off-the-clock state. A warning haptic confirms the clock-out. Your hours are saved automatically.
+  <Step title="Clock out">
+    Tap **Clock out** when you're done. A warning haptic confirms and your hours save automatically.
   </Step>
 </Steps>
 
-<Warning>
-  Clocking in and out is permanent. If you accidentally clock in or out at the wrong time, ask your shop owner to correct the record in the web dashboard.
-</Warning>
+<Note>
+  If the card says you're clocked in at another shop, switch back to that shop from the account menu before clocking out.
+</Note>
 
----
+<Warning>
+  Clock corrections happen in the web dashboard by an owner or manager. Get mistakes fixed the same day so payroll stays clean.
+</Warning>
 
 ## My jobs today
 
-The **My jobs today** card lists every job assigned to you for the current day. Each row shows:
+The **My jobs today** card lists every job assigned to you today: scheduled time, customer, vehicle, and status.
 
-- **Scheduled time** — the time the job is booked for
-- **Customer name** — the customer the job belongs to
-- **Vehicle** — the vehicle being worked on, or the job number if no vehicle label is set
-- **Status badge** — a color-coded label showing the current state of the job
+| Status | Meaning |
+| --- | --- |
+| Waiting | Created but not yet scheduled |
+| Scheduled | Upcoming, not started |
+| In Progress | Actively being worked |
+| Pending Review | Finished, awaiting owner approval |
+| Completed | Done |
+| Cancelled | Not happening |
+| Rescheduled | Moved to a new date |
 
-### Job statuses
-
-| Status | Badge color | Meaning |
-|---|---|---|
-| Scheduled | Grey | The job is upcoming but not yet started |
-| In progress | Blue | The job is actively being worked on |
-| Pending review | Yellow | The job is done but waiting for inspection or approval |
-| Completed | Green | The job has been marked complete |
-| Cancelled | Red | The job was cancelled |
-| No show | Red | The customer did not arrive |
-
-If no jobs are assigned to you today, the card displays a "No jobs assigned to you today" message.
+No assignments today? The card says so.
 
 <Tip>
-  Job assignments are managed by your shop owner in the web dashboard. If you don't see a job you expect, check with your owner or manager.
+  Assignments come from your owner in the web dashboard. Missing a job you expected? Ask them.
 </Tip>
-
----
 
 ## Time tracking
 
-The **Time** card shows a summary of your hours for the day and the current week.
+The Time card shows two numbers:
 
 | Row | What it shows |
-|---|---|
-| **Today** | Total hours and minutes clocked so far today |
-| **This week** | Total hours and minutes clocked since the start of the current week |
+| --- | --- |
+| **Today** | Hours and minutes clocked so far today |
+| **This week** | Total since the start of the week |
 
-A progress bar below the two numbers fills as you approach a 40-hour week, giving you a visual sense of where you are relative to a standard full-time schedule.
+A progress bar fills as you approach a standard 40-hour week.
 
-<Note>
-  Hours are calculated from your clock-in and clock-out records. They update as soon as you clock in or out.
-</Note>
+## Messages preview
 
----
+The messages card at the bottom of home previews your most recent conversations: sender, snippet, and how long ago. An unread count badge appears on the header when something is waiting.
 
-## Inbox preview
+## Inbox
 
-The **Inbox** card at the bottom of your home screen shows a preview of your most recent messages. Each row shows:
-
-- The sender's name
-- A short preview of the message content
-- A relative timestamp (for example, "5 min ago")
-
-An unread count badge appears next to "Inbox" in the card header when you have unread messages.
-
-If you have no messages, the card shows "No new messages."
-
-<Info>
-  The full Inbox tab with conversation threading and reply functionality is coming in a future release. Use the ShopWrk web dashboard to send and reply to messages in the meantime.
-</Info>
-
----
+The full Inbox tab works today. Search and filter conversations, open a thread, start a conversation, and reply where the channel allows it.
 
 ## Create
 
-The **Create** tab (the `+` in the bottom tab bar) opens a quick-start action sheet shared with the owner experience. From here you can kick off any of the five most common creation tasks.
-
-| Action | What it does |
-|---|---|
-| **New job** | Opens a job for a customer and vehicle |
-| **New estimate** | Builds an estimate to send for customer approval |
-| **New invoice** | Creates an invoice to charge for completed work |
-| **New customer** | Adds a new customer and their first vehicle |
-| **New vehicle** | Attaches a vehicle to an existing customer |
-
-<Info>
-  Full create flows for estimates, invoices, customers, and vehicles are being added in an upcoming release. Tapping those rows currently shows a "Coming soon" notice. New job creation is available now.
-</Info>
-
----
+The Create tab previews five shortcuts (new job, estimate, invoice, customer, vehicle). All five currently show a **Coming soon** notice; creation happens on the web dashboard for now.
 
 ## Schedule
 
-The **Schedule** tab shows your job calendar.
+Your job calendar is coming soon. Check **My jobs today** on Home for your assignments, or use the web dashboard for the full calendar.
 
-<Note>
-  The calendar view for technicians is coming in a future release. Use the ShopWrk web dashboard to view your schedule in detail in the meantime.
-</Note>
+## ShopWrker
 
----
-
-## AI assistant
-
-The **Assistant** tab (sparkle icon) opens a conversational AI interface you can use to ask questions about your jobs, customers, or shop operations.
-
-You can also view **Artifacts** — structured outputs the assistant has produced — by navigating to the artifacts screen within the Assistant tab.
+The ShopWrker tab opens the AI assistant for questions about your jobs, customers, or operations. From inside, open **Artifacts** for structured outputs like summaries and reports.
 
 <Tip>
-  Try asking specific questions like "What are my jobs for today?" or "What's the status of the Johnson job?" to get the most useful responses.
+  "What are my jobs today?" or "What's the status of the Johnson job?" gets better answers than vague questions.
 </Tip>
-
----
 
 ## Notifications
 
-ShopWrk sends push notifications when new jobs are assigned to you, when job details change, or when you receive a new message. Tap any notification to open the relevant screen directly in the app.
+Push notifications can reach you while the app is closed. Tapping an inbox-message or AI-response notification opens its related screen. Other notification types open the app without a guaranteed direct link.
 
-To manage which notifications you receive, go to your iPhone's **Settings → Notifications → ShopWrk**.
+Manage delivery in your iPhone's **Settings → Notifications → ShopWrk**.

@@ -5,6 +5,10 @@ description: "View your current plan, track usage meters, upgrade or change your
 
 ShopWrk billing is handled entirely through Stripe. Your subscription controls which features are active for your shop, how many included units you get each billing period, and when overage charges apply. You can view all of this from **Settings → Billing**.
 
+<Note>
+  **Settings → Billing** is how you pay ShopWrk. Customer card and bank payments are [ShopWrk Pay](/integrations/shopwrk-pay), under **Settings → Payments**.
+</Note>
+
 ## Subscription plans
 
 ShopWrk offers three plans, billed monthly or annually. Annual billing saves approximately 17% compared to paying month to month.
@@ -35,7 +39,7 @@ ShopWrk offers three plans, billed monthly or annually. Annual billing saves app
 
 ## Trial period
 
-New shops start on a 14-day free trial. During the trial you have access to the features on your plan, but usage meters stop at the included allowance — overages only apply on paid plans. The billing page shows a countdown when fewer than 14 days remain on your trial.
+New shops start on a 14-day free trial. During the trial you have access to the features on your plan, but usage meters stop at the included allowance. Overages only apply on paid plans. The billing page shows a countdown when fewer than 14 days remain on your trial.
 
 <Note>
   Add a payment method before your trial ends to avoid any interruption. Stripe will not charge you until the trial period expires.
@@ -45,10 +49,10 @@ New shops start on a 14-day free trial. During the trial you have access to the 
 
 The top of the billing page shows a summary of your active subscription:
 
-- **Plan** — the tier you are currently on
-- **Status** — active, trialing, past due, or another Stripe status
-- **Trial** — the trial end date, or when it ended if the trial has passed
-- **Renews** — the date your current billing period ends
+- **Plan.** The tier you are currently on
+- **Status.** Active, trialing, past due, or another status from the Stripe customer portal
+- **Trial.** The trial end date, or when it ended if the trial has passed
+- **Renews.** The date your current billing period ends
 
 ### Billing warnings
 
@@ -64,12 +68,12 @@ ShopWrk tracks usage for features that have per-unit costs beyond your plan's in
 
 | Meter | Included (Essential) | Included (Pro) | Included (Autopilot) | Overage rate |
 |-------|---------------------|----------------|----------------------|--------------|
-| Outbound SMS segments | — | 5,000 | 12,000 | $10.00 per 1,000 segments |
-| SMS AI lead threads | — | 50 | 1,000 | $1.00 per thread |
-| Voice AI minutes | — | — | 300 | $0.15 per minute |
+| Outbound SMS segments | None | 5,000 | 12,000 | $10.00 per 1,000 segments |
+| SMS AI lead threads | None | 50 | 1,000 | $1.00 per thread |
+| Voice AI minutes | None | None | 300 | $0.15 per minute |
 | Assistant images | 5 | 15 | 50 | $0.25 per image |
-| Meta strategist runs | — | — | 60 | $5.00 per run |
-| Meta ad images | — | — | 15 | $0.50 per image |
+| Meta strategist runs | None | None | 60 | $5.00 per run |
+| Meta ad images | None | None | 15 | $0.50 per image |
 
 A meter turns yellow when you have used 80% of the included allowance. If you exceed the allowance, overages are billed automatically at the end of the billing period.
 
@@ -101,7 +105,7 @@ SMS messaging in the US requires A2P 10DLC registration. Registration fees are b
     Use the Monthly / Annual toggle to see pricing for each interval before making a selection.
   </Step>
   <Step title="Select a plan">
-    Click the plan card you want. If you already have an active subscription, you are taken to the Stripe customer portal where Stripe handles proration automatically. If you are starting a new subscription from a trial, a Stripe Checkout session opens to collect payment.
+    Click the plan card you want. If you already have an active subscription, you are taken to the Stripe customer portal where Stripe handles proration automatically. If you are starting a new subscription from a trial, Stripe opens a payment page for your ShopWrk subscription.
   </Step>
   <Step title="Complete payment in Stripe">
     Follow the prompts to confirm the change. You are redirected back to ShopWrk once complete.
