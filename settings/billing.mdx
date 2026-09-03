@@ -1,9 +1,9 @@
 ---
 title: "Manage your ShopWrk subscription, pricing plan, and usage"
-description: "View your current plan, track usage meters, upgrade or change your subscription, and manage your payment method through the Stripe customer portal."
+description: "View your current plan, track usage, upgrade or change your subscription, and manage how you pay ShopWrk."
 ---
 
-ShopWrk billing is handled entirely through Stripe. Your subscription controls which features are active for your shop, how many included units you get each billing period, and when overage charges apply. You can view all of this from **Settings → Billing**.
+Your ShopWrk subscription controls which features are on, how many included units you get each billing period, and when overage charges apply. View all of this from **Settings → Billing**.
 
 <Note>
   **Settings → Billing** is how you pay ShopWrk. Customer card and bank payments are [ShopWrk Pay](/integrations/shopwrk-pay), under **Settings → Payments**.
@@ -42,7 +42,7 @@ ShopWrk offers three plans, billed monthly or annually. Annual billing saves app
 New shops start on a 14-day free trial. During the trial you have access to the features on your plan, but usage meters stop at the included allowance. Overages only apply on paid plans. The billing page shows a countdown when fewer than 14 days remain on your trial.
 
 <Note>
-  Add a payment method before your trial ends to avoid any interruption. Stripe will not charge you until the trial period expires.
+  Add a payment method before your trial ends to avoid any interruption. You are not charged until the trial ends.
 </Note>
 
 ## Current subscription
@@ -50,7 +50,7 @@ New shops start on a 14-day free trial. During the trial you have access to the 
 The top of the billing page shows a summary of your active subscription:
 
 - **Plan.** The tier you are currently on
-- **Status.** Active, trialing, past due, or another status from the Stripe customer portal
+- **Status.** Active, trialing, past due, or another status from Billing
 - **Trial.** The trial end date, or when it ended if the trial has passed
 - **Renews.** The date your current billing period ends
 
@@ -59,7 +59,7 @@ The top of the billing page shows a summary of your active subscription:
 If your subscription becomes past due, ShopWrk shows a warning banner. Paid features stay active for 7 days past the due date. After that, the account is locked until payment is updated.
 
 <Warning>
-  Billing access is restricted after 7 days past due. Update your payment method in the Stripe customer portal as soon as you see a past-due warning to avoid losing access to paid features.
+  Billing access is restricted after 7 days past due. Update your payment method on Billing as soon as you see a past-due warning to avoid losing access to paid features.
 </Warning>
 
 ## Usage and overage meters
@@ -81,19 +81,10 @@ A meter turns yellow when you have used 80% of the included allowance. If you ex
   During a free trial, meters stop at the included allowance. No overage charges apply until you are on a paid plan.
 </Note>
 
-## A2P and 10DLC fees
+## Texting registration fees
 
-SMS messaging in the US requires A2P 10DLC registration. Registration fees are billed separately from your subscription.
+US texting registration is billed separately from your plan. ShopWrk shows those fees on Billing when they apply. Finish the registration steps on **Settings → Messaging**. See [Texts and calling](/integrations/sms-voice).
 
-| Fee | Amount |
-|-----|--------|
-| Brand registration | $5.40 (one-time) |
-| Campaign registration | $18.00 (one-time) |
-| Medium Volume Mixed upgrade | $12.00/mo |
-
-<Info>
-  The Low Volume Mixed tier is included by default on plans with SMS. The Medium Volume Mixed upgrade is only needed if your shop sends high message volumes. Contact support if you are unsure which tier applies to you.
-</Info>
 
 ## Changing your plan
 
@@ -105,28 +96,28 @@ SMS messaging in the US requires A2P 10DLC registration. Registration fees are b
     Use the Monthly / Annual toggle to see pricing for each interval before making a selection.
   </Step>
   <Step title="Select a plan">
-    Click the plan card you want. If you already have an active subscription, you are taken to the Stripe customer portal where Stripe handles proration automatically. If you are starting a new subscription from a trial, Stripe opens a payment page for your ShopWrk subscription.
+    Click the plan card you want. If you already have an active subscription, Billing prorates the change. If you are starting a new subscription from a trial, you will add a payment method for ShopWrk.
   </Step>
-  <Step title="Complete payment in Stripe">
-    Follow the prompts to confirm the change. You are redirected back to ShopWrk once complete.
+  <Step title="Confirm payment">
+    Follow the prompts to confirm the change. You come back to ShopWrk when it is done.
   </Step>
 </Steps>
 
 <Note>
-  Only users with the **Owner** role or billing permission can change plans or open the customer portal. Admins can view the plan cards but the action buttons are disabled.
+  Only an Owner or someone with billing permission can change plans or manage payment. Other people can view the plan cards, but the action buttons are off.
 </Note>
 
 ## Managing your payment method
 
-Click **Manage in Stripe** at the top of the billing page to open the Stripe customer portal. From there you can:
+Click **Manage billing** at the top of the billing page. From there you can:
 
-- Update your credit card or bank account
+- Update your card or bank account
 - Download past invoices and receipts
 - View your full billing history
 - Cancel your subscription
 
 <Warning>
-  Canceling your subscription in the Stripe portal takes effect at the end of the current billing period. Your shop retains full access until that date.
+  Canceling takes effect at the end of the current billing period. Your shop keeps full access until that date.
 </Warning>
 
 ## Custom and legacy plans

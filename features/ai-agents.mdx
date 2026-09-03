@@ -1,129 +1,65 @@
 ---
 title: "How the ShopWrk AI agents work"
-description: "Meet the assistant, the lead closer, the voice receptionist, and the Meta Ads agent. What each one does, what it can act on, and when it hands off to a human."
+description: "The assistant helps you run the shop. Lead Closer texts customers. A voice receptionist can answer when nobody picks up. Open the page for the job you want to do."
 icon: "robot"
 ---
 
-ShopWrk ships with a set of AI agents that work from your shop's real data: your services, pricing, calendar, customers, and conversations. They are not generic chatbots. Each one has a job, a set of tools it can use, and clear limits on when it acts on its own versus when it checks with you.
+ShopWrk agents work from your services, prices, calendar, and conversations. They are not generic chatbots.
 
-You can see every agent in one place under **Agents** in the sidebar, and talk to your assistant any time from **AI** in the sidebar.
+Open **Agents** in the sidebar to see them. The chat that helps *you* run the shop is **AI**.
 
 <CardGroup cols={2}>
-  <Card title="AI assistant" icon="comment">
-    Your inside man. Ask questions, get drafts, pull numbers, run analysis across the whole shop.
+  <Card title="AI assistant" icon="comment" href="/features/ai-assistant">
+    Ask questions, draft messages, and pull numbers from your shop. Opens from **AI** in the sidebar.
   </Card>
-
-  <Card title="Lead closer" icon="user-plus">
-    Works your inbound leads over SMS, Instagram, and Facebook. Answers fast, quotes from your pricing, books the job.
+  <Card title="Lead Closer" icon="user-plus" href="/features/lead-closer">
+    Texts inbound leads, quotes from your catalog, can take a ShopWrk Pay deposit, and books a bay.
   </Card>
-
-  <Card title="Voice receptionist" icon="phone">
-    Answers calls you can't pick up, collects details, checks availability, and books or hands off.
+  <Card title="Texts and calling" icon="phone" href="/integrations/sms-voice">
+    Shop number, Call Flow, Work Phone, and recording. The voice receptionist uses this setup.
   </Card>
-
-  <Card title="Meta Ads agent" icon="bullhorn">
-    Connects your ad spend to booked, paid jobs and proposes budget and creative changes for your approval.
+  <Card title="ShopWrker memory" icon="brain" href="/settings/shopwrker">
+    Shop facts and personal notes the assistant should remember.
   </Card>
 </CardGroup>
 
-## The AI assistant
+## Voice receptionist
 
-The assistant lives in the AI chat and knows your whole shop. Use it when you want an answer or a draft without clicking through five screens.
+When a call comes in and nobody can pick up, the voice receptionist answers in your shop's style. It can answer common questions, check whether someone is already a customer, take a message, or book a time.
 
-Things owners ask it every day:
+Calls it handles show up in [Conversations](/features/communications) with a transcript. Set how after-hours calls get handled with [Call Flow](/integrations/sms-voice#call-flow).
 
-- "Which estimates went out this week and haven't been opened?"
-- "What did we invoice for ceramic coating last month vs the month before?"
-- "Draft a win-back text for customers who haven't booked in 6 months."
-- "Why did my PPF leads stall in July? Read the conversations and tell me."
+## Meta Ads agent
 
-It can look up customers and vehicles, summarize threads, analyze revenue and jobs, draft messages and campaigns, and walk you through features. When you ask it to change something, it confirms before acting. See [Use the AI assistant](/features/ai-assistant) for the full tour.
+This agent connects your ad spend to booked, paid jobs. It can show cost per booked job, which creatives actually convert, and propose budget or creative changes. Proposals wait in an approvals queue. Nothing changes on your ad account until you approve it.
 
-## The lead closer
+## What every agent reads
 
-Speed wins jobs in this industry. The lead closer replies to new inbound leads in seconds instead of hours, then keeps the conversation moving until it books or the lead goes cold.
+Keep these current. Every agent picks up the next conversation from the same place.
 
-**Where it works.** SMS, Instagram DMs, Facebook Messenger, and form submissions, depending on which channels your shop has connected.
-
-**What it can do:**
-
-1. Answer questions and ask qualifying questions.
-2. Quote from your service catalog and vehicle-tier pricing, so a full front PPF on a crew cab prices correctly without anyone checking a sheet.
-3. Check your calendar availability and propose times.
-4. Send an estimate and collect a deposit when those options are enabled.
-5. Book the job and follow up on stalled leads until they convert or opt out.
-
-How far it goes on its own depends on the handling mode you choose for that lead source. In autopilot it runs the full sequence; in answer-only mode every reply waits for your approval.
-
-Every conversation is visible in [Conversations](/features/communications), so you or your team can jump in at any point. You can also set it to draft replies for your approval instead of sending on its own.
-
-<Info>
-  Autonomy is your call. Per lead source, you choose autopilot (it runs the full conversation), answer-only (it drafts, you send), or route-to-assignee (leads go straight to a team member).
-</Info>
-
-## The voice receptionist
-
-When a call comes in and nobody can pick up, the voice receptionist answers in your shop's style. It can:
-
-- Answer common questions about services and hours.
-- Look up whether someone is an existing customer and their job history.
-- Check availability and book appointments.
-- Create a lead, take a message, or text a follow-up link.
-- Transfer urgent or high-value calls to you.
-
-Calls it handles show up in the Conversations inbox with transcripts and summaries, so you can review everything it did in one pass at the end of the day.
-
-<Tip>
-  Set how each lead source gets handled under your lead routing settings. Many shops run autopilot on web forms and after-hours calls, and answer-only during busy daytime hours.
-</Tip>
-
-## The Meta Ads agent
-
-Most shops know what their ads cost. Few know which ads produced booked, paid jobs. This agent closes that gap. It connects your Meta ad accounts to what actually happened downstream: which lead came from which ad, what they asked for, whether they booked, and what they paid.
-
-With that picture it can:
-
-- Show both cost per lead and the more useful cost per booked job.
-- Spot which creatives and offers actually convert for your shop.
-- Propose budget moves, audience adjustments, and new creative variants.
-
-Proposals land in your approvals queue. Nothing changes on your ad account until you approve it.
-
-## How agents use your shop's context
-
-All the agents draw from the same foundation, which is why keeping it current matters:
-
-| Context | Where you maintain it |
+| What | Where you keep it |
 | --- | --- |
 | Services and vehicle-tier pricing | [Service catalog](/settings/services-catalog) |
 | Calendar and availability | [Calendar and booking](/features/calendar-booking) |
 | Customer history | [CRM](/features/crm) |
-| Your policies and FAQs | Knowledge base under **AI** |
-| Tone, greetings, escalation rules | Agent settings under **Agents** |
+| Policies and FAQs | Knowledge under **AI**. See [AI assistant](/features/ai-assistant) |
+| Tone and escalation | Agent settings under **Agents** |
 
-If a price changes or you add a service, update the catalog once and every agent picks it up on the next conversation.
+## Guardrails
 
-## Guardrails and handoff
+- Low confidence or a sensitive topic hands the conversation to a person, with a summary of what happened.
+- Money-moving and ad-account changes wait for you unless you turn that on for that agent.
+- Customers who reply STOP stop getting automated texts.
+- One shop's data never leaks into another's answers.
 
-The agents follow your rules, and the rules always beat the agent:
-
-- **Human handoff.** Low confidence, sensitive topics, or a request outside its limits sends the conversation to a human with a summary of what happened so far.
-- **Approvals.** Money-moving and account-changing actions, like deposit collection and ad budget changes, wait for your confirmation unless you explicitly turn on autopilot for them.
-- **Consent.** Messaging and call recording respect opt-outs and compliance requirements. Customers who reply STOP stop getting automated messages.
-- **Your data stays yours.** Agents read your shop's workspace only. One shop's data never leaks into another's answers.
-
-<Note>
-  The agents are capable, but they don't replace your judgment on anything that matters. Review deposits, discounts, and anything customer-facing that you wouldn't say yourself.
-</Note>
-
-## Plan availability
+## Which plan includes what
 
 | Capability | Essential | Pro | Autopilot |
 | --- | --- | --- | --- |
 | AI assistant chat | Limited images | Yes | Yes |
-| Lead closer (SMS) |  | Yes | Yes |
-| Lead closer (Instagram, Facebook) |  | Yes | Yes |
+| Lead Closer (SMS) |  | Yes | Yes |
+| Lead Closer (Instagram, Facebook) |  | Yes | Yes |
 | Voice receptionist |  |  | Yes |
 | Meta Ads agent proposals |  |  | Yes |
 
-See [Billing and plans](/settings/billing) for included allowances and overage rates.
+See [Billing](/settings/billing) for included allowances.

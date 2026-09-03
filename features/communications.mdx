@@ -1,12 +1,12 @@
 ---
 title: "Text, call, and email customers from Conversations"
-description: "Text and call customers from Conversations. Set Call Flow, Work Phone ringing, and call recording for your shop."
+description: "Text and call customers from Conversations. Threads, templates, and CALL history live here. Shop number and Call Flow are on Texts and calling."
 ---
 
 ShopWrk puts customer texts, calls, and email in one place. From **Conversations** you can text a customer, place a call, and keep the history on their profile.
 
 <Note>
-  Conversations needs messaging set up for your shop. If you see a "Set Up Messaging" prompt, go to **Settings → Messaging** to connect your phone number and configure SMS.
+  Conversations needs a shop number. If you see **Set Up Messaging**, finish that on **Settings → Messaging**. See [Texts and calling](/integrations/sms-voice).
 </Note>
 
 ## Conversations
@@ -15,63 +15,45 @@ ShopWrk puts customer texts, calls, and email in one place. From **Conversations
 
 CALL threads show up here as soon as you start dialing. Inbound calls land here too. You do not need recording turned on for the call to appear.
 
-## SMS messaging
+## Send a text
 
-ShopWrk texts come from your shop's registered phone number and arrive in the customer's regular messaging app.
-
-### Sending a message
+ShopWrk texts come from your shop number and arrive in the customer's regular messaging app.
 
 <Steps>
   <Step title="Open a conversation">
     Click a customer's thread in Conversations, or click **+ New Conversation** to start a thread with a contact who does not have one yet.
   </Step>
   <Step title="Compose your message">
-    Type your message in the composer at the bottom of the thread. You can type freely or insert a template.
+    Type in the composer at the bottom of the thread. You can type freely or insert a template.
   </Step>
   <Step title="Send">
-    Press Enter or click **Send**. The message appears in the thread and is delivered to the customer's phone number.
+    Press Enter or click **Send**. The message appears in the thread and goes to the customer's phone.
   </Step>
 </Steps>
 
 ### Message templates
 
-Templates save messages you send often, like appointment reminders, estimate notices, and ShopWrk Pay links, so you are not typing them from scratch.
+Templates save messages you send often, like appointment reminders, estimate notices, and ShopWrk Pay links.
 
 <Steps>
   <Step title="Open templates">
     In the message composer, click the **Templates** icon, or go to **Settings → Messaging → Templates**.
   </Step>
   <Step title="Pick a template">
-    Select a template from the list. It fills the composer. Edit the text if you need to before sending.
+    Select a template from the list. It fills the composer. Edit it before sending if you need to.
   </Step>
   <Step title="Save a new template">
-    In Settings, click **New Template**, name it, write the body, and save. It is immediately available in the composer.
+    In Settings, click **New Template**, name it, write the body, and save.
   </Step>
 </Steps>
 
-### Bulk messaging
-
-Send one SMS to many contacts at once. This is useful for promotions, reminders, or seasonal campaigns.
-
-<Warning>
-  Bulk SMS is subject to A2P 10DLC rules. Complete A2P registration before sending bulk messages. See [A2P 10DLC](#a2p-10dlc) below.
-</Warning>
-
-### A2P 10DLC
-
-A2P 10DLC registration is required by US carriers for business SMS. Without it, your messages may be filtered or blocked.
-
-ShopWrk guides you through registration from **Settings → Messaging**. You provide your business name, EIN, and a description of how you use texts. Approval usually takes a few business days.
-
-<Info>
-  A2P registration is a one-time setup. Once approved, your shop number is treated as a business sender and deliverability is better.
-</Info>
+To text many customers at once, see [bulk texts](/integrations/sms-voice#bulk-text-campaigns). Email to a list is [Campaigns](/features/campaigns).
 
 ## Calls
 
-You can make and receive ShopWrk calls from Chrome. A Work Phone can ring at the same time. Set the route at **Settings → Calling**. See [Call Flow](/integrations/sms-voice#call-flow) for the full setup.
+Make and receive ShopWrk calls from Chrome. A Work Phone can ring at the same time. Set the route at **Settings → Calling**. Full setup is [Call Flow](/integrations/sms-voice#call-flow).
 
-### Making a call
+### Make a call
 
 Open a customer thread in Conversations, or open the customer, then click the phone icon.
 
@@ -79,62 +61,31 @@ As soon as dialing begins, ShopWrk creates a CALL thread for that number. A save
 
 While the call is live, Conversations shows Calling, Ringing, or On a call. Hangup, no answer, and a completed talk all stay on that thread.
 
-### Receiving calls
+### Answer a call
 
-Incoming calls to your shop number ring every ready Chrome tab and the Primary Recipient's Work Phone together. The incoming-call screen shows on each ready tab, not only one of them.
-
-Answer in Chrome, or press 1 on the Work Phone when you hear "ShopWrk business call. Press 1 to accept." The first accepted destination wins. If nobody answers, the caller reaches ShopWrk voicemail.
+Incoming calls to your shop number ring ready Chrome tabs and the Primary Recipient's Work Phone together. Answer in Chrome, or press 1 on the Work Phone. The first accepted destination wins. If nobody answers, the caller reaches ShopWrk voicemail.
 
 That inbound call still gets a CALL thread in Conversations, missed or answered.
 
+Ring rules, fallbacks, and Work Phone live on [Texts and calling](/integrations/sms-voice).
+
 ### Voicemail
 
-Missed calls go to ShopWrk voicemail. The message is stored on the conversation thread so you can play it back from Conversations.
+Missed calls go to ShopWrk voicemail. Play the message back from the conversation thread.
 
 ### Call recording
 
-Recording is not on for every call by default. The shop toggle on **Settings → Calling** is the only switch that starts it. If you see tabs, open **Setup** and turn on **Call recording enabled**.
+Recording is off until you turn it on at **Settings → Calling**. When it is on, open the CALL thread in Conversations to play the audio. ShopWrk then writes a transcript and a summary on that thread. If those fail, the audio and the call history still stay.
 
-When recording is on, ShopWrk starts after a person answers. Open the CALL thread in Conversations to play the audio back. ShopWrk then transcribes the call and writes a summary on that thread. If those fail, the audio and the call history still stay.
-
-When recording is off, you still get the CALL history in Conversations. There is no audio, transcript, or summary.
+When recording is off, you still get the CALL history. There is no audio, transcript, or summary.
 
 <Warning>
   Recording rules differ by state. ShopWrk plays a disclosure when recording is on. Know the consent rules where you operate.
 </Warning>
 
-### Call Flow
-
-Owners and admins set Call Flow at **Settings → Calling**. Choose a Primary Recipient, then add that person's Work Phone. You can also set Work Phone on **Team** for that teammate. Add fallback teammates and an optional fallback number if you want backup rings. Save.
-
-A missing or inactive Call Flow sends callers to ShopWrk voicemail instead of leaving the call hanging.
-
 ## Email
 
-ShopWrk sends transactional emails, such as estimates, invoices, and job confirmations, automatically. You can also send one-off emails to customers and run targeted email campaigns.
-
-### Email campaigns
-
-Use campaigns to send a message to a specific list of contacts. For example, all customers who have not been in for more than 6 months, or everyone tagged "Window Tint".
-
-<Steps>
-  <Step title="Open Marketing">
-    Go to **Marketing** in the sidebar, then open **Email**.
-  </Step>
-  <Step title="Create a campaign">
-    Click **New Campaign**, choose a name, and select your audience by filtering contacts.
-  </Step>
-  <Step title="Write your email">
-    Compose the subject line and body. You can insert the customer's first name.
-  </Step>
-  <Step title="Send or schedule">
-    Send immediately or schedule the campaign for a later date and time.
-  </Step>
-</Steps>
-
-### Delivery tracking
-
-After sending a campaign, ShopWrk tracks delivery status for each recipient: delivered, opened, or bounced. View these stats from the campaign detail page.
+ShopWrk sends estimates, invoices, and job confirmations on its own. One-off email lives on the customer's thread. A blast to a list is [Campaigns](/features/campaigns). To send from your shop domain, see [Sending domain](/settings/sending-domain).
 
 ## Related
 
@@ -142,8 +93,7 @@ After sending a campaign, ShopWrk tracks delivery status for each recipient: del
   <Card title="Texts and calling setup" icon="phone" href="/integrations/sms-voice">
     Get a shop number, set Call Flow, add Work Phones, and turn recording on.
   </Card>
-
-  <Card title="Team roles" icon="users" href="/getting-started/roles-permissions">
-    Who can set Call Flow, answer calls, and add a Work Phone on Team.
+  <Card title="Campaigns" icon="paper-plane" href="/features/campaigns">
+    Email a list of customers you already have.
   </Card>
 </CardGroup>

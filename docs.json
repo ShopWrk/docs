@@ -80,8 +80,7 @@
               "settings/shopwrker",
               "settings/services-catalog",
               "settings/checklists",
-              "settings/data-management",
-              "settings/webhooks"
+              "settings/data-management"
             ]
           }
         ]
@@ -116,6 +115,11 @@
     {
       "source": "/integrations/stripe-payments",
       "destination": "/integrations/shopwrk-pay",
+      "permanent": true
+    },
+    {
+      "source": "/settings/webhooks",
+      "destination": "/settings/billing",
       "permanent": true
     }
   ]
