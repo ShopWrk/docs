@@ -5,104 +5,104 @@ icon: "list"
 description: "Create services with Good/Better/Best tier pricing by vehicle size, build packages and combo deals, and configure add-ons and tax settings for your shop."
 ---
 
-Your service catalog is the foundation of every estimate and invoice in ShopWrk. When you build out your catalog with accurate prices and vehicle-size tiers, quote creation becomes fast and consistent. The catalog lives under the **Services** section in the main navigation and is configured in **Settings → Services**.
+Your service catalog feeds every estimate and invoice. Build it under **Services** in the main navigation, and configure shared settings in **Settings → Services**.
 
 ## How the catalog is organized
 
-Services are grouped into categories (for example, Window Tint, PPF, Ceramic Coating). Within a category, each service can have multiple **variants** — the tiers that represent quality or coverage levels. Each variant carries its own price and duration, optionally broken down by vehicle size.
+Services sit in categories (for example Window Tint, PPF, Ceramic Coating). Inside a category, each service can have tiers such as Good, Better, and Best. In ShopWrk those tiers are called **variants**. Each tier has its own price and job length, and can break out by vehicle size.
 
-Beyond individual services, you can also create:
+You can also create:
 
-- **Packages** — bundles of services sold together at a package price
-- **Combo deals** — cross-category combinations that unlock a combined price
-- **Add-ons (modifiers)** — optional extras a customer can add to a service at a flat fee, percentage, or per-panel rate
+- **Packages:** several services sold together at one package price.
+- **Combo deals:** mixes across categories (for example tint plus PPF) sold at one bundled price.
+- **Add-ons (modifiers):** optional extras on a service, priced as a flat fee, a percent of the service, or a per-panel rate.
 
 ## Creating a service
 
 <Steps>
   <Step title="Go to Services">
-    Navigate to **Services** from the main sidebar, then click **New Service**.
+    Open **Services** from the sidebar, then click **New Service**.
   </Step>
   <Step title="Choose a category">
-    Select the category the service belongs to. Categories help organize your catalog and control which add-ons are available for each service.
+    Pick the category. Categories organize the catalog and control which add-ons show for each service.
   </Step>
   <Step title="Name and describe the service">
-    Enter the service name and an optional description. You can use the AI description tool to generate a customer-facing description based on the service name.
+    Enter the name and an optional description. You can use the description helper to draft customer-facing copy from the service name.
   </Step>
   <Step title="Choose a pricing mode">
-    Select how this service prices different vehicle sizes:
+    Pick how this service prices different vehicle sizes:
 
-    - **Flat vehicle prices** — set exact prices for Sedan/Coupe, SUV/Crossover, and Large SUV/Truck on each variant
-    - **Multiplier pricing** — set a base price on each variant and apply multipliers per vehicle size (for example, 1.0× for sedan, 1.2× for SUV, 1.4× for large)
+    - **Flat vehicle prices:** enter exact prices for Sedan/Coupe, SUV/Crossover, and Large SUV/Truck on each variant.
+    - **Multiplier pricing:** set a base price on each variant, then multiply by vehicle size (for example 1.0× sedan, 1.2× SUV, 1.4× large).
   </Step>
   <Step title="Add variants (tiers)">
-    Each variant is a tier of the service — for example, Good, Better, or Best. For each variant you set a name, duration, and price (either flat by vehicle size or a base price used with multipliers). You can add up to as many variants as you need.
+    Each variant is a tier of the service, such as Good, Better, or Best. For each one set a name, duration, and price (flat by vehicle size, or a base price used with multipliers). Add as many variants as you need.
   </Step>
   <Step title="Configure add-ons">
-    After saving the service, open the **Add-ons** tab to assign available modifiers. Add-ons created under Settings → Services → Modifiers appear here filtered by category. Mark any add-on as **Suggested** to highlight it during the estimate process.
+    After saving, open the **Add-ons** tab. Assign modifiers from **Settings → Services → Modifiers** (filtered by category). Mark an add-on as **Suggested** to highlight it while quoting.
   </Step>
   <Step title="Save the service">
-    Click **Save** to publish the service to your catalog.
+    Click **Save** to publish it to your catalog.
   </Step>
 </Steps>
 
 ## Tier-based pricing by vehicle size
 
-ShopWrk is built around Good / Better / Best quoting. Each tier is a variant on a service, and each variant has its own price for each vehicle size class.
+ShopWrk quotes with Good / Better / Best packages. Each package level is a variant on a service. Each variant can have its own price for each vehicle size class.
 
-**Flat vehicle pricing** gives you the most control — you enter exact dollar amounts for sedan, SUV, and large for every variant. This works well when your pricing does not follow a consistent pattern across vehicle sizes.
+**Flat vehicle pricing** gives the most control. You enter exact dollar amounts for sedan, SUV, and large on every variant. Use this when prices do not follow a clean pattern across sizes.
 
-**Multiplier pricing** is faster to maintain. You set one base price per variant and ShopWrk multiplies it by a vehicle-size factor to calculate the price. Default multipliers are set in **Settings → Services** and apply to all services unless you override them at the service or variant level.
+**Multiplier pricing** is faster to maintain. You set one base price per variant and ShopWrk multiplies it by a vehicle-size factor. Default multipliers live in **Settings → Services** and apply shop-wide unless you override them on a service or variant.
 
 <AccordionGroup>
   <Accordion title="Default vehicle multipliers">
-    The shop-wide defaults are set in Settings → Services. The factory defaults are 1.0× for sedan, 1.2× for SUV, and 1.4× for large. You can change these defaults to match your shop's typical pricing spread.
+    Shop-wide defaults live in Settings → Services. Factory defaults are 1.0× sedan, 1.2× SUV, and 1.4× large. Change them to match how your shop prices larger vehicles.
   </Accordion>
 
   <Accordion title="Service-level multiplier overrides">
-    Turn on **Override** within a service's pricing settings to set different multipliers for that service only, without affecting any other services.
+    Turn on **Override** in a service's pricing settings to set different multipliers for that service only.
   </Accordion>
 
   <Accordion title="Duration multipliers">
-    You can also apply separate multipliers to job duration by vehicle size. This ensures scheduling reflects the actual time it takes to work on a larger vehicle.
+    You can also multiply job duration by vehicle size so larger vehicles block the right amount of calendar time.
   </Accordion>
 </AccordionGroup>
 
 ## Service packages
 
-A package groups multiple services into a single line item that you can add to an estimate or invoice. Packages have their own price, which can be different from the sum of the individual service prices.
+A package groups several services into one line item on an estimate or invoice. The package price can differ from the sum of the parts.
 
-To create a package, go to **Services → Packages → New Package**, select the services to include, and set the package price.
+Create one under **Services → Packages → New Package**, pick the services, and set the package price.
 
 ## Combo deals
 
-Combos let you combine services from different categories — for example, window tint plus PPF — and offer a bundled price. Combo pricing can be set by tier, with separate prices for Good, Better, and Best combinations.
+Combos combine services from different categories, for example window tint plus PPF, at a bundled price. You can set combo prices by tier (Good, Better, Best) and by vehicle size.
 
-To create a combo, go to **Services → Combos → New Combo**, choose the services to combine, and configure the pricing for each tier and vehicle size combination.
+Create one under **Services → Combos → New Combo**, choose the services, and set pricing for each tier and vehicle size.
 
 ## Add-ons and modifiers
 
-Modifiers are optional extras that customers or staff can attach to a service on an estimate. You manage modifiers in **Settings → Services → Modifiers**. Each modifier has:
+Modifiers are optional extras staff or customers can attach to a service on an estimate. Manage them in **Settings → Services → Modifiers**. Each modifier has:
 
 - A name and optional description
 - A pricing type: flat fee, percentage of the service price, or per-panel rate
-- An optional category filter — leave blank to make it available on all services
+- An optional category filter. Leave blank to offer it on all services.
 
-Once a modifier exists, you assign it to specific services from the **Add-ons** tab inside the service editor.
+After a modifier exists, assign it to services from the **Add-ons** tab in the service editor.
 
 ## Tax configuration
 
-Go to **Settings → Services** to set the tax mode for your shop:
+Go to **Settings → Services** to set tax mode:
 
-- **Tax added to price (exclusive)** — prices shown to customers have tax added on top at checkout
-- **Tax included in price (inclusive)** — prices already include tax and the net amount is back-calculated
+- **Tax added to price (exclusive):** listed prices get tax added at checkout.
+- **Tax included in price (inclusive):** listed prices already include tax; ShopWrk back-calculates the net amount.
 
-Individual services can be marked as taxable or non-taxable within the service editor.
+Mark individual services as taxable or not inside the service editor.
 
 <Note>
-  Changing the tax mode affects all new estimates and invoices. Existing documents are not updated retroactively.
+  Changing tax mode affects new estimates and invoices only. Existing documents stay as they were.
 </Note>
 
 ## Deposits
 
-You can require a deposit on a per-service basis. Inside the service editor, enable **Deposit required** and choose either a flat dollar amount or a percentage of the service price. The deposit setting flows through to the estimate and invoice for that service.
+You can require a deposit per service. In the service editor, turn on **Deposit required** and choose a flat dollar amount or a percentage of the service price. That setting flows through to estimates and invoices for that service.
