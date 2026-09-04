@@ -5,13 +5,11 @@ icon: "package"
 description: "Monitor your PPF, window tint, ceramic coating, and vinyl stock levels, get low-stock alerts, manage your film catalog, and run material usage reports."
 ---
 
-ShopWrk's inventory module keeps your shop stocked and accountable. You can track how much film and material you have on hand, receive alerts before you run out, manage your film catalog, and review usage and cost reports — all from the **Inventory** page in the sidebar.
-
-The Inventory area has four sections: **Overview**, **Stock**, **Catalog**, and **Reports**.
+Open **Inventory** to see what film you have, add rolls, approve tech deductions, and check usage. The page has four sections: **Overview**, **Stock**, **Catalog**, and **Reports**.
 
 ## Overview
 
-The Overview tab gives you a snapshot of your inventory health:
+Overview shows:
 
 - Total stock items and current quantities
 - Estimated inventory value
@@ -21,12 +19,12 @@ The Overview tab gives you a snapshot of your inventory health:
 - Usage trend chart
 
 <Tip>
-  Check the Overview tab at the start of each week to catch anything running low before it affects your jobs.
+  Check Overview at the start of each week so low stock does not surprise you mid-job.
 </Tip>
 
 ## Stock
 
-The Stock tab shows every item in your inventory with its current quantity, status, film type, and brand.
+Stock lists every item with quantity, status, film type, and brand.
 
 ### Adding stock
 
@@ -35,13 +33,13 @@ The Stock tab shows every item in your inventory with its current quantity, stat
     On the Stock tab, click **Add Stock** in the top-right corner.
   </Step>
   <Step title="Select a film from the catalog">
-    Choose a film from your catalog. The catalog entry fills in the film type, brand, and unit automatically.
+    Choose a film from your catalog. The catalog entry fills in film type, brand, and unit.
   </Step>
   <Step title="Enter the quantity">
-    Enter the amount you're adding (in rolls, linear feet, or whatever unit the film uses).
+    Enter how much you are adding (rolls, linear feet, or the unit that film uses).
   </Step>
   <Step title="Confirm">
-    Submit the form. The new stock appears in your inventory and the transaction is logged.
+    Submit the form. The stock updates and the transaction is logged.
   </Step>
 </Steps>
 
@@ -50,69 +48,69 @@ The Stock tab shows every item in your inventory with its current quantity, stat
 | Status | Meaning |
 | --- | --- |
 | Normal | Quantity is above your low-stock threshold |
-| Low | Quantity has dropped below the low-stock threshold |
+| Low | Quantity dropped below the low-stock threshold |
 | Critical | Quantity is at or near zero |
 
 ### Low-stock alerts
 
-When an item falls to low or critical status, ShopWrk highlights it in the Overview tab and shows a warning in the stock list. You can set per-item thresholds in the item detail.
+When an item hits low or critical, ShopWrk highlights it on Overview and in the stock list. Set per-item thresholds on the item detail page.
 
 <Note>
-  Low-stock thresholds are configurable per item. Go to the item's detail view to set the quantity at which an alert should trigger.
+  Low-stock thresholds are per item. Open the item detail to set the quantity that should trigger an alert.
 </Note>
 
 ### Filtering stock
 
-Filter the stock list by film type (PPF, Tinted PPF, Window Tint, Ceramic Coating), brand, or status. Use the search box to find a specific product by name.
+Filter by film type (PPF, Tinted PPF, Window Tint, Ceramic Coating), brand, or status. Use search to find a product by name.
 
 ## Catalog
 
-The Catalog tab is your reference library of films and materials. Each catalog entry defines a product — brand, film type, dimensions, and pricing — independent of how much stock you currently have.
+Catalog is your product library. Each entry defines a product (brand, film type, dimensions, pricing) separate from how much you currently have on the shelf.
 
 ### Why the catalog matters
 
-Catalog entries are the source of truth for product information. When you add stock, you pick from the catalog so that product names and specs stay consistent across all your inventory transactions and reports.
+Catalog entries keep names and specs consistent. When you add stock, you pick from the catalog so transactions and reports stay aligned.
 
-ShopWrk ships with a pre-seeded catalog of common PPF, window tint, and ceramic coating products. You can add custom entries for products specific to your shop.
+ShopWrk ships with common PPF, window tint, and ceramic products. Add custom entries for products your shop uses.
 
 ### Adding a custom catalog entry
 
 <Steps>
   <Step title="Open the Catalog tab">
-    Navigate to **Inventory → Catalog**.
+    Go to **Inventory → Catalog**.
   </Step>
   <Step title="Add a new entry">
-    Click **Add Film** and fill in the product name, brand, film type, and any pricing details.
+    Click **Add Film** and fill in product name, brand, film type, and pricing details.
   </Step>
   <Step title="Save">
-    The entry is now available when adding stock or building job estimates.
+    The entry is available when adding stock or building estimates.
   </Step>
 </Steps>
 
 ## Approval-based adjustments
 
-When a technician deducts material from inventory during a job, ShopWrk can require an owner or admin to approve the adjustment before it's applied. This gives you a checkpoint to catch errors or unauthorized usage.
+When a technician deducts material on a job, ShopWrk can require someone with permission to approve the adjustment before stock changes. That catches bad counts and unauthorized use.
 
-Pending approvals appear as a banner at the top of the Inventory page. Click it to go to the **Approvals** view and review each pending deduction.
+Pending approvals show as a banner at the top of Inventory. Open **Approvals** to review each deduction.
 
 <Warning>
-  If you have pending approvals, your stock quantities won't reflect those deductions until they're approved or rejected. Check the approvals queue regularly to keep your numbers accurate.
+  Pending approvals are not reflected in stock counts until you approve or reject them. Clear the queue regularly so numbers stay honest.
 </Warning>
 
 <Steps>
   <Step title="Review the request">
-    Open a pending approval to see which item was deducted, by how much, who submitted it, and the associated job.
+    Open a pending approval to see the item, amount, who submitted it, and the job.
   </Step>
   <Step title="Approve or reject">
-    Click **Approve** to apply the deduction, or **Reject** to dismiss it without changing the stock count.
+    Click **Approve** to apply the deduction, or **Reject** to dismiss it without changing stock.
   </Step>
 </Steps>
 
 ## Film allocation on services
 
-Film inventory connects directly to your service catalog. For tint and PPF services you can define how much material each service consumes, per vehicle tier or per panel coverage, using VLT and film type.
+For tint and PPF services you can define how much material each service uses, by vehicle size or panel coverage, using shade (how dark the film is) and film type.
 
-When a job runs a service that carries an allocation, ShopWrk knows what the job should consume before anyone touches a roll. Whether that amount deducts automatically or waits for approval depends on your inventory deduction settings. Consumption posts against the job, waste gets logged separately, and cost-per-job reflects reality.
+When a job runs a service with an allocation, ShopWrk knows what the job should consume. Whether that amount deducts automatically or waits for approval depends on your inventory settings. Consumption posts against the job, waste logs separately, and cost-per-job reflects what actually happened.
 
 <Note>
   Configure allocations on each service under **Settings → Services**. Services without an allocation still work; they just do not deduct film automatically.
@@ -120,20 +118,20 @@ When a job runs a service that carries an allocation, ShopWrk knows what the job
 
 ## Reports
 
-The Reports tab gives you three analytical views of your inventory over a selected date range (7 days, 30 days, 90 days, or 1 year).
+Reports has three views over a date range (7 days, 30 days, 90 days, or 1 year).
 
 <AccordionGroup>
   <Accordion title="Usage report">
-    See which materials were consumed, how much was used per film type or brand, and how usage breaks down across jobs. Filter by film type and brand to zero in on specific products.
+    See which materials were consumed, how much per film type or brand, and how usage breaks down across jobs. Filter by film type and brand.
   </Accordion>
 
   <Accordion title="Cost analysis">
-    Understand the cost of materials consumed during the period. Useful for calculating job profitability and budgeting for restocking.
+    See material cost for the period. Useful for job profitability and restocking budgets.
   </Accordion>
 
   <Accordion title="Waste report">
-    Track material that was logged as waste — offcuts, defective rolls, or installation errors. Use this to identify where your shop can reduce material loss.
+    Track material logged as waste: offcuts, defective rolls, or install mistakes. Use it to cut loss.
   </Accordion>
 </AccordionGroup>
 
-You can also export inventory data using the **Export** button at the top of the Inventory page.
+Export inventory data with **Export** at the top of the Inventory page.

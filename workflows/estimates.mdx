@@ -5,36 +5,36 @@ icon: "file-text"
 description: "Create Good/Better/Best estimates for any vehicle size, add services and optional add-ons, then send for customer approval, with optional deposit on the same public flow."
 ---
 
-Estimates in ShopWrk let you quote a customer before any work begins. You build the estimate in a step-by-step wizard, choose how pricing tiers are structured, and then send a link the customer can review and approve on their own device. If you turn on **Collect deposit on approval**, they can pay the deposit through [ShopWrk Pay](/integrations/shopwrk-pay) in that same public flow.
+Estimates let you quote a customer before work starts. Build the estimate in a step-by-step wizard, choose how package tiers are structured, then send a link the customer can review and approve on their own device. If you turn on **Collect deposit on approval**, they can pay the deposit through [ShopWrk Pay](/integrations/shopwrk-pay) in that same public flow.
 
 ## Creating a new estimate
 
-Navigate to **Estimates** in the sidebar and click **New Estimate**. A wizard opens and walks you through four steps: picking the customer, selecting the vehicle, adding services, and reviewing pricing.
+Go to **Estimates** in the sidebar and click **New Estimate**. The wizard walks through four steps: customer, vehicle, services, and pricing review.
 
 <Steps>
   <Step title="Select a customer">
-    Search for an existing customer by name, phone, or email. If the customer is new, click **Add new customer** directly from the search panel to create a contact without leaving the wizard.
+    Search by name, phone, or email. If the customer is new, click **Add new customer** from the search panel without leaving the wizard.
   </Step>
   <Step title="Select a vehicle">
-    Choose from vehicles already on file for that customer, or click **Add new vehicle** to enter the year, make, model, and color. ShopWrk uses the vehicle details to automatically suggest the correct pricing tier (sedan, SUV, or truck).
+    Choose a vehicle on file, or click **Add new vehicle** for year, make, model, and color. ShopWrk uses the vehicle to fill the right size prices from your catalog (sedan, SUV, or truck).
   </Step>
   <Step title="Add services">
-    Browse your service catalog by category. Select packages and individual services. Each service shows tier-based pricing. The price adjusts automatically based on the vehicle size detected in the previous step.
+    Browse your catalog by category. Select packages and services. Each service can show package-tier pricing. The price also follows the vehicle size from the previous step.
 
     <Tip>
-      You can override the auto-detected vehicle tier at any point in the services step using the tier selector at the top of the panel.
+      You can override the auto-detected vehicle size in the services step using the selector at the top of the panel.
     </Tip>
   </Step>
   <Step title="Review pricing and send">
-    Set a discount (fixed dollar amount or percentage) and a tax rate. Turn on **Collect deposit on approval** if you want the customer to pay the deposit when they approve. The deposit amount comes from your service settings, not a number you type on the estimate. Choose whether to send the estimate by email, SMS, or both, then click **Create Estimate**.
+    Set a discount (fixed dollar or percentage) and a tax rate. Turn on **Collect deposit on approval** if you want the customer to pay the deposit when they approve. The deposit amount comes from your service settings, not a number you type on the estimate. Choose email, SMS, or both, then click **Create Estimate**.
   </Step>
 </Steps>
 
 ## Tier-based pricing (Good / Better / Best)
 
-ShopWrk supports multi-tier estimates where the customer picks a package level, typically **Good**, **Better**, and **Best**, and sees a different price for each. This is the default mode for new estimates.
+ShopWrk supports multi-tier estimates where the customer picks a package level, typically **Good**, **Better**, and **Best**, and sees a different price for each. That is the default for new estimates.
 
-Each tier maps to a vehicle size:
+Good / Better / Best are package levels the customer picks. Separately, ShopWrk prices each level by vehicle size (sedan, SUV, truck) from your catalog. The wizard uses the vehicle you selected to fill the right size prices.
 
 | Vehicle type | Typical use |
 | --- | --- |
@@ -42,10 +42,10 @@ Each tier maps to a vehicle size:
 | SUV | SUVs, crossovers, and minivans |
 | Truck | Full-size trucks |
 
-When you add a service with tier pricing enabled, the correct per-vehicle-size price is pulled from your service catalog automatically. You can adjust any individual line item price before sending.
+When you add a service with tier pricing enabled, the matching per-size price comes from your catalog. You can still adjust any line item before sending.
 
 <Note>
-  If you prefer a flat single-price estimate with no tier selection, toggle off **Use tiers** in the services step. All line items will use a single price regardless of vehicle size.
+  For a flat single-price estimate with no package choice, turn off **Use tiers** in the services step. Line items then use a single price.
 </Note>
 
 ## Adding services, packages, and add-ons
@@ -54,7 +54,7 @@ In the services step you can add three kinds of line items:
 
 <CardGroup cols={3}>
   <Card title="Services" icon="wrench" href="/workflows/estimates#adding-services-packages-and-add-ons">
-    Individual services from your catalog, priced per vehicle tier.
+    Individual services from your catalog, priced by package tier and vehicle size.
   </Card>
 
   <Card title="Packages" icon="layers" href="/workflows/estimates#adding-services-packages-and-add-ons">
@@ -62,35 +62,35 @@ In the services step you can add three kinds of line items:
   </Card>
 
   <Card title="Add-ons" icon="plus-circle" href="/workflows/estimates#adding-services-packages-and-add-ons">
-    Optional extras the customer can choose to include when they approve.
+    Optional extras the customer can include when they approve.
   </Card>
 </CardGroup>
 
-Mark any line item as **Optional** to let the customer decide whether to include it. Optional items appear as checkboxes on the customer-facing approval page.
+Mark a line item **Optional** to let the customer decide. Optional items appear as checkboxes on the approval page.
 
 ## Sending the estimate to a customer
 
-From the estimate detail page, click **Send**. You can deliver the estimate via:
+From the estimate detail page, click **Send**. Deliver by:
 
-- **Email.** Sends a branded email with a unique link to the estimate.
-- **SMS.** Sends a text message with the same link.
+- **Email.** Branded email with a unique link.
+- **SMS.** Text with the same link.
 
-The customer does not need a ShopWrk account to view or respond. You can resend the estimate at any time from the same detail page.
+The customer does not need a ShopWrk account. You can resend anytime from the detail page.
 
 ## Edit an estimate after sending
 
-Open the estimate and click **Edit**. You can update an estimate that is sent, viewed, declined, expired, or approved. Save the changes, then resend it by email, SMS, or both.
+Open the estimate and click **Edit**. You can update an estimate that is sent, viewed, declined, expired, or approved. Save, then resend by email, SMS, or both.
 
-The customer's existing estimate link opens the latest saved version. If they already have an older version open, ShopWrk asks them to refresh before they approve or decline.
+The customer's existing link opens the latest saved version. If they still have an older tab open, ShopWrk asks them to refresh before they approve or decline.
 
-Editing an approved estimate removes the current approval. The customer must review and approve the updated version. ShopWrk keeps the version they approved before your edit.
+Editing an approved estimate removes the current approval. The customer must review and approve again. ShopWrk keeps the version they approved before your edit.
 
 <Note>
   You cannot edit an estimate after it has been converted to a job. Update the job or invoice instead.
 </Note>
 
 <Tip>
-  Set a **Valid until** date on the estimate to automatically expire the customer's ability to approve after a certain date. Expired estimates display a notice to the customer.
+  Set a **Valid until** date so approval expires after that date. Expired estimates show a notice to the customer.
 </Tip>
 
 ## What the customer sees
@@ -98,20 +98,20 @@ Editing an approved estimate removes the current approval. The customer must rev
 When the customer opens their estimate link, they see:
 
 - Your shop branding and the services quoted
-- Tier options (if the estimate uses tiers). The customer picks **Good**, **Better**, or **Best**
-- Optional add-ons as checkboxes they can include or skip
-- A live price summary that updates as they make selections
+- Package options (if tiers are on). They pick **Good**, **Better**, or **Best**
+- Optional add-ons as checkboxes
+- A live price summary that updates with their selections
 - **Approve** and **Decline** buttons
 
 If **Collect deposit on approval** is on, approve takes them into [ShopWrk Pay](/integrations/shopwrk-pay) for the deposit. They approve and pay in one flow.
 
-If a contract or agreement needs to be signed before approval is allowed, the customer will be prompted to sign the document first.
+If a contract must be signed before approval, they are prompted to sign first.
 
-The customer can also send a question directly from the estimate page. Questions appear in your messaging inbox.
+They can also send a question from the estimate page. Questions land in your messaging inbox.
 
 ## Approving, paying the deposit, and converting
 
-Once the customer clicks **Approve**, the estimate status changes to **Approved** in your dashboard.
+Once the customer clicks **Approve**, the estimate status becomes **Approved** in your dashboard.
 
 If **Collect deposit on approval** is on, ShopWrk creates an unscheduled job and that job's invoice before taking money. The deposit is a payment request on that invoice. Success shows the approved work, the linked job, deposit paid, and that the shop will contact them to schedule.
 
@@ -119,14 +119,16 @@ If they leave before paying, the approval still stands. The job and invoice stay
 
 Send the remaining balance later on that same invoice. See [Invoices and payments](/workflows/invoices-payments).
 
-If **Collect deposit on approval** is off, approval only accepts the quote. Open the approved estimate and click **Convert to Job**. On the conversion page you can optionally set a scheduled date and time, assign a technician, and assign a bay number. All of those fields are optional.
+If **Collect deposit on approval** is off, approval only accepts the quote. Open the approved estimate and click **Convert to Job**. On conversion you can optionally set date and time, technician, and bay. All of those fields are optional.
+
+If Collect deposit on approval already created the job, schedule that job. Do not convert the estimate again.
 
 <Note>
-  You can only convert an estimate once. After conversion, the estimate shows a link to the job it created. Collect-on-approval already created that job, so you schedule it from the job instead of converting again.
+  You can only convert an estimate once. After conversion, the estimate shows a link to the job it created.
 </Note>
 
-If the customer declines, they can optionally leave a reason. The estimate status changes to **Declined** and the reason is visible on the estimate detail page.
+If the customer declines, they can leave a reason. Status becomes **Declined** and the reason shows on the estimate detail page.
 
 <Warning>
-  A customer cannot approve an estimate that has already expired. If a customer tries to approve after the valid-until date has passed, they will see an expiry notice and cannot proceed.
+  A customer cannot approve an expired estimate. After the valid-until date they see an expiry notice and cannot proceed.
 </Warning>
