@@ -8,7 +8,7 @@
     "dark": "/images/ShopWrkIconLogoBlackBG.png"
   },
   "colors": {
-    "primary": "#A77642",
+    "primary": "#734A2D",
     "light": "#C9A06A",
     "dark": "#734A2D"
   },
@@ -38,12 +38,6 @@
     "decoration": "gradient"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Open ShopWrk",
-        "href": "https://app.shopwrk.com"
-      }
-    ],
     "primary": {
       "type": "button",
       "label": "Sign in",
@@ -131,7 +125,7 @@
               "integrations/google-calendar",
               "integrations/social-media",
               "integrations/site-tracker",
-              "settings/sending-domain"
+              "settings/email-domain"
             ]
           },
           {
@@ -178,6 +172,11 @@
     {
       "source": "/integrations/meta",
       "destination": "/integrations/social-media",
+      "permanent": true
+    },
+    {
+      "source": "/settings/sending-domain",
+      "destination": "/settings/email-domain",
       "permanent": true
     }
   ],

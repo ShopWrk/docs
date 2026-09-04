@@ -2,7 +2,7 @@
 title: "How the ShopWrk AI agents work"
 sidebarTitle: "AI agents"
 icon: "bot"
-description: "The assistant helps you run the shop. Lead Closer texts customers. A voice receptionist can answer when nobody picks up. Open the page for the job you want to do."
+description: "The assistant helps you run the shop. Lead Closer texts inbound leads. Voice receptionist and Meta Ads agent are coming soon."
 ---
 
 ShopWrk agents work from your services, prices, calendar, and conversations. They are not generic chatbots.
@@ -17,7 +17,7 @@ Open **Agents** in the sidebar to see them. The chat that helps *you* run the sh
     Texts inbound leads, quotes from your catalog, can take a ShopWrk Pay deposit, and books a bay.
   </Card>
   <Card title="Texts and calling" icon="phone" href="/integrations/sms-voice">
-    Shop number, Call Flow, Work Phone, and recording. The voice receptionist uses this setup.
+    Shop number, Call Flow, Work Phone, and recording. Call Flow is for how humans answer the shop line.
   </Card>
   <Card title="ShopWrker memory" icon="brain" href="/settings/shopwrker">
     Shop facts and personal notes the assistant should remember.
@@ -26,13 +26,11 @@ Open **Agents** in the sidebar to see them. The chat that helps *you* run the sh
 
 ## Voice receptionist
 
-When a call comes in and nobody can pick up, the voice receptionist answers in your shop's style. It can answer common questions, check whether someone is already a customer, take a message, or book a time.
-
-Calls it handles show up in [Conversations](/features/communications) with a transcript. Set how after-hours calls get handled with [Call Flow](/integrations/sms-voice#call-flow).
+**Coming soon.** Not available yet. When it ships, it will answer calls the shop cannot pick up. Until then, use [Call Flow](/integrations/sms-voice#call-flow) so a person or voicemail handles inbound calls.
 
 ## Meta Ads agent
 
-This agent connects your ad spend to booked, paid jobs. It can show cost per booked job, which creatives actually convert, and propose budget or creative changes. Proposals wait in an approvals queue. Nothing changes on your ad account until you approve it.
+**Coming soon.** Not available yet. Connecting Instagram, Messenger, and Facebook Lead Ads is separate and works today. See [Instagram and Messenger](/integrations/social-media).
 
 ## What every agent reads
 
@@ -49,7 +47,7 @@ Keep these current. Every agent picks up the next conversation from the same pla
 ## Guardrails
 
 - Low confidence or a sensitive topic hands the conversation to a person, with a summary of what happened.
-- Money-moving and ad-account changes wait for you unless you turn that on for that agent.
+- Money-moving changes wait for you unless you turn that on for that agent.
 - Customers who reply STOP stop getting automated texts.
 - One shop's data never leaks into another's answers.
 
@@ -59,8 +57,7 @@ Keep these current. Every agent picks up the next conversation from the same pla
 | --- | --- | --- | --- |
 | AI assistant chat | Limited images | Yes | Yes |
 | Lead Closer (SMS) |  | Yes | Yes |
-| Lead Closer (Instagram, Facebook) |  | Yes | Yes |
-| Voice receptionist |  |  | Yes |
-| Meta Ads agent proposals |  |  | Yes |
+| Voice receptionist |  |  | Coming soon |
+| Meta Ads agent |  |  | Coming soon |
 
 See [Billing](/settings/billing) for included allowances.
