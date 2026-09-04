@@ -1,95 +1,158 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "ShopWrk",
-  "theme": "willow",
+  "theme": "maple",
+  "description": "Help for running your ShopWrk shop.",
   "favicon": {
     "light": "/images/ShopWrk-WhiteBGLogo.png",
     "dark": "/images/ShopWrkIconLogoBlackBG.png"
   },
   "colors": {
-    "primary": "#040404",
-    "light": "#a77642",
-    "dark": "#734a2d"
+    "primary": "#A77642",
+    "light": "#C9A06A",
+    "dark": "#734A2D"
+  },
+  "logo": {
+    "light": "/images/ShopWrkFullLogo-Black.png",
+    "dark": "/images/ShopwrkWhiteLogo-NOBG.png",
+    "href": "https://shopwrk.com"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "fonts": {
+    "family": "Inter",
+    "heading": {
+      "family": "Inter",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "background": {
+    "decoration": "gradient"
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Open ShopWrk",
+        "href": "https://app.shopwrk.com"
+      }
+    ],
     "primary": {
-      "type": "github",
-      "href": "https://github.com/kassamkhoja/shopwrk-app"
+      "type": "button",
+      "label": "Sign in",
+      "href": "https://app.shopwrk.com"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://shopwrk.com"
     }
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Help",
+        "icon": "book-open",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Start here",
+            "icon": "rocket",
             "pages": [
               "introduction",
               "getting-started/account-setup",
               "getting-started/onboarding",
-              "getting-started/roles-permissions",
-              "getting-started/first-job"
+              "getting-started/first-job",
+              "getting-started/roles-permissions"
             ]
           },
           {
-            "group": "Core Workflows",
+            "group": "Jobs",
+            "icon": "wrench",
             "pages": [
               "workflows/estimates",
               "workflows/jobs",
               "workflows/invoices-payments",
+              "features/calendar-booking",
               "workflows/customer-portal"
             ]
           },
           {
-            "group": "Features",
+            "group": "Customers",
+            "icon": "users",
             "pages": [
               "features/crm",
-              "features/calendar-booking",
-              "features/inventory",
-              "features/team-scheduling",
               "features/communications",
-              "features/lead-closer",
-              "features/automations",
-              "features/ai-assistant",
-              "features/command-palette",
-              "features/warranties",
-              "features/reports",
-              "features/documents",
               "features/campaigns",
-              "features/ai-agents",
-              "features/forms"
+              "features/forms",
+              "features/documents",
+              "features/warranties"
             ]
           },
           {
-            "group": "Integrations",
+            "group": "Team",
+            "icon": "users-round",
+            "pages": [
+              "features/team-scheduling",
+              "features/inventory"
+            ]
+          },
+          {
+            "group": "AI",
+            "icon": "sparkles",
+            "pages": [
+              "features/ai-agents",
+              "features/ai-assistant",
+              "features/lead-closer",
+              "features/automations",
+              "features/command-palette",
+              "features/reports"
+            ]
+          },
+          {
+            "group": "Payments",
+            "icon": "credit-card",
             "pages": [
               "integrations/shopwrk-pay",
+              "settings/billing"
+            ]
+          },
+          {
+            "group": "Connections",
+            "icon": "unplug",
+            "pages": [
+              "integrations/sms-voice",
               "integrations/google-calendar",
               "integrations/social-media",
               "integrations/site-tracker",
-              "integrations/sms-voice"
+              "settings/sending-domain"
             ]
           },
           {
-            "group": "Settings & Config",
+            "group": "Settings",
+            "icon": "settings",
             "pages": [
-              "settings/billing",
-              "settings/branding",
-              "settings/sending-domain",
-              "settings/shopwrker",
               "settings/services-catalog",
               "settings/checklists",
+              "settings/branding",
+              "settings/shopwrker",
               "settings/data-management"
             ]
           }
         ]
       },
       {
-        "tab": "Mobile App",
+        "tab": "Mobile",
+        "icon": "smartphone",
         "groups": [
           {
-            "group": "iOS App",
+            "group": "iOS app",
             "pages": [
               "mobile/overview",
               "mobile/getting-started",
@@ -100,16 +163,6 @@
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/images/ShopWrkFullLogo-Black.png",
-    "dark": "/images/ShopWrkFullLogo-Black.png"
-  },
-  "appearance": {
-    "default": "system"
-  },
-  "fonts": {
-    "family": "Montserrat"
   },
   "redirects": [
     {
@@ -127,5 +180,8 @@
       "destination": "/integrations/social-media",
       "permanent": true
     }
-  ]
+  ],
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  }
 }

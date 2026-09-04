@@ -1,0 +1,6 @@
+/* Tighter, scannable sidebar for shop owners */
+nav [data-sidebar] a,
+aside a {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
