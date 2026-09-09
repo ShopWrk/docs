@@ -1,21 +1,36 @@
 ---
-title: "Build your service catalog with tier-based pricing"
+title: "Build your service catalog with variants and vehicle-group prices"
 sidebarTitle: "Services"
 icon: "list"
-description: "Create services with Good/Better/Best tier pricing by vehicle size, build packages and combo deals, and configure add-ons and tax settings for your shop."
+description: "Create services with Good/Better/Best variants, set prices by vehicle group, manage categories and panel templates, and configure add-ons and tax for your shop."
 ---
 
 Your service catalog feeds every estimate and invoice. Build it under **Services** in the main navigation, and configure shared settings in **Settings → Services**.
 
 ## How the catalog is organized
 
-Services sit in categories (for example Window Tint, PPF, Ceramic Coating). Inside a category, each service can have tiers such as Good, Better, and Best. In ShopWrk those tiers are called **variants**. Each tier has its own price and job length, and can break out by vehicle size.
+Services sit in categories (for example Window Tint, PPF, Ceramic Coating). Inside a category, each service can have options such as Good, Better, and Best. In ShopWrk those options are called **variants**.
+
+Each variant has its own job length and its own prices by **vehicle group**. Vehicle groups are how you price different kinds of cars under that option. Put the dollar amount for each group on the variant. Catalog pricing uses those amounts, not a size multiplier.
 
 You can also create:
 
 - **Packages:** several services sold together at one package price.
 - **Combo deals:** mixes across categories (for example tint plus PPF) sold at one bundled price.
 - **Add-ons (modifiers):** optional extras on a service, priced as a flat fee, a percent of the service, or a per-panel rate.
+
+## Manage service categories
+
+Categories live under **Settings → Services**.
+
+From that page you can:
+
+- Create a new category
+- Rename a category
+- Activate or deactivate a category
+- Reorder categories so the catalog shows in the order your shop prefers
+
+Deactivated categories stay out of the way when you build new services, without deleting the services already in them.
 
 ## Creating a service
 
@@ -29,44 +44,50 @@ You can also create:
   <Step title="Name and describe the service">
     Enter the name and an optional description. You can use the description helper to draft customer-facing copy from the service name.
   </Step>
-  <Step title="Choose a pricing mode">
-    Pick how this service prices different vehicle sizes:
-
-    - **Flat vehicle prices:** enter exact prices for Sedan/Coupe, SUV/Crossover, and Large SUV/Truck on each variant.
-    - **Multiplier pricing:** set a base price on each variant, then multiply by vehicle size (for example 1.0× sedan, 1.2× SUV, 1.4× large).
+  <Step title="Add variants">
+    Each variant is an option the customer can pick, such as Good, Better, or Best. Give each one a clear name, a job duration, and prices for your vehicle groups. Add as many variants as you need.
   </Step>
-  <Step title="Add variants (tiers)">
-    Each variant is a tier of the service, such as Good, Better, or Best. For each one set a name, duration, and price (flat by vehicle size, or a base price used with multipliers). Add as many variants as you need.
+  <Step title="Set vehicle-group prices">
+    Inside each variant, enter prices for the vehicle groups your shop uses. Incomplete pricing shows what still needs a number before the quote is ready.
+  </Step>
+  <Step title="Set up panels">
+    Open the **Panels** tab. If the service has no panels yet, choose **Choose from template** or **Start from scratch**. Use **Manage templates** when you want to edit the shared library first. See [Panel templates](#panel-templates) below.
   </Step>
   <Step title="Configure add-ons">
-    After saving, open the **Add-ons** tab. Assign modifiers from **Settings → Services → Modifiers** (filtered by category). Mark an add-on as **Suggested** to highlight it while quoting.
+    Open the **Add-ons** tab. Assign modifiers from **Settings → Services → Modifiers** (filtered by category). Mark an add-on as **Suggested** to highlight it while quoting.
   </Step>
   <Step title="Save the service">
-    Click **Save** to publish it to your catalog.
+    Click **Save** to publish it to your catalog. The editor stays open so you can keep editing after a save.
   </Step>
 </Steps>
 
-## Tier-based pricing by vehicle size
+## Variants and vehicle-group prices
 
-ShopWrk quotes with Good / Better / Best packages. Each package level is a variant on a service. Each variant can have its own price for each vehicle size class.
+ShopWrk quotes with package options such as Good / Better / Best. Each option is a **variant** on a service.
 
-**Flat vehicle pricing** gives the most control. You enter exact dollar amounts for sedan, SUV, and large on every variant. Use this when prices do not follow a clean pattern across sizes.
+Under each variant, **vehicle groups** are the prices for different vehicle types. Put the dollar amounts you actually charge for that group on that variant. ShopWrk uses those amounts on estimates and jobs.
 
-**Multiplier pricing** is faster to maintain. You set one base price per variant and ShopWrk multiplies it by a vehicle-size factor. Default multipliers live in **Settings → Services** and apply shop-wide unless you override them on a service or variant.
+Keep one pricing story for the shop: variants for the package level, vehicle groups for the car.
 
-<AccordionGroup>
-  <Accordion title="Default vehicle multipliers">
-    Shop-wide defaults live in Settings → Services. Factory defaults are 1.0× sedan, 1.2× SUV, and 1.4× large. Change them to match how your shop prices larger vehicles.
-  </Accordion>
+## Panel templates
 
-  <Accordion title="Service-level multiplier overrides">
-    Turn on **Override** in a service's pricing settings to set different multipliers for that service only.
-  </Accordion>
+Panels are the parts of the vehicle a service covers (for example windshield, driver door, or a ceramic panel). Templates let you reuse a panel layout across services.
 
-  <Accordion title="Duration multipliers">
-    You can also multiply job duration by vehicle size so larger vehicles block the right amount of calendar time.
-  </Accordion>
-</AccordionGroup>
+### Manage the template library
+
+Open the panel template library from **Settings**, or click **Manage templates** from a service **Panels** tab. Create, edit, or delete templates there. The first time you open it, ShopWrk adds starter templates you can edit like any other row.
+
+When you create a template, you can say whether panels ask for a VLT shade. Inside the template editor, turn shade on or off per panel so mixed tint and non-tint templates work.
+
+### Apply templates on a service
+
+In the service editor **Panels** tab:
+
+- An empty panel list shows **Choose from template** and **Start from scratch**, plus **Manage templates**.
+- After panels exist, manage them as usual. Use **Apply template…** when you want to replace the current list (ShopWrk asks you to confirm).
+- On a variant, you can copy panels from another variant, add panels from the pool or a template, or reset the variant panels back to the chooser (with confirm).
+
+VLT shade controls show only on panels that ask for a shade. Tint and ceramic panels can live on the same service.
 
 ## Service packages
 
@@ -76,9 +97,9 @@ Create one under **Services → Packages → New Package**, pick the services, a
 
 ## Combo deals
 
-Combos combine services from different categories, for example window tint plus PPF, at a bundled price. You can set combo prices by tier (Good, Better, Best) and by vehicle size.
+Combos combine services from different categories, for example window tint plus PPF, at a bundled price. You can set combo prices by variant and by vehicle group.
 
-Create one under **Services → Combos → New Combo**, choose the services, and set pricing for each tier and vehicle size.
+Create one under **Services → Combos → New Combo**, choose the services, and set pricing for each option and vehicle group.
 
 ## Add-ons and modifiers
 
