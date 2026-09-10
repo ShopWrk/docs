@@ -2,7 +2,7 @@
 title: "Find customers, jobs, stock, and messages from anywhere in ShopWrk"
 sidebarTitle: "Shop search"
 icon: "search"
-description: "Press Cmd+K or Ctrl+K to search customers, jobs, invoices, messages, calls, voicemails, and film stock without leaving the page you are on."
+description: "Press Cmd+K or Ctrl+K to search customers, jobs, invoices, messages, calls, voicemails, and film stock. Type in your own words and ShopWrk turns that into a search."
 keywords:
   - "command palette"
   - "search"
@@ -13,6 +13,7 @@ keywords:
   - "inventory"
   - "unread messages"
   - "missed calls"
+  - "natural language search"
 ---
 
 When a customer is on the phone, you do not have time to click through Contacts, Jobs, and Invoices. Press **Cmd+K** on a Mac or **Ctrl+K** on Windows from anywhere in ShopWrk. A search box opens on top of the page you were already on.
@@ -25,11 +26,23 @@ After you sign in, press **Cmd+K** on a Mac or **Ctrl+K** on Windows. You can do
 
 Start typing. Results show as you type. An invoice number, phone number, VIN, or license plate jumps to the top. A misspelled customer name usually still finds them.
 
-Headings above the results show what ShopWrk understood, such as **Jobs on January 4, 2026**.
+You can also type the way you talk at the front desk. ShopWrk reads the meaning of what you typed, turns it into a search, and runs that search. A short heading above the results shows what ShopWrk actually ran, such as **Jobs on January 4, 2026**. That reading is how you tell whether ShopWrk understood you.
+
+Ordinary natural-language search does **not** use Quick AI credits. Credits apply only when you choose the explicit **Quick AI** path for a written answer.
+
+Exact invoice numbers, phone numbers, VINs, license plates, and simple name lookups stay fast. Those do not wait on interpretation.
 
 Click a result to open it. A customer opens their contact page. A job opens the job. An invoice opens the invoice. A conversation opens the thread. Search closes and you land on that record.
 
-Search looks through your current shop. You only see what your login can already open.
+Search looks through your current shop. You only see what your login can already open. Permissions still gate every result and every create command.
+
+## When the reading is wrong or empty
+
+Empty results for an interpreted search still show the reading ShopWrk used. That helps you tell a misunderstanding apart from an empty shop (for example, no unpaid invoices right now).
+
+If interpretation fails because of a timeout, outage, or a bad parse, you get a distinct message. That is not the same as "no matching records." Simple search still works in those cases, so exact numbers and names keep finding records.
+
+If the heading shows the wrong idea, edit the search text and try again. There is no interview or clarification dialog. Change the words until the reading matches what you meant.
 
 ## What you can find
 
@@ -81,7 +94,15 @@ Dates follow your shop's timezone. Unpaid and overdue invoices use the due date.
 
 If the search is asking for a total, you get the matching records plus one number: outstanding invoice balance, or the combined value of estimates still waiting.
 
-You can also search with wording from service details or notes on customers, vehicles, jobs, estimates, invoices, and inventory. Use the wording you remember when you do not know the exact name or number. Exact invoice numbers, phone numbers, VINs, and other identifiers still work best. This does not search inside old messages.
+You can also search with wording from service details or notes on customers, vehicles, jobs, estimates, invoices, and inventory. Use the wording you remember when you do not know the exact name or number. Exact invoice numbers, phone numbers, VINs, and other identifiers still work best. This does not search inside old message bodies or call transcripts.
+
+### Walkthrough: find overdue invoices in your own words
+
+1. Press **Cmd+K** (Mac) or **Ctrl+K** (Windows).
+2. Type `invoices more than 7 days overdue` and wait a moment for the heading to show what ShopWrk ran.
+3. Read the heading. If it matches what you meant, click an invoice in the list.
+4. If the heading is wrong, edit the text (for example `unpaid invoices past due`) until the reading looks right.
+5. If you only need invoice `1042`, type that number instead. Exact identifiers stay fast and skip waiting on interpretation.
 
 ## Start a new estimate, invoice, or job from search
 
@@ -152,6 +173,8 @@ After they are pinned, the next search or **Quick AI** question stays about that
 Search comes first. Use **Quick AI** when you want a written answer instead of a list of records.
 
 When the box has text, a **Quick AI** action appears. Click it, or press **Tab**, to send what you typed. The search box stays where it is. The answer shows underneath.
+
+Natural-language shop search (typing in your own words and getting a result list) is separate from Quick AI. Search interpretation does not spend Quick AI credits. Credits apply when you choose Quick AI for a conversational answer.
 
 After the first answer, the box says **Ask a follow-up…**. Type the next question and press **Tab** again. That stays in the same thread.
 
