@@ -2,8 +2,8 @@
 title: "Tell ShopWrker how your shop works"
 sidebarTitle: "ShopWrker"
 icon: "brain"
-description: "Add shop facts and personal notes in Settings so ShopWrker remembers them in chat. Keep longer files in the assistant knowledge library."
-keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings"]
+description: "Add shop facts and personal notes in Settings so ShopWrker remembers them in chat. Connect the apps you already use so ShopWrker can read and take actions when you ask."
+keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings", "Connected apps"]
 ---
 
 If you want ShopWrker to remember shop rules, go to **Settings → AI & Automation → ShopWrker → Memory**.
@@ -54,6 +54,81 @@ Open **AI** in the sidebar and type like you always do. ShopWrker already has th
 The same shop memory is in play on Lead Closer. Set it once on this tab.
 
 If ShopWrker needs a yes or a choice from you, it asks in the same chat box. You do not get a second window.
+
+## Connected apps
+
+If you want ShopWrker to read or take actions in apps you already use, go to **Settings → AI & Automation → ShopWrker → Connected apps**.
+
+Connected apps lets ShopWrker work in accounts like Google, Notion, QuickBooks, or Zoho when you ask in chat. ShopWrk never sees the provider password. You sign in with that app's own sign-in screen.
+
+### Connected apps vs Google Calendar sync
+
+These are easy to mix up. They are not the same setting.
+
+| Place | What it is for |
+| --- | --- |
+| **Settings → AI & Automation → ShopWrker → Connected apps** | Lets ShopWrker read and take actions in Google (Gmail, Calendar, Drive, Contacts, Ads, website stats) and other apps when you ask in AI chat |
+| **Connections → Google Calendar** | Syncs your shop calendar so jobs and appointments show on the calendar you already use. See [Google Calendar](/integrations/google-calendar) |
+
+Use Connected apps when you want ShopWrker to pull from Gmail or Drive in a chat. Use **Connections → Google Calendar** when you want the shop schedule on Google Calendar.
+
+### Who can manage Connected apps
+
+You need the **Settings Integrations** permission. If you cannot open the tab or connect an app, ask someone with that permission.
+
+### Connect an app
+
+The **Connected apps** tab lists the pilot apps: **Google**, **Notion**, **QuickBooks**, and **Zoho**.
+
+- **Google.** ShopWrker can read and take actions in your Gmail, Calendar, Drive, Contacts, Ads, and website stats when you ask.
+- **Notion**, **QuickBooks**, and **Zoho.** ShopWrker can read and take actions in that account when you ask.
+
+<Steps>
+  <Step title="Open Connected apps">
+    Go to **Settings → AI & Automation → ShopWrker**, then open the **Connected apps** tab.
+  </Step>
+  <Step title="Start the connection">
+    Click the plus button on the app you want. ShopWrk opens that provider's sign-in screen. Sign in there. ShopWrk never asks for the provider password on its own screen.
+  </Step>
+  <Step title="Finish or retry">
+    When sign-in works, the app shows as connected. If you leave early or sign-in fails, you see a warning. Click the plus button again, or **Sign in again**, to retry.
+  </Step>
+</Steps>
+
+If app connections are not ready for your shop yet, the page says **App connections are not set up yet. Check back soon.**
+
+### Manage tools after you connect
+
+When a connection is healthy, open **Manage** on that app. ShopWrk opens a detail page titled **Connected apps** for that account.
+
+On the detail page, each tool has a segmented control:
+
+| Choice | What it means |
+| --- | --- |
+| **Never** | ShopWrker cannot use that tool |
+| **Ask first** | ShopWrker shows an approval card each time (default when you have not saved a choice) |
+| **Always allow** | ShopWrker runs that tool without asking |
+
+The tools list can be empty until ShopWrk finishes the first connection check. Wait a moment, then refresh the page if it stays blank.
+
+**Uninstall** confirms, then removes access right away. ShopWrker cannot use that app until you connect it again.
+
+### How Connected apps show up in chat
+
+When ShopWrker uses a connected app while you chat on **AI**, you may see status like **Using Gmail**. Results can show a line such as **From Google** so you know where the answer came from.
+
+If a tool is set to **Ask first**, approve or deny in the same chat before ShopWrker continues.
+
+### Walkthrough: connect Google for ShopWrker
+
+Maria runs a wrap shop. She wants ShopWrker to pull open estimates from Gmail when she asks about a lead.
+
+1. She goes to **Settings → AI & Automation → ShopWrker → Connected apps**.
+2. She clicks plus on **Google** and signs in on Google's screen.
+3. She opens **Manage**, leaves Gmail tools on **Ask first**, and sets Drive tools she does not need to **Never**.
+4. On **AI**, she asks ShopWrker to find the last email from a customer. ShopWrker shows **Using Gmail**, asks once, then answers with **From Google**.
+
+Her shop calendar sync stays under **Connections → Google Calendar**. That sync is separate from this Google connection for ShopWrker.
 
 ## General
 
