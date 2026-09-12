@@ -1,1 +1,224 @@
-PLACEHOLDER_WILL_REPLACE
+---
+title: "Build and send tier-based estimates for customer approval"
+sidebarTitle: "Estimates"
+icon: "file-text"
+description: "Create Good/Better/Best estimates, set On approval for invoice, deposit, job, or nothing, then send for customer approval through ShopWrk Pay when you collect money."
+---
+
+Estimates let you quote a customer before work starts. Build the estimate in a step-by-step wizard, choose how package tiers are structured, then send a link the customer can review and approve on their own device.
+
+Before they approve, set the **On approval** card so ShopWrk knows what to do next: create a full invoice, create a deposit invoice, create an unscheduled job, do both, or do nothing. That card replaces the older "Collect deposit always creates a job" behavior. You decide each path on purpose.
+
+## Creating a new estimate
+
+Go to **Estimates** in the sidebar and click **New Estimate**. The wizard walks through four steps: customer, vehicle, services, and pricing review.
+
+<Steps>
+  <Step title="Select a customer">
+    Search by name, phone, or email. If the customer is new, click **Add new customer** from the search panel without leaving the wizard.
+  </Step>
+  <Step title="Select a vehicle">
+    Choose a vehicle on file, or click **Add new vehicle** for year, make, model, and color. ShopWrk uses the vehicle to fill the right size prices from your catalog (sedan, SUV, or truck).
+  </Step>
+  <Step title="Add services">
+    Browse your catalog by category. Select packages and services. Each service can show package-tier pricing. The price also follows the vehicle size from the previous step.
+
+    <Tip>
+      You can override the auto-detected vehicle size in the services step using the selector at the top of the panel.
+    </Tip>
+  </Step>
+  <Step title="Review pricing and send">
+    Set a discount (fixed dollar or percentage) and a tax rate. Choose email, SMS, or both if you want to send right away, then click **Create Estimate**. After the estimate is open, use the **On approval** card to set invoice, deposit, send, and job choices before the customer approves.
+  </Step>
+</Steps>
+
+## Tier-based pricing (Good / Better / Best)
+
+ShopWrk supports multi-tier estimates where the customer picks a package level, typically **Good**, **Better**, and **Best**, and sees a different price for each. That is the default for new estimates.
+
+Good / Better / Best are package levels the customer picks. Separately, ShopWrk prices each level by vehicle size (sedan, SUV, truck) from your catalog. The wizard uses the vehicle you selected to fill the right size prices.
+
+| Vehicle type | Typical use |
+| --- | --- |
+| Sedan | Cars and smaller coupes |
+| SUV | SUVs, crossovers, and minivans |
+| Truck | Full-size trucks |
+
+When you add a service with tier pricing enabled, the matching per-size price comes from your catalog. You can still adjust any line item before sending.
+
+<Note>
+  For a flat single-price estimate with no package choice, turn off **Use tiers** in the services step. Line items then use a single price.
+</Note>
+
+## Adding services, packages, and add-ons
+
+In the services step you can add three kinds of line items:
+
+<CardGroup cols={3}>
+  <Card title="Services" icon="wrench" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Individual services from your catalog, priced by package tier and vehicle size.
+  </Card>
+
+  <Card title="Packages" icon="layers" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Pre-configured bundles of services with combined pricing.
+  </Card>
+
+  <Card title="Add-ons" icon="plus-circle" href="/workflows/estimates#adding-services-packages-and-add-ons">
+    Optional extras the customer can include when they approve.
+  </Card>
+</CardGroup>
+
+Mark a line item **Optional** to let the customer decide. Optional items appear as checkboxes on the approval page.
+
+## On approval: what happens when they say yes
+
+**On approval** is the plan for the moment the customer approves. Set it before they approve. You will find the card in two places:
+
+- On the estimate canvas inspector while you edit (saves when you save the canvas)
+- On the estimate detail rail after the estimate exists (autosaves as you change it)
+
+New estimates use this card. Older estimates that still have the legacy collect-deposit or auto-convert flags still work, but new quotes should be set here.
+
+### Invoice on approval
+
+The segmented control **Invoice on approval** has three choices:
+
+| Choice | What ShopWrk does on approval |
+| --- | --- |
+| **Full invoice** | Creates an invoice for the approved amount |
+| **Deposit** | Creates a deposit invoice for the amount you set |
+| **Do nothing** | Does not create an invoice from approval |
+
+If you pick **Deposit**, set the deposit type (percent or flat), enter the value, and read the **Due on approval** money readout. That is the deposit amount the customer can pay through [ShopWrk Pay](/integrations/shopwrk-pay) on the public estimate when Deposit is chosen.
+
+### Send the invoice automatically
+
+When invoice is **Full invoice** or **Deposit**, you can turn on **Send automatically**. The helper text is: "When they approve, email or text the invoice."
+
+With send on:
+
+- Choose email, SMS, or both. You must pick at least one channel.
+- Write the message in each channel composer. Use **Insert** or **Insert variable** for invoice fields when you want names and links filled in. **Reset** puts the wording back to the default.
+- Set **Due date**: Due on receipt, or Net 7 / 14 / 30 / 60 **from approval**. The due date counts from the day they approve, not from the day the message sends.
+
+If send is off, the invoice can still be created. You send it yourself later from [Invoices and payments](/workflows/invoices-payments).
+
+### Create an unscheduled job
+
+Separately from the invoice choice, turn on **Create unscheduled job on approval** when you want a job ready without a booked appointment. The helper text is: "Creates a job without a scheduled appointment. You schedule it later."
+
+Invoice and job are independent. You can pick any of these four paths:
+
+1. **Invoice only.** Money paperwork starts on approval. You schedule the job later yourself, or use **Convert to Job** if no job was created.
+2. **Job only.** An unscheduled job appears. No invoice from approval.
+3. **Both.** Invoice (full or deposit) plus an unscheduled job.
+4. **Neither.** Approval only accepts the quote. You convert and invoice when you are ready.
+
+### On approval vs Convert to Job
+
+Use **On approval** when you already know what should happen the moment they say yes.
+
+Use **Convert to Job** when approval only locked in the quote, or when you chose **Do nothing** for invoice and left the job switch off. Open the approved estimate and click **Convert to Job**. You can optionally set date and time, technician, and bay. All of those are optional.
+
+If On approval already created the job, schedule that job. Do not convert again to invent a second one.
+
+When you convert manually and a standalone approval invoice already exists, ShopWrk adopts that invoice instead of creating a second invoice for the same approval.
+
+<Note>
+  You can only convert an estimate once into a new job path. After a job exists from approval or convert, the estimate shows a link to that job.
+</Note>
+
+## Sending the estimate to a customer
+
+From the estimate detail page, click **Send**. Deliver by:
+
+- **Email.** Branded email with a unique link.
+- **SMS.** Text with the same link.
+
+The customer does not need a ShopWrk account. You can resend anytime from the detail page.
+
+## Edit an estimate after sending
+
+Open the estimate and click **Edit**. You can update an estimate that is sent, viewed, declined, expired, or approved. Save, then resend by email, SMS, or both.
+
+The customer's existing link opens the latest saved version. If they still have an older tab open, ShopWrk asks them to refresh before they approve or decline.
+
+Editing an approved estimate removes the current approval. The customer must review and approve again. ShopWrk keeps the version they approved before your edit.
+
+<Note>
+  You cannot edit an estimate after it has been converted to a job. Update the job or invoice instead.
+</Note>
+
+<Tip>
+  Set a **Valid until** date so approval expires after that date. Expired estimates show a notice to the customer.
+</Tip>
+
+## What the customer sees
+
+When the customer opens their estimate link, they see:
+
+- Your shop branding and the services quoted
+- Package options (if tiers are on). They pick **Good**, **Better**, or **Best**
+- Optional add-ons as checkboxes
+- A live price summary that updates with their selections
+- **Approve** and **Decline** buttons
+
+If **Invoice on approval** is **Deposit**, approve can take them into [ShopWrk Pay](/integrations/shopwrk-pay) to collect that deposit on the same public flow. They approve and can pay without a separate hop you have to invent.
+
+If a contract must be signed before approval, they are prompted to sign first.
+
+They can also send a question from the estimate page. Questions land in [Conversations](/features/communications).
+
+## After they approve: outcome card and retry
+
+Once the customer clicks **Approve**, the estimate status becomes **Approved** in your dashboard. On the detail rail, the **On approval** card switches to an outcome view.
+
+You will see:
+
+- An **Invoice** row with a link to Invoice # when one was created, plus status Created, Failed, Pending, or Not created
+- A **Job** row with a link to Job # when one was created. Created jobs show as Unscheduled until you book them
+- Deposit, Balance, and Due summary lines when they apply
+- A delivery notice: Invoice sent on approval, delivery in progress, or Delivery needs retry
+
+If a send or related approval action failed, and you have permission to convert estimates, use **Retry failed actions**. Retry tries the failed send or legs again. It does not create a second invoice or job, and it does not push the due date further out.
+
+If they leave before paying a deposit that was offered, the approval can still stand. You can send the pay link again from the invoice. See [ShopWrk Pay](/integrations/shopwrk-pay) and [Invoices and payments](/workflows/invoices-payments).
+
+If the customer declines, they can leave a reason. Status becomes **Declined** and the reason shows on the estimate detail page.
+
+<Warning>
+  A customer cannot approve an expired estimate. After the valid-until date they see an expiry notice and cannot proceed.
+</Warning>
+
+## How this ties to Jobs, Invoices, and Conversations
+
+| Piece | How it connects |
+| --- | --- |
+| [Jobs](/workflows/jobs) | Unscheduled jobs from On approval wait for you to set day, tech, and bay |
+| [Invoices and payments](/workflows/invoices-payments) | Full or deposit invoices from approval are real invoices you can remind, collect, and balance |
+| [ShopWrk Pay](/integrations/shopwrk-pay) | Public checkout can collect the deposit when Deposit is chosen |
+| [Conversations](/features/communications) | Estimate questions and invoice texts/emails land with the same customer thread |
+
+## Walkthrough: Jordan's ceramic coating quote
+
+Jordan wants ceramic coating on a 2022 SUV. You open **Estimates -> New Estimate**, pick Jordan, add the SUV, and add your ceramic package with Good / Better / Best tiers plus an optional ceramic boost add-on.
+
+On the open estimate, open **On approval**:
+
+1. Set **Invoice on approval** to **Deposit**, percent based, and confirm the **Due on approval** amount looks right.
+2. Turn on **Send automatically**, choose email and SMS, and set due date to **Net 7 from approval**.
+3. Turn on **Create unscheduled job on approval**.
+
+You send the estimate. Jordan opens the link, picks Better, checks the add-on, and approves. ShopWrk creates the deposit invoice and the unscheduled job. Jordan pays the deposit through ShopWrk Pay on that same flow. Your detail rail shows Invoice created, Job unscheduled, and that the invoice was sent on approval.
+
+Next you open the job, schedule it on the calendar, and later invoice the remaining balance on the same invoice record. If the automatic send had failed, you would click **Retry failed actions** instead of building a new invoice.
+
+## Gotchas
+
+- **On approval is not Convert to Job.** Setting Do nothing for invoice and leaving the job switch off means approval only accepts the quote. Convert when you are ready.
+- **Due date is from approval day.** Net 7 from approval starts on the day they approve, even if the email sends a few minutes later.
+- **Send automatically needs a channel.** If the switch is on, pick email, SMS, or both before you rely on it.
+- **Deposit is one invoice choice on this card.** Use Deposit here. Do not invent extra deposit screens that are not on the estimate.
+- **Retry does not duplicate.** Failed send or legs can retry. Invoice and job are not created twice, and due dates do not extend.
+- **Legacy estimates.** Older rows may still follow the old collect-deposit / auto-convert flags. New estimates should use the On approval card.
+- **Expired links.** After Valid until, the customer cannot approve.
