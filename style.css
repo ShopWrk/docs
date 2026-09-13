@@ -1,15 +1,11 @@
 /*
-  ShopWrk help site — match apps/web chrome.
-  Tokens from semantic-web-values.css. Orange is the CTA / "main thing"
-  (button.tsx atmosphere + .accent-line), not a wash. Nav active is a raised
-  white card (navigation-row data-[active]:bg-nav-active), then a 3px orange
-  rail like .accent-line. Do not copy the onboarding teal→orange setup gradient.
+  Match staging.shopwrk.com shell (Night owl / dark demo).
+  Orange is View-all links + the one Sign in CTA. Active nav is a raised
+  gray chip, not an orange rail. Search is quiet. No mint glow.
 */
 
 :root {
   --sw-primary: #f96010;
-  --sw-primary-mid: #f97316;
-  --sw-primary-deep: #ea580c;
   --sw-primary-strong: #b53600;
   --sw-on-primary: #020202;
   --sw-shell: #eeedec;
@@ -17,13 +13,22 @@
   --sw-card: #ffffff;
   --sw-content: #020202;
   --sw-content-medium: #4f4d4c;
+  --sw-content-quiet: #a39d9b;
   --sw-border: #d9d9d9;
   --sw-radius-card: 12px;
   --sw-radius-control: 10px;
-  --sw-cta-fill: linear-gradient(180deg, #f97316 0%, #f96010 52%, #ea580c 100%);
+  --sw-radius-workspace: 16px;
+  --sw-cta-fill: linear-gradient(
+    180deg,
+    #f97316 0%,
+    #f96010 52%,
+    #ea580c 100%
+  );
   --sw-nav-active-shadow:
     0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
-    0 3px 2px rgb(0 0 0 / 0.02), inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 3px 2px rgb(0 0 0 / 0.02), 0 5px 2px rgb(0 0 0 / 0.01),
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    inset 0 0 0 1px rgb(255 255 255 / 0.15), 0 1px 0 rgb(0 0 0 / 0.06),
     0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
@@ -34,13 +39,14 @@
   --sw-card: #1e1e1e;
   --sw-content: #f5f5f5;
   --sw-content-medium: #a8a8a8;
+  --sw-content-quiet: #747474;
   --sw-border: #2b2b2b;
   --sw-nav-active-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.11), inset 0 0 0 1px rgb(255 255 255 / 0.05),
+    inset 0 1px 0 rgb(255 255 255 / 0.11),
+    inset 0 0 0 1px rgb(255 255 255 / 0.05), 0 1px 0 rgb(0 0 0 / 0.06),
     0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
-/* Flat stone canvas. No Mintlify mint glow. */
 #background-color {
   background: var(--sw-shell) !important;
 }
@@ -53,7 +59,7 @@
 
 #navbar {
   background: var(--sw-shell) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--sw-primary) 28%, var(--sw-border)) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
   box-shadow: none !important;
 }
 
@@ -62,7 +68,18 @@
   background: var(--sw-shell) !important;
 }
 
-#content-area,
+#sidebar-content a {
+  color: color-mix(in srgb, var(--sw-content) 70%, transparent);
+}
+
+#content-area {
+  background: var(--sw-workspace) !important;
+  border-radius: var(--sw-radius-workspace);
+  box-shadow:
+    0 1px 0 rgb(0 0 0 / 0.04), 0 0 0 1px rgb(0 0 0 / 0.05),
+    inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
 #content,
 #body-content,
 #table-of-contents,
@@ -75,16 +92,22 @@
   border-top: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
 }
 
-/* App primary CTA: orange atmosphere fill, near-black label. */
 #topbar-cta-button {
   background-color: var(--sw-primary) !important;
-  background-image: var(--sw-cta-fill) !important;
+  background-image:
+    radial-gradient(
+      110% 160% at 18% -35%,
+      rgb(255 255 255 / 0.22) 0%,
+      transparent 52%
+    ),
+    var(--sw-cta-fill) !important;
   color: var(--sw-on-primary) !important;
   border: 0 !important;
   border-radius: var(--sw-radius-control) !important;
   font-weight: 600 !important;
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.22),
+    inset 0 0 0 1px rgb(255 255 255 / 0.08),
     0 1px 0 rgb(0 0 0 / 0.3),
     0 2px 3px -1px rgb(0 0 0 / 0.28) !important;
 }
@@ -95,45 +118,37 @@
 
 #search-bar-entry {
   border-radius: var(--sw-radius-control) !important;
-  background: var(--sw-card) !important;
+  background: transparent !important;
   border: 1px solid var(--sw-border) !important;
+  box-shadow: none !important;
 }
 
 #search-bar-entry:focus-within {
-  border-color: var(--sw-primary) !important;
-  box-shadow: 0 0 0 1px var(--sw-primary) !important;
+  border-color: var(--sw-content) !important;
+  box-shadow: none !important;
 }
 
-/* Active nav: raised card + 3px orange rail (.accent-line). */
 #sidebar-content li[data-active] {
-  position: relative;
   background: var(--sw-card) !important;
-  border-radius: 8px !important;
+  border-radius: var(--sw-radius-control) !important;
   box-shadow: var(--sw-nav-active-shadow) !important;
   color: var(--sw-content) !important;
 }
 
-#sidebar-content li[data-active]::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  bottom: 6px;
-  width: 3px;
-  background: linear-gradient(180deg, var(--sw-primary) 0%, transparent 100%);
-  border-radius: 0 2px 2px 0;
+#sidebar-content li[data-active] a {
+  color: var(--sw-content) !important;
 }
 
 #sidebar-content li[data-active] svg {
-  color: var(--sw-primary) !important;
+  color: var(--sw-content) !important;
 }
 
 sidebar-group-header {
-  color: var(--sw-content-medium) !important;
+  color: var(--sw-content-quiet) !important;
 }
 
 .nav-tabs-item[data-active] {
-  color: var(--sw-primary-strong) !important;
+  color: var(--sw-content) !important;
   box-shadow: inset 0 -2px 0 var(--sw-primary);
 }
 
@@ -143,14 +158,12 @@ sidebar-group-header {
 }
 
 eyebrow {
-  color: var(--sw-primary-strong) !important;
+  color: var(--sw-content-quiet) !important;
   font-weight: 600 !important;
 }
 
-/* In-page links: primary-strong, same as Button variant="link". */
 mdx-content a,
-#content a,
-#content-area a:not(#topbar-cta-button):not([data-sidebar]) {
+#content a {
   color: var(--sw-primary-strong);
 }
 
@@ -161,18 +174,18 @@ mdx-content a:hover,
 
 toc-item[data-active],
 toc-item[data-active-deepest] {
-  color: var(--sw-primary-strong) !important;
+  color: var(--sw-primary) !important;
 }
 
 card {
   border-radius: var(--sw-radius-card) !important;
   background: var(--sw-card) !important;
   border: 1px solid var(--sw-border) !important;
-  box-shadow: 0 1px 2px rgb(2 2 2 / 0.04);
+  box-shadow: none;
 }
 
 [data-component-part="card-icon"] {
-  color: var(--sw-primary) !important;
+  color: var(--sw-content-medium) !important;
 }
 
 callout {
@@ -184,16 +197,13 @@ step {
   border-radius: var(--sw-radius-card);
 }
 
-step {
-  --step-color: var(--sw-primary);
-}
-
 pagination-next {
   color: var(--sw-primary-strong) !important;
 }
 
 nav [data-sidebar] a,
 aside a {
-  font-size: 0.875rem !important;
+  font-size: 0.8125rem !important;
   line-height: 1.25rem !important;
+  font-weight: 500 !important;
 }
