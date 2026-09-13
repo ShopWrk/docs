@@ -56,6 +56,28 @@ From the invoice detail page, click **Send**. You can deliver the invoice by:
 
 The customer-facing page shows line items, total, amount due, and **Pay now**. Customers do not need a ShopWrk account.
 
+### Insert customer and invoice details
+
+If you want the email or text to fill in names, totals, and links for you, use **Insert** or **Insert variable** in the send panel.
+
+On email, you can insert into **Subject** and **Message**. On SMS, you can insert into **Message**.
+
+Click **Insert** (or **Insert variable**). Search with **Search variables**. Pick a field. ShopWrk adds an orange pill for that field. When you send, ShopWrk fills the real value for that invoice.
+
+Variables are grouped like this:
+
+| Group | Fields you can insert |
+| --- | --- |
+| **Contact** | First name, Last name, Vehicle |
+| **Shop** | Shop name |
+| **Invoice** | Invoice number, Payment link, Invoice total |
+
+**Reset** puts the message back to the default wording.
+
+Example: insert **First name**, **Invoice number**, and **Payment link** into an SMS so Jordan gets a text with his name, INV-1042, and the pay link filled in.
+
+Blank fields stay blank in the sent message. If a token is unknown, it can stay as written instead of filling in.
+
 ### Send a payment reminder
 
 Open the invoice and click **Send reminder**. Choose email, SMS, or both. Edit the message in the composer, then send it. The reminder includes the invoice link.

@@ -39,6 +39,20 @@ The trigger is the event that starts it. Filters decide whether this contact sho
 
 Actions run in order. Put a wait between them when you want breathing room, like a same-day text and a next-day email.
 
+## Insert details into texts and emails
+
+If you want a text or email step to fill in names, shop details, or other fields when the automation runs, use **Insert** or **Insert variable** on that step.
+
+Click **Insert** (or **Insert variable**). Search with **Search variables**. Pick a field. ShopWrk adds an orange pill for that field. When the automation runs, ShopWrk fills the real value for that contact or event.
+
+The same picker appears when you send an [invoice](/workflows/invoices-payments#insert-customer-and-invoice-details) or [estimate](/workflows/estimates#insert-customer-and-estimate-details). On automations you may also see fields from the trigger, your shop, and other apps you already use.
+
+**Reset** puts the message back to the default wording for that step.
+
+Example: on a text step after **Missed inbound call**, insert **First name** and **Shop name** so the follow-up says hi to Jordan from your shop name when it sends.
+
+Blank fields stay blank in the sent message. If a token is unknown, it can stay as written instead of filling in.
+
 ## Message and comment triggers
 
 These are separate triggers. There is not one "message received" item for new automations.
