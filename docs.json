@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "ShopWrk",
-  "theme": "maple",
+  "theme": "mint",
   "description": "Help for running your ShopWrk shop.",
   "favicon": {
     "light": "/images/ShopWrk-WhiteBGLogo.png",

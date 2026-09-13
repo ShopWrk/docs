@@ -1,11 +1,8 @@
 /*
-  Help site chrome from the live staging rail (Night owl) +
-  app-shell / navigation-row / home-sections.
-
-  Hover: flat charcoal wash, 10px, brighter icon/text, no shadow, no orange.
-  Active: raised #1e1e1e chip + layered shadow. Stays that way on hover.
-  Rows ~32px, 2px apart. Idle ~70%. Section labels ~40%.
-  Orange is Sign in + in-page links only.
+  Live docs.shopwrk.com (looked at 2026-09-12): Maple + prior CSS
+  made a gray article island on black, jammed the title into the
+  card edge, and painted an orange underline on Help.
+  Mint fills the canvas. This file is color + spacing only.
 */
 
 :root {
@@ -17,27 +14,7 @@
   --sw-card: #ffffff;
   --sw-content: #020202;
   --sw-content-medium: #4f4d4c;
-  --sw-content-quiet: #a39d9b;
   --sw-border: #d9d9d9;
-  --sw-hover: #0202020d;
-  --sw-radius-compact: 8px;
-  --sw-radius-control: 10px;
-  --sw-radius-card: 12px;
-  --sw-radius-workspace: 16px;
-  --sw-row-gap: 2px;
-  --sw-ease: cubic-bezier(0.32, 0.72, 0, 1);
-  --sw-cta-fill: linear-gradient(
-    180deg,
-    #f97316 0%,
-    #f96010 52%,
-    #ea580c 100%
-  );
-  --sw-nav-active-shadow:
-    0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
-    0 3px 2px rgb(0 0 0 / 0.02), 0 5px 2px rgb(0 0 0 / 0.01),
-    inset 0 1px 0 rgb(255 255 255 / 0.7),
-    inset 0 0 0 1px rgb(255 255 255 / 0.15), 0 1px 0 rgb(0 0 0 / 0.06),
-    0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
 .dark {
@@ -47,14 +24,7 @@
   --sw-card: #1e1e1e;
   --sw-content: #f5f5f5;
   --sw-content-medium: #a8a8a8;
-  --sw-content-quiet: #747474;
   --sw-border: #2b2b2b;
-  --sw-hover: #2b2b2b;
-  --sw-nav-active-shadow:
-    0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
-    inset 0 1px 0 rgb(255 255 255 / 0.11),
-    inset 0 0 0 1px rgb(255 255 255 / 0.05), 0 1px 0 rgb(0 0 0 / 0.06),
-    0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
 #background-color {
@@ -67,165 +37,87 @@
   display: none !important;
 }
 
-#navbar {
-  background: var(--sw-shell) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
-  box-shadow: none !important;
-}
-
+#navbar,
 #sidebar,
-#sidebar-content {
+#sidebar-content,
+#footer {
   background: var(--sw-shell) !important;
-}
-
-#sidebar-content ul {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sw-row-gap);
-}
-
-#sidebar-content li {
-  border-radius: var(--sw-radius-control);
-  transition:
-    background-color 200ms var(--sw-ease),
-    color 200ms var(--sw-ease),
-    box-shadow 200ms var(--sw-ease);
-}
-
-#sidebar-content a {
-  display: flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 6px 10px;
-  border-radius: var(--sw-radius-control);
-  color: color-mix(in srgb, var(--sw-content) 70%, transparent);
-  font-size: 0.8125rem !important;
-  line-height: 1.25rem !important;
-  font-weight: 500 !important;
-}
-
-#sidebar-content li:not([data-active]):hover {
-  background: var(--sw-hover) !important;
   box-shadow: none !important;
 }
 
-#sidebar-content li:not([data-active]):hover a,
-#sidebar-content li:not([data-active]):hover svg {
+#navbar {
+  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
+}
+
+/* Help / Mobile: no orange bar, hide cramped icons */
+.nav-tabs-item svg,
+#navbar [class*="nav-tab"] svg,
+#navbar [class*="NavTab"] svg {
+  display: none !important;
+}
+
+.nav-tabs-item,
+#navbar [class*="nav-tab"],
+#navbar [class*="NavTab"] {
+  gap: 0 !important;
+}
+
+.nav-tabs-item[data-active],
+#navbar [class*="nav-tab"][data-active],
+#navbar [class*="NavTab"][data-active] {
+  box-shadow: none !important;
+  border-bottom-color: transparent !important;
   color: var(--sw-content) !important;
 }
 
-#sidebar-content li[data-active] {
-  background: var(--sw-card) !important;
-  border-radius: var(--sw-radius-control) !important;
-  box-shadow: var(--sw-nav-active-shadow) !important;
-}
-
-#sidebar-content li[data-active]:hover {
-  background: var(--sw-card) !important;
-  box-shadow: var(--sw-nav-active-shadow) !important;
-}
-
-#sidebar-content li[data-active] a,
-#sidebar-content li[data-active] svg {
-  color: var(--sw-content) !important;
-}
-
-#sidebar-content svg {
-  width: 18px;
-  height: 18px;
-  color: color-mix(in srgb, var(--sw-content) 65%, transparent);
-  transition: color 200ms var(--sw-ease);
-}
-
-sidebar-group-header {
-  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
-  font-weight: 500 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.01em;
-  padding: 0 8px !important;
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-#content-area {
-  background: var(--sw-workspace) !important;
-  border-radius: var(--sw-radius-workspace);
-  box-shadow:
-    0 1px 0 rgb(0 0 0 / 0.04), 0 0 0 1px rgb(0 0 0 / 0.05),
-    inset 0 0 0 1px rgb(255 255 255 / 0.06);
-}
-
+/* One workspace surface. No floating island. */
+#content-area,
 #content,
 #body-content,
 #table-of-contents,
 #table-of-contents-layout {
-  background: transparent !important;
-}
-
-#footer {
-  background: var(--sw-shell) !important;
-  border-top: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
-}
-
-#topbar-cta-button {
-  background-color: var(--sw-primary) !important;
-  background-image:
-    radial-gradient(
-      110% 160% at 18% -35%,
-      rgb(255 255 255 / 0.22) 0%,
-      transparent 52%
-    ),
-    var(--sw-cta-fill) !important;
-  color: var(--sw-on-primary) !important;
-  border: 0 !important;
-  border-radius: var(--sw-radius-compact) !important;
-  font-weight: 600 !important;
-  box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.22),
-    inset 0 0 0 1px rgb(255 255 255 / 0.08),
-    0 1px 0 rgb(0 0 0 / 0.3),
-    0 2px 3px -1px rgb(0 0 0 / 0.28) !important;
-}
-
-#topbar-cta-button:hover {
-  filter: brightness(0.96);
-}
-
-#search-bar-entry {
-  border-radius: var(--sw-radius-compact) !important;
-  background: transparent !important;
-  border: 1px solid var(--sw-border) !important;
+  background: var(--sw-workspace) !important;
   box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
 }
 
-#search-bar-entry:focus-within {
-  border-color: var(--sw-content) !important;
-  box-shadow: none !important;
-}
-
-.nav-tabs-item[data-active] {
-  color: var(--sw-content) !important;
-  box-shadow: inset 0 -2px 0 var(--sw-primary);
+/* Room around the words — the title was flush to the card. */
+#content,
+#body-content,
+mdx-content {
+  padding: 2.75rem 3.25rem 4rem !important;
 }
 
 #page-title {
   letter-spacing: -0.02em;
   font-weight: 600 !important;
+  margin-bottom: 1.25rem !important;
 }
 
 eyebrow {
-  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
-  font-weight: 500 !important;
+  color: color-mix(in srgb, var(--sw-content) 45%, transparent) !important;
+  margin-bottom: 0.75rem !important;
+}
+
+#topbar-cta-button {
+  background: #f96010 !important;
+  color: #020202 !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+#search-bar-entry {
+  border-radius: 8px !important;
+  background: transparent !important;
+  border: 1px solid var(--sw-border) !important;
+  box-shadow: none !important;
 }
 
 mdx-content a,
 #content a {
   color: var(--sw-primary-strong);
-}
-
-mdx-content a:hover,
-#content a:hover {
-  color: var(--sw-primary);
 }
 
 toc-item[data-active],
@@ -234,32 +126,28 @@ toc-item[data-active-deepest] {
 }
 
 card {
-  border-radius: var(--sw-radius-card) !important;
+  border-radius: 12px !important;
   background: var(--sw-card) !important;
   border: 1px solid var(--sw-border) !important;
   box-shadow: none;
 }
 
-[data-component-part="card-icon"] {
-  color: var(--sw-content-medium) !important;
+#sidebar-content li:not([data-active]):hover {
+  background: color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
 }
 
-callout {
-  border-radius: var(--sw-radius-card) !important;
+#sidebar-content li[data-active] {
+  background: var(--sw-card) !important;
 }
 
-steps,
-step {
-  border-radius: var(--sw-radius-card);
+#sidebar-content a {
+  color: color-mix(in srgb, var(--sw-content) 70%, transparent);
 }
 
-pagination-next {
-  color: var(--sw-primary-strong) !important;
+#sidebar-content li[data-active] a {
+  color: var(--sw-content) !important;
 }
 
-nav [data-sidebar] a,
-aside a {
-  font-size: 0.8125rem !important;
-  line-height: 1.25rem !important;
-  font-weight: 500 !important;
+sidebar-group-header {
+  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
 }
