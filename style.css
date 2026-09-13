@@ -1,9 +1,7 @@
 /*
-  Looked at live docs.shopwrk.com after the mint flatten.
-  Remaining breaks: Help+Mobile smashed together (a too-broad
-  selector zeroed the tab gap), orange 1.5px primary underline
-  still on Help, TOC column a different black than the article.
-  Hide the tab row (Mobile is unfinished). One workspace color.
+  Live page still showed HelpMobile + orange underline after
+  display:none on .nav-tabs. Remove the tab bar in docs.json
+  and force-hide any leftover row. One page color, no islands.
 */
 
 :root {
@@ -14,7 +12,6 @@
   --sw-workspace: #f5f5f4;
   --sw-card: #ffffff;
   --sw-content: #020202;
-  --sw-content-medium: #4f4d4c;
   --sw-border: #d9d9d9;
   --topbar-tabs-height: 0rem;
 }
@@ -25,12 +22,21 @@
   --sw-workspace: #141414;
   --sw-card: #1e1e1e;
   --sw-content: #f5f5f5;
-  --sw-content-medium: #a8a8a8;
   --sw-border: #2b2b2b;
 }
 
-#background-color {
-  background: var(--sw-shell) !important;
+html,
+body,
+#background-color,
+#content-container,
+#content-side-layout,
+#content-area,
+#content,
+#header,
+#body-content,
+#table-of-contents,
+#table-of-contents-layout {
+  background: var(--sw-workspace) !important;
 }
 
 #background-color > div[aria-hidden="true"],
@@ -51,37 +57,22 @@
   border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
 }
 
-/* Drop the Help / Mobile row and its orange underline. */
-header :has(> .nav-tabs),
-.nav-tabs {
+.nav-tabs,
+.nav-tabs-item,
+div.h-12:has(.nav-tabs) {
   display: none !important;
+  visibility: hidden !important;
   height: 0 !important;
+  max-height: 0 !important;
   overflow: hidden !important;
-}
-
-.nav-tabs-item .absolute.bottom-0,
-.nav-tabs-item [class*="bg-primary"] {
-  display: none !important;
-}
-
-/* Article + TOC are the same surface. */
-#content-container,
-#content-side-layout,
-#content-area,
-#content,
-#body-content,
-#table-of-contents,
-#table-of-contents-layout {
-  background: var(--sw-workspace) !important;
-  box-shadow: none !important;
-  border: none !important;
-  border-radius: 0 !important;
+  pointer-events: none !important;
 }
 
 #content,
 #body-content,
 mdx-content {
-  padding: 2.75rem 3.25rem 4rem !important;
+  padding: 2.5rem 2.75rem 4rem !important;
+  max-width: none !important;
 }
 
 #page-title {
