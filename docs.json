@@ -18,7 +18,8 @@
     "href": "https://shopwrk.com"
   },
   "appearance": {
-    "default": "dark"
+    "default": "dark",
+    "strict": true
   },
   "fonts": {
     "family": "Inter",

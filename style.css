@@ -1,28 +1,19 @@
 /*
-  Live page still showed HelpMobile + orange underline after
-  display:none on .nav-tabs. Remove the tab bar in docs.json
-  and force-hide any leftover row. One page color, no islands.
+  Live page 2026-09-12 after tabs died: washed light Mintlify,
+  peach rail from bg-primary/10, skinny column, white cards.
+  Lock dark. Active nav is a gray chip, not orange. One surface.
 */
 
 :root {
   --sw-primary: #f96010;
   --sw-primary-strong: #b53600;
   --sw-on-primary: #020202;
-  --sw-shell: #eeedec;
-  --sw-workspace: #f5f5f4;
-  --sw-card: #ffffff;
-  --sw-content: #020202;
-  --sw-border: #d9d9d9;
-  --topbar-tabs-height: 0rem;
-}
-
-.dark {
-  --sw-primary-strong: #f96010;
   --sw-shell: #090909;
   --sw-workspace: #141414;
   --sw-card: #1e1e1e;
   --sw-content: #f5f5f5;
   --sw-border: #2b2b2b;
+  --topbar-tabs-height: 0rem;
 }
 
 html,
@@ -54,18 +45,55 @@ body,
 }
 
 #navbar {
-  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
+  border-bottom: 1px solid rgb(255 255 255 / 0.06) !important;
 }
 
 .nav-tabs,
 .nav-tabs-item,
 div.h-12:has(.nav-tabs) {
   display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important;
+}
+
+#theme-preference-menu-trigger {
+  display: none !important;
+}
+
+#footer a[href*="mintlify"] {
+  display: none !important;
+}
+
+/* Peach rail is bg-primary/10 + text-primary. Kill it. */
+#sidebar-content a[aria-current="page"],
+#sidebar-content li[data-active-nav-item] > a,
+#sidebar-content li[data-active] > a {
+  background: #1e1e1e !important;
+  background-color: #1e1e1e !important;
+  color: #f5f5f5 !important;
+  text-shadow: none !important;
+  border-radius: 10px !important;
+}
+
+#sidebar-content li[data-active-nav-item] svg,
+#sidebar-content a[aria-current="page"] svg {
+  background-color: #f5f5f5 !important;
+}
+
+#sidebar-content a:not([aria-current="page"]) {
+  color: rgb(245 245 245 / 0.7) !important;
+}
+
+#sidebar-content a:not([aria-current="page"]) svg {
+  background-color: rgb(245 245 245 / 0.55) !important;
+}
+
+#sidebar-content li:not([data-active-nav-item]):hover > a {
+  background: #2b2b2b !important;
+  color: #f5f5f5 !important;
+}
+
+sidebar-group-header,
+.sidebar-title {
+  color: rgb(245 245 245 / 0.4) !important;
 }
 
 #content,
@@ -75,14 +103,20 @@ mdx-content {
   max-width: none !important;
 }
 
+#content-container,
+#content-area {
+  max-width: none !important;
+}
+
 #page-title {
   letter-spacing: -0.02em;
   font-weight: 600 !important;
   margin-bottom: 1.25rem !important;
+  color: #f5f5f5 !important;
 }
 
 eyebrow {
-  color: color-mix(in srgb, var(--sw-content) 45%, transparent) !important;
+  color: rgb(245 245 245 / 0.45) !important;
   margin-bottom: 0.75rem !important;
 }
 
@@ -101,43 +135,29 @@ eyebrow {
 #search-bar-entry {
   border-radius: 8px !important;
   background: transparent !important;
-  border: 1px solid var(--sw-border) !important;
+  border: 1px solid #2b2b2b !important;
   box-shadow: none !important;
 }
 
 mdx-content a,
 #content a {
-  color: var(--sw-primary-strong);
+  color: #f96010;
 }
 
 toc-item[data-active],
 toc-item[data-active-deepest] {
-  color: var(--sw-primary) !important;
+  color: #f96010 !important;
 }
 
 card {
   border-radius: 12px !important;
-  background: var(--sw-card) !important;
-  border: 1px solid var(--sw-border) !important;
+  background: #1e1e1e !important;
+  border: 1px solid #2b2b2b !important;
   box-shadow: none;
 }
 
-#sidebar-content li:not([data-active]):hover {
-  background: color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
-}
-
-#sidebar-content li[data-active] {
-  background: var(--sw-card) !important;
-}
-
-#sidebar-content a {
-  color: color-mix(in srgb, var(--sw-content) 70%, transparent);
-}
-
-#sidebar-content li[data-active] a {
-  color: var(--sw-content) !important;
-}
-
-sidebar-group-header {
-  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
+card svg,
+[data-component-part="card-icon"] {
+  background-color: #a8a8a8 !important;
+  color: #a8a8a8 !important;
 }
