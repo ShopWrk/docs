@@ -1,8 +1,9 @@
 /*
-  Live docs.shopwrk.com (looked at 2026-09-12): Maple + prior CSS
-  made a gray article island on black, jammed the title into the
-  card edge, and painted an orange underline on Help.
-  Mint fills the canvas. This file is color + spacing only.
+  Looked at live docs.shopwrk.com after the mint flatten.
+  Remaining breaks: Help+Mobile smashed together (a too-broad
+  selector zeroed the tab gap), orange 1.5px primary underline
+  still on Help, TOC column a different black than the article.
+  Hide the tab row (Mobile is unfinished). One workspace color.
 */
 
 :root {
@@ -15,6 +16,7 @@
   --sw-content: #020202;
   --sw-content-medium: #4f4d4c;
   --sw-border: #d9d9d9;
+  --topbar-tabs-height: 0rem;
 }
 
 .dark {
@@ -49,28 +51,22 @@
   border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent) !important;
 }
 
-/* Help / Mobile: no orange bar, hide cramped icons */
-.nav-tabs-item svg,
-#navbar [class*="nav-tab"] svg,
-#navbar [class*="NavTab"] svg {
+/* Drop the Help / Mobile row and its orange underline. */
+header :has(> .nav-tabs),
+.nav-tabs {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+.nav-tabs-item .absolute.bottom-0,
+.nav-tabs-item [class*="bg-primary"] {
   display: none !important;
 }
 
-.nav-tabs-item,
-#navbar [class*="nav-tab"],
-#navbar [class*="NavTab"] {
-  gap: 0 !important;
-}
-
-.nav-tabs-item[data-active],
-#navbar [class*="nav-tab"][data-active],
-#navbar [class*="NavTab"][data-active] {
-  box-shadow: none !important;
-  border-bottom-color: transparent !important;
-  color: var(--sw-content) !important;
-}
-
-/* One workspace surface. No floating island. */
+/* Article + TOC are the same surface. */
+#content-container,
+#content-side-layout,
 #content-area,
 #content,
 #body-content,
@@ -82,7 +78,6 @@
   border-radius: 0 !important;
 }
 
-/* Room around the words — the title was flush to the card. */
 #content,
 #body-content,
 mdx-content {
@@ -100,12 +95,16 @@ eyebrow {
   margin-bottom: 0.75rem !important;
 }
 
-#topbar-cta-button {
-  background: #f96010 !important;
+#topbar-cta-button,
+#topbar-cta-button a,
+#topbar-cta-button span,
+#topbar-cta-button svg {
   color: #020202 !important;
-  border: 0 !important;
+}
+
+#topbar-cta-button [class*="bg-primary"] {
+  background: #f96010 !important;
   border-radius: 8px !important;
-  font-weight: 600 !important;
 }
 
 #search-bar-entry {
