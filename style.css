@@ -1,7 +1,11 @@
 /*
-  Match staging.shopwrk.com shell (Night owl / dark demo).
-  Orange is View-all links + the one Sign in CTA. Active nav is a raised
-  gray chip, not an orange rail. Search is quiet. No mint glow.
+  Help site chrome from the live staging rail (Night owl) +
+  app-shell / navigation-row / home-sections.
+
+  Hover: flat charcoal wash, 10px, brighter icon/text, no shadow, no orange.
+  Active: raised #1e1e1e chip + layered shadow. Stays that way on hover.
+  Rows ~32px, 2px apart. Idle ~70%. Section labels ~40%.
+  Orange is Sign in + in-page links only.
 */
 
 :root {
@@ -15,9 +19,13 @@
   --sw-content-medium: #4f4d4c;
   --sw-content-quiet: #a39d9b;
   --sw-border: #d9d9d9;
-  --sw-radius-card: 12px;
+  --sw-hover: #0202020d;
+  --sw-radius-compact: 8px;
   --sw-radius-control: 10px;
+  --sw-radius-card: 12px;
   --sw-radius-workspace: 16px;
+  --sw-row-gap: 2px;
+  --sw-ease: cubic-bezier(0.32, 0.72, 0, 1);
   --sw-cta-fill: linear-gradient(
     180deg,
     #f97316 0%,
@@ -41,7 +49,9 @@
   --sw-content-medium: #a8a8a8;
   --sw-content-quiet: #747474;
   --sw-border: #2b2b2b;
+  --sw-hover: #2b2b2b;
   --sw-nav-active-shadow:
+    0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
     inset 0 1px 0 rgb(255 255 255 / 0.11),
     inset 0 0 0 1px rgb(255 255 255 / 0.05), 0 1px 0 rgb(0 0 0 / 0.06),
     0 0 0 1px rgb(0 0 0 / 0.05);
@@ -68,8 +78,73 @@
   background: var(--sw-shell) !important;
 }
 
+#sidebar-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sw-row-gap);
+}
+
+#sidebar-content li {
+  border-radius: var(--sw-radius-control);
+  transition:
+    background-color 200ms var(--sw-ease),
+    color 200ms var(--sw-ease),
+    box-shadow 200ms var(--sw-ease);
+}
+
 #sidebar-content a {
+  display: flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: var(--sw-radius-control);
   color: color-mix(in srgb, var(--sw-content) 70%, transparent);
+  font-size: 0.8125rem !important;
+  line-height: 1.25rem !important;
+  font-weight: 500 !important;
+}
+
+#sidebar-content li:not([data-active]):hover {
+  background: var(--sw-hover) !important;
+  box-shadow: none !important;
+}
+
+#sidebar-content li:not([data-active]):hover a,
+#sidebar-content li:not([data-active]):hover svg {
+  color: var(--sw-content) !important;
+}
+
+#sidebar-content li[data-active] {
+  background: var(--sw-card) !important;
+  border-radius: var(--sw-radius-control) !important;
+  box-shadow: var(--sw-nav-active-shadow) !important;
+}
+
+#sidebar-content li[data-active]:hover {
+  background: var(--sw-card) !important;
+  box-shadow: var(--sw-nav-active-shadow) !important;
+}
+
+#sidebar-content li[data-active] a,
+#sidebar-content li[data-active] svg {
+  color: var(--sw-content) !important;
+}
+
+#sidebar-content svg {
+  width: 18px;
+  height: 18px;
+  color: color-mix(in srgb, var(--sw-content) 65%, transparent);
+  transition: color 200ms var(--sw-ease);
+}
+
+sidebar-group-header {
+  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
+  font-weight: 500 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.01em;
+  padding: 0 8px !important;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 #content-area {
@@ -103,7 +178,7 @@
     var(--sw-cta-fill) !important;
   color: var(--sw-on-primary) !important;
   border: 0 !important;
-  border-radius: var(--sw-radius-control) !important;
+  border-radius: var(--sw-radius-compact) !important;
   font-weight: 600 !important;
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.22),
@@ -117,7 +192,7 @@
 }
 
 #search-bar-entry {
-  border-radius: var(--sw-radius-control) !important;
+  border-radius: var(--sw-radius-compact) !important;
   background: transparent !important;
   border: 1px solid var(--sw-border) !important;
   box-shadow: none !important;
@@ -126,25 +201,6 @@
 #search-bar-entry:focus-within {
   border-color: var(--sw-content) !important;
   box-shadow: none !important;
-}
-
-#sidebar-content li[data-active] {
-  background: var(--sw-card) !important;
-  border-radius: var(--sw-radius-control) !important;
-  box-shadow: var(--sw-nav-active-shadow) !important;
-  color: var(--sw-content) !important;
-}
-
-#sidebar-content li[data-active] a {
-  color: var(--sw-content) !important;
-}
-
-#sidebar-content li[data-active] svg {
-  color: var(--sw-content) !important;
-}
-
-sidebar-group-header {
-  color: var(--sw-content-quiet) !important;
 }
 
 .nav-tabs-item[data-active] {
@@ -158,8 +214,8 @@ sidebar-group-header {
 }
 
 eyebrow {
-  color: var(--sw-content-quiet) !important;
-  font-weight: 600 !important;
+  color: color-mix(in srgb, var(--sw-content) 40%, transparent) !important;
+  font-weight: 500 !important;
 }
 
 mdx-content a,
