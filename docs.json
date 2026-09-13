@@ -53,110 +53,99 @@
     }
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Help",
-        "icon": "book-open",
-        "groups": [
-          {
-            "group": "Start here",
-            "icon": "rocket",
-            "pages": [
-              "introduction",
-              "getting-started/account-setup",
-              "getting-started/onboarding",
-              "getting-started/first-job",
-              "getting-started/roles-permissions"
-            ]
-          },
-          {
-            "group": "Jobs",
-            "icon": "wrench",
-            "pages": [
-              "workflows/estimates",
-              "workflows/jobs",
-              "workflows/invoices-payments",
-              "features/calendar-booking",
-              "workflows/customer-portal"
-            ]
-          },
-          {
-            "group": "Customers",
-            "icon": "users",
-            "pages": [
-              "features/crm",
-              "features/communications",
-              "features/campaigns",
-              "features/forms",
-              "features/documents",
-              "features/warranties"
-            ]
-          },
-          {
-            "group": "Team",
-            "icon": "users-round",
-            "pages": [
-              "features/team-scheduling",
-              "features/inventory"
-            ]
-          },
-          {
-            "group": "AI",
-            "icon": "sparkles",
-            "pages": [
-              "features/ai-agents",
-              "features/ai-assistant",
-              "features/lead-closer",
-              "features/automations",
-              "features/command-palette",
-              "features/reports"
-            ]
-          },
-          {
-            "group": "Payments",
-            "icon": "credit-card",
-            "pages": [
-              "integrations/shopwrk-pay",
-              "settings/billing"
-            ]
-          },
-          {
-            "group": "Connections",
-            "icon": "unplug",
-            "pages": [
-              "integrations/sms-voice",
-              "integrations/google-calendar",
-              "integrations/social-media",
-              "integrations/site-tracker",
-              "settings/email-domain"
-            ]
-          },
-          {
-            "group": "Settings",
-            "icon": "settings",
-            "pages": [
-              "settings/services-catalog",
-              "settings/checklists",
-              "settings/branding",
-              "settings/shopwrker",
-              "settings/data-management"
-            ]
-          }
+        "group": "Start here",
+        "icon": "rocket",
+        "pages": [
+          "introduction",
+          "getting-started/account-setup",
+          "getting-started/onboarding",
+          "getting-started/first-job",
+          "getting-started/roles-permissions"
         ]
       },
       {
-        "tab": "Mobile",
+        "group": "Jobs",
+        "icon": "wrench",
+        "pages": [
+          "workflows/estimates",
+          "workflows/jobs",
+          "workflows/invoices-payments",
+          "features/calendar-booking",
+          "workflows/customer-portal"
+        ]
+      },
+      {
+        "group": "Customers",
+        "icon": "users",
+        "pages": [
+          "features/crm",
+          "features/communications",
+          "features/campaigns",
+          "features/forms",
+          "features/documents",
+          "features/warranties"
+        ]
+      },
+      {
+        "group": "Team",
+        "icon": "users-round",
+        "pages": [
+          "features/team-scheduling",
+          "features/inventory"
+        ]
+      },
+      {
+        "group": "AI",
+        "icon": "sparkles",
+        "pages": [
+          "features/ai-agents",
+          "features/ai-assistant",
+          "features/lead-closer",
+          "features/automations",
+          "features/command-palette",
+          "features/reports"
+        ]
+      },
+      {
+        "group": "Payments",
+        "icon": "credit-card",
+        "pages": [
+          "integrations/shopwrk-pay",
+          "settings/billing"
+        ]
+      },
+      {
+        "group": "Connections",
+        "icon": "unplug",
+        "pages": [
+          "integrations/sms-voice",
+          "integrations/google-calendar",
+          "integrations/social-media",
+          "integrations/site-tracker",
+          "settings/email-domain"
+        ]
+      },
+      {
+        "group": "Settings",
+        "icon": "settings",
+        "pages": [
+          "settings/services-catalog",
+          "settings/checklists",
+          "settings/branding",
+          "settings/shopwrker",
+          "settings/data-management"
+        ]
+      },
+      {
+        "group": "iOS app",
         "icon": "smartphone",
-        "groups": [
-          {
-            "group": "iOS app",
-            "pages": [
-              "mobile/overview",
-              "mobile/getting-started",
-              "mobile/owner-features",
-              "mobile/technician-features"
-            ]
-          }
+        "pages": [
+          "mobile/overview",
+          "mobile/getting-started",
+          "mobile/owner-features",
+          "mobile/technician-features"
         ]
       }
     ]
