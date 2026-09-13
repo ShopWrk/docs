@@ -2,7 +2,7 @@
 title: "Build your service catalog with variants and vehicle-group prices"
 sidebarTitle: "Services"
 icon: "list"
-description: "Create services with Good/Better/Best variants, set prices by vehicle group, manage categories and panel templates, and configure add-ons and tax for your shop."
+description: "Create services with Good/Better/Best variants, set prices by vehicle group, choose which technicians and bays can take each service, and configure add-ons and tax for your shop."
 ---
 
 Your service catalog feeds every estimate and invoice. Build it under **Services** in the main navigation, and configure shared settings in **Settings → Services**.
@@ -36,16 +36,15 @@ Deactivated categories stay out of the way when you build new services, without 
 
 <Steps>
   <Step title="Go to Services">
-    Open **Services** from the sidebar, then click **New Service**.
+    Open **Services** from the sidebar, then click **New Service**. That opens the create wizard.
   </Step>
-  <Step title="Choose a category">
-    Pick the category. Categories organize the catalog and control which add-ons show for each service.
-  </Step>
-  <Step title="Name and describe the service">
-    Enter the name and an optional description. You can use the description helper to draft customer-facing copy from the service name.
+  <Step title="Fill in the first Service details step">
+    Pick the category. Enter the name and an optional description. You can use the description helper to draft customer-facing copy from the service name.
+
+    On this same first step, find the **Resources** card above Deposit and Tax. Pick which technicians and which bays can take this service. Both fields are multiselects. There is no Select all. For a bookable service, choose at least one technician and at least one bay. See [Technicians and bays](#technicians-and-bays) below.
   </Step>
   <Step title="Add variants">
-    Each variant is an option the customer can pick, such as Good, Better, or Best. Give each one a clear name, a job duration, and prices for your vehicle groups. Add as many variants as you need.
+    Each variant is an option the customer can pick, such as Good, Better, or Best. Give each one a clear name, a job duration, and prices for your vehicle groups. Add as many variants as you need. On early wizard steps, click **Continue** to move forward.
   </Step>
   <Step title="Set vehicle-group prices">
     Inside each variant, enter prices for the vehicle groups your shop uses. Incomplete pricing shows what still needs a number before the quote is ready.
@@ -57,9 +56,60 @@ Deactivated categories stay out of the way when you build new services, without 
     Open the **Add-ons** tab. Assign modifiers from **Settings → Services → Modifiers** (filtered by category). Mark an add-on as **Suggested** to highlight it while quoting.
   </Step>
   <Step title="Save the service">
-    Click **Save** to publish it to your catalog. The editor stays open so you can keep editing after a save.
+    On the last create wizard step, click **Save Service** to publish it to your catalog. You can also open an existing service and edit it anytime. The editor stays open after a save so you can keep working.
   </Step>
 </Steps>
+
+## Technicians and bays
+
+Use the **Resources** card when you want to say which people and which bays can take a service. That is eligibility: who and where this work is allowed. It is not an automatic schedule, and it is not the same as managing staff profiles under **Team**.
+
+### When to use this
+
+- Set Resources on a service when only some technicians or some bays should do that work (for example ceramic on two techs, or PPF in one bay).
+- Add or edit people under **Team** when you are hiring, changing roles, or setting schedules. Then come back to each service and choose them on Resources if they should take that work.
+- Leave a service incomplete on Resources only while you are still building the catalog. Incomplete is not a shortcut for "anyone can do it."
+
+### Where to set it
+
+- **New service:** first step of the create wizard (**New Service**). Resources sits above Deposit and Tax on that Service details step.
+- **Existing service:** open the service, stay on the **Service** tab. Resources sits above Deposit and Tax there too.
+
+### How to choose
+
+Both technicians and bays use an explicit multiselect.
+
+- Pick each technician who should be allowed to take this service.
+- Pick each bay where this service can run.
+- There is no Select all. You add people and bays one by one.
+
+For a bookable service, select at least one technician and at least one bay.
+
+<Note>
+  You can save a service before Resources is complete. An incomplete service is not the same as "anyone" or "any bay." Until you pick people and bays, that service is not set up with bookable eligibility.
+</Note>
+
+### New people and bays stay off until you add them
+
+When you add a technician or a bay to your shop, they do **not** automatically join every service. New technicians and new bays stay off a service until someone opens that service (or the create wizard) and adds them on the Resources card.
+
+That keeps specialty work (for example ceramic only, or one bay for paint protection) from silently opening to everyone.
+
+### How this connects to booking and the rest of the shop
+
+Later, when someone books the service by hand, they pick within the technicians and bays you configured on that service. Resources is the list of who and where is allowed for that service. It does not invent a schedule or force auto-assignment beyond that eligibility.
+
+Pricing, panels, add-ons, tax, and deposits still live on the same service. Resources only answers "who can take this" and "which bays can run it."
+
+### Walkthrough: limit ceramic coating to two techs and one bay
+
+1. Open **Services** and click the ceramic coating service (or **New Service** if you are building it).
+2. On the Service tab (or the first create wizard step), scroll to **Resources** above Deposit and Tax.
+3. In technicians, select the two people who actually run ceramic jobs.
+4. In bays, select the one bay with the right lighting and space.
+5. Leave other technicians and bays unselected.
+6. Click **Continue** through the remaining create steps, or save if you are editing an existing service. On the last create step, click **Save Service**.
+7. Add a new tech later: they will not appear as eligible for this ceramic service until you come back and add them on Resources.
 
 ## Variants and vehicle-group prices
 
@@ -118,7 +168,7 @@ Go to **Settings → Services** to set tax mode:
 - **Tax added to price (exclusive):** listed prices get tax added at checkout.
 - **Tax included in price (inclusive):** listed prices already include tax; ShopWrk back-calculates the net amount.
 
-Mark individual services as taxable or not inside the service editor.
+Mark individual services as taxable or not inside the service editor. On the Service tab and create wizard step 1, Deposit and Tax sit below the Resources card.
 
 <Note>
   Changing tax mode affects new estimates and invoices only. Existing documents stay as they were.
@@ -126,4 +176,4 @@ Mark individual services as taxable or not inside the service editor.
 
 ## Deposits
 
-You can require a deposit per service. In the service editor, turn on **Deposit required** and choose a flat dollar amount or a percentage of the service price. That setting flows through to estimates and invoices for that service.
+You can require a deposit per service. In the service editor (or create wizard step 1), turn on **Deposit required** and choose a flat dollar amount or a percentage of the service price. That setting flows through to estimates and invoices for that service. The Deposit controls sit below Resources on the Service tab.
