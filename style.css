@@ -1,8 +1,17 @@
-/* ShopWrk help site. Match the app: orange primary, warm stone, no mint glow. */
+/*
+  ShopWrk help site — match apps/web chrome.
+  Tokens from semantic-web-values.css. Orange is the CTA / "main thing"
+  (button.tsx atmosphere + .accent-line), not a wash. Nav active is a raised
+  white card (navigation-row data-[active]:bg-nav-active), then a 3px orange
+  rail like .accent-line. Do not copy the onboarding teal→orange setup gradient.
+*/
 
 :root {
   --sw-primary: #f96010;
+  --sw-primary-mid: #f97316;
+  --sw-primary-deep: #ea580c;
   --sw-primary-strong: #b53600;
+  --sw-on-primary: #020202;
   --sw-shell: #eeedec;
   --sw-workspace: #f5f5f4;
   --sw-card: #ffffff;
@@ -11,10 +20,14 @@
   --sw-border: #d9d9d9;
   --sw-radius-card: 12px;
   --sw-radius-control: 10px;
+  --sw-cta-fill: linear-gradient(180deg, #f97316 0%, #f96010 52%, #ea580c 100%);
+  --sw-nav-active-shadow:
+    0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
+    0 3px 2px rgb(0 0 0 / 0.02), inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
 .dark {
-  --sw-primary: #f96010;
   --sw-primary-strong: #f96010;
   --sw-shell: #090909;
   --sw-workspace: #141414;
@@ -22,9 +35,12 @@
   --sw-content: #f5f5f5;
   --sw-content-medium: #a8a8a8;
   --sw-border: #2b2b2b;
+  --sw-nav-active-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.11), inset 0 0 0 1px rgb(255 255 255 / 0.05),
+    0 0 0 1px rgb(0 0 0 / 0.05);
 }
 
-/* Flat stone canvas. Kill leftover Mintlify gradient / mint blobs. */
+/* Flat stone canvas. No Mintlify mint glow. */
 #background-color {
   background: var(--sw-shell) !important;
 }
@@ -37,7 +53,7 @@
 
 #navbar {
   background: var(--sw-shell) !important;
-  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--sw-primary) 28%, var(--sw-border)) !important;
   box-shadow: none !important;
 }
 
@@ -48,10 +64,7 @@
 
 #content-area,
 #content,
-#body-content {
-  background: transparent !important;
-}
-
+#body-content,
 #table-of-contents,
 #table-of-contents-layout {
   background: transparent !important;
@@ -62,14 +75,18 @@
   border-top: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
 }
 
-/* Sign in matches app primary: orange fill, near-black label. */
+/* App primary CTA: orange atmosphere fill, near-black label. */
 #topbar-cta-button {
-  background: var(--sw-primary) !important;
-  color: #020202 !important;
+  background-color: var(--sw-primary) !important;
+  background-image: var(--sw-cta-fill) !important;
+  color: var(--sw-on-primary) !important;
   border: 0 !important;
   border-radius: var(--sw-radius-control) !important;
   font-weight: 600 !important;
-  box-shadow: none !important;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    0 1px 0 rgb(0 0 0 / 0.3),
+    0 2px 3px -1px rgb(0 0 0 / 0.28) !important;
 }
 
 #topbar-cta-button:hover {
@@ -82,15 +99,69 @@
   border: 1px solid var(--sw-border) !important;
 }
 
+#search-bar-entry:focus-within {
+  border-color: var(--sw-primary) !important;
+  box-shadow: 0 0 0 1px var(--sw-primary) !important;
+}
+
+/* Active nav: raised card + 3px orange rail (.accent-line). */
 #sidebar-content li[data-active] {
+  position: relative;
   background: var(--sw-card) !important;
   border-radius: 8px !important;
-  box-shadow: 0 1px 2px rgb(2 2 2 / 0.05);
+  box-shadow: var(--sw-nav-active-shadow) !important;
+  color: var(--sw-content) !important;
+}
+
+#sidebar-content li[data-active]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  background: linear-gradient(180deg, var(--sw-primary) 0%, transparent 100%);
+  border-radius: 0 2px 2px 0;
+}
+
+#sidebar-content li[data-active] svg {
+  color: var(--sw-primary) !important;
+}
+
+sidebar-group-header {
+  color: var(--sw-content-medium) !important;
+}
+
+.nav-tabs-item[data-active] {
+  color: var(--sw-primary-strong) !important;
+  box-shadow: inset 0 -2px 0 var(--sw-primary);
 }
 
 #page-title {
   letter-spacing: -0.02em;
   font-weight: 600 !important;
+}
+
+eyebrow {
+  color: var(--sw-primary-strong) !important;
+  font-weight: 600 !important;
+}
+
+/* In-page links: primary-strong, same as Button variant="link". */
+mdx-content a,
+#content a,
+#content-area a:not(#topbar-cta-button):not([data-sidebar]) {
+  color: var(--sw-primary-strong);
+}
+
+mdx-content a:hover,
+#content a:hover {
+  color: var(--sw-primary);
+}
+
+toc-item[data-active],
+toc-item[data-active-deepest] {
+  color: var(--sw-primary-strong) !important;
 }
 
 card {
@@ -100,6 +171,10 @@ card {
   box-shadow: 0 1px 2px rgb(2 2 2 / 0.04);
 }
 
+[data-component-part="card-icon"] {
+  color: var(--sw-primary) !important;
+}
+
 callout {
   border-radius: var(--sw-radius-card) !important;
 }
@@ -107,6 +182,14 @@ callout {
 steps,
 step {
   border-radius: var(--sw-radius-card);
+}
+
+step {
+  --step-color: var(--sw-primary);
+}
+
+pagination-next {
+  color: var(--sw-primary-strong) !important;
 }
 
 nav [data-sidebar] a,
