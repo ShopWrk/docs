@@ -8,9 +8,9 @@
     "dark": "/images/ShopWrkIconLogoBlackBG.png"
   },
   "colors": {
-    "primary": "#734A2D",
-    "light": "#C9A06A",
-    "dark": "#734A2D"
+    "primary": "#f96010",
+    "light": "#f96010",
+    "dark": "#b53600"
   },
   "logo": {
     "light": "/images/ShopWrkFullLogo-Black.png",
@@ -35,7 +35,10 @@
     "library": "lucide"
   },
   "background": {
-    "decoration": "gradient"
+    "color": {
+      "light": "#eeedec",
+      "dark": "#090909"
+    }
   },
   "navbar": {
     "primary": {

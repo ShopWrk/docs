@@ -1,4 +1,114 @@
-/* Tighter, scannable sidebar for shop owners */
+/* ShopWrk help site. Match the app: orange primary, warm stone, no mint glow. */
+
+:root {
+  --sw-primary: #f96010;
+  --sw-primary-strong: #b53600;
+  --sw-shell: #eeedec;
+  --sw-workspace: #f5f5f4;
+  --sw-card: #ffffff;
+  --sw-content: #020202;
+  --sw-content-medium: #4f4d4c;
+  --sw-border: #d9d9d9;
+  --sw-radius-card: 12px;
+  --sw-radius-control: 10px;
+}
+
+.dark {
+  --sw-primary: #f96010;
+  --sw-primary-strong: #f96010;
+  --sw-shell: #090909;
+  --sw-workspace: #141414;
+  --sw-card: #1e1e1e;
+  --sw-content: #f5f5f5;
+  --sw-content-medium: #a8a8a8;
+  --sw-border: #2b2b2b;
+}
+
+/* Flat stone canvas. Kill leftover Mintlify gradient / mint blobs. */
+#background-color {
+  background: var(--sw-shell) !important;
+}
+
+#background-color > div[aria-hidden="true"],
+#background-color [class*="blur"],
+#background-color [class*="gradient"] {
+  display: none !important;
+}
+
+#navbar {
+  background: var(--sw-shell) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
+  box-shadow: none !important;
+}
+
+#sidebar,
+#sidebar-content {
+  background: var(--sw-shell) !important;
+}
+
+#content-area,
+#content,
+#body-content {
+  background: transparent !important;
+}
+
+#table-of-contents,
+#table-of-contents-layout {
+  background: transparent !important;
+}
+
+#footer {
+  background: var(--sw-shell) !important;
+  border-top: 1px solid color-mix(in srgb, var(--sw-content) 8%, transparent);
+}
+
+/* Sign in matches app primary: orange fill, near-black label. */
+#topbar-cta-button {
+  background: var(--sw-primary) !important;
+  color: #020202 !important;
+  border: 0 !important;
+  border-radius: var(--sw-radius-control) !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+
+#topbar-cta-button:hover {
+  filter: brightness(0.96);
+}
+
+#search-bar-entry {
+  border-radius: var(--sw-radius-control) !important;
+  background: var(--sw-card) !important;
+  border: 1px solid var(--sw-border) !important;
+}
+
+#sidebar-content li[data-active] {
+  background: var(--sw-card) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 2px rgb(2 2 2 / 0.05);
+}
+
+#page-title {
+  letter-spacing: -0.02em;
+  font-weight: 600 !important;
+}
+
+card {
+  border-radius: var(--sw-radius-card) !important;
+  background: var(--sw-card) !important;
+  border: 1px solid var(--sw-border) !important;
+  box-shadow: 0 1px 2px rgb(2 2 2 / 0.04);
+}
+
+callout {
+  border-radius: var(--sw-radius-card) !important;
+}
+
+steps,
+step {
+  border-radius: var(--sw-radius-card);
+}
+
 nav [data-sidebar] a,
 aside a {
   font-size: 0.875rem !important;
