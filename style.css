@@ -1,12 +1,11 @@
 /*
-  Live page 2026-09-12 after tabs died: washed light Mintlify,
-  peach rail from bg-primary/10, skinny column, white cards.
-  Lock dark. Active nav is a gray chip, not orange. One surface.
+  Live page 2026-09-15: the sidebar read as a raw black slab because
+  the workspace had no inset or edge. Card icon masks were also
+  painted gray, which made every orange icon sit on a gray square.
 */
 
 :root {
   --sw-primary: #f96010;
-  --sw-primary-strong: #b53600;
   --sw-on-primary: #020202;
   --sw-shell: #090909;
   --sw-workspace: #141414;
@@ -18,7 +17,10 @@
 
 html,
 body,
-#background-color,
+#background-color {
+  background: var(--sw-shell) !important;
+}
+
 #content-container,
 #content-side-layout,
 #content-area,
@@ -48,26 +50,28 @@ body,
   border-bottom: 1px solid rgb(255 255 255 / 0.06) !important;
 }
 
+/* Match the app shell: the black rail frames an inset, rounded workspace. */
+@media (min-width: 1024px) {
+  #content-container {
+    margin: 8px 8px 8px 0 !important;
+    border-radius: 16px !important;
+    overflow: clip !important;
+    min-height: calc(100dvh - 80px) !important;
+  }
+}
+
 .nav-tabs,
 .nav-tabs-item,
-div.h-12:has(.nav-tabs) {
-  display: none !important;
-}
-
-#theme-preference-menu-trigger {
-  display: none !important;
-}
-
+div.h-12:has(.nav-tabs),
+#theme-preference-menu-trigger,
 #footer a[href*="mintlify"] {
   display: none !important;
 }
 
-/* Peach rail is bg-primary/10 + text-primary. Kill it. */
 #sidebar-content a[aria-current="page"],
 #sidebar-content li[data-active-nav-item] > a,
 #sidebar-content li[data-active] > a {
   background: #1e1e1e !important;
-  background-color: #1e1e1e !important;
   color: #f5f5f5 !important;
   text-shadow: none !important;
   border-radius: 10px !important;
@@ -124,40 +128,42 @@ eyebrow {
 #topbar-cta-button a,
 #topbar-cta-button span,
 #topbar-cta-button svg {
-  color: #020202 !important;
+  color: var(--sw-on-primary) !important;
 }
 
 #topbar-cta-button [class*="bg-primary"] {
-  background: #f96010 !important;
+  background: var(--sw-primary) !important;
   border-radius: 8px !important;
 }
 
 #search-bar-entry {
   border-radius: 8px !important;
   background: transparent !important;
-  border: 1px solid #2b2b2b !important;
+  border: 1px solid var(--sw-border) !important;
   box-shadow: none !important;
 }
 
 mdx-content a,
-#content a {
-  color: #f96010;
-}
-
+#content a,
 toc-item[data-active],
 toc-item[data-active-deepest] {
-  color: #f96010 !important;
+  color: var(--sw-primary) !important;
 }
 
 card {
   border-radius: 12px !important;
-  background: #1e1e1e !important;
-  border: 1px solid #2b2b2b !important;
+  background: var(--sw-card) !important;
+  border: 1px solid var(--sw-border) !important;
   box-shadow: none;
 }
 
-card svg,
+/* Mintlify uses a masked SVG. Color the mask orange; never its container. */
 [data-component-part="card-icon"] {
-  background-color: #a8a8a8 !important;
-  color: #a8a8a8 !important;
+  background: transparent !important;
+  color: var(--sw-primary) !important;
+}
+
+[data-component-part="card-icon"] svg {
+  background-color: var(--sw-primary) !important;
+  color: var(--sw-primary) !important;
 }
