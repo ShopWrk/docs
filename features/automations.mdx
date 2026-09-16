@@ -131,14 +131,14 @@ If you want another tool to create the person in ShopWrk and then text them or o
     Add the **Webhook** / **Event received** trigger. Point your other tool at the address ShopWrk shows for this automation.
   </Step>
   <Step title="Create the contact">
-    Add **Create Contact** next. Map name, phone, and email from the inbound payload when you can. If those fields arrive in the payload and you leave the step blank, ShopWrk can fill them from the inbound data.
+    Add **Create Contact** next. Map name, phone, and email from what the other tool sends when you can. If those fields arrive and you leave the step blank, ShopWrk can fill them from that inbound data.
   </Step>
   <Step title="Do the follow-up">
     Add **Send SMS**, create a job, add a note, open a deal, or the other contact-based steps you need. Those steps use the contact Create Contact just made.
   </Step>
 </Steps>
 
-Publish only after every path that texts or creates shop work has a contact. If a branch skips Create Contact and never picks a catalog contact, ShopWrk blocks publish with a message that the step needs a contact from the trigger or an upstream Create Contact step.
+Publish only after every path that texts or creates shop work has a contact. If a branch skips Create Contact and never picks a contact from your list, ShopWrk blocks publish with a message that the step needs a contact from the trigger or an upstream Create Contact step.
 
 ### What counts as giving the run a contact
 
@@ -150,7 +150,7 @@ Publish only after every path that texts or creates shop work has a contact. If 
 | **Add note** alone | No. A note needs a contact. It does not create one. |
 | **Send email** | Email can find or create by address on its own. It does not need Create Contact first the way SMS does. |
 
-SMS still needs a phone. If the saved contact has no phone, ShopWrk can fall back to a phone number that arrived in the inbound payload. If neither has a phone, the text step fails.
+SMS still needs a phone. If the saved contact has no phone, ShopWrk can fall back to a phone number that arrived from the other tool. If neither has a phone, the text step fails.
 
 ### Gotchas for this trigger
 
