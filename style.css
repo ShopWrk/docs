@@ -753,6 +753,30 @@ step {
   font-size: 14px;
 }
 
+.sw-app a,
+.sw-person a,
+.sw-identity-meta a,
+.sw-person-email a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.sw-table-staff th:nth-child(5),
+.sw-table-staff td:nth-child(5),
+.sw-table-staff th:nth-child(6),
+.sw-table-staff td:nth-child(6) {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .sw-table-staff th:nth-child(5),
+  .sw-table-staff td:nth-child(5),
+  .sw-table-staff th:nth-child(6),
+  .sw-table-staff td:nth-child(6) {
+    display: table-cell;
+  }
+}
+
 .sw-table-staff td.sw-num {
   text-align: right;
   font-variant-numeric: tabular-nums;
