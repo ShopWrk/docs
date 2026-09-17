@@ -7,6 +7,17 @@ description: "Invite your team, publish weekly shifts, review timesheets, set ho
 
 Open **Team** in the sidebar. You get five tabs: **Staff**, **Schedules**, **Timesheet**, **Access**, and **Payroll Prep**.
 
+<figure className="sw-ui">
+  <div className="sw-tabs" role="tablist" aria-label="Team">
+    <span className="sw-tab sw-tab-active">Staff</span>
+    <span className="sw-tab">Schedules</span>
+    <span className="sw-tab">Timesheet</span>
+    <span className="sw-tab">Access</span>
+    <span className="sw-tab">Payroll Prep</span>
+  </div>
+  <figcaption>Team uses the same recessed tab track as the rest of the shop app.</figcaption>
+</figure>
+
 Staff is your people. Schedules is the dated week you publish. Timesheet is who clocked in. Access is permission groups. Payroll Prep is hourly snapshots and a CSV. How each person is paid lives on their profile under **Compensation**. There is no **Run Payroll** button.
 
 Anyone with permission to view the team can open Team. Tabs they cannot use stay hidden. Compensation, payroll prep, and a few other actions need extra grants. Approving a snapshot and exporting the CSV stay with an Owner.
@@ -38,6 +49,18 @@ ShopWrk emails them a join link. Phone is required. That number becomes their **
 ## Member profiles
 
 Open an active member from the Staff table to see their profile. Tabs on the profile are **Profile**, **Access**, **Schedule**, **Stats**, and **Activity**. People with compensation permission also see **Compensation**.
+
+<figure className="sw-ui">
+  <div className="sw-tabs" role="tablist" aria-label="Member profile">
+    <span className="sw-tab">Profile</span>
+    <span className="sw-tab">Access</span>
+    <span className="sw-tab">Schedule</span>
+    <span className="sw-tab">Stats</span>
+    <span className="sw-tab">Activity</span>
+    <span className="sw-tab sw-tab-active">Compensation</span>
+  </div>
+  <figcaption>Compensation only shows if you have the compensation grant.</figcaption>
+</figure>
 
 - **Profile** holds name, phone, and shop membership details. You can view their sign-in email when you are allowed to. You cannot change it for them. They change their own email.
 - **Access** is this person's groups. See [Roles and permissions](/getting-started/roles-permissions).
@@ -89,6 +112,38 @@ Invites stay on **Team → Staff**. Job timers never become pay.
   </Step>
 </Steps>
 
+<figure className="sw-ui">
+  <div className="sw-card">
+    <div className="sw-card-header">
+      <p className="sw-card-title">Pay</p>
+      <p className="sw-card-desc">How this member is paid.</p>
+    </div>
+    <div className="sw-card-body">
+      <div className="sw-pay-row">
+        <div className="sw-field sw-field-method">
+          <span className="sw-label">Pay method</span>
+          <div className="sw-select">
+            Hourly
+            <span className="sw-select-caret"></span>
+          </div>
+        </div>
+        <div className="sw-field sw-field-amount">
+          <span className="sw-label">Hourly rate</span>
+          <div className="sw-input-group">
+            <span className="sw-addon">$</span>
+            <span className="sw-input">28.00</span>
+          </div>
+        </div>
+      </div>
+      <p className="sw-caption">Pays the hourly rate for each recorded shift.</p>
+    </div>
+    <div className="sw-card-footer">
+      <span className="sw-btn">Save changes</span>
+    </div>
+  </div>
+  <figcaption>Compensation → Pay. Hourly rate sits next to the method. There is no attendance toggle.</figcaption>
+</figure>
+
 What each method does:
 
 | Pay method | Field | What ShopWrk shows |
@@ -113,11 +168,48 @@ If they used to be hourly, a read-only **Hourly rate** card can still show after
 
 ### Pay history
 
-**Pay history** lists every saved change, newest first. It merges pay method changes and hourly rate changes.
+**Pay history** lists every saved change, newest first. It merges pay method changes and hourly rate changes. Status is **Current**, **Scheduled**, or **Ended**. You cannot edit or delete history rows.
 
-Columns: **Status**, **Change**, **Effective**, **Saved by**, **Saved**.
-
-Status is **Current**, **Scheduled**, or **Ended**. You cannot edit or delete history rows.
+<figure className="sw-ui">
+  <div className="sw-card">
+    <div className="sw-card-header">
+      <p className="sw-card-title">Pay history</p>
+      <p className="sw-card-desc">Every saved change, newest first.</p>
+    </div>
+    <div className="sw-card-body">
+      <div className="sw-table-wrap">
+        <table className="sw-table">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Change</th>
+              <th>Effective</th>
+              <th>Saved by</th>
+              <th>Saved</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="sw-muted">Current</td>
+              <td>Pay terms · Hourly</td>
+              <td>From Sep 17, 2026</td>
+              <td>Maya Chen</td>
+              <td className="sw-muted">Sep 17, 2026, 9:12 AM</td>
+            </tr>
+            <tr>
+              <td className="sw-muted">Ended</td>
+              <td>Hourly rate · $28.00 per hour</td>
+              <td>From Sep 3, 2026</td>
+              <td>Maya Chen</td>
+              <td className="sw-muted">Sep 3, 2026, 4:05 PM</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <figcaption>Pay history merges method changes and hourly rate changes.</figcaption>
+</figure>
 
 Older hourly rows that had the shift clock off may show **shift clock off** in the change text. Saving those terms again turns the clock back on.
 
