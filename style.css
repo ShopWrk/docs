@@ -753,11 +753,13 @@ step {
   font-size: 14px;
 }
 
+mdx-content .sw-app a,
+#content .sw-app a,
 .sw-app a,
 .sw-person a,
 .sw-identity-meta a,
 .sw-person-email a {
-  color: inherit !important;
+  color: var(--sw-quiet) !important;
   text-decoration: none !important;
 }
 
