@@ -5,18 +5,100 @@ icon: "users"
 description: "Invite your team, publish weekly shifts, review timesheets, set how each member is paid, and export hourly payroll prep from Team."
 ---
 
-Open **Team** in the sidebar. You get five tabs: **Staff**, **Schedules**, **Timesheet**, **Access**, and **Payroll Prep**.
+Open **Team** in the sidebar. You get five tabs: **Staff**, **Schedules**, **Timesheet**, **Access**, and **Payroll Prep**. **Invite Team Member** sits on the right of that tab row.
 
-<figure className="sw-ui">
-  <div className="sw-tabs" role="tablist" aria-label="Team">
-    <span className="sw-tab sw-tab-active">Staff</span>
-    <span className="sw-tab">Schedules</span>
-    <span className="sw-tab">Timesheet</span>
-    <span className="sw-tab">Access</span>
-    <span className="sw-tab">Payroll Prep</span>
+<div className="sw-ui">
+  <div className="sw-app">
+    <div className="sw-tabs-row">
+      <div className="sw-tabs-scroll">
+        <div className="sw-tabs">
+          <span className="sw-tab sw-tab-active">Staff</span>
+          <span className="sw-tab">Schedules</span>
+          <span className="sw-tab">Timesheet</span>
+          <span className="sw-tab">Access</span>
+          <span className="sw-tab">Payroll Prep</span>
+        </div>
+      </div>
+      <span className="sw-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" x2="19" y1="8" y2="14" /><line x1="22" x2="16" y1="11" y2="11" /></svg>
+        Invite Team Member
+      </span>
+    </div>
+    <div className="sw-filter">
+      <div className="sw-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+        Search by name or email…
+      </div>
+      <span className="sw-chip">Role · All</span>
+      <span className="sw-chip">Status · All</span>
+    </div>
+    <div className="sw-table-wrap">
+      <table className="sw-table sw-table-staff">
+        <thead>
+          <tr>
+            <th>Member</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th className="sw-num">Jobs Completed</th>
+            <th className="sw-num">Job hours</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div className="sw-person">
+                <span className="sw-avatar sw-avatar-sm">MC</span>
+                <span>
+                  <p className="sw-person-name">Maya Chen</p>
+                  <p className="sw-person-email">maya@mayaswraps.com</p>
+                </span>
+              </div>
+            </td>
+            <td><span className="sw-badge sw-badge-warning"><span className="sw-badge-dot"></span>Owner</span></td>
+            <td><span className="sw-badge sw-badge-success"><span className="sw-badge-dot"></span>Active</span></td>
+            <td className="sw-num">12</td>
+            <td className="sw-num">0h</td>
+            <td><span className="sw-icon-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /><circle cx="5" cy="12" r="1.6" /></svg></span></td>
+          </tr>
+          <tr>
+            <td>
+              <div className="sw-person">
+                <span className="sw-avatar sw-avatar-sm">LO</span>
+                <span>
+                  <p className="sw-person-name">Luis Ortega</p>
+                  <p className="sw-person-email">luis@mayaswraps.com</p>
+                </span>
+              </div>
+            </td>
+            <td><span className="sw-badge sw-badge-info"><span className="sw-badge-dot"></span>Technician</span></td>
+            <td><span className="sw-badge sw-badge-success"><span className="sw-badge-dot"></span>Active</span></td>
+            <td className="sw-num">48</td>
+            <td className="sw-num">32h</td>
+            <td><span className="sw-icon-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /><circle cx="5" cy="12" r="1.6" /></svg></span></td>
+          </tr>
+          <tr>
+            <td>
+              <div className="sw-person">
+                <span className="sw-avatar sw-avatar-sm">JB</span>
+                <span>
+                  <p className="sw-person-name">Jordan Blake</p>
+                  <p className="sw-person-email">jordan@mayaswraps.com</p>
+                </span>
+              </div>
+            </td>
+            <td><span className="sw-badge sw-badge-info"><span className="sw-badge-dot"></span>Technician</span></td>
+            <td><span className="sw-badge sw-badge-warning"><span className="sw-badge-dot"></span>Invited</span></td>
+            <td className="sw-num sw-muted">-</td>
+            <td className="sw-num sw-muted">-</td>
+            <td><span className="sw-icon-btn" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /><circle cx="5" cy="12" r="1.6" /></svg></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <figcaption>Team uses the same recessed tab track as the rest of the shop app.</figcaption>
-</figure>
+  <p className="sw-ui-caption">Team → Staff. Invite sits on the tab row. An invited row is not a profile yet.</p>
+</div>
 
 Staff is your people. Schedules is the dated week you publish. Timesheet is who clocked in. Access is permission groups. Payroll Prep is hourly snapshots and a CSV. How each person is paid lives on their profile under **Compensation**. There is no **Run Payroll** button.
 
@@ -48,19 +130,31 @@ ShopWrk emails them a join link. Phone is required. That number becomes their **
 
 ## Member profiles
 
-Open an active member from the Staff table to see their profile. Tabs on the profile are **Profile**, **Access**, **Schedule**, **Stats**, and **Activity**. People with compensation permission also see **Compensation**.
+Open an active member from the Staff table to see their profile. The header shows their name, work or sign-in email, and Work Phone. Tabs on the profile are **Profile**, **Access**, **Schedule**, **Stats**, and **Activity**. People with compensation permission also see **Compensation**.
 
-<figure className="sw-ui">
-  <div className="sw-tabs" role="tablist" aria-label="Member profile">
-    <span className="sw-tab">Profile</span>
-    <span className="sw-tab">Access</span>
-    <span className="sw-tab">Schedule</span>
-    <span className="sw-tab">Stats</span>
-    <span className="sw-tab">Activity</span>
-    <span className="sw-tab sw-tab-active">Compensation</span>
+<div className="sw-ui">
+  <div className="sw-app">
+    <div className="sw-identity">
+      <span className="sw-avatar">LO</span>
+      <span>
+        <p className="sw-identity-name">Luis Ortega</p>
+        <p className="sw-identity-meta">luis@mayaswraps.com <span className="sw-quiet">(work)</span></p>
+        <p className="sw-identity-meta">(512) 555-0148</p>
+      </span>
+    </div>
+    <div className="sw-tabs-scroll">
+      <div className="sw-tabs">
+        <span className="sw-tab">Profile</span>
+        <span className="sw-tab">Access</span>
+        <span className="sw-tab">Schedule</span>
+        <span className="sw-tab">Stats</span>
+        <span className="sw-tab">Activity</span>
+        <span className="sw-tab sw-tab-active">Compensation</span>
+      </div>
+    </div>
   </div>
-  <figcaption>Compensation only shows if you have the compensation grant.</figcaption>
-</figure>
+  <p className="sw-ui-caption">Member profile. Compensation only shows if you have the compensation grant.</p>
+</div>
 
 - **Profile** holds name, phone, and shop membership details. You can view their sign-in email when you are allowed to. You cannot change it for them. They change their own email.
 - **Access** is this person's groups. See [Roles and permissions](/getting-started/roles-permissions).
@@ -112,47 +206,168 @@ Invites stay on **Team → Staff**. Job timers never become pay.
   </Step>
 </Steps>
 
-<figure className="sw-ui">
-  <div className="sw-card">
-    <div className="sw-card-header">
-      <p className="sw-card-title">Pay</p>
-      <p className="sw-card-desc">How this member is paid.</p>
+<div className="sw-ui">
+  <div className="sw-app">
+    <div className="sw-identity">
+      <span className="sw-avatar">LO</span>
+      <span>
+        <p className="sw-identity-name">Luis Ortega</p>
+        <p className="sw-identity-meta">luis@mayaswraps.com <span className="sw-quiet">(work)</span></p>
+        <p className="sw-identity-meta">(512) 555-0148</p>
+      </span>
     </div>
-    <div className="sw-card-body">
-      <div className="sw-pay-row">
-        <div className="sw-field sw-field-method">
-          <span className="sw-label">Pay method</span>
-          <div className="sw-select">
-            Hourly
-            <span className="sw-select-caret"></span>
-          </div>
+    <div className="sw-tabs-scroll">
+      <div className="sw-tabs">
+        <span className="sw-tab">Profile</span>
+        <span className="sw-tab">Access</span>
+        <span className="sw-tab">Schedule</span>
+        <span className="sw-tab">Stats</span>
+        <span className="sw-tab">Activity</span>
+        <span className="sw-tab sw-tab-active">Compensation</span>
+      </div>
+    </div>
+    <div className="sw-stack sw-stack-after-tabs">
+      <div className="sw-card">
+        <div className="sw-card-header">
+          <p className="sw-card-title">Pay</p>
+          <p className="sw-card-desc">How this member is paid.</p>
         </div>
-        <div className="sw-field sw-field-amount">
-          <span className="sw-label">Hourly rate</span>
-          <div className="sw-input-group">
-            <span className="sw-addon">$</span>
-            <span className="sw-input">28.00</span>
+        <div className="sw-card-body">
+          <div className="sw-pay-row">
+            <div className="sw-field sw-field-method">
+              <span className="sw-label">Pay method</span>
+              <div className="sw-select">
+                Hourly
+                <svg className="sw-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </div>
+            </div>
+            <div className="sw-field sw-field-amount">
+              <span className="sw-label">Hourly rate</span>
+              <div className="sw-input-group">
+                <span className="sw-addon">$</span>
+                <span className="sw-input">28.00</span>
+              </div>
+            </div>
+          </div>
+          <p className="sw-caption">Pays the hourly rate for each recorded shift.</p>
+        </div>
+        <div className="sw-card-footer">
+          <span className="sw-btn">Save changes</span>
+        </div>
+      </div>
+      <div className="sw-card">
+        <div className="sw-card-header">
+          <p className="sw-card-title">Pay history</p>
+          <p className="sw-card-desc">Every saved change, newest first.</p>
+        </div>
+        <div className="sw-card-body">
+          <div className="sw-table-wrap">
+            <table className="sw-table sw-table-history">
+              <thead>
+                <tr>
+                  <th>Status</th>
+                  <th>Change</th>
+                  <th>Effective</th>
+                  <th>Saved by</th>
+                  <th>Saved</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="sw-muted">Current</td>
+                  <td>Pay terms · Hourly</td>
+                  <td>From Sep 17, 2026</td>
+                  <td>Maya Chen</td>
+                  <td className="sw-muted">Sep 17, 9:12 AM</td>
+                </tr>
+                <tr>
+                  <td className="sw-muted">Ended</td>
+                  <td>Hourly rate · $28.00 per hour</td>
+                  <td>From Sep 3, 2026</td>
+                  <td>Maya Chen</td>
+                  <td className="sw-muted">Sep 3, 4:05 PM</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      <p className="sw-caption">Pays the hourly rate for each recorded shift.</p>
-    </div>
-    <div className="sw-card-footer">
-      <span className="sw-btn">Save changes</span>
     </div>
   </div>
-  <figcaption>Compensation → Pay. Hourly rate sits next to the method. There is no attendance toggle.</figcaption>
-</figure>
+  <p className="sw-ui-caption">Compensation. Pay and Pay history stack on the same tab. There is no attendance toggle.</p>
+</div>
 
 What each method does:
 
 | Pay method | Field | What ShopWrk shows |
 | --- | --- | --- |
-| **Hourly** | **Hourly rate** `$` | Pays the hourly rate for each recorded shift. |
-| **Percentage** | **Percentage** `%` | Share of accepted service sales after discounts, before tax and tips. Each job can set its own rate. |
-| **Fixed fee** | **Fixed fee** `$` | The usual fee per service. Each job can set a different amount. |
+| **Hourly** | **Hourly rate** $ | Pays the hourly rate for each recorded shift. |
+| **Percentage** | **Percentage** % | Share of accepted service sales after discounts, before tax and tips. Each job can set its own rate. |
+| **Fixed fee** | **Fixed fee** $ | The usual fee per service. Each job can set a different amount. |
 
 Hourly has no attendance toggle. Hourly people clock in on [Timesheet](#timesheet). Percentage and fixed fee do not use the hourly shift clock.
+
+<div className="sw-ui">
+  <div className="sw-stack">
+    <div className="sw-card">
+      <div className="sw-card-header">
+        <p className="sw-card-title">Pay</p>
+        <p className="sw-card-desc">How this member is paid.</p>
+      </div>
+      <div className="sw-card-body">
+        <div className="sw-pay-row">
+          <div className="sw-field sw-field-method">
+            <span className="sw-label">Pay method</span>
+            <div className="sw-select">
+              Percentage
+              <svg className="sw-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+          </div>
+          <div className="sw-field sw-field-amount">
+            <span className="sw-label">Percentage</span>
+            <div className="sw-input-group">
+              <span className="sw-input">40.00</span>
+              <span className="sw-addon sw-addon-end">%</span>
+            </div>
+          </div>
+        </div>
+        <p className="sw-caption">Share of accepted service sales after discounts, before tax and tips. Each job can set its own rate.</p>
+      </div>
+      <div className="sw-card-footer">
+        <span className="sw-btn">Save changes</span>
+      </div>
+    </div>
+    <div className="sw-card">
+      <div className="sw-card-header">
+        <p className="sw-card-title">Pay</p>
+        <p className="sw-card-desc">How this member is paid.</p>
+      </div>
+      <div className="sw-card-body">
+        <div className="sw-pay-row">
+          <div className="sw-field sw-field-method">
+            <span className="sw-label">Pay method</span>
+            <div className="sw-select">
+              Fixed fee
+              <svg className="sw-select-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+            </div>
+          </div>
+          <div className="sw-field sw-field-amount">
+            <span className="sw-label">Fixed fee</span>
+            <div className="sw-input-group">
+              <span className="sw-addon">$</span>
+              <span className="sw-input">150.00</span>
+            </div>
+          </div>
+        </div>
+        <p className="sw-caption">The usual fee per service. Each job can set a different amount.</p>
+      </div>
+      <div className="sw-card-footer">
+        <span className="sw-btn">Save changes</span>
+      </div>
+    </div>
+  </div>
+  <p className="sw-ui-caption">Percentage puts % on the right of the field. Fixed fee uses the same $ field as hourly.</p>
+</div>
 
 Percentage needs a default share. Fixed fee needs a dollar amount. Hourly rate can stay blank if you are only changing the method and a rate is already on file.
 
@@ -170,15 +385,16 @@ If they used to be hourly, a read-only **Hourly rate** card can still show after
 
 **Pay history** lists every saved change, newest first. It merges pay method changes and hourly rate changes. Status is **Current**, **Scheduled**, or **Ended**. You cannot edit or delete history rows.
 
-<figure className="sw-ui">
-  <div className="sw-card">
-    <div className="sw-card-header">
-      <p className="sw-card-title">Pay history</p>
-      <p className="sw-card-desc">Every saved change, newest first.</p>
-    </div>
-    <div className="sw-card-body">
-      <div className="sw-table-wrap">
-        <table className="sw-table">
+<div className="sw-ui">
+  <div className="sw-app">
+    <div className="sw-card">
+      <div className="sw-card-header">
+        <p className="sw-card-title">Pay history</p>
+        <p className="sw-card-desc">Every saved change, newest first.</p>
+      </div>
+      <div className="sw-card-body">
+        <div className="sw-table-wrap">
+          <table className="sw-table sw-table-history">
           <thead>
             <tr>
               <th>Status</th>
@@ -194,22 +410,23 @@ If they used to be hourly, a read-only **Hourly rate** card can still show after
               <td>Pay terms · Hourly</td>
               <td>From Sep 17, 2026</td>
               <td>Maya Chen</td>
-              <td className="sw-muted">Sep 17, 2026, 9:12 AM</td>
+              <td className="sw-muted">Sep 17, 9:12 AM</td>
             </tr>
             <tr>
               <td className="sw-muted">Ended</td>
               <td>Hourly rate · $28.00 per hour</td>
               <td>From Sep 3, 2026</td>
               <td>Maya Chen</td>
-              <td className="sw-muted">Sep 3, 2026, 4:05 PM</td>
+              <td className="sw-muted">Sep 3, 4:05 PM</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    </div>
   </div>
-  <figcaption>Pay history merges method changes and hourly rate changes.</figcaption>
-</figure>
+  <p className="sw-ui-caption">Pay history merges method changes and hourly rate changes.</p>
+</div>
 
 Older hourly rows that had the shift clock off may show **shift clock off** in the change text. Saving those terms again turns the clock back on.
 
@@ -218,8 +435,8 @@ Older hourly rows that had the shift clock off may show **shift clock off** in t
 Luis installs wraps at Maya's shop. He has been treated as hourly because nobody saved a method yet.
 
 1. Maya goes to **Team → Staff**, opens Luis, then **Compensation**.
-2. Under **Pay**, she leaves **Pay method** on **Hourly**, enters **Hourly rate** `$28.00`, and clicks **Save changes**. The toast says **Pay settings saved**. **Pay history** shows a current hourly row.
-3. After a busy wrap week she switches **Pay method** to **Percentage** and enters `40`. He is still clocked in from the morning. Save shows **Pay settings saved**, then **Their open shift was closed for review**.
+2. Under **Pay**, she leaves **Pay method** on **Hourly**, enters **Hourly rate** $28.00, and clicks **Save changes**. The toast says **Pay settings saved**. **Pay history** shows a current hourly row.
+3. After a busy wrap week she switches **Pay method** to **Percentage** and enters 40. He is still clocked in from the morning. Save shows **Pay settings saved**, then **Their open shift was closed for review**.
 4. She opens [Payroll Prep](#payroll-prep) for that period. ShopWrk will not calculate or approve Luis on percentage. She can leave the stored 40% for later, or switch him back to hourly if she needs this period's CSV.
 
 The 40% is the usual share. If one wrap job should pay a different share, that job can set its own rate. Payroll Prep still will not export percentage or fixed fee.
