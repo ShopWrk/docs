@@ -982,3 +982,51 @@ mdx-content .sw-app a,
   background: var(--sw-workspace);
   box-shadow: var(--sw-shadow-edge);
 }
+
+.sw-ai-thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sw-space-2-5);
+  color: var(--sw-quiet);
+  font-size: var(--sw-text-sm);
+  line-height: var(--sw-leading-caption);
+}
+
+.sw-ai-thinking canvas {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+.sw-ai-thinking-label {
+  background: linear-gradient(
+    90deg,
+    var(--sw-quiet) 0%,
+    var(--sw-content) 45%,
+    var(--sw-quiet) 90%
+  );
+  background-size: 200% 100%;
+  animation: sw-ai-shimmer 1s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes sw-ai-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sw-ai-thinking-label {
+    animation: none;
+    background: none;
+    color: var(--sw-quiet);
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+}

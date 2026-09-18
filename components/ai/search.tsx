@@ -12,11 +12,12 @@ import {
   useState,
 } from 'react';
 import { flushSync } from 'react-dom';
-import { Loader2, RefreshCw, SearchIcon, Send, X } from 'lucide-react';
+import { RefreshCw, Send, X } from 'lucide-react';
 import { cn } from '../../lib/cn';
 import { useChat, type UseChatHelpers } from '@ai-sdk/react';
 import { DefaultChatTransport, type Tool, type UIMessage, type UIToolInvocation } from 'ai';
 import { Markdown } from '../markdown';
+import { ThinkingStatus } from './thinking-status';
 
 export type ChatUIMessage = UIMessage<
   never,
@@ -155,7 +156,6 @@ export function AISearchInput(props: ComponentProps<'form'>) {
       />
       {isLoading ? (
         <button key="bn" type="button" className="sw-ai-abort" onClick={stop}>
-          <Loader2 className="size-3.5 animate-spin" />
           Stop
         </button>
       ) : (
@@ -228,6 +228,14 @@ function Input(props: ComponentProps<'textarea'>) {
   );
 }
 
+function messageHasText(message: ChatUIMessage) {
+  return (message.parts ?? []).some((part) => part.type === 'text' && part.text.trim().length > 0);
+}
+
+function isSearchPending(call: UIToolInvocation<SearchTool>) {
+  return call.state !== 'output-available' && call.state !== 'output-error' && call.state !== 'output-denied';
+}
+
 function Message({ message, ...props }: { message: ChatUIMessage } & ComponentProps<'div'>) {
   let markdown = '';
   const searchCalls: UIToolInvocation<SearchTool>[] = [];
@@ -257,22 +265,29 @@ function Message({ message, ...props }: { message: ChatUIMessage } & ComponentPr
 
   return (
     <div onClick={(e) => e.stopPropagation()} className="sw-ai-msg-assistant" {...props}>
-      <p className="sw-ai-role">
-        <ShopWrkMark className="sw-ai-role-mark" />
-        ShopWrk
-      </p>
-      <div className="prose text-sm">
-        <Markdown text={markdown} />
-      </div>
+      {markdown.trim() ? (
+        <>
+          <p className="sw-ai-role">
+            <ShopWrkMark className="sw-ai-role-mark" />
+            ShopWrk
+          </p>
+          <div className="prose text-sm">
+            <Markdown text={markdown} />
+          </div>
+        </>
+      ) : null}
 
       {searchCalls.map((call) => {
+        if (isSearchPending(call)) {
+          return <ThinkingStatus key={call.toolCallId} state="searching" label="Searching docs" />;
+        }
+
         return (
           <div key={call.toolCallId} className="sw-ai-search">
-            <SearchIcon className="size-4" />
             {call.state === 'output-error' || call.state === 'output-denied' ? (
               <p className="text-fd-error">{call.errorText ?? 'Failed to search'}</p>
             ) : (
-              <p>{!call.output ? 'Searching docs…' : `${call.output.length} matches in the docs`}</p>
+              <p>{`${call.output?.length ?? 0} matches in the docs`}</p>
             )}
           </div>
         );
@@ -393,6 +408,17 @@ export function AISearchPanel() {
 export function AISearchPanelList({ className, style, ...props }: ComponentProps<'div'>) {
   const chat = useChatContext();
   const messages = chat.messages.filter((msg) => msg.role !== 'system');
+  const isBusy = chat.status === 'streaming' || chat.status === 'submitted';
+  const last = messages.at(-1);
+  const lastIsSearching =
+    last?.role === 'assistant' &&
+    (last.parts ?? []).some((part) => {
+      if (!part.type.startsWith('tool-')) return false;
+      const call = part as UIToolInvocation<Tool>;
+      return isSearchPending(call as UIToolInvocation<SearchTool>);
+    });
+  const showComposingOrb =
+    isBusy && !lastIsSearching && (last?.role !== 'assistant' || !messageHasText(last));
 
   return (
     <List
@@ -414,9 +440,18 @@ export function AISearchPanelList({ className, style, ...props }: ComponentProps
               <p className="text-sm">{chat.error.message}</p>
             </div>
           )}
-          {messages.map((item) => (
-            <Message key={item.id} message={item} />
-          ))}
+          {messages.map((item) => {
+            if (
+              item.role === 'assistant' &&
+              isBusy &&
+              !messageHasText(item) &&
+              !(item.parts ?? []).some((part) => part.type.startsWith('tool-'))
+            ) {
+              return null;
+            }
+            return <Message key={item.id} message={item} />;
+          })}
+          {showComposingOrb ? <ThinkingStatus state="composing" label="ShopWrk is answering" /> : null}
         </div>
       )}
     </List>
