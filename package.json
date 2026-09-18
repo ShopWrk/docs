@@ -1,0 +1,49 @@
+{
+  "name": "shopwrk-docs",
+  "version": "0.0.29",
+  "private": true,
+  "packageManager": "pnpm@10.33.3",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "types:check": "next typegen && tsc --noEmit",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@ai-sdk/react": "^4.0.96",
+    "@fumadocs/base-ui": "16.15.11",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "ai": "^7.0.93",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.2.6",
+    "flexsearch": "^0.8.212",
+    "fumadocs-core": "16.15.11",
+    "fumadocs-mdx": "15.4.1",
+    "fumadocs-ui": "npm:@fumadocs/base-ui@16.15.11",
+    "hast-util-to-jsx-runtime": "^2.3.6",
+    "lucide-react": "^1.43.0",
+    "next": "16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-rehype": "^11.1.2",
+    "thinking-orbs": "0.2.0",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "16.3.4",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/hast": "^3.0.5",
+    "@types/mdx": "^2.0.14",
+    "@types/node": "^26.5.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "eslint": "^9.39.4",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}
