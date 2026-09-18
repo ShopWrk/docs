@@ -4,8 +4,8 @@
   "theme": "mint",
   "description": "Help for running your ShopWrk shop.",
   "favicon": {
-    "light": "/images/ShopWrk-WhiteBGLogo.png",
-    "dark": "/images/ShopWrkIconLogoBlackBG.png"
+    "light": "/images/favicon.svg",
+    "dark": "/images/shopwrk-symbol-white.svg"
   },
   "colors": {
     "primary": "#f96010",
@@ -13,8 +13,8 @@
     "dark": "#b53600"
   },
   "logo": {
-    "light": "/images/ShopWrkFullLogo-Black.png",
-    "dark": "/images/ShopwrkWhiteLogo-NOBG.png",
+    "light": "/images/shopwrk-lockup-horizontal-black.svg",
+    "dark": "/images/shopwrk-lockup-horizontal-white.svg",
     "href": "https://shopwrk.com"
   },
   "appearance": {
