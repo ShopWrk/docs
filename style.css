@@ -21,6 +21,7 @@
   --sw-radius-control: 10px;
   --sw-radius-compact: 8px;
   --sw-control-h: 32px;
+  --sw-shell-inset: 16px;
   --sw-shadow-card:
     0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
     0 3px 2px rgb(0 0 0 / 0.02), 0 5px 2px rgb(0 0 0 / 0.01),
@@ -90,11 +91,11 @@ body,
   border-bottom: 1px solid rgb(255 255 255 / 0.06) !important;
 }
 
-/* Same 8px inset as the workspace. Mintlify uses lg:px-12, then space-x-4
-   after Sign in for hidden theme/assistant controls. */
+/* Logo, Sign in, and the workspace right edge share one shell inset.
+   8px sat on the window; Mintlify’s 48px/64px was uneven and too wide. */
 #navbar div.flex.items-center.h-16 {
-  padding-left: 8px !important;
-  padding-right: 8px !important;
+  padding-left: var(--sw-shell-inset) !important;
+  padding-right: var(--sw-shell-inset) !important;
 }
 
 #navbar a:has(img) {
@@ -140,7 +141,7 @@ body,
   #content-container {
     position: relative;
     isolation: isolate;
-    margin: 8px 8px 8px 0 !important;
+    margin: 8px var(--sw-shell-inset) 8px 0 !important;
     border-radius: var(--sw-radius-workspace) !important;
     overflow: visible !important;
     min-height: calc(100dvh - 80px) !important;
