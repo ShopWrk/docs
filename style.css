@@ -111,20 +111,21 @@ body,
     isolation: isolate;
     margin: 8px 8px 8px 0 !important;
     border-radius: var(--sw-radius-workspace) !important;
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-    height: calc(100dvh - 80px) !important;
+    overflow: visible !important;
     min-height: calc(100dvh - 80px) !important;
-    max-height: calc(100dvh - 80px) !important;
     box-shadow: none !important;
   }
 
+  /* overflow: clip on the workspace killed sticky and scroll-spy. */
   #content-side-layout {
     position: sticky !important;
-    top: 1.75rem !important;
+    top: 5.75rem !important;
     align-self: flex-start !important;
+    z-index: 21 !important;
     height: auto !important;
-    max-height: calc(100dvh - 7.5rem) !important;
+    max-height: calc(100dvh - 7rem) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
   }
 
   /* Paint the inner edge on top of header/TOC so it cannot be clipped mid-panel. */
