@@ -98,7 +98,8 @@ body,
 .nav-tabs-item,
 div.h-12:has(.nav-tabs),
 #theme-preference-menu-trigger,
-#footer a[href*="mintlify"] {
+#footer a[href*="mintlify"],
+body > div.fixed.z-999[role="status"] {
   display: none !important;
 }
 
