@@ -209,10 +209,28 @@ body > div.fixed.z-999[role="status"] {
   padding-bottom: 24px !important;
 }
 
+#sidebar-content .sidebar-group-header,
 #sidebar-content a {
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
+  gap: 8px !important;
+}
+
+#sidebar-content .sidebar-group-header > svg,
+#sidebar-content a > div:first-child {
+  width: 16px !important;
+  min-width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+#sidebar-content .sidebar-group-header > svg,
+#sidebar-content a svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+#sidebar-content a {
   height: 32px !important;
   min-height: 32px !important;
   padding: 0 8px !important;
