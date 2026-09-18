@@ -35,6 +35,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           theme={{
             defaultTheme: 'dark',
             enableSystem: false,
+            forcedTheme: 'dark',
           }}
         >
           {children}

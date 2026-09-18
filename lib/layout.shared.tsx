@@ -32,6 +32,9 @@ export function baseOptions(): BaseLayoutProps {
       url: 'https://shopwrk.com',
     },
     githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
+    themeSwitch: {
+      enabled: false,
+    },
     links: [
       {
         type: 'button',
