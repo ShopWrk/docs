@@ -2,6 +2,7 @@
   "name": "shopwrk-docs",
   "version": "0.0.29",
   "private": true,
+  "packageManager": "pnpm@10.33.3",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
