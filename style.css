@@ -102,8 +102,12 @@ body,
   column-gap: 0 !important;
 }
 
-#navbar [class*="justify-end"][class*="space-x-4"] > :not([hidden]) ~ :not([hidden]) {
-  margin-left: 0 !important;
+#navbar [class*="justify-end"][class*="space-x-4"] > * {
+  margin: 0 !important;
+}
+
+#navbar [class*="justify-end"][class*="space-x-4"] > nav ~ * {
+  display: none !important;
 }
 
 /* Current brand kit lockup: 500×110, 32px tall like the app wordmark. */
