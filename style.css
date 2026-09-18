@@ -90,11 +90,16 @@ body,
   border-bottom: 1px solid rgb(255 255 255 / 0.06) !important;
 }
 
-/* Same inset on the wordmark and Sign in. Mintlify uses lg:px-12, then
-   space-x-4 after Sign in for hidden theme/assistant controls. */
+/* Same 8px inset as the workspace. Mintlify uses lg:px-12, then space-x-4
+   after Sign in for hidden theme/assistant controls. */
 #navbar div.flex.items-center.h-16 {
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+#navbar a:has(img) {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 #navbar [class*="justify-end"][class*="space-x-4"] {
@@ -358,6 +363,12 @@ eyebrow {
 #topbar-cta-button span,
 #topbar-cta-button svg {
   color: var(--sw-on-primary) !important;
+}
+
+#topbar-cta-button a {
+  height: var(--sw-control-h) !important;
+  padding: 0 12px !important;
+  gap: 6px !important;
 }
 
 #topbar-cta-button [class*="bg-primary"] {
