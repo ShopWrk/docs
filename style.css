@@ -86,6 +86,15 @@ body,
   border-bottom: 1px solid rgb(255 255 255 / 0.06) !important;
 }
 
+/* Current brand kit lockup: 500×110, 32px tall like the app wordmark. */
+#navbar a img,
+#navbar img {
+  height: 32px !important;
+  width: auto !important;
+  max-height: 32px !important;
+  max-width: none !important;
+}
+
 /* Match the app shell: the black rail frames an inset, rounded workspace. */
 @media (min-width: 1024px) {
   #sidebar {
