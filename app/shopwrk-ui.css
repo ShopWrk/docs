@@ -724,6 +724,12 @@ mdx-content .sw-app a,
   color: var(--sw-content);
 }
 
+@media (min-width: 1024px) {
+  .sw-ai-panel {
+    width: var(--ai-chat-width, 400px);
+  }
+}
+
 .sw-ai-frame {
   display: flex;
   flex-direction: column;

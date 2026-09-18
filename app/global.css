@@ -100,3 +100,22 @@ body {
   background: var(--sw-inset) !important;
   color: var(--sw-content) !important;
 }
+
+#nd-docs-layout:has(.sw-ai-panel) {
+  --ai-chat-width: 400px;
+  --fd-toc-width: 400px !important;
+  --fd-right-width: 400px !important;
+}
+
+@media (min-width: 1536px) {
+  #nd-docs-layout:has(.sw-ai-panel) {
+    --ai-chat-width: 460px;
+    --fd-toc-width: 460px !important;
+    --fd-right-width: 460px !important;
+  }
+}
+
+#nd-docs-layout:has(.sw-ai-panel) #nd-toc,
+#nd-docs-layout:has(.sw-ai-panel) #nd-toc-placeholder {
+  display: none;
+}

@@ -63,7 +63,7 @@ export function AISearchPanelHeader({ className, ...props }: ComponentProps<'div
         <ShopWrkMark className="sw-ai-mark" />
         <div>
           <p className="sw-ai-title">Ask AI</p>
-          <p className="sw-ai-subtitle">Answers from the ShopWrk docs. Verify anything important.</p>
+          <p className="sw-ai-subtitle">Answers from the docs. Verify anything important.</p>
         </div>
       </div>
 
@@ -365,7 +365,7 @@ export function AISearchPanel() {
           className={cn(
             'sw-ai-panel overflow-hidden z-30 [--ai-chat-width:400px] 2xl:[--ai-chat-width:460px]',
             'max-lg:fixed max-lg:inset-x-2 max-lg:inset-y-4 max-lg:rounded-2xl max-lg:shadow-xl',
-            'lg:sticky lg:top-0 lg:h-dvh lg:border-s lg:border-fd-border lg:ms-auto lg:in-[#nd-docs-layout]:[grid-area:toc] lg:in-[#nd-notebook-layout]:row-span-full lg:in-[#nd-notebook-layout]:col-start-5',
+            'lg:sticky lg:top-0 lg:h-dvh lg:border-s lg:border-fd-border lg:in-[#nd-docs-layout]:[grid-area:toc] lg:in-[#nd-notebook-layout]:row-span-full lg:in-[#nd-notebook-layout]:col-start-5',
             open
               ? 'animate-fd-dialog-in lg:animate-[ask-ai-open_200ms]'
               : 'animate-fd-dialog-out lg:animate-[ask-ai-close_200ms]',
@@ -374,7 +374,7 @@ export function AISearchPanel() {
             if (!open) flushSync(() => setActualOpen(false));
           }}
         >
-          <div className="sw-ai-frame lg:w-(--ai-chat-width)">
+          <div className="sw-ai-frame">
             <AISearchPanelHeader />
             <AISearchPanelList className="flex-1" />
             <div className="sw-ai-composer">
