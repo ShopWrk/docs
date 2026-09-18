@@ -12,9 +12,8 @@ import {
   useState,
 } from 'react';
 import { flushSync } from 'react-dom';
-import { Loader2, MessageCircleIcon, RefreshCw, SearchIcon, Send, X } from 'lucide-react';
+import { Loader2, RefreshCw, SearchIcon, Send, X } from 'lucide-react';
 import { cn } from '../../lib/cn';
-import { buttonVariants } from '../ui/button';
 import { useChat, type UseChatHelpers } from '@ai-sdk/react';
 import { DefaultChatTransport, type Tool, type UIMessage, type UIToolInvocation } from 'ai';
 import { Markdown } from '../markdown';
@@ -36,37 +35,45 @@ const Context = createContext<{
   chat: UseChatHelpers<ChatUIMessage>;
 } | null>(null);
 
+function ShopWrkMark({ className }: { className?: string }) {
+  return (
+    <>
+      <img src="/images/shopwrk-symbol-black.svg" alt="" className={cn('dark:hidden', className)} />
+      <img
+        src="/images/shopwrk-symbol-white.svg"
+        alt=""
+        className={cn('hidden dark:block', className)}
+      />
+    </>
+  );
+}
+
+const SUGGESTIONS = [
+  'How do I take a payment?',
+  'How do I add a technician?',
+  'How does ShopWrk Pay work?',
+];
+
 export function AISearchPanelHeader({ className, ...props }: ComponentProps<'div'>) {
   const { setOpen } = useAISearchContext();
 
   return (
-    <div
-      className={cn(
-        'sticky top-0 flex items-start gap-2 border rounded-xl bg-fd-secondary text-fd-secondary-foreground shadow-sm',
-        className,
-      )}
-      {...props}
-    >
-      <div className="px-3 py-2 flex-1">
-        <p className="text-sm font-medium mb-2">AI Chat</p>
-        <p className="text-xs text-fd-muted-foreground">
-          AI can be inaccurate, please verify the answers.
-        </p>
+    <div className={cn('sw-ai-header', className)} {...props}>
+      <div className="sw-ai-brand">
+        <ShopWrkMark className="sw-ai-mark" />
+        <div>
+          <p className="sw-ai-title">Ask AI</p>
+          <p className="sw-ai-subtitle">Answers from the ShopWrk docs. Verify anything important.</p>
+        </div>
       </div>
 
       <button
         aria-label="Close"
         tabIndex={-1}
-        className={cn(
-          buttonVariants({
-            size: 'icon-sm',
-            variant: 'ghost',
-            className: 'text-fd-muted-foreground rounded-full',
-          }),
-        )}
+        className="sw-ai-icon-btn"
         onClick={() => setOpen(false)}
       >
-        <X />
+        <X className="size-4" />
       </button>
     </div>
   );
@@ -81,33 +88,13 @@ export function AISearchInputActions() {
   return (
     <>
       {!isLoading && messages.at(-1)?.role === 'assistant' && (
-        <button
-          type="button"
-          className={cn(
-            buttonVariants({
-              variant: 'secondary',
-              size: 'sm',
-              className: 'rounded-full gap-1.5',
-            }),
-          )}
-          onClick={() => regenerate()}
-        >
-          <RefreshCw className="size-4" />
+        <button type="button" className="sw-ai-chip" onClick={() => regenerate()}>
+          <RefreshCw className="size-3.5" />
           Retry
         </button>
       )}
-      <button
-        type="button"
-        className={cn(
-          buttonVariants({
-            variant: 'secondary',
-            size: 'sm',
-            className: 'rounded-full',
-          }),
-        )}
-        onClick={() => setMessages([])}
-      >
-        Clear Chat
+      <button type="button" className="sw-ai-chip" onClick={() => setMessages([])}>
+        Clear
       </button>
     </>
   );
@@ -150,7 +137,7 @@ export function AISearchInput(props: ComponentProps<'form'>) {
     <form {...props} className={cn('flex items-start pe-2', props.className)} onSubmit={onStart}>
       <Input
         value={input}
-        placeholder={isLoading ? 'AI is answering...' : 'Ask a question'}
+        placeholder={isLoading ? 'ShopWrk is answering…' : 'Ask about ShopWrk'}
         autoFocus
         className="p-3"
         disabled={status === 'streaming' || status === 'submitted'}
@@ -167,32 +154,12 @@ export function AISearchInput(props: ComponentProps<'form'>) {
         }}
       />
       {isLoading ? (
-        <button
-          key="bn"
-          type="button"
-          className={cn(
-            buttonVariants({
-              variant: 'secondary',
-              className: 'transition-all rounded-full mt-2 gap-2',
-            }),
-          )}
-          onClick={stop}
-        >
-          <Loader2 className="size-4 animate-spin text-fd-muted-foreground" />
-          Abort Answer
+        <button key="bn" type="button" className="sw-ai-abort" onClick={stop}>
+          <Loader2 className="size-3.5 animate-spin" />
+          Stop
         </button>
       ) : (
-        <button
-          key="bn"
-          type="submit"
-          className={cn(
-            buttonVariants({
-              variant: 'default',
-              className: 'transition-all rounded-full mt-2',
-            }),
-          )}
-          disabled={input.length === 0}
-        >
+        <button key="bn" type="submit" className="sw-ai-send" disabled={input.length === 0}>
           <Send className="size-4" />
         </button>
       )}
@@ -261,11 +228,6 @@ function Input(props: ComponentProps<'textarea'>) {
   );
 }
 
-const roleName: Record<string, string> = {
-  user: 'you',
-  assistant: 'fumadocs',
-};
-
 function Message({ message, ...props }: { message: ChatUIMessage } & ComponentProps<'div'>) {
   let markdown = '';
   const searchCalls: UIToolInvocation<SearchTool>[] = [];
@@ -285,15 +247,19 @@ function Message({ message, ...props }: { message: ChatUIMessage } & ComponentPr
     }
   }
 
+  if (message.role === 'user') {
+    return (
+      <div onClick={(e) => e.stopPropagation()} className="sw-ai-msg-user" {...props}>
+        {markdown}
+      </div>
+    );
+  }
+
   return (
-    <div onClick={(e) => e.stopPropagation()} {...props}>
-      <p
-        className={cn(
-          'mb-1 text-sm font-medium text-fd-muted-foreground',
-          message.role === 'assistant' && 'text-fd-primary',
-        )}
-      >
-        {roleName[message.role] ?? 'unknown'}
+    <div onClick={(e) => e.stopPropagation()} className="sw-ai-msg-assistant" {...props}>
+      <p className="sw-ai-role">
+        <ShopWrkMark className="sw-ai-role-mark" />
+        ShopWrk
       </p>
       <div className="prose text-sm">
         <Markdown text={markdown} />
@@ -301,15 +267,12 @@ function Message({ message, ...props }: { message: ChatUIMessage } & ComponentPr
 
       {searchCalls.map((call) => {
         return (
-          <div
-            key={call.toolCallId}
-            className="flex flex-row gap-2 items-center mt-3 rounded-lg border bg-fd-secondary text-fd-muted-foreground text-xs p-2"
-          >
+          <div key={call.toolCallId} className="sw-ai-search">
             <SearchIcon className="size-4" />
             {call.state === 'output-error' || call.state === 'output-denied' ? (
               <p className="text-fd-error">{call.errorText ?? 'Failed to search'}</p>
             ) : (
-              <p>{!call.output ? 'Searching…' : `${call.output.length} search results`}</p>
+              <p>{!call.output ? 'Searching docs…' : `${call.output.length} matches in the docs`}</p>
             )}
           </div>
         );
@@ -344,7 +307,7 @@ export function AISearchTrigger({
       data-state={open ? 'open' : 'closed'}
       className={cn(
         position === 'float' && [
-          'fixed bottom-4 gap-3 w-24 inset-e-[calc(--spacing(4)+var(--removed-body-scroll-bar-size,0px))] shadow-lg z-20 transition-[translate,opacity]',
+          'fixed bottom-4 inset-e-[calc(--spacing(4)+var(--removed-body-scroll-bar-size,0px))] z-20 transition-[translate,opacity]',
           open && 'translate-y-10 opacity-0',
         ],
         className,
@@ -400,9 +363,9 @@ export function AISearchPanel() {
       {actualOpen && (
         <div
           className={cn(
-            'overflow-hidden z-30 bg-fd-card text-fd-card-foreground [--ai-chat-width:400px] 2xl:[--ai-chat-width:460px]',
-            'max-lg:fixed max-lg:inset-x-2 max-lg:inset-y-4 max-lg:border max-lg:rounded-2xl max-lg:shadow-xl',
-            'lg:sticky lg:top-0 lg:h-dvh lg:border-s lg:ms-auto lg:in-[#nd-docs-layout]:[grid-area:toc] lg:in-[#nd-notebook-layout]:row-span-full lg:in-[#nd-notebook-layout]:col-start-5',
+            'sw-ai-panel overflow-hidden z-30 [--ai-chat-width:400px] 2xl:[--ai-chat-width:460px]',
+            'max-lg:fixed max-lg:inset-x-2 max-lg:inset-y-4 max-lg:rounded-2xl max-lg:shadow-xl',
+            'lg:sticky lg:top-0 lg:h-dvh lg:border-s lg:border-fd-border lg:ms-auto lg:in-[#nd-docs-layout]:[grid-area:toc] lg:in-[#nd-notebook-layout]:row-span-full lg:in-[#nd-notebook-layout]:col-start-5',
             open
               ? 'animate-fd-dialog-in lg:animate-[ask-ai-open_200ms]'
               : 'animate-fd-dialog-out lg:animate-[ask-ai-close_200ms]',
@@ -411,12 +374,12 @@ export function AISearchPanel() {
             if (!open) flushSync(() => setActualOpen(false));
           }}
         >
-          <div className="flex flex-col size-full p-2 lg:p-3 lg:w-(--ai-chat-width)">
+          <div className="sw-ai-frame lg:w-(--ai-chat-width)">
             <AISearchPanelHeader />
             <AISearchPanelList className="flex-1" />
-            <div className="rounded-xl border bg-fd-secondary text-fd-secondary-foreground shadow-sm has-focus-visible:shadow-md">
+            <div className="sw-ai-composer">
               <AISearchInput />
-              <div className="flex items-center gap-1.5 p-1 empty:hidden">
+              <div className="sw-ai-actions">
                 <AISearchInputActions />
               </div>
             </div>
@@ -442,17 +405,12 @@ export function AISearchPanelList({ className, style, ...props }: ComponentProps
       {...props}
     >
       {messages.length === 0 ? (
-        <div className="text-sm text-fd-muted-foreground/80 size-full flex flex-col items-center justify-center text-center gap-2">
-          <MessageCircleIcon fill="currentColor" stroke="none" />
-          <p onClick={(e) => e.stopPropagation()}>Start a new chat below.</p>
-        </div>
+        <EmptyState />
       ) : (
         <div className="flex flex-col px-3 gap-4">
           {chat.error && (
-            <div className="p-2 bg-fd-secondary text-fd-secondary-foreground border rounded-lg">
-              <p className="text-xs text-fd-muted-foreground mb-1">
-                Request Failed: {chat.error.name}
-              </p>
+            <div className="sw-ai-error">
+              <p className="sw-ai-subtitle">Request failed: {chat.error.name}</p>
               <p className="text-sm">{chat.error.message}</p>
             </div>
           )}
@@ -492,4 +450,46 @@ export function useAISearchContext() {
 
 function useChatContext() {
   return use(Context)!.chat;
+}
+
+function EmptyState() {
+  const { sendMessage } = useChatContext();
+
+  const ask = (message: string) => {
+    void sendMessage({
+      role: 'user',
+      parts: [
+        {
+          type: 'data-client',
+          data: {
+            location: location.href,
+          },
+        },
+        {
+          type: 'text',
+          text: message,
+        },
+      ],
+    });
+  };
+
+  return (
+    <div className="sw-ai-empty" onClick={(e) => e.stopPropagation()}>
+      <ShopWrkMark className="sw-ai-empty-mark" />
+      <p className="sw-ai-empty-title">Ask anything about ShopWrk</p>
+      <p className="sw-ai-empty-copy">Payments, staff, jobs, and the rest of the docs.</p>
+      <div className="sw-ai-suggestions">
+        {SUGGESTIONS.map((suggestion) => (
+          <button
+            key={suggestion}
+            type="button"
+            className="sw-ai-suggestion"
+            onClick={() => ask(suggestion)}
+          >
+            {suggestion}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
 }

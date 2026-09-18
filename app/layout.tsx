@@ -18,24 +18,37 @@ export const metadata: Metadata = {
   description: 'Help for running your ShopWrk shop.',
   applicationName: 'ShopWrk docs',
   icons: {
-    icon: [{ url: '/images/favicon.svg', type: 'image/svg+xml' }],
-    apple: [{ url: '/images/shopwrk-symbol-black.svg' }],
+    icon: [
+      {
+        url: '/images/favicon-light.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/images/favicon-dark.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: [{ url: '/images/favicon-light.svg', type: 'image/svg+xml' }],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#090909',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#eeedec' },
+    { media: '(prefers-color-scheme: dark)', color: '#090909' },
+  ],
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className={`${inter.className} dark`} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <RootProvider
           theme={{
             defaultTheme: 'dark',
-            enableSystem: false,
-            forcedTheme: 'dark',
+            enableSystem: true,
           }}
         >
           {children}
