@@ -472,11 +472,112 @@ Staff can request full-day or partial-day time off. An Owner, or someone with Ma
 
 Time off never creates paid hours. If approved time off overlaps a published shift, resolve those shifts before you approve. ShopWrk will not leave a published shift sitting on top of approved time off.
 
+### Break policies
+
+If you have Manage Time permission, **Team → Schedules** also shows **Break policies**.
+
+Use this when you want ShopWrk to warn after a long stretch without a break, and to decide whether break minutes count as paid time.
+
+Click **Add policy**. Give it a **Name** (for example Meal break), set **Warn after (minutes worked)**, set **Duration (minutes)**, and choose whether it is a **Paid break**. Click **Save**.
+
+These policies show up when someone starts a break on **Timesheet**, and when a manager records or corrects breaks on a session. If you try to add a break while recording a missing shift and no policies exist, ShopWrk tells you to add a break policy under the Schedules tab first.
+
 ## Timesheet
 
-**Team → Timesheet** is shop-wide attendance. Staff can clock in from here. People with Manage Time can correct time.
+**Team → Timesheet** is shop attendance. Everyone clocks themselves in and out here. People with **Manage Time** also get a **Manage time** card under their own clock, so they can fix stuck or missing shifts before [Payroll Prep](#payroll-prep).
 
-The Staff table also has a **Job hours** column. That is time on jobs. Keep it distinct from paid attendance. Job timers are not what Payroll Prep pays.
+Job timers on a job are operational time. They are not pay. The Staff table **Job hours** column is the same idea. Paid hours come from Timesheet sessions.
+
+### Clock in and out
+
+At the top of Timesheet you see your status badge (**Clocked Out**, **Working**, **On Break**, or **Clocked In Elsewhere**) plus the matching buttons.
+
+| Status | What you can do |
+| --- | --- |
+| Clocked Out | **Clock In** |
+| Working | Start the named break when one is due, or **Clock Out** |
+| On Break | **End Break** or **Clock Out** |
+
+Today's work, break time, this week, and daily average sit in the summary cards. **Weekly Hours** is the Monday through Sunday table with work, break, and net hours. Use the week arrows to move around. **Today** jumps back to the current week.
+
+If a job timer is running, the banner shows it. That timer is not what Payroll Prep pays.
+
+### Manage time (managers)
+
+You only see **Manage time** if you have Manage Time (Owners always do). The card says it is for closing stuck shifts, recording missed shifts, and clearing flagged sessions before payroll.
+
+The table lists attendance sessions from about the last 14 days: team member, session times, paid time, and status.
+
+| Status badge | Meaning |
+| --- | --- |
+| **Open** | Still clocked in. Nobody clocked out. |
+| **Ready** | Closed and waiting for a look |
+| **Needs review** | Flagged. Blocks Payroll Prep until someone resolves it. |
+| **Approved** | Attendance approved for that session |
+
+Click a row to open **Review** for that person. From there you can close a stuck shift, flag or resolve review, correct times, approve attendance, and read **Change history**.
+
+### Close a stuck open shift
+
+Use this when someone forgot to clock out and the session still shows **Open**.
+
+1. Open **Team → Timesheet**.
+2. In **Manage time**, open the open session.
+3. Under **Close open shift**, set **Clock out at** to when the shift actually ended (shop time).
+4. Write a **Reason** (at least a short sentence).
+5. Click **Close shift**.
+
+Closing stops running job timers tied to that session and records the change permanently. If the close time would credit more than 24 hours from clock-in, ShopWrk warns you before you save. Confirm the real end time. Do not leave the default "now" if the person left yesterday.
+
+### Record a missing shift
+
+Use this when the work happened but nobody clocked it.
+
+1. On **Manage time**, click **Record missing shift**.
+2. Pick the **Team member**. Inactive members stay in the list and are labeled **inactive**, so you can still repair history for someone who left.
+3. Set **Clock in** and **Clock out** in shop time.
+4. Add breaks if needed (**Add break**). Breaks use your Schedules break policies.
+5. Write how you know the shift was worked, then click **Record shift**.
+
+Payroll covering that range must be prepared again after you record it. This creates an already-closed historical shift. It does not invent pay outside the clock-in and clock-out you enter.
+
+### Flag and resolve Needs review
+
+**Needs review** is the hard stop before payroll numbers.
+
+- **Flag for review** when something looks wrong. Flagging clears any prior approval and keeps the session out of Payroll Prep until it is resolved. Write what needs checking.
+- **Resolve review** when the record checks out. Write what you checked. Payroll covering it must be prepared again.
+- While correcting times, you can also check **Resolve the review with this correction** so one save clears the blocker.
+
+You cannot **Approve attendance** while the session is still **Needs review** or still open.
+
+### Correct attendance
+
+On a closed session, **Correct attendance** lets you edit clock-in, clock-out, and breaks with a required reason. Every save is permanent and shows under **Change history**.
+
+When you only change times on an existing break, ShopWrk keeps the break rules that were recorded with that break (paid vs unpaid, label, duration). Changing the break's policy on purpose takes the current policy settings instead. Inactive policies still show on old breaks as **(inactive policy)** so you can see what was used.
+
+After a correction, any approved Payroll Prep period that covered those dates is invalidated. Prepare and approve a new snapshot. Old versions cannot export.
+
+### When to use Timesheet vs Payroll Prep vs job timers
+
+| Job | Where |
+| --- | --- |
+| Clock yourself in or out | **Team → Timesheet** |
+| Fix stuck, missing, or flagged attendance | **Timesheet → Manage time** |
+| Build hourly totals for your accountant | **Team → Payroll Prep** (not Run Payroll) |
+| Track time on a specific job | Job timer on the job. Not pay. |
+
+### Walkthrough: forgotten clock-out before payroll
+
+Alex forgot to clock out Friday. Monday morning the session still shows **Open** on **Manage time**.
+
+1. Maya opens **Team → Timesheet**, clicks Alex's open row, and sets **Clock out at** to Friday 5:15 PM with reason "Alex confirmed end time from bay camera."
+2. ShopWrk warns if the close would credit more than 24 hours. She confirms Friday's time and clicks **Close shift**.
+3. She notices a lunch break was never recorded, so she opens **Correct attendance**, adds the meal break policy, saves with a reason, and leaves review clear.
+4. On **Payroll Prep** she prepares the period again. The earlier draft no longer exports. After an Owner approves the new snapshot, she exports the CSV for the accountant.
+
+If she had only flagged the row as **Needs review** without resolving it, Payroll Prep would stay blocked on that session until someone resolved it.
 
 ## Access
 
@@ -494,7 +595,7 @@ What a snapshot includes:
 - Regular gross, overtime you classify, overtime gross, audited adjustments, and total gross
 - Periods you configure as weekly, biweekly, semimonthly, or monthly
 
-If a rate changes mid-period, ShopWrk splits the hours across the old and new rates. A missing hourly rate for payable time blocks the snapshot. Open or overlapping attendance blocks it too. Schedule mismatches warn you. They do not stop the snapshot.
+If a rate changes mid-period, ShopWrk splits the hours across the old and new rates. A missing hourly rate for payable time blocks the snapshot. Open or overlapping attendance blocks it too. A session marked **Needs review** blocks approval until someone resolves it on Timesheet. Schedule mismatches warn you. They do not stop the snapshot.
 
 Preparing a draft is a grant you can give. Approving a snapshot and exporting the CSV are Owner-only, and those are separate actions.
 

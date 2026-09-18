@@ -3,7 +3,7 @@ title: "Build automations for texts, calls, forms, and Meta leads"
 sidebarTitle: "Automations"
 icon: "zap"
 description: "Create shop automations in the two-pane builder, watch Activity runs, and set send windows plus failure emails in Settings."
-keywords: ["automations", "ShopWrker", "Meta Lead Form", "ShopWrk Form", "missed call", "Instagram", "Activity", "Send window"]
+keywords: ["automations", "ShopWrker", "Meta Lead Form", "ShopWrk Form", "missed call", "Instagram", "Activity", "Send window", "Create Contact", "webhook"]
 ---
 
 Automations run the follow-up you should not have to remember. A missed ShopWrk call can get a text. A Facebook lead form can create the contact and tag them. An Instagram comment can get a public reply.
@@ -116,13 +116,59 @@ If an older automation still used replace-tags, it will not publish until you re
 
 ## Start from another tool
 
-Two pieces stay in the builder for shops that already use other software.
+Use this when another tool you already run (a form site, a booking tool, Zapier, or similar) should start work inside ShopWrk.
 
-**Start from another tool** is a trigger. Another tool you already use can tell ShopWrk to start this automation.
+In the builder, the trigger family is **Webhook**. The step is **Event received** (you may also see **Custom Webhook**). That is the inbound start. **Send info to another tool** is the outbound action when ShopWrk should push info somewhere else. You set both on the automation itself.
 
-**Send info to another tool** is an action. It sends info to another tool you already use.
+A start-from-another-tool run does not bring a ShopWrk contact with it the way a missed call or Meta lead does. If later steps need a person (text, job, note, deal, estimate, and similar), put **Create Contact** early in the flow, or pick a contact on that step from your contact list.
 
-You set both on the automation itself.
+### Create Contact, then text or start a job
+
+If you want another tool to create the person in ShopWrk and then text them or open a job, build it in this order.
+
+<Steps>
+  <Step title="Start from the other tool">
+    Add the **Webhook** / **Event received** trigger. Point your other tool at the address ShopWrk shows for this automation.
+  </Step>
+  <Step title="Create the contact">
+    Add **Create Contact** next. Map name, phone, and email from what the other tool sends when you can. If those fields arrive and you leave the step blank, ShopWrk can fill them from that inbound data.
+  </Step>
+  <Step title="Do the follow-up">
+    Add **Send SMS**, create a job, add a note, open a deal, or the other contact-based steps you need. Those steps use the contact Create Contact just made.
+  </Step>
+</Steps>
+
+Publish only after every path that texts or creates shop work has a contact. If a branch skips Create Contact and never picks a contact from your list, ShopWrk blocks publish with a message that the step needs a contact from the trigger or an upstream Create Contact step.
+
+### What counts as giving the run a contact
+
+| Step | Does it give later steps a contact? |
+| --- | --- |
+| **Create Contact** | Yes |
+| Create deal, job, estimate, or invoice (when those create against a person) | Yes, when they produce the contact link |
+| Convert lead | Yes |
+| **Add note** alone | No. A note needs a contact. It does not create one. |
+| **Send email** | Email can find or create by address on its own. It does not need Create Contact first the way SMS does. |
+
+SMS still needs a phone. If the saved contact has no phone, ShopWrk can fall back to a phone number that arrived from the other tool. If neither has a phone, the text step fails.
+
+### Gotchas for this trigger
+
+- **Create Contact before the text.** A completed Create Contact that never carries into SMS used to leave shops with "No phone number available" / "No customer found." Put Create Contact upstream, then publish again.
+- **Every branch needs a contact.** If you split the flow, each path that texts or creates a job still needs Create Contact or a picked contact.
+- **Add note is not a contact creator.** Do not use a note step as the only step before SMS.
+- **CRM triggers are different.** Estimate created, job status change, and similar already know the contact. You do not need Create Contact there unless you are starting from another tool.
+
+### Walkthrough: form tool to welcome text
+
+Jordan fills a quote form on your old website. That tool posts into ShopWrk on a **Webhook** / **Event received** automation.
+
+1. You open **Automations**, create a workflow, and pick **Webhook** → **Event received**.
+2. You add **Create Contact**, then **Send SMS** with a short welcome and your shop name inserted.
+3. You publish. The first test run shows Completed on Create Contact and on the text in **Activity**.
+4. If publish complained that Send SMS needs a contact, you had skipped Create Contact on that path. You add it, publish, and retry from Activity.
+
+The same pattern works for create job or add note after Create Contact. Keep the person step first.
 
 ## Other shop events
 
@@ -203,6 +249,7 @@ Old automations that used one combined message trigger are moved onto the matchi
 | [Estimates](/workflows/estimates) | Estimate sent or approved can start a workflow after the quote moves |
 | [Jobs](/workflows/jobs) | Job status changes can start follow-up without you watching the board |
 | ShopWrk calling | Missed call, voicemail, and call ended are the calling triggers above |
+| Contacts | Create Contact on a start-from-another-tool flow puts the person in your CRM before texts and jobs |
 
 ## Walkthrough: missed-call text with quiet hours
 
@@ -223,3 +270,4 @@ If the SMS step had failed three times in a row on other contacts, owners would 
 - **Alert must be less than disable.** The form expects the warning earlier than the circuit breaker.
 - **Failure email opt-out is live from the draft.** You do not need to publish to stop the emails.
 - **Form triggers still need one form.** Publish stays blocked until Meta Lead Form or ShopWrk Form Submitted has exactly one form picked.
+- **Start from another tool needs Create Contact for texts and jobs.** See [Create Contact, then text or start a job](#create-contact-then-text-or-start-a-job).

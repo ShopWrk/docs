@@ -2,8 +2,8 @@
 title: "Tell ShopWrker how your shop works"
 sidebarTitle: "ShopWrker"
 icon: "brain"
-description: "Add shop facts and personal notes in Settings so ShopWrker remembers them in chat. Connect the apps you already use so ShopWrker can read and take actions when you ask."
-keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings", "Connected apps"]
+description: "Add shop facts, personal notes, and saved logins in Settings so ShopWrker remembers them and can sign in when you ask."
+keywords: ["ShopWrker", "memory", "shop facts", "personal notes", "settings", "Connected apps", "Vault", "credentials"]
 ---
 
 If you want ShopWrker to remember shop rules, go to **Settings → AI & Automation → ShopWrker → Memory**.
@@ -20,9 +20,11 @@ These are different places. Do not mix the names.
 
 The **knowledge library** is the files the assistant can read. Put price sheets, PDFs, film spec sheets, and longer writeups there. See [AI assistant](/features/ai-assistant).
 
+**Vault** is where you save logins and keys ShopWrker can use when you ask it to work on a site. Secrets stay hidden after you save. See [Vault](#vault) below.
+
 **Lead Closer Knowledge (this agent only)** is that agent's playbook knowledge. It is not this Memory list. See [Lead Closer](/features/lead-closer).
 
-If ShopWrker should answer from a short rule without opening a file, put it on **Memory**. If it is a document someone would print or attach, put it in the knowledge library.
+If ShopWrker should answer from a short rule without opening a file, put it on **Memory**. If it is a document someone would print or attach, put it in the knowledge library. If ShopWrker needs a login to a dealer portal or similar, put it in **Vault**.
 
 ## Shop memory
 
@@ -54,6 +56,71 @@ Open **AI** in the sidebar and type like you always do. ShopWrker already has th
 The same shop memory is in play on Lead Closer. Set it once on this tab.
 
 If ShopWrker needs a yes or a choice from you, it asks in the same chat box. You do not get a second window.
+
+## Vault
+
+If you want ShopWrker to reuse a login you already trust, go to **Settings → AI & Automation → ShopWrker → Vault**.
+
+Vault sits next to **General**, **Memory**, and **Connected apps**. You only see the tab if your access allows owning credentials or using shared ones. If the tab is missing, ask an Owner to grant use of shared credentials under [Team access](/getting-started/roles-permissions).
+
+Vault is for saved logins and keys. **Connected apps** is for signing into Google, Notion, QuickBooks, or Zoho on that app's own screen. Do not mix them.
+
+### What you see
+
+| Section | What it is |
+| --- | --- |
+| **Your credentials** | Logins and keys you added. You can edit, share, disable, or delete. |
+| **Shared with you** | Use-only access a teammate shared. You can use it with ShopWrker. You cannot see the secret, edit it, or share it again. |
+
+Each row shows the name, websites, type, optional account label, and last used. After you save, the password or key is never shown again. The row says **Saved** when you edit, with a **Replace** button if you need a new secret.
+
+### Add a login
+
+<Steps>
+  <Step title="Open Vault">
+    Go to **Settings → AI & Automation → ShopWrker → Vault**.
+  </Step>
+  <Step title="Add credential">
+    Click **Add credential**. **Type** defaults to **Login**. You can also pick **API key**. **Card** is not typed in here. Cards are saved through your payment setup under Connected apps when that path applies.
+  </Step>
+  <Step title="Name it and save">
+    Enter a **Name** you will recognize (for example XPEL Dealer Portal). Optionally add **Websites** like `xpel.com` (press Enter or the plus control). For a login, enter **Username or email** and **Password**. Optional **Account label** helps when you have more than one account. Click **Save credential**.
+  </Step>
+</Steps>
+
+Edit later from the row menu (**Edit**). Keep the stored secret, or click **Replace** to type a new one. **Disable** stops ShopWrker from using it without deleting. **Delete** ends assistant access and any shares. Deleting does not sign you out of the website itself.
+
+### Share with a teammate
+
+From **Your credentials**, open the row menu and click **Share**.
+
+The dialog says they can use it but cannot see it, edit it, or share it. Pick a teammate and click **Share**. Revoke with the trash control on that person.
+
+If nobody is eligible, the picker says to grant use of shared credentials in Team access first.
+
+Payment-type rows do not offer Share.
+
+### How ShopWrker uses Vault in chat
+
+When you ask ShopWrker to work on a site that matches a saved credential you own or one shared with you, ShopWrker can reuse that login instead of asking you to type it again.
+
+If several logins could match, ShopWrker shows choices for you to pick. Weak or unclear matches do not auto-pick. Secrets still never appear in the chat.
+
+### Walkthrough: save a dealer portal login
+
+Priya's shop orders film through a dealer portal. She wants ShopWrker to open that site without pasting the password every time.
+
+1. She goes to **Settings → AI & Automation → ShopWrker → Vault** and clicks **Add credential**.
+2. She leaves **Type** on **Login**, names it "XPEL dealer", adds website `xpel.com`, enters the shop username and password, and saves.
+3. She shares it with her office manager as use-only so they can ask ShopWrker the same way.
+4. On **AI**, she asks ShopWrker to check an order on the dealer site. ShopWrker uses the saved login. Neither of them sees the password again in Vault or in chat.
+
+### Vault gotchas
+
+- **Secrets stay hidden after save.** There is no "show password" on a saved row. Use **Replace** if you need a new secret.
+- **Vault is not Connected apps.** Google and similar stay under **Connected apps**.
+- **Shared means use-only.** Teammates never see or reshare your secret.
+- **Tab visibility follows access.** No Vault tab usually means your permission group cannot own or use shared credentials yet.
 
 ## Connected apps
 
