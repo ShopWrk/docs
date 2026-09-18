@@ -145,23 +145,23 @@ body,
 
 @media (min-width: 1280px) {
   #content-side-layout {
-    max-width: 15rem !important;
-    width: 15rem !important;
+    max-width: 16.5rem !important;
+    width: 16.5rem !important;
   }
 
   #table-of-contents-layout {
-    width: 15rem !important;
-    max-width: 15rem !important;
+    width: 16.5rem !important;
+    max-width: 16.5rem !important;
     padding-left: 1.25rem !important;
     padding-right: 0.75rem !important;
   }
 
   #table-of-contents {
-    width: 13.25rem !important;
+    width: 14.75rem !important;
   }
 
   #content-area {
-    width: calc(100% - 15rem) !important;
+    width: calc(100% - 16.5rem) !important;
   }
 }
 
@@ -323,19 +323,84 @@ mdx-content a,
   color: var(--sw-primary) !important;
 }
 
-#table-of-contents,
-#table-of-contents a,
-toc-item {
+#table-of-contents {
   color: var(--sw-medium) !important;
-  font-size: 13px !important;
-  line-height: 1.35 !important;
 }
 
-#table-of-contents a[data-active],
-#table-of-contents a[aria-current],
-toc-item[data-active],
-toc-item[data-active-deepest] {
+#table-of-contents nav > h2 {
+  margin: 0 0 12px !important;
+}
+
+#table-of-contents nav > h2 button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  line-height: 1 !important;
+  color: var(--sw-quiet) !important;
+  background: transparent !important;
+}
+
+#table-of-contents nav > h2 button:hover {
+  color: var(--sw-quiet) !important;
+}
+
+#table-of-contents nav > h2 button svg {
+  display: none !important;
+}
+
+#table-of-contents ul.toc,
+#table-of-contents-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#table-of-contents .toc-item {
+  margin: 0 !important;
+}
+
+#table-of-contents .toc-item > a,
+#table-of-contents a,
+toc-item {
+  display: block !important;
+  padding: 7px 10px !important;
+  border-radius: var(--sw-radius-compact) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  color: rgb(245 245 245 / 0.55) !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#table-of-contents .toc-item[data-depth="1"] > a {
+  padding-left: 18px !important;
+  font-size: 12.5px !important;
+  font-weight: 450 !important;
+}
+
+#table-of-contents .toc-item > a:hover {
   color: var(--sw-content) !important;
+  background: #2b2b2b !important;
+}
+
+#table-of-contents .toc-item[data-active] > a {
+  color: var(--sw-content) !important;
+}
+
+#table-of-contents .toc-item[data-active-deepest] > a,
+#table-of-contents a[aria-current] {
+  color: var(--sw-content) !important;
+  background: var(--sw-fill-nav-active) !important;
+  box-shadow: var(--sw-shadow-nav-active) !important;
 }
 
 .card-group {
@@ -417,8 +482,8 @@ mdx-content,
   color: var(--sw-content);
 }
 
-mdx-content p,
-#content p {
+mdx-content p:not([class*="sw-"]),
+#content p:not([class*="sw-"]) {
   margin: 0 0 0.875rem !important;
   font-size: 0.9375rem !important;
   line-height: 1.6 !important;
@@ -760,15 +825,26 @@ mdx-content pre {
 
 /* In-page copies of ShopWrk tabs, SectionCard, fields, and tables. */
 .sw-ui {
-  margin: 1.25rem 0 1.5rem;
+  margin: 1.75rem 0 3rem;
+}
+
+#content img,
+#content figure:not(:has(pre)),
+mdx-content img,
+mdx-content figure:not(:has(pre)) {
+  margin: 1.75rem 0 3rem !important;
 }
 
 .sw-ui figcaption,
-.sw-ui-caption {
-  margin-top: 0.625rem;
-  font-size: 12px;
-  line-height: 1.25rem;
-  color: var(--sw-quiet);
+.sw-ui-caption,
+#content .sw-ui-caption,
+#content p.sw-ui-caption {
+  margin-top: 14px !important;
+  margin-bottom: 0 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  color: var(--sw-quiet) !important;
 }
 
 .sw-app {
