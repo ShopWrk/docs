@@ -21,6 +21,7 @@
   --sw-radius-control: 10px;
   --sw-radius-compact: 8px;
   --sw-control-h: 32px;
+  --sw-logo-h: 24px;
   --sw-shell-inset: 16px;
   --sw-shadow-card:
     0 0 1px rgb(0 0 0 / 0.05), 0 1px 1px rgb(0 0 0 / 0.04),
@@ -116,12 +117,12 @@ body,
   display: none !important;
 }
 
-/* Current brand kit lockup: 500×110, 32px tall like the app wordmark. */
+/* Lockup is 500×110. 24px tall keeps the wordmark quieter than the 32px app mark. */
 #navbar a img,
 #navbar img {
-  height: 32px !important;
+  height: var(--sw-logo-h) !important;
   width: auto !important;
-  max-height: 32px !important;
+  max-height: var(--sw-logo-h) !important;
   max-width: none !important;
 }
 
