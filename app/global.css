@@ -45,8 +45,8 @@ body {
 
 /* Sidebar: dark shell + raised gray chip, matching the last Mintlify chrome. */
 #nd-sidebar {
-  background: var(--sw-shell);
-  border-inline-end-color: var(--sw-border);
+  background: var(--sw-shell) !important;
+  border-inline-end-color: var(--sw-border) !important;
 }
 
 #nd-sidebar a[data-active] {
@@ -58,21 +58,23 @@ body {
 
 #nd-sidebar a[data-active='true'],
 #nd-sidebar a[data-active='true']:hover {
-  background: var(--sw-fill-nav-active);
-  color: var(--sw-content);
-  box-shadow: var(--sw-shadow-nav-active);
+  background: var(--sw-fill-nav-active) !important;
+  color: var(--sw-content) !important;
+  box-shadow: var(--sw-shadow-nav-active) !important;
 }
 
 #nd-sidebar a[data-active='true']::before {
-  display: none;
+  display: none !important;
+  content: none !important;
 }
 
 #nd-sidebar a[data-active='false'] {
-  color: var(--sw-content-70);
+  color: var(--sw-content-70) !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 #nd-sidebar a[data-active='false']:hover {
-  background: var(--sw-inset);
-  color: var(--sw-content);
-  box-shadow: none;
+  background: var(--sw-inset) !important;
+  color: var(--sw-content) !important;
 }
