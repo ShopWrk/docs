@@ -460,17 +460,29 @@ step,
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 0 !important;
+  border: 0 none transparent !important;
   background: transparent !important;
   box-shadow: none !important;
+  outline: none !important;
+}
+
+#content div:has(> details > [data-component-part="accordion-button"]) > details {
+  border-color: var(--sw-border) !important;
 }
 
 #content details:has([data-component-part="accordion-button"]) {
   overflow: hidden;
   margin: 0;
-  border: 1px solid var(--sw-border) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-color: var(--sw-border) !important;
+  border-top-color: var(--sw-border) !important;
+  border-right-color: var(--sw-border) !important;
+  border-bottom-color: var(--sw-border) !important;
+  border-left-color: var(--sw-border) !important;
   border-radius: var(--sw-radius-control) !important;
   background: var(--sw-field) !important;
+  color: var(--sw-content);
   box-shadow: var(--sw-shadow-field) !important;
   outline: none !important;
   --tw-ring-shadow: 0 0 #0000 !important;
