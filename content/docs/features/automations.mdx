@@ -10,7 +10,7 @@ Automations run the follow-up you should not have to remember. A missed ShopWrk 
 
 Open **Automations** to see what you already have. When you create one, ShopWrk opens the builder. There is no setup screen before the canvas.
 
-Messaging, lead forms, and calling only fire if those pieces are already connected. [Instagram and Messenger](/integrations/social-media#connect-instagram-and-messenger) and [Facebook Lead Ads](/integrations/social-media#connect-facebook-lead-ads) start on **Settings -> Integrations**. ShopWrk calling is your shop phone, not a separate phone vendor.
+Messaging, lead forms, and calling only fire if those pieces are already connected. [Instagram and Messenger](/integrations/social-media#connect-instagram-and-messenger) and [Facebook Lead Ads](/integrations/social-media#connect-facebook-lead-ads) start on **Settings** then **Integrations**. ShopWrk calling is your shop phone, not a separate phone vendor.
 
 ## The builder
 
@@ -118,15 +118,47 @@ If an older automation still used replace-tags, it will not publish until you re
 
 Two pieces stay in the builder for shops that already use other software.
 
-**Start from another tool** is a trigger. Another tool you already use can tell ShopWrk to start this automation.
+**Start from another tool** is a trigger. Another tool you already use can tell ShopWrk to start this automation. Each automation gets its own webhook URL. A delivery to that URL starts that automation only. It does not fire every webhook automation in the shop.
 
 **Send info to another tool** is an action. It sends info to another tool you already use.
 
 You set both on the automation itself.
 
+When the outside tool does not already send a contact, put **Create Contact** before texts, jobs, notes, or **Create Deal**. Those later steps need someone on the run.
+
 ## Other shop events
 
 You can also start automations from everyday shop work: a new contact or lead, a deal moving, an estimate sent or approved, a job changing status, an invoice paid, a booking request, or a warranty coming due. Those sit alongside the message, calling, and form triggers above.
+
+## Create Deal
+
+**Create Deal** builds a deal on your pipeline when the automation runs. Use it after you already have a contact on the run. Create Deal needs a customer or lead. Bind one from the trigger or from an earlier step such as **Create Contact**.
+
+Click the Create Deal step. The right pane has sections for **Deal**, **Customer**, **Assignment**, **Services**, and **Pipeline**.
+
+### Auto value from services
+
+Under **Deal**, turn on **Auto value from services** when the deal total should match the services you list. The **Deal Value** field becomes a live readout from those lines. Turn the toggle off when you want a fixed dollar amount, including a pinned $0.
+
+ShopWrk keeps the board card value and the deal's Services list in sync when auto value is on. Packages, combos, add-ons, and services can sit in **Services**. Quantity and percent add-ons count in the total the same way they do on estimates.
+
+If a service line cannot resolve, that line is skipped rather than vanishing silently. Check Activity on a test run when a package looks missing.
+
+### Pipeline and customer
+
+Pick a **Pipeline** and **Stage**. Both are required to publish. Set **Deal Title**, optional description, source, and tags. Assign a team member when you want an owner on the card.
+
+Use Create Deal when the next step is a pipeline card, not an estimate or a job yet. If the shop already sent a quote, start from estimate events instead of inventing a second deal.
+
+### Create Note and where notes show
+
+**Create Note** writes a note on the contact. Notes from automations show up in the contact **Notes** list alongside notes you type by hand. Activity is not the only place they appear.
+
+If this automation starts from another tool and the note text comes from a field in that payload, map the real note field. Empty templates produce no note content and the step fails.
+
+### Automation vs ShopWrker in Conversations
+
+Configured messages from an automation show as **Automation**, not as ShopWrker. That keeps customer threads honest when a scripted text lands next to a real assistant reply.
 
 ## Activity: see how runs went
 
@@ -159,7 +191,7 @@ Use Activity when a customer says they never got the text, or when the automatio
 
 ## Settings: send window and failure emails
 
-Click **Settings** in the header for this automation. Besides the name and whether it is on, two safety areas matter for day-to-day shops: **Communication -> Send window** and **Safety**.
+Click **Settings** in the header for this automation. Besides the name and whether it is on, two safety areas matter for day-to-day shops: **Communication** then **Send window** and **Safety**.
 
 ### Send window
 
@@ -199,20 +231,32 @@ Old automations that used one combined message trigger are moved onto the matchi
 
 | Piece | How it connects |
 | --- | --- |
-| [Conversations](/features/communications) | Texts, emails, and social replies from automations land on the same contact thread |
+| [Conversations](/features/communications) | Texts, emails, and social replies from automations land on the same contact thread. Automation-authored messages show as Automation. |
+| Contact Notes | Create Note steps appear in the contact Notes list, not only in Activity |
+| Deals / CRM | Create Deal opens a pipeline card with services and auto or fixed value |
 | [Estimates](/workflows/estimates) | Estimate sent or approved can start a workflow after the quote moves |
 | [Jobs](/workflows/jobs) | Job status changes can start follow-up without you watching the board |
 | ShopWrk calling | Missed call, voicemail, and call ended are the calling triggers above |
 
 ## Walkthrough: missed-call text with quiet hours
 
-Sam misses a call from Alex on Saturday night. You already built **Missed inbound call -> Wait 2 minutes -> Send SMS** with a short "sorry we missed you" text.
+Sam misses a call from Alex on Saturday night. You already built **Missed inbound call** then **Wait 2 minutes** then **Send SMS** with a short "sorry we missed you" text.
 
 In **Settings** you turned on **Send window**, enabled Monday through Saturday 8:00 AM to 6:00 PM, and left Sunday off. **Email on run failure** stays on, alert after 3 failures, disable after 10.
 
 When Alex calls Saturday at 9:40 PM, the automation starts, but the SMS waits until Monday morning inside the send window. Monday you open **Activity**, see the Completed run named for Alex, and open Run details to confirm the text step sent.
 
 If the SMS step had failed three times in a row on other contacts, owners would get the failure email. At ten straight failures the automation would disable so it stops looping. You would open the Failed run, click **Diagnose with AI**, review ShopWrker's prompt in Builder, fix the step, publish, then **Retry** from Activity.
+
+## Walkthrough: landing-page lead becomes a deal
+
+A wrap shop runs a ceramic landing page that posts into ShopWrk.
+
+1. The owner builds **Start from another tool**, then **Create Contact**, then **Create Deal**, then **Send SMS**.
+2. On Create Deal they pick the Sales pipeline and New lead stage, add Ceramic package lines under **Services**, and leave **Auto value from services** on so the card total matches the package.
+3. They publish, then submit a test from the landing page.
+4. **Activity** shows a Completed run. The new contact has a deal on the board with the ceramic total, and Notes shows the automation note if they added Create Note.
+5. The follow-up text on the contact thread shows **Automation**, not ShopWrker.
 
 ## Gotchas
 
@@ -223,3 +267,7 @@ If the SMS step had failed three times in a row on other contacts, owners would 
 - **Alert must be less than disable.** The form expects the warning earlier than the circuit breaker.
 - **Failure email opt-out is live from the draft.** You do not need to publish to stop the emails.
 - **Form triggers still need one form.** Publish stays blocked until Meta Lead Form or ShopWrk Form Submitted has exactly one form picked.
+- **Create Deal needs a contact.** Bind a customer or lead from the trigger or an earlier Create Contact step.
+- **Auto value follows Services.** Turn **Auto value from services** off only when you want a fixed deal value.
+- **Automation notes belong in Notes.** If Activity said a note ran but Notes looked empty, reopen the contact Notes list. Automation notes show there now.
+- **Scripted texts say Automation.** They are not labeled as ShopWrker.
