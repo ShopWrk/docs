@@ -237,3 +237,37 @@ Old automations that used one combined message trigger are moved onto the matchi
 | [Estimates](/workflows/estimates) | Estimate sent or approved can start a workflow after the quote moves |
 | [Jobs](/workflows/jobs) | Job status changes can start follow-up without you watching the board |
 | ShopWrk calling | Missed call, voicemail, and call ended are the calling triggers above |
+
+## Walkthrough: missed-call text with quiet hours
+
+Sam misses a call from Alex on Saturday night. You already built **Missed inbound call** then **Wait 2 minutes** then **Send SMS** with a short "sorry we missed you" text.
+
+In **Settings** you turned on **Send window**, enabled Monday through Saturday 8:00 AM to 6:00 PM, and left Sunday off. **Email on run failure** stays on, alert after 3 failures, disable after 10.
+
+When Alex calls Saturday at 9:40 PM, the automation starts, but the SMS waits until Monday morning inside the send window. Monday you open **Activity**, see the Completed run named for Alex, and open Run details to confirm the text step sent.
+
+If the SMS step had failed three times in a row on other contacts, owners would get the failure email. At ten straight failures the automation would disable so it stops looping. You would open the Failed run, click **Diagnose with AI**, review ShopWrker's prompt in Builder, fix the step, publish, then **Retry** from Activity.
+
+## Walkthrough: landing-page lead becomes a deal
+
+A wrap shop runs a ceramic landing page that posts into ShopWrk.
+
+1. The owner builds **Start from another tool**, then **Create Contact**, then **Create Deal**, then **Send SMS**.
+2. On Create Deal they pick the Sales pipeline and New lead stage, add Ceramic package lines under **Services**, and leave **Auto value from services** on so the card total matches the package.
+3. They publish, then submit a test from the landing page.
+4. **Activity** shows a Completed run. The new contact has a deal on the board with the ceramic total, and Notes shows the automation note if they added Create Note.
+5. The follow-up text on the contact thread shows **Automation**, not ShopWrker.
+
+## Gotchas
+
+- **Activity is per automation.** Open the workflow first, then Activity. The list only hints that runs are failing.
+- **Diagnose does not send itself.** ShopWrker opens with a prompt. You still decide whether to submit.
+- **Retry is not always available.** Some cancelled or reconciled cases cannot retry. Read the run details before assuming Retry will show.
+- **Send window only shapes outbound message steps.** It does not delete the run. Steps may skip or defer until the window opens.
+- **Alert must be less than disable.** The form expects the warning earlier than the circuit breaker.
+- **Failure email opt-out is live from the draft.** You do not need to publish to stop the emails.
+- **Form triggers still need one form.** Publish stays blocked until Meta Lead Form or ShopWrk Form Submitted has exactly one form picked.
+- **Create Deal needs a contact.** Bind a customer or lead from the trigger or an earlier Create Contact step.
+- **Auto value follows Services.** Turn **Auto value from services** off only when you want a fixed deal value.
+- **Automation notes belong in Notes.** If Activity said a note ran but Notes looked empty, reopen the contact Notes list. Automation notes show there now.
+- **Scripted texts say Automation.** They are not labeled as ShopWrker.
