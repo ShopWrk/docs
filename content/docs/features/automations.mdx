@@ -52,3 +52,80 @@ The same picker appears when you send an [invoice](/workflows/invoices-payments#
 Example: on a text step after **Missed inbound call**, insert **First name** and **Shop name** so the follow-up says hi to Jordan from your shop name when it sends.
 
 Blank fields stay blank in the sent message. If a token is unknown, it can stay as written instead of filling in.
+
+## Message and comment triggers
+
+These are separate triggers. There is not one "message received" item for new automations.
+
+- **SMS Received**
+- **Email Received**
+- **Instagram Message Received**
+- **Facebook Message Received**
+- **Instagram Comment Received**
+- **Facebook Comment Received**
+
+Reply actions are split the same way. **Reply to Instagram Comment** and **Reply to Facebook Comment** are two separate steps you can add.
+
+Instagram DMs and Facebook messages need the [Instagram & Messenger connection](/integrations/social-media#connect-instagram-and-messenger) on Integrations first. Those threads also land in Conversations, on the same contact.
+
+<Note>
+  Instagram and Messenger automations can send for up to 7 days after the customer last wrote in. After 7 days, ShopWrk will not send. See [how long you can reply](/integrations/social-media#how-long-you-can-reply).
+</Note>
+
+## Calling triggers
+
+These use **ShopWrk calling**. They are three separate triggers, not one call step with a dropdown.
+
+- **Missed inbound call** fires when an inbound call is not answered. It does not also fire Call ended.
+- **Voicemail left** fires when the caller leaves a voicemail. That is not a missed call and not a call ended.
+- **Call ended** fires after an answered call hangs up.
+
+## ShopWrk form submitted
+
+**ShopWrk Form Submitted** is its own trigger. You must pick exactly one ShopWrk form. There is no "any form" option, and you cannot leave it blank.
+
+If you change the form, ShopWrk asks you to confirm, then clears field mappings for the old form.
+
+Draft and test submissions do not run live automations. Only a real submission on that form does.
+
+## Meta lead form
+
+**Meta Lead Form** is a different trigger from ShopWrk Form Submitted. That is the name on the step. It is not labeled Facebook.
+
+You must pick exactly one Facebook lead form. Publish is blocked until that form is set.
+
+Connect Facebook Lead Ads first. See [Instagram, Messenger, and Facebook Lead Ads](/integrations/social-media). Then pick that form on this trigger. Changing the form confirms and clears mappings, same as ShopWrk forms.
+
+When that form is submitted, the person lands in ShopWrk as a lead. The automation can then **Add Tag**, send a text, or move them through the rest of your follow-up.
+
+<Tip>
+  If the form list is empty, import the Facebook lead form in Forms first. The Facebook Lead Ads connection lives on Integrations. The import is not in this builder.
+</Tip>
+
+## When ShopWrker needs setup first
+
+If you ask ShopWrker to build an automation that starts from a ShopWrk form or a Meta lead form, and your shop has no form ready yet, ShopWrker stops with a setup card instead of a broken draft.
+
+The card tells you what is missing and links to the fix (create a ShopWrk form, or finish the Facebook lead form connection). After you finish that setup, click **Check again** on the card so ShopWrker can continue. ShopWrk will not save an invalid automation while the form is missing. You can still type in the composer or change your request.
+
+## Tags
+
+**Add Tag** and **Remove Tag** are the tag actions. Add and remove are separate. New automations cannot replace every tag in one shot.
+
+If an older automation still used replace-tags, it will not publish until you rebuild that part with add and remove.
+
+## Start from another tool
+
+Two pieces stay in the builder for shops that already use other software.
+
+**Start from another tool** is a trigger. Another tool you already use can tell ShopWrk to start this automation. Each automation gets its own webhook URL. A delivery to that URL starts that automation only. It does not fire every webhook automation in the shop.
+
+**Send info to another tool** is an action. It sends info to another tool you already use.
+
+You set both on the automation itself.
+
+When the outside tool does not already send a contact, put **Create Contact** before texts, jobs, notes, or **Create Deal**. Those later steps need someone on the run.
+
+## Other shop events
+
+You can also start automations from everyday shop work: a new contact or lead, a deal moving, an estimate sent or approved, a job changing status, an invoice paid, a booking request, or a warranty coming due. Those sit alongside the message, calling, and form triggers above.
