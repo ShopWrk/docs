@@ -129,3 +129,33 @@ When the outside tool does not already send a contact, put **Create Contact** be
 ## Other shop events
 
 You can also start automations from everyday shop work: a new contact or lead, a deal moving, an estimate sent or approved, a job changing status, an invoice paid, a booking request, or a warranty coming due. Those sit alongside the message, calling, and form triggers above.
+
+## Create Deal
+
+**Create Deal** builds a deal on your pipeline when the automation runs. Use it after you already have a contact on the run. Create Deal needs a customer or lead. Bind one from the trigger or from an earlier step such as **Create Contact**.
+
+Click the Create Deal step. The right pane has sections for **Deal**, **Customer**, **Assignment**, **Services**, and **Pipeline**.
+
+### Auto value from services
+
+Under **Deal**, turn on **Auto value from services** when the deal total should match the services you list. The **Deal Value** field becomes a live readout from those lines. Turn the toggle off when you want a fixed dollar amount, including a pinned $0.
+
+ShopWrk keeps the board card value and the deal's Services list in sync when auto value is on. Packages, combos, add-ons, and services can sit in **Services**. Quantity and percent add-ons count in the total the same way they do on estimates.
+
+If a service line cannot resolve, that line is skipped rather than vanishing silently. Check Activity on a test run when a package looks missing.
+
+### Pipeline and customer
+
+Pick a **Pipeline** and **Stage**. Both are required to publish. Set **Deal Title**, optional description, source, and tags. Assign a team member when you want an owner on the card.
+
+Use Create Deal when the next step is a pipeline card, not an estimate or a job yet. If the shop already sent a quote, start from estimate events instead of inventing a second deal.
+
+### Create Note and where notes show
+
+**Create Note** writes a note on the contact. Notes from automations show up in the contact **Notes** list alongside notes you type by hand. Activity is not the only place they appear.
+
+If this automation starts from another tool and the note text comes from a field in that payload, map the real note field. Empty templates produce no note content and the step fails.
+
+### Automation vs ShopWrker in Conversations
+
+Configured messages from an automation show as **Automation**, not as ShopWrker. That keeps customer threads honest when a scripted text lands next to a real assistant reply.
