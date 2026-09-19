@@ -159,3 +159,81 @@ If this automation starts from another tool and the note text comes from a field
 ### Automation vs ShopWrker in Conversations
 
 Configured messages from an automation show as **Automation**, not as ShopWrker. That keeps customer threads honest when a scripted text lands next to a real assistant reply.
+
+## Activity: see how runs went
+
+Open the automation, then click **Activity** in the header. This is the run history for that workflow, not a second builder.
+
+### Filter and find a run
+
+Across the top you get a filter bar:
+
+- Search with **Search name or error…**. It matches customer, lead, or deal names, and error text.
+- **Status**: All, Failed, Completed, Running, Pending, or Cancelled.
+- Sort **Newest** or **Oldest**.
+- **Refresh** to pull the latest runs.
+
+Run cards use the customer, lead, or deal name when ShopWrk has one. Click a card to open the **Run details** drawer. There you get Execution path, Step results, and Trigger data so you can see which step ran and what started the run.
+
+Empty states are plain: **No runs yet** when nothing has fired, or **No matching runs** when filters hide everything.
+
+### Cancel, retry, and diagnose
+
+If you can manage automations, the drawer (and related actions) lets you:
+
+| Action | When it shows | What it does |
+| --- | --- | --- |
+| **Cancel** | Running or Pending | Stops the run from continuing |
+| **Retry** | Failed or Cancelled | Starts the run again (some manual-reconciliation cases cannot retry) |
+| **Diagnose with AI** | Failed | Opens ShopWrker in **Builder** with a diagnosis prompt already filled in. It does **not** auto-submit. You review and send when ready. |
+
+Use Activity when a customer says they never got the text, or when the automations list shows failing runs. Fix the step in Builder, publish if needed, then retry from Activity when the failure is still on that run.
+
+## Settings: send window and failure emails
+
+Click **Settings** in the header for this automation. Besides the name and whether it is on, two safety areas matter for day-to-day shops: **Communication** then **Send window** and **Safety**.
+
+### Send window
+
+Under **Communication**, turn on **Send window**. The label is: "Only send messages during this time window."
+
+You get a row for each day, Monday through Sunday. Each row has an enable switch plus start and end times.
+
+- If the day list is empty the first time, ShopWrk fills weekday defaults so you are not staring at a blank grid.
+- If end is before start on the same day, treat that as an overnight window and double-check the times. ShopWrk warns when the range looks backwards.
+
+Outside the window, outbound message steps skip or wait for the next allowed time. Your own quiet-hours and shop rules still apply on top of this. The send window is the automation's clock, not a replacement for how you talk to customers.
+
+Turn the whole Send window off when this automation should message any time it runs.
+
+### Email on run failure
+
+Under **Safety**, **Email on run failure** is on by default. You can opt out.
+
+When it is on, ShopWrk emails owners and admins after consecutive failures hit **Alert after failures**. If failures keep going and hit **Disable after failures**, the automation trips a circuit breaker and stops running so it does not keep failing in a loop.
+
+Rules that matter:
+
+- The alert number must be lower than the disable number.
+- Opting out of the failure email takes effect from the live draft, even before you publish. You do not have to publish just to stop the emails.
+
+Use a low alert number when this automation texts customers and you want to know fast. Use a higher disable number only if short blips are normal and you do not want the whole workflow turned off too early.
+
+## Turn one on, pause it, or check the list
+
+The automations list shows whether each workflow is on, what starts it, and whether runs are failing.
+
+Use **Builder** to edit steps. Use **Activity** to inspect runs, cancel, retry, or diagnose. Use **Settings** for the name, on/off, send window, and failure emails. You can pause one without deleting it.
+
+Old automations that used one combined message trigger are moved onto the matching channel when ShopWrk can tell which channel it was. If it cannot tell, that step is marked incomplete so you can pick SMS, email, Instagram, or Facebook yourself.
+
+## How this ties to Conversations, Estimates, and Jobs
+
+| Piece | How it connects |
+| --- | --- |
+| [Conversations](/features/communications) | Texts, emails, and social replies from automations land on the same contact thread. Automation-authored messages show as Automation. |
+| Contact Notes | Create Note steps appear in the contact Notes list, not only in Activity |
+| Deals / CRM | Create Deal opens a pipeline card with services and auto or fixed value |
+| [Estimates](/workflows/estimates) | Estimate sent or approved can start a workflow after the quote moves |
+| [Jobs](/workflows/jobs) | Job status changes can start follow-up without you watching the board |
+| ShopWrk calling | Missed call, voicemail, and call ended are the calling triggers above |
