@@ -188,3 +188,53 @@ The toolbar filters and sorts like [Invoices](/workflows/invoices-payments). Fil
 Filter by employee, status, pay method, duration (**Under 4h**, **4-8h**, **8-12h**, **12h+**), and From / To dates. Sort by clock in, clock out, or duration. The footer shows the real total count across pages, even when everything fits on page one.
 
 Empty states are plain: **No attendance history yet**, **No shifts match these filters**, or **Couldn't load attendance history** with **Retry**.
+
+### Open a shift
+
+Click a row. A right-side panel opens with clock times, breaks, pay-method context for that shift, correction history, and manager actions when you can manage time.
+
+From the panel you can:
+
+- Correct clock-in, clock-out, or breaks when the record is wrong
+- Flag a shift as **Needs review**, or resolve that flag
+- Approve a ready shift when your process calls for it
+- See who changed what and why on past corrections
+
+Open shifts stay marked open until someone clocks out or a manager closes them for review.
+
+### Record a missing shift
+
+On the team Timesheet toolbar, click **Record missing shift** when someone forgot to clock in. You can record for inactive members when that is how the shop keeps history honest. Use this for a whole missing day, not as a shortcut to invent hours.
+
+### Timesheet vs Compensation vs Payroll Prep
+
+| What you want | Where |
+| --- | --- |
+| Who was in the shop, every retained shift | **Team** then **Timesheet** |
+| Clock in / break / clock out | Account menu |
+| How someone is paid | Member **Compensation** |
+| Hourly snapshot and CSV | **Team** then **Payroll Prep** |
+| Time on a specific car | Job timers on the [job](/workflows/jobs) |
+
+Attendance history does not show wage amounts. Seeing shifts is not the same grant as seeing pay rates.
+
+### Walkthrough: find last Thursday's wrap installers
+
+Maya needs to know who was on the floor last Thursday before she builds Payroll Prep.
+
+1. She opens **Team** then **Timesheet**.
+2. She sets **From** and **To** to that Thursday, status **All**, and leaves employee on **All members**.
+3. The table lists Luis and Jordan with clock times, breaks, elapsed hours, and review badges.
+4. Luis shows *open* on clock out. She opens his row, confirms he forgot to clock out, and corrects the out time with a short reason.
+5. Jordan shows **Needs review** from an earlier flag. She opens his panel, checks the correction history, resolves the flag, then prepares [Payroll Prep](#payroll-prep) for the period.
+
+### Timesheet gotchas
+
+- **This is full history**, not a 14-day queue. Widen the date filter when an old shift seems missing.
+- **Clock lives in the account menu**, not on the Timesheet tab.
+- **Pay method on a row is historical.** ShopWrk uses the terms that applied during that shift. It does not relabel old shifts with today's Compensation method. **Unknown** means no overlapping terms were on file. **Mixed** means terms changed mid-shift.
+- **Elapsed is gross clock time**, not paid minutes after unpaid breaks. Payroll Prep still owns payable math for hourly people.
+- **Unresolved Needs review** blocks Payroll Prep approval until you clear it.
+- **Corrections invalidate old Payroll Prep snapshots.** Expect to prepare a new version after you fix attendance.
+- **Job timers never become Timesheet rows.** Assigning Luis to a wrap job does not clock him in.
+
