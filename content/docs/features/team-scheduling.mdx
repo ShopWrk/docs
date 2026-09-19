@@ -125,3 +125,67 @@ Invited people show status **Invited**. Filter the table to **Status = Invited**
 </Steps>
 
 ShopWrk emails them a join link. Phone is required. That number becomes their **Work Phone** for this shop only. ShopWrk calling and texts in this shop use that Work Phone, not their personal sign-in phone.
+
+## Member profiles
+
+Open an active member from the Staff table to see their profile. The header shows their name, work or sign-in email, and Work Phone. Tabs on the profile are **Profile**, **Access**, **Schedule**, **Stats**, and **Activity**. People with compensation permission also see **Compensation**.
+
+<div className="sw-ui">
+  <div className="sw-app">
+    <div className="sw-identity">
+      <span className="sw-avatar">LO</span>
+      <span>
+        <p className="sw-identity-name">Luis Ortega</p>
+        <p className="sw-identity-meta">luis@mayaswraps.com <span className="sw-quiet">(work)</span></p>
+        <p className="sw-identity-meta">(512) 555-0148</p>
+      </span>
+    </div>
+    <div className="sw-tabs-scroll">
+      <div className="sw-tabs">
+        <span className="sw-tab">Profile</span>
+        <span className="sw-tab">Access</span>
+        <span className="sw-tab">Schedule</span>
+        <span className="sw-tab">Stats</span>
+        <span className="sw-tab">Activity</span>
+        <span className="sw-tab sw-tab-active">Compensation</span>
+      </div>
+    </div>
+  </div>
+  <p className="sw-ui-caption">Member profile. Compensation only shows if you have the compensation grant.</p>
+</div>
+
+- **Profile** holds name, phone, and shop membership details. You can view their sign-in email when you are allowed to. You cannot change it for them. They change their own email.
+- **Access** is this person's groups. See [Roles and permissions](/getting-started/roles-permissions).
+- **Schedule** shows this person's dated shifts and time off. Manage shifts from **Team** then **Schedules**.
+- **Stats** shows jobs completed, paid hours this week versus last week, and time per service.
+- **Activity** is the audit trail for membership and access changes.
+- **Compensation** is how this person is paid: **Hourly**, **Percentage**, or **Fixed fee**, plus **Pay history**.
+
+You can deactivate or reactivate a member from the profile. Deactivation cancels future draft and published shifts, keeps history, and notifies the people who need to know. Reactivating restores their previous groups and overrides.
+
+<Note>
+  Stats hours come from paid work sessions, not job timers. Job time is operational. It is not pay.
+</Note>
+
+## Compensation
+
+Compensation is where you set how each team member is paid and keep a history of those terms. It lives on the member profile, not on Payroll Prep.
+
+You pick one method: **Hourly**, **Percentage**, or **Fixed fee**. You can save percentage and fixed fee today. Payroll Prep still only calculates hourly. Those other methods are stored for later. They are not payable in Payroll Prep yet.
+
+If you have permission to view or manage compensation, open the member and go to **Compensation**. People without that grant do not see the tab. Viewing your own profile does not unlock it. Technicians without compensation permission cannot see rates, including their own.
+
+Salary is not a method you can pick. Paystubs, direct deposit, and **Run Payroll** are not on this tab.
+
+### Compensation vs Timesheet vs Payroll Prep
+
+Use Compensation for pay method and amount. Use Timesheet for who was in the shop. Use Payroll Prep only for hourly export.
+
+| What you want | Where |
+| --- | --- |
+| Set hourly, percentage, or fixed fee, and keep history | Member **Compensation**, **Pay** section |
+| Who clocked in | **Team** then **Timesheet** |
+| Hourly snapshot and CSV | **Team** then **Payroll Prep** |
+| Time on a specific car | Job timers on the [job](/workflows/jobs). Not pay. |
+
+Invites stay on **Team** then **Staff**. Job timers never become pay.
