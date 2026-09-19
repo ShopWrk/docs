@@ -238,3 +238,55 @@ Maya needs to know who was on the floor last Thursday before she builds Payroll 
 - **Corrections invalidate old Payroll Prep snapshots.** Expect to prepare a new version after you fix attendance.
 - **Job timers never become Timesheet rows.** Assigning Luis to a wrap job does not clock him in.
 
+## Access
+
+**Team** then **Access** is where you set who can do what. See [Roles and permissions](/getting-started/roles-permissions).
+
+## Payroll Prep
+
+**Team** then **Payroll Prep** builds hourly snapshots you can check and export. It does not pay people. There is no **Run Payroll** button, and ShopWrk does not claim tax or legal compliance.
+
+Payroll Prep remains hourly-only. You can configure **Percentage** and **Fixed fee** on [Compensation](#compensation). A period that includes those methods cannot be approved or exported yet. The saved terms are ready for later. They are not payable today.
+
+What a snapshot includes:
+
+- Regular hours and the hourly rate segments used in the period
+- Regular gross, overtime you classify, overtime gross, audited adjustments, and total gross
+- Periods you configure as weekly, biweekly, semimonthly, or monthly
+
+If a rate changes mid-period, ShopWrk splits the hours across the old and new rates. A missing hourly rate for payable time blocks the snapshot. Open or overlapping attendance blocks it too. Schedule mismatches warn you. They do not stop the snapshot.
+
+Preparing a draft is a grant you can give. Approving a snapshot and exporting the CSV are Owner-only, and those are separate actions.
+
+After an Owner approves a snapshot, that version is locked. If attendance, rates, overtime classification, or an adjustment changes, ShopWrk invalidates it and you prepare a new version. Old or invalidated versions cannot export.
+
+The CSV is a full replacement for that approved version. Export it again and you get the same file.
+
+Staff can see only their own approved gross. They do not see rates, other people's amounts, or draft snapshots.
+
+<Warning>
+  Payroll Prep is not **Run Payroll**. You can set percentage and fixed fee on Compensation now. Payroll Prep will not calculate or export those methods yet. Salary is not a pay method you can pick. Paystubs, direct deposit, and processing pay are still coming.
+</Warning>
+
+## Jobs and Work Phone
+
+The people on Staff are who you assign on a job. On the job, job timers are operational time. They are not pay. Paid hours come from **Timesheet**. How that person is paid is on [Compensation](#compensation). Percentage and fixed fee defaults can differ on a given job.
+
+When you assign a technician, ShopWrk can warn you about an availability conflict next to **Labor start**, **Work starts**, or the technician picker. Open the warning to see the reason.
+
+If you have permission to manage the schedule, you can continue by entering a short override reason. ShopWrk saves that reason with the assignment.
+
+Typical reasons:
+
+- After hours
+- No published shift
+- Time off
+- Overlap with another appointment in this shop
+
+Overnight jobs that still start and end inside shop hours do not warn. Two jobs in the same bay at the same time still refuse, as do blocked time and a busy Google Calendar. Cross-shop schedule conflicts are ignored on purpose.
+
+ShopWrk calling and texts for this shop use each person's **Work Phone** from the invite.
+
+## What is not live yet
+
+Payroll processing, paystubs, and direct deposit are not available. Salary is not a selectable pay method. You can configure **Hourly**, **Percentage**, and **Fixed fee** on the member **Compensation** tab. Payroll Prep still only calculates hourly. Use hourly compensation and Payroll Prep snapshots when you need numbers for your accountant or payroll provider this period.
